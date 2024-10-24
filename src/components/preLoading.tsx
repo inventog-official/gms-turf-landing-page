@@ -70,7 +70,8 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
           <div className="absolute flex items-center justify-center h-full w-full">
             <div className="relative px-8 md:px-[30px] overflow-hidden">
               {/* Sliding box that reveals the text */}
-              <div className="absolute h-full w-full bg-[#CD512F] z-10 p-5 animate-slideReveal"></div>
+              <div className="absolute h-full w-full bg-secondary z-10 p-5 animate-slideReveal"></div>
+              {/* <div className="absolute h-full w-full bg-[#CD512F] z-10 p-5 animate-slideReveal"></div> */}
 
               {/* Text with reveal effect */}
               <p className="relative z-0 text-white text-4xl md:text-6xl uppercase font-anton animate-revealText">
