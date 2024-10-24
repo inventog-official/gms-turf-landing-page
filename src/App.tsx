@@ -7,7 +7,6 @@ import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
 import Preloader from "./components/preLoading";
 const App: React.FC = () => {
-
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadingComplete = () => {
@@ -24,7 +23,11 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Preloader isLoading={isLoading} onComplete={handleLoadingComplete} />
+      {isLoading && (
+        <div className="w-screen h-screen bg-primary">
+          <Preloader isLoading={isLoading} onComplete={handleLoadingComplete} />
+        </div>
+      )}
       {!isLoading && (
         <div className={`w-screen h-screen bg-primary`}>
           <Navbar />
