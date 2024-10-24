@@ -4,7 +4,7 @@ const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center justify-center min-h-screen bg-primary overflow-hidden"
+      className="relative flex items-center animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden"
     >
       {/* Background Image */}
       <img

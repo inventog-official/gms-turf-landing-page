@@ -34,7 +34,8 @@ const Navbar: React.FC = () => {
       ${
         scrolled
           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
-          : "bg-transparent h-[15%] border-t-[0.1px] border-[#181817]"
+          : "bg-transparent h-[15%]"
+          // : "bg-transparent h-[15%] border-t-[0.1px] border-[#181817]"
       } flex items-center justify-center px-8 lg:px-[10rem]`}
     >
       <div className="flex items-center w-full h-full">

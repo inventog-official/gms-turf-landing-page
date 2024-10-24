@@ -79,7 +79,8 @@ module.exports = {
         // doubleSlide: "doubleSlide 1.5s ease forwards",
         parallaxText: "parallaxText 1.5s ease 0.75s forwards", // Delay to sync with the second slide
         slideOut: "slideOut 1s ease-out forwards",
-        fadeIn: "fadeIn 1s ease-out forwards",
+        fadeIn: "fadeIn 1s ease-in-out forwards",
+        zoomIn: 'zoomIn 0.5s ease-in-out forwards',
         slideReveal: "slideReveal 1s ease-in forwards",
         revealText: "revealText 1.1s ease-out forwards",
       },
@@ -123,8 +124,12 @@ module.exports = {
           "100%": { transform: "translateY(0)" },
         },
         fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        zoomIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
         slideReveal: {
           "0%": { transform: "translateX(-90%)" }, // Start at the left

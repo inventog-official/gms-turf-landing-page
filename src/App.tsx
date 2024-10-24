@@ -6,6 +6,7 @@ import Services from "./components/services";
 import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
 import Preloader from "./components/preLoading";
+import PageWrapper from "./components/pageWrapper";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -32,7 +33,30 @@ const App: React.FC = () => {
         <div className={`w-screen h-screen bg-primary`}>
           <Navbar />
           <CursorFollower />
-          <div id="home">
+          <PageWrapper>
+            <div id="home">
+              <Home />
+            </div>
+          </PageWrapper>
+
+          <PageWrapper>
+            <div id="about">
+              <About />
+            </div>
+          </PageWrapper>
+
+          <PageWrapper>
+            <div id="services">
+              <Services />
+            </div>
+          </PageWrapper>
+
+          <PageWrapper>
+            <div id="contact">
+              <Contact />
+            </div>
+          </PageWrapper>
+          {/* <div id="home">
             <Home />
           </div>
           <div id="about">
@@ -43,7 +67,7 @@ const App: React.FC = () => {
           </div>
           <div id="contact">
             <Contact />
-          </div>
+          </div> */}
         </div>
       )}
     </>
