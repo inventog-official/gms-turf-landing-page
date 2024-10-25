@@ -37,6 +37,21 @@
   }
 }
 
+/* Hide scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+* {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and older Edge */
+body {
+  -ms-overflow-style: none;
+}
+
 /* Add to your global CSS file */
 html {
   scroll-behavior: smooth; /* Ensures smooth scrolling */
@@ -45,15 +60,6 @@ html {
 * {
   outline: none;
   /* background-color: #0f150e; */
-}
-
-/* Hide scrollbar */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
 
 body {

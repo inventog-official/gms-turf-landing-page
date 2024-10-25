@@ -7,6 +7,7 @@ import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
 import Preloader from "./components/preLoading";
 import PageWrapper from "./components/pageWrapper";
+import ScrollProgress from "./components/scrollProgress";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -30,9 +31,10 @@ const App: React.FC = () => {
         </div>
       )}
       {!isLoading && (
-        <div className={`w-screen h-screen bg-primary`}>
+        <div className={`w-screen h-screen bg-primary no-scrollbar`}>
           <Navbar />
           <CursorFollower />
+          <ScrollProgress />
           <PageWrapper>
             <div id="home">
               <Home />

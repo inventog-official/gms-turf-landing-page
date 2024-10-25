@@ -39,10 +39,6 @@ const Home: React.FC = () => {
           <TextHoverAnimation text="Sports" />
           <TextHoverAnimation text="infrastructure" />
         </h1>
-
-        {/* <h1 className="relative uppercase text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11]">
-        <TextAnimation text="Sports infrastructure" />
-        </h1> */}
       </div>
       <div className="absolute bottom-[7rem] md:bottom-[4rem] right-0 z-[10] w-[50%] md:w-[30%] h-[30%]">
         <FootballAnimation />
