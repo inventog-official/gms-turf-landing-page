@@ -32,6 +32,38 @@
 // export default TextAnimation;
 
 // TextAnimation.tsx
+// import { motion } from "framer-motion";
+// import React from "react";
+
+// interface TextHoverAnimationProps {
+//   text: string;
+// }
+
+// const TextHoverAnimation: React.FC<TextHoverAnimationProps> = ({ text }) => {
+//   return (
+//     <div className="flex space-x-1">
+//       {text.split("").map((char, index) => (
+//         <motion.span
+//           key={index}
+//           className="inline-block origin-bottom" // Set the transform origin to the bottom
+//           whileHover={{
+//             scaleY: 1.3, // Increase only the top height on hover
+//           }}
+//           transition={{
+//             type: "smooth",
+//             stiffness: 300,
+//             damping: 15,
+//           }}
+//         >
+//           {char}
+//         </motion.span>
+//       ))}
+//     </div>
+//   );
+// };
+
+// export default TextHoverAnimation;
+
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -46,11 +78,10 @@ const TextHoverAnimation: React.FC<TextHoverAnimationProps> = ({ text }) => {
         <motion.span
           key={index}
           className="inline-block origin-bottom" // Set the transform origin to the bottom
-          whileHover={{
-            scaleY: 1.3, // Increase only the top height on hover
-          }}
+          whileHover={{ scaleY: 1.3 }} // For desktop hover
+          whileTap={{ scaleY: 1.3 }}   // For mobile touch
           transition={{
-            type: "smooth",
+            type: "spring",
             stiffness: 300,
             damping: 15,
           }}
@@ -63,3 +94,4 @@ const TextHoverAnimation: React.FC<TextHoverAnimationProps> = ({ text }) => {
 };
 
 export default TextHoverAnimation;
+
