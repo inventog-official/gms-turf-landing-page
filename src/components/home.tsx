@@ -1,10 +1,11 @@
 import React from "react";
+import FootballAnimation from "./footballAnimation";
 
 const Home: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative flex items-center animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden"
+      className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden"
     >
       {/* Background Image */}
       <img
@@ -25,9 +26,17 @@ const Home: React.FC = () => {
       />
 
       {/* Text */}
-      <h1 className="relative text-5xl font-extrabold text-white font-anton z-10">
-        Welcome to Our Site
-      </h1>
+      <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col gap-5 lg:gap-8 select-none">
+        <h1 className="relative uppercase text-lg md:text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white">
+          South india's no.1
+        </h1>
+        <h1 className="relative uppercase text-lg md:text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white">
+        Sports infrastructure
+        </h1>
+      </div>
+      <div className="absolute bottom-[4rem] right-0 z-[100000] w-[30%] h-[30%]">
+        <FootballAnimation/>
+      </div>
     </section>
   );
 };

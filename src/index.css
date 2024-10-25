@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Ethnocentric-RG";
+  src: url("./assets/fonts/ethnocentric rg it.otf") format("opentype");
+  /* src: url("./assets/fonts/ethnocentric rg.otf") format("opentype"); */
+  font-weight: 100 !important;
+  font-style: italic !important;
+}
+
 :root {
   --color-primary: #0f150e;
   --color-primary-border: #0f150e;
@@ -160,7 +168,10 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-

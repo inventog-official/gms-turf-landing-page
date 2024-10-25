@@ -1,46 +1,3 @@
-// import { Canvas, useFrame } from "@react-three/fiber";
-// import { OrbitControls, useGLTF } from "@react-three/drei";
-// import { useRef } from "react";
-// import { Mesh } from "three";
-
-// // Component to load and render the soccer ball model
-// const Football = () => {
-//   const ballRef = useRef<Mesh>(null);
-
-//   // Load the GLB model
-//   const { scene } = useGLTF("./soccer_ball.glb"); // Adjust the path as needed
-
-//   // Rotate the ball each frame
-//   useFrame(() => {
-//     if (ballRef.current) {
-//       ballRef.current.rotation.y += 0.01; // Rotate around the Y-axis
-//     }
-//   });
-
-//   return (
-//     <primitive ref={ballRef} object={scene} scale={[2, 2, 2]} />
-//   );
-// };
-
-// const FootballAnimation = () => {
-//   return (
-//     <div className="w-full h-screen bg-gray-900">
-//       <Canvas>
-//         <OrbitControls />
-//         <ambientLight intensity={0.5} />
-//         <directionalLight position={[10, 10, 5]} intensity={1} />
-//         {/* Render the Football component */}
-//         <Football />
-//       </Canvas>
-//     </div>
-//   );
-// };
-
-// // Load the GLTF model in useGLTF
-// useGLTF.preload(".soccer_ball.glb"); // Preload the model
-
-// export default FootballAnimation;
-
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { useEffect, useRef } from "react";
@@ -109,11 +66,12 @@ const FootballAnimation = () => {
     };
   }, []);
   return (
-    <div className="w-full h-full bg-gray-900">
+    <div className="h-full w-full bg-transparent">
       <Canvas>
-        <OrbitControls />
-        <ambientLight  intensity={0.1} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <OrbitControls enableZoom={false} enablePan={false} enableRotate={true}/>
+        <ambientLight  intensity={0.3} />
+        <directionalLight isLight intensity={3} />
+        {/* <directionalLight position={[10, 10, 5]} intensity={1} /> */}
         {/* Render the Football component */}
         <Football />
       </Canvas>
