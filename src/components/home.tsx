@@ -1,6 +1,7 @@
 import React from "react";
 import FootballAnimation from "./footballAnimation";
 import TextAnimation from "./textAnimation";
+import { SlBadge } from "react-icons/sl";
 
 const Home: React.FC = () => {
   return (
@@ -27,16 +28,24 @@ const Home: React.FC = () => {
       />
 
       {/* Text */}
-      <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col gap-5 lg:gap-8 select-none">
-        <h1 className="relative uppercase text-lg md:text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white">
+      <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col select-none">
+        <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-ethnocentric italic font-extrabold text-white/60 z-[11]">
+          <span>
+            <SlBadge />
+          </span>
           South india's no.1
         </h1>
-        <h1 className="relative uppercase text-lg md:text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white">
-        <TextAnimation text="Sports infrastructure" />
+        <h1 className="relative uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11]">
+          <TextAnimation text="Sports" />
+          <TextAnimation text="infrastructure" />
         </h1>
+
+        {/* <h1 className="relative uppercase text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11]">
+        <TextAnimation text="Sports infrastructure" />
+        </h1> */}
       </div>
-      <div className="absolute bottom-[7rem] md:bottom-[4rem] right-0 z-[100000] w-[50%] md:w-[30%] h-[30%]">
-        <FootballAnimation/>
+      <div className="absolute bottom-[7rem] md:bottom-[4rem] right-0 z-[10] w-[50%] md:w-[30%] h-[30%]">
+        <FootballAnimation />
       </div>
     </section>
   );
