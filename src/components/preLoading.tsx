@@ -67,7 +67,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
         {/* Second section: Game On Solutions reveal animation */}
         {firstSectionComplete && (
-          <div className="absolute flex items-center justify-center h-full w-full z-10">
+          <div className="absolute flex items-center justify-center h-full w-full z-10 pb-8 md:pb-16">
             <div className="relative px-8 md:px-[30px] overflow-hidden">
               {/* Sliding box that reveals the text */}
               <div className="absolute h-full w-full bg-secondary z-10 p-5 animate-slideReveal"></div>
@@ -75,7 +75,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
               {/* Text with reveal effect */}
               <p className="relative text-white text-4xl md:text-6xl uppercase font-anton animate-revealText">
-                Game <span className="text-secondary">On</span> Solutions
+                GameOn <span className="text-secondary">Solutions</span> 
               </p>
             </div>
           </div>

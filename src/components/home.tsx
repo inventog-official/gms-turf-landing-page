@@ -1,6 +1,6 @@
 import React from "react";
 import FootballAnimation from "./footballAnimation";
-import TextAnimation from "./textAnimation";
+import TextHoverAnimation from "./textHoverAnimation";
 import { SlBadge } from "react-icons/sl";
 
 const Home: React.FC = () => {
@@ -29,15 +29,15 @@ const Home: React.FC = () => {
 
       {/* Text */}
       <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col select-none">
-        <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-ethnocentric italic font-extrabold text-white/60 z-[11]">
+        <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-ethnocentric italic font-extrabold text-white/60 z-[11] animate-lineUp">
           <span>
             <SlBadge />
           </span>
           South india's no.1
         </h1>
-        <h1 className="relative uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11]">
-          <TextAnimation text="Sports" />
-          <TextAnimation text="infrastructure" />
+        <h1 className="relative uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11] animate-lineUp delay-1000">
+          <TextHoverAnimation text="Sports" />
+          <TextHoverAnimation text="infrastructure" />
         </h1>
 
         {/* <h1 className="relative uppercase text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white z-[11]">

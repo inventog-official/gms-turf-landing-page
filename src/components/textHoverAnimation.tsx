@@ -35,11 +35,11 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-interface TextAnimationProps {
+interface TextHoverAnimationProps {
   text: string;
 }
 
-const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
+const TextHoverAnimation: React.FC<TextHoverAnimationProps> = ({ text }) => {
   return (
     <div className="flex space-x-1">
       {text.split("").map((char, index) => (
@@ -62,4 +62,4 @@ const TextAnimation: React.FC<TextAnimationProps> = ({ text }) => {
   );
 };
 
-export default TextAnimation;
+export default TextHoverAnimation;
