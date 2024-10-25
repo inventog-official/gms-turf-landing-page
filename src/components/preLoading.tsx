@@ -47,7 +47,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
       <div className="relative h-full">
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
-          <div className="absolute flex items-center justify-center h-full w-full pb-8 md:pb-16 z-10 border-4 border-red-900">
+          <div className="absolute flex items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
             {["Sports", "Infrastructure"].map((word, index) => (
               <p
                 key={index}
@@ -67,7 +67,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
         {/* Second section: Game On Solutions reveal animation */}
         {firstSectionComplete && (
-          <div className="absolute flex items-center justify-center h-full w-full z-10 border-4 border-yellow-600">
+          <div className="absolute flex items-center justify-center h-full w-full z-10">
             <div className="relative px-8 md:px-[30px] overflow-hidden">
               {/* Sliding box that reveals the text */}
               <div className="absolute h-full w-full bg-secondary z-10 p-5 animate-slideReveal"></div>
@@ -75,7 +75,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
               {/* Text with reveal effect */}
               <p className="relative text-white text-4xl md:text-6xl uppercase font-anton animate-revealText">
-                Game On Solutions
+                Game <span className="text-secondary">On</span> Solutions
               </p>
             </div>
           </div>

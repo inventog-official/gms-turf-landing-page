@@ -1,5 +1,6 @@
 import React from "react";
 import FootballAnimation from "./footballAnimation";
+import TextAnimation from "./textAnimation";
 
 const Home: React.FC = () => {
   return (
@@ -31,10 +32,10 @@ const Home: React.FC = () => {
           South india's no.1
         </h1>
         <h1 className="relative uppercase text-lg md:text-xl lg:text-5xl font-ethnocentric italic font-extrabold text-white">
-        Sports infrastructure
+        <TextAnimation text="Sports infrastructure" />
         </h1>
       </div>
-      <div className="absolute bottom-[4rem] right-0 z-[100000] w-[30%] h-[30%]">
+      <div className="absolute bottom-[7rem] md:bottom-[4rem] right-0 z-[100000] w-[50%] md:w-[30%] h-[30%]">
         <FootballAnimation/>
       </div>
     </section>
