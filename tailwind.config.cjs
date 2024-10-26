@@ -81,9 +81,6 @@ module.exports = {
         lineUp: "lineUp 2s ease-out forwards",
         slideReveal: "slideReveal 1s ease-in forwards",
         revealText: "revealText 1.1s ease-in-out forwards",
-        glow: "glow 1.5s infinite alternate",
-        // glow: "glow 1.5s infinite alternate",
-        // glow: 'glow 1s ease-in-out infinite',
       },
       blur: {
         "10px": "10px",
@@ -118,33 +115,6 @@ module.exports = {
           "60%": { opacity: 0, transform: "scale(0.95)" }, // Remains hidden while box slides
           "100%": { opacity: 1, transform: "scale(1)" }, // Text becomes fully visible and scales up slightly
         },
-        glow: {
-          "0%": {
-            boxShadow: "0 0 10px rgba(255, 255, 0, 0.8)", // brighter starting point
-          },
-          "50%": {
-            boxShadow: "0 0 25px rgba(255, 255, 0, 1)", // peak intensity
-          },
-          "100%": {
-            boxShadow: "0 0 10px rgba(255, 255, 0, 0.8)", // return to initial glow
-          },
-        },
-        // glow: {
-        //   "0%": {
-        //     boxShadow: "0 0 5px rgba(255, 255, 0, 0.5)",
-        //   },
-        //   "50%": {
-        //     boxShadow: "0 0 15px rgba(255, 255, 0, 1)",
-        //   },
-        //   "100%": {
-        //     boxShadow: "0 0 5px rgba(255, 255, 0, 0.5)",
-        //   },
-        // },
-        // glow: {
-        //   '0%': { opacity: '0.1', transform: 'translateY(0)' },
-        //   '50%': { opacity: '0.7', transform: 'translateY(-50%)' },
-        //   '100%': { opacity: '0', transform: 'translateY(-100%)' },
-        // },
       },
     },
   },
