@@ -8,6 +8,7 @@ import CursorFollower from "./components/customCursor";
 import Preloader from "./components/preLoading";
 import PageWrapper from "./components/pageWrapper";
 import ScrollProgress from "./components/scrollProgress";
+import AboutUs from "./components/aboutUs";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -42,8 +43,14 @@ const App: React.FC = () => {
           </PageWrapper>
 
           <PageWrapper>
-            <div id="about">
+            <div id="iconsWithContent">
               <IconsWithContent />
+            </div>
+          </PageWrapper>
+
+          <PageWrapper>
+            <div id="aboutUs">
+              <AboutUs/>
             </div>
           </PageWrapper>
 

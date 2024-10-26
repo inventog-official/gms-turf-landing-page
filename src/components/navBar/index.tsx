@@ -84,7 +84,7 @@ const Navbar: React.FC = () => {
             </li>
             <li>
               <a
-                href="#about"
+                href="#aboutUs"
                 className="font-medium uppercase text-[#D2D2D0] transition-all hover:text-secondary"
               >
                 About
