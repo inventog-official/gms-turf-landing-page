@@ -36,7 +36,7 @@ const AboutUs: React.FC = () => {
       {/* Text Section */}
       <div className=" relative w-[60%] pr-4">
         <div className="absolute top-[5rem] left-[18rem]">
-          <img src="/eeee.png" className="opacity-30" />
+          <img src="/paintSplatter.png" className="opacity-30" />
         </div>
         <div className="flex flex-col gap-16">
           <div className="text-left w-full">
