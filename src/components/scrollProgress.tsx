@@ -17,7 +17,8 @@ const ScrollProgress: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed right-0 top-0 h-full w-[0.15rem] bg-primary z-[9999] hidden md:flex">
+    <div className="fixed right-0 top-0 h-full w-[0.15rem] bg-primary z-[9999]">
+    {/* <div className="fixed right-0 top-0 h-full w-[0.15rem] bg-primary z-[9999] hidden md:flex"> */}
       <div
         className="relative bg-secondary w-full rounded transition-all duration-300 ease-out"
         style={{ height: `${scrollProgress}%` }}

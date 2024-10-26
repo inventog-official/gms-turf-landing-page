@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/navBar";
 import Home from "./components/home";
-import About from "./components/about";
+import IconsWithContent from "./components/iconsWithContent";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
@@ -43,7 +43,7 @@ const App: React.FC = () => {
 
           <PageWrapper>
             <div id="about">
-              <About />
+              <IconsWithContent />
             </div>
           </PageWrapper>
 
