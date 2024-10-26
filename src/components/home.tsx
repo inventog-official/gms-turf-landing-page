@@ -18,15 +18,15 @@ const Home: React.FC = () => {
 
       {/* Inner Shadow Effect */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `./bg-image.webp`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./bg-image.webp)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          boxShadow: "inset 0 200px 250px -100px rgba(0, 0, 0, 0.9)",
+          boxShadow: "inset 20px 20px 100px 100px rgba(0, 0, 0, 0.9)", // Inner shadow on all sides
         }}
       />
-
+      
       {/* Text */}
       <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col select-none">
         <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-ethnocentric italic font-extrabold text-white/60 z-[11] opacity-0 animate-lineUp delay-700">
