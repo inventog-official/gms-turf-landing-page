@@ -4,7 +4,7 @@ const AboutUs: React.FC = () => {
   return (
     <section
       id="aboutUs"
-      className="relative flex w-full min-h-[90vh] justify-center items-center gap-4 bg-primary px-[0.5rem] border-4 border-red-900"
+      className="relative flex w-full min-h-[90vh] justify-center items-center gap-4 bg-primary px-[0.5rem]"
     >
       {/* Image Section with Enhanced Inner Light Effect */}
       <div className="relative w-[40%] h-full flex items-center justify-center">
