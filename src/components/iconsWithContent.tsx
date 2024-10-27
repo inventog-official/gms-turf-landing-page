@@ -11,8 +11,8 @@ const IconsWithContent: React.FC = () => {
         <div className="w-full md:w-[50%] lg:w-[18%] rounded-lg flex flex-col justify-center items-center p-5">
           <img src="/icons/1-01.png" className="w-full" />
           <div className="flex flex-col gap-4 text-center">
-            <p className="text-white text-2xl font-primary">Quality Products</p>
-            <p className="text-center w-full font-secondary text-base">
+            <p className="text-white/70 text-2xl font-primary">Quality Products</p>
+            <p className="text-center w-full font-secondary text-lg">
               Unmatched quality for lasting beauty and resilience.
             </p>
           </div>
@@ -20,10 +20,10 @@ const IconsWithContent: React.FC = () => {
         <div className="w-full md:w-[50%] lg:w-[18%] rounded-lg flex flex-col justify-center items-center p-5">
           <img src="/icons/1-02.png" className="w-full" />
           <div className="flex flex-col gap-4 text-center">
-            <p className="text-white text-2xl font-primary">
+            <p className="text-white/70 text-2xl font-primary">
               Customer Stratification
             </p>
-            <p className="text-center w-full font-secondary text-base">
+            <p className="text-center w-full font-secondary text-lg">
               Exceeding expectations with tailored solutions for every need.
             </p>
           </div>
@@ -31,8 +31,8 @@ const IconsWithContent: React.FC = () => {
         <div className="w-full md:w-[50%] lg:w-[18%] rounded-lg flex flex-col justify-center items-center p-5">
           <img src="/icons/1-03.png" className="w-full" />
           <div className="flex flex-col gap-4 text-center">
-            <p className="text-white text-2xl font-primary">On Time Delivery</p>
-            <p className="text-center w-full font-secondary text-base">
+            <p className="text-white/70 text-2xl font-primary">On Time Delivery</p>
+            <p className="text-center w-full font-secondary text-lg">
               Punctuality you can trust, quality you can count on.
             </p>
           </div>
@@ -40,10 +40,10 @@ const IconsWithContent: React.FC = () => {
         <div className="w-full md:w-[50%] lg:w-[18%] rounded-lg flex flex-col justify-center items-center p-5">
           <img src="/icons/1-04.png" className="w-full" />
           <div className="flex flex-col gap-4 text-center">
-            <p className="text-white text-2xl font-primary">
+            <p className="text-white/70 text-2xl font-primary">
               Square Feet Installed
             </p>
-            <p className="text-center w-full font-secondary text-base">
+            <p className="text-center w-full font-secondary text-lg">
               Expansive installations crafted to perfection, down to every
               square foot.
             </p>

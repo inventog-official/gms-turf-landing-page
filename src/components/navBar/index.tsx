@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
         {/* Call Us Now Button */}
         <div className="flex gap-7 h-full w-[50%] md:w-[20%] justify-end items-center">
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
-          <HamburgerMenu/>
+          <HamburgerMenu />
         </div>
       </div>
     </nav>
