@@ -4,7 +4,7 @@ const IconsWithContent: React.FC = () => {
   return (
     <section
       id="iconsWithContent"
-      className="relative flex flex-col bg-primary shadow-inner h-[80vh] justify-center items-center select-none"
+      className="relative flex flex-col bg-primary shadow-inner min-h-[70vh] justify-center items-center select-none"
     >
       <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black via-black/80 to-transparent pointer-events-none"></div>
       <div className="flex md:flex-row flex-wrap justify-around p-5">

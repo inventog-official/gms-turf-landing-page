@@ -4,7 +4,7 @@ const AboutUs: React.FC = () => {
   return (
     <section
       id="aboutUs"
-      className="relative flex w-full h-[80vh] justify-center items-center gap-4 bg-primary px-[0.5rem]"
+      className="relative flex w-full min-h-[90vh] justify-center items-center gap-4 bg-primary px-[0.5rem] border-4 border-red-900"
     >
       {/* Image Section with Enhanced Inner Light Effect */}
       <div className="relative w-[40%] h-full flex items-center justify-center">
@@ -34,7 +34,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Text Section */}
-      <div className="w-[60%] flex flex-col h-full gap-16 pr-[5rem]">
+      <div className="w-[60%] flex flex-col justify-center h-full gap-16 pr-[5rem]">
         <div className="text-left">
           <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
             About Us
