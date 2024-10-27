@@ -51,7 +51,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
             {["Sports", "Infrastructure"].map((word, index) => (
               <p
                 key={index}
-                className={`text-4xl md:text-6xl uppercase font-anton mr-4 transition-all duration-700 ${
+                className={`text-4xl md:text-6xl uppercase font-primary mr-4 transition-all duration-700 ${
                   currentWord >= index + 1
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-[10px] translate-y-10"
@@ -74,7 +74,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
               {/* <div className="absolute h-full w-full bg-[#CD512F] z-10 p-5 animate-slideReveal"></div> */}
 
               {/* Text with reveal effect */}
-              <p className="relative text-white text-4xl md:text-6xl uppercase font-anton animate-revealText">
+              <p className="relative text-white text-4xl md:text-6xl uppercase font-primary animate-revealText">
                 <span className="text-secondary">GameOn</span> Solutions
               </p>
             </div>

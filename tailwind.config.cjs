@@ -63,9 +63,12 @@ module.exports = {
         "custom-bezier": "cubic-bezier(0.75, -1, 0.3, 2.33)",
       },
       fontFamily: {
-        outfit: ["Outfit", "sans-serif"],
-        anton: ["Anton", "sans-serif"],
-        ethnocentric: ['"Ethnocentric-RG"', "sans-serif"], // Custom font family
+        primary: ["Anton", "sans-serif"],
+        secondary: ["Outfit", "sans-serif"],
+        special: ['"Ethnocentric-RG"', "sans-serif"], // Custom font family
+        // outfit: ["Outfit", "sans-serif"],
+        // anton: ["Anton", "sans-serif"],
+        // ethnocentric: ['"Ethnocentric-RG"', "sans-serif"], // Custom font family
         // airstrike: ['AirstrikeRegular', 'sans-serif'], // Add custom font family here
       },
       //   borderRadius: {
@@ -81,6 +84,7 @@ module.exports = {
         lineUp: "lineUp 2s ease-out forwards",
         slideReveal: "slideReveal 1s ease-in forwards",
         revealText: "revealText 1.1s ease-in-out forwards",
+        glow: "glow 1.5s infinite alternate",
       },
       blur: {
         "10px": "10px",
@@ -114,6 +118,17 @@ module.exports = {
           "0%": { opacity: 0, transform: "scale(0.95)" }, // Text starts hidden and slightly smaller
           "60%": { opacity: 0, transform: "scale(0.95)" }, // Remains hidden while box slides
           "100%": { opacity: 1, transform: "scale(1)" }, // Text becomes fully visible and scales up slightly
+        },
+        glow: {
+          "0%": {
+            boxShadow: "0 0 10px rgba(255, 255, 0, 0.8)", // brighter starting point
+          },
+          "50%": {
+            boxShadow: "0 0 25px rgba(255, 255, 0, 1)", // peak intensity
+          },
+          "100%": {
+            boxShadow: "0 0 10px rgba(255, 255, 0, 0.8)", // return to initial glow
+          },
         },
       },
     },

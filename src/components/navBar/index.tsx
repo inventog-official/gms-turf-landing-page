@@ -73,7 +73,7 @@ const Navbar: React.FC = () => {
         <div
           className={`hidden bg-[#181817] w-[70%] md:w-[60%] lg:w-[60%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out`}
         >
-          <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-outfit">
+          <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
             <li>
               <a
                 href="#home"
@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
                     <li>
                       <a
                         href="#item2"
-                        className="block font-outfit px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+                        className="block font-secondary px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
                         onClick={handleOptionClick} // Close dropdown when an option is clicked
                       >
                         Item 2
