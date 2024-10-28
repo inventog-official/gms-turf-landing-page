@@ -67,7 +67,7 @@ const WhyUs: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-6 w-full font-primary text-white font-semibold uppercase leading-relaxed">
+      <div className="flex flex-col gap-6 w-full font-primary text-white font-semibold leading-relaxed">
         <p className="text-lg lg:text-4xl text-center">
           {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
           We specialize in delivering{" "}
