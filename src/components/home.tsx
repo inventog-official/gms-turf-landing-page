@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       
       {/* Text */}
       <div className="absolute left-5 md:left-10 lg:left-[11rem] bottom-[8rem] flex flex-col select-none">
-        <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-special italic font-extrabold text-white/60 z-[11] opacity-0 animate-lineUp delay-700">
+        <h1 className="relative uppercase flex gap-3 items-center text-sm md:text-lg font-special italic font-extrabold text-white z-[11] opacity-0 animate-lineUp delay-700">
           <span>
             <SlBadge />
           </span>

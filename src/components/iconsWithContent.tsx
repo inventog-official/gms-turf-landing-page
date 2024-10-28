@@ -17,7 +17,7 @@ const IconsWithContent: React.FC = () => {
             >
               <img src={item.imageSrc} className="w-[55%] md:w-[75%] lg:w-full" />
               <div className="flex flex-col gap-4 text-center">
-                <p className="text-white/70 text-2xl font-primary">
+                <p className="text-white text-2xl font-primary">
                   {item.title}
                 </p>
                 <p className="text-center w-full font-secondary text-lg">

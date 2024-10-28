@@ -26,8 +26,8 @@ const WhyUs: React.FC = () => {
         </div>
 
         {/* Skilled Professionals */}
-        <div className="flex flex-col gap-4 justify-center items-center text-center py-5 bg-white/85">
-          <div className="w-[40%]">
+        <div className="flex flex-col gap-5 justify-center items-center text-center bg-white/85">
+          <div className="w-[45%]">
             <img
               src="/whyUs/skilledProfessionals.webp"
               alt="Skilled Professionals"
@@ -40,7 +40,7 @@ const WhyUs: React.FC = () => {
         </div>
 
         {/* Resurfacing & Maintenance */}
-        <div className="flex flex-col gap-4 justify-center items-center text-center border border-red-900 py-5 bg-white/85">
+        <div className="flex flex-col gap-4 justify-center items-center text-center py-5 bg-white/85">
           <div className="w-[35%]">
             <img
               src="/whyUs/resurfing_maintenance.webp"
@@ -54,7 +54,7 @@ const WhyUs: React.FC = () => {
         </div>
 
         {/* Comprehensive Maintenance Service */}
-        <div className="flex flex-col gap-4 justify-center items-center text-center border border-red-900 py-5 bg-white/85">
+        <div className="flex flex-col gap-4 justify-center items-center text-center py-5 bg-white/85">
           <div className="w-[30%]">
             <img
               src="/whyUs/maintenanceService.webp"
@@ -67,7 +67,7 @@ const WhyUs: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-6 border border-red-900 w-full font-primary text-white/70 font-semibold uppercase leading-relaxed">
+      <div className="flex flex-col gap-6 w-full font-primary text-white font-semibold uppercase leading-relaxed">
         <p className="text-lg lg:text-4xl text-center">
           {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
           We specialize in delivering{" "}

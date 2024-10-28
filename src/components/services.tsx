@@ -33,7 +33,7 @@ const Services: React.FC = () => {
 
       {/* Main Title */}
       <div className="w-full flex flex-col gap-8 lg:gap-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary font-bold text-white/70 uppercase leading-tight text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary font-bold text-white uppercase leading-tight text-left">
           Installation<span className="text-secondary">,</span> Maintenance
           <span className="text-secondary">,</span> Renovation
           <span className="text-secondary"></span>
