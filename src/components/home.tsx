@@ -30,8 +30,6 @@ const Home: React.FC = () => {
           <div className="w-full flex justify-start animate-bounce transition-all duration-1000">
             <FootballAnimation />
           </div>
-          {/* <div className="absolute z-[12] -top-32 -left-20"> */}
-          {/* <div className="absolute top-0 z-[10] w-[50%] md:w-[30%] h-[30%] bg-red-400"> */}
           <div className="flex flex-col gap-3">
             <h1 className="uppercase flex gap-2 text-left items-center text-[8px] md:text-[12px] lg:text-base font-special italic font-extrabold text-white/70 z-[11] opacity-0 animate-lineUp delay-700">
               <span className="text-secondary">
