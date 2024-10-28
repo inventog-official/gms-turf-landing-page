@@ -47,6 +47,11 @@ export const servicesObj = [
       "/Football/Football-01.png",
       "/Football/Football-02.png",
       "/Football/Football-03.png",
+      "/Football/Football-01.png",
+      "/Football/Football-02.png",
+      "/Football/Football-03.png",
+      "/Football/Football-02.png",
+      "/Football/Football-03.png",
     ],
   },
 ];
