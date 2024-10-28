@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row w-full min-h-[90vh] justify-center items-center gap-10 lg:gap-4 bg-primary px-6 sm:px-8 lg:px-4 xl:px-12 2xl:px-16 py-2 lg:py-0">
+    <section className="relative flex flex-col lg:flex-row w-full min-h-screen justify-center items-center gap-10 lg:gap-4 bg-primary px-6 sm:px-8 lg:px-4 xl:px-12 2xl:px-16 py-2 lg:py-0">
       {/* Mobile "About Us" Heading */}
       <div className="flex flex-col lg:hidden w-full px-2 gap-10">
         <div className="text-left w-full">
@@ -68,7 +68,7 @@ const AboutUs: React.FC = () => {
             building turf grounds, athletic tracks, and sports flooring
             solutions.
           </p>
-          <p className="text-sm sm:text-base md:text-lg lg:text-2xl">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
             Their services cover everything from consultancy and planning stages
             to the construction and execution of sports complexes and grounds.
             Additionally, GameOn Solution undertakes maintenance, repair, and
