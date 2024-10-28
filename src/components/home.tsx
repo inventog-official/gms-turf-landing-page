@@ -6,7 +6,6 @@ import { SlBadge } from "react-icons/sl";
 const Home: React.FC = () => {
   return (
     <section
-      id="home"
       className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden"
     >
       {/* Background Image */}
