@@ -3,7 +3,7 @@ import Navbar from "./components/navBar";
 import Home from "./components/home";
 import IconsWithContent from "./components/iconsWithContent";
 import Services from "./components/services";
-import Contact from "./components/contact";
+// import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
 import Preloader from "./components/preLoading";
 import PageWrapper from "./components/pageWrapper";
