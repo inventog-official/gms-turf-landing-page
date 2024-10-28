@@ -67,11 +67,11 @@ const App: React.FC = () => {
             </div>
           </PageWrapper>
 
-          <PageWrapper>
+          {/* <PageWrapper>
             <div id="contact">
               <Contact />
             </div>
-          </PageWrapper>
+          </PageWrapper> */}
           {/* <div id="home">
             <Home />
           </div>
