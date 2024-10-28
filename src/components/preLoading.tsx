@@ -40,7 +40,8 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
   return (
     <div
-      className={`top-0 left-0 w-full h-full z-[99999999] bg-gradient-to-b from-primary to-primary/90 duration-500 ease-out ${
+      className={`top-0 left-0 w-full h-full z-[99999999] bg-primary duration-500 ease-out ${
+      // className={`top-0 left-0 w-full h-full z-[99999999] bg-gradient-to-b from-primary to-primary/90 duration-500 ease-out ${
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
