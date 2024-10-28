@@ -23,7 +23,7 @@ const Services: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-6 sm:px-12 md:px-20 lg:px-32 py-20 md:py-10">
+    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-12 md:px-20 lg:px-32 py-20 md:py-10">
       {/* Header */}
       <div className="text-left w-full">
         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
