@@ -15,7 +15,7 @@ const IconsWithContent: React.FC = () => {
               key={index}
               className="w-full md:w-[40%] lg:w-[20%] rounded-lg flex flex-col justify-center items-center px-10 md:px-6 lg:px-5 py-2 lg:py-5"
             >
-              <img src={item.imageSrc} className="w-[55%] md:w-[75%] lg:w-full" />
+              <img src={item.imageSrc} className="w-[55%] md:w-[75%] lg:w-full select-none" />
               <div className="flex flex-col gap-4 text-center">
                 <p className="text-white text-2xl font-primary">
                   {item.title}
