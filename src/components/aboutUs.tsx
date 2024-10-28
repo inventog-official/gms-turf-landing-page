@@ -59,7 +59,7 @@ const AboutUs: React.FC = () => {
               Managing <span className="text-secondary">Director</span>
             </p>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-2xl">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
             GameOn Solution specializes in constructing sports grounds,
             artificial football turf, cricket pitches, volleyball courts,
             basketball courts, and badminton courts, primarily serving customers
