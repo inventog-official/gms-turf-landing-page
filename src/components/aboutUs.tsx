@@ -53,7 +53,7 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         {/* Main Content */}
-        <div className="flex flex-col gap-6 md:gap-10 text-base md:text-lg lg:text-2xl xl:text-3xl text-white/60 font-primary">
+        <div className="flex flex-col gap-6 md:gap-10 text-base md:text-lg lg:text-2xl xl:text-3xl text-white/40 font-primary">
           <div className="text-left hidden lg:flex">
             <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white/70 font-semibold uppercase leading-tight">
               Managing <span className="text-secondary">Director</span>
