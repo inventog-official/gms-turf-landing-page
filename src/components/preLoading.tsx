@@ -14,7 +14,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
     if (isLoading) {
       // Animate each word
       let wordTimeouts: NodeJS.Timeout[] = [];
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 3; i++) {
         wordTimeouts.push(
           setTimeout(() => {
             setCurrentWord(i + 1);
@@ -25,7 +25,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
       // Complete first section and start second animation
       setTimeout(() => {
         setFirstSectionComplete(true);
-      }, 2000);
+      }, 3000);
 
       return () => wordTimeouts.forEach(clearTimeout);
     } else {
@@ -48,7 +48,8 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
           <div className="absolute flex items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
-            {["Sports", "Infrastructure"].map((word, index) => (
+            {["South", "India's", "No.1"].map((word, index) => (
+            // {["Sports", "Infrastructure"].map((word, index) => (
               <p
                 key={index}
                 className={`text-4xl md:text-6xl uppercase font-primary mr-4 transition-all duration-700 ${
@@ -56,7 +57,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-[10px] translate-y-10"
                 } ${
-                  index === 1 ? "text-secondary" : "text-white" // Apply a different color for the first word
+                  index === 2 ? "text-secondary" : "text-white" // Apply a different color for the first word
                 }`}
               >
                 {word}
@@ -74,7 +75,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
               {/* <div className="absolute h-full w-full bg-[#CD512F] z-10 p-5 animate-slideReveal"></div> */}
 
               {/* Text with reveal effect */}
-              <p className="relative text-white text-4xl md:text-6xl uppercase font-primary animate-revealText">
+              <p className="text-white text-4xl md:text-6xl uppercase font-primary animate-revealText">
                 <span className="text-secondary">GameOn</span> Solutions
               </p>
             </div>

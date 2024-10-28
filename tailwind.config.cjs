@@ -83,7 +83,8 @@ module.exports = {
         zoomIn: "zoomIn 0.5s ease-in-out forwards",
         lineUp: "lineUp 2s ease-out forwards",
         slideReveal: "slideReveal 1s ease-in forwards",
-        revealText: "revealText 1.1s ease-in-out forwards",
+        revealText: "revealText 2s ease-in-out forwards", // Adjust duration as needed
+        // revealText: "revealText 1.1s ease-in-out forwards",
         glow: "glow 1.5s infinite alternate",
       },
       blur: {
@@ -115,10 +116,17 @@ module.exports = {
           "100%": { transform: "translateX(200%)" }, // Completely move out of view
         },
         revealText: {
-          "0%": { opacity: 0, transform: "scale(0.95)" }, // Text starts hidden and slightly smaller
-          "60%": { opacity: 0, transform: "scale(0.95)" }, // Remains hidden while box slides
-          "100%": { opacity: 1, transform: "scale(1)" }, // Text becomes fully visible and scales up slightly
+          "0%": { opacity: 0, transform: "scale(0.95)", filter: "blur(4px)" },
+          "40%": { opacity: 0, transform: "translateY(0)", filter: "blur(0px)" },
+          "60%": { opacity: 1, transform: "scale(1)", filter: "blur(0px)" }, // Fully reveals with no blur
+          "70%": { opacity: 1, transform: "translateY(0%)", filter: "blur(0px)" }, // Brief pause
+          "100%": { opacity: 0, transform: "translateY(-200%)", filter: "blur(9px)" } // Moves up with blur and fades out
         },
+        // revealText: {
+        //   "0%": { opacity: 0, transform: "scale(0.95)" }, // Text starts hidden and slightly smaller
+        //   "60%": { opacity: 0, transform: "scale(0.95)" }, // Remains hidden while box slides
+        //   "100%": { opacity: 1, transform: "scale(1)" }, // Text becomes fully visible and scales up slightly
+        // },
         glow: {
           "0%": {
             boxShadow: "0 0 10px rgba(255, 255, 0, 0.8)", // brighter starting point
