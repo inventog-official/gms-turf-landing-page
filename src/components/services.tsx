@@ -26,12 +26,15 @@ const Services: React.FC = () => {
           return (
             <div
               key={index}
-              className={`group w-full flex flex-col gap-5 lg:flex-row ${index===0 ? "lg:border-t-[0.5px] lg:border-b-[0.5px]" : "lg:border-b-[0.5px]"} lg:border-secondary py-5 lg:py-10 transition-all duration-300 ease-in-out relative`}
+              className={`group w-full flex flex-col gap-5 items-end md:flex-row ${index===0 ? "lg:border-t lg:border-b" : "lg:border-b"} lg:border-yellow-600 lg:border-opacity-20 py-5 lg:py-10 transition-all duration-300 ease-in-out relative`}
+              // className={`group w-full flex flex-col gap-5 md:flex-row border border-yellow-600 py-5 lg:py-10 transition-all duration-300 ease-in-out relative`}
               // className={`group w-full flex flex-col lg:flex-row ${index===0 ? "border-t-[0.5px] border-b-[0.5px]" : "border-b-[0.5px]"} border-secondary py-5 transition-all duration-300 ease-in-out relative`}
             >
               {/* Service Info */}
               <div
-                className={`w-full lg:w-[70%] flex flex-col gap-4 lg:gap-6 transition-all duration-300 ease-in-out`}
+                // className={`w-full lg:w-[70%] flex flex-col gap-4 lg:gap-6`}
+                className={`w-full md:w-[70%] flex flex-col gap-4 lg:gap-6`}
+                // className={`w-full lg:w-[70%] flex flex-col gap-4 lg:gap-6 transition-all duration-300 ease-in-out`}
               >
                 <h3 className="text-lg font-bold font-primary tracking-[1.5px] uppercase text-secondary">
                   {service.title}
@@ -44,10 +47,13 @@ const Services: React.FC = () => {
               </div>
 
               {/* Call to Action */}
-              <div className="w-full lg:w-[30%] flex justify-start lg:justify-end">
-                <div className="flex flex-row-reverse lg:flex-col h-full w-[35%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border-2 border-secondary opacity-80 shadow-lg transform transition-transform duration-300 ease-out hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary group-hover:scale-105">
-                  <FaArrowRight className="text-lg lg:text-3xl text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
-                  <p className="text-[12px] md:text-base text-white/80 font-primary tracking-wide uppercase transition-colors duration-300 group-hover:text-primary">
+              {/* <div className="w-full lg:w-[30%] flex justify-start lg:justify-end"> */}
+              <div className="w-full h-full md:w-[30%] flex justify-start md:justify-end items-center">
+                <div className="flex flex-row-reverse md:flex-col w-[40%] md:w-[60%] lg:w-[30%] md:h-[70%] lg:h-full gap-3 md:gap-5 md:items-end justify-center items-center border opacity-80 border-yellow-600 border-opacity-10 bg-slate-200/10 p-2 md:p-3 lg:p-4 group-hover:bg-secondary hover:cursor-pointer">
+                {/* <div className="flex flex-row-reverse lg:flex-col h-full w-[35%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border border-secondary opacity-80 bg-slate-200/20 shadow-lg hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary"> */}
+                {/* <div className="flex flex-row-reverse lg:flex-col h-full w-[35%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border-2 border-secondary opacity-80 shadow-lg transform transition-transform duration-300 ease-out hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary group-hover:scale-105"> */}
+                  <FaArrowRight className="text-lg md:text-xl lg:3xl text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
+                  <p className="text-[12px] md:text-sm lg:text-base text-white/80 font-primary tracking-[1.5px] uppercase transition-colors duration-300 group-hover:text-primary">
                     Read more
                   </p>
                 </div>
