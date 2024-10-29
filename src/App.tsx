@@ -11,6 +11,7 @@ import ScrollProgress from "./components/scrollProgress";
 import AboutUs from "./components/aboutUs";
 import WhyUs from "./components/whyUs";
 import ReviewsSection from "./components/reviewSection";
+import { Footer } from "./components/footer";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -76,6 +77,11 @@ const App: React.FC = () => {
           <PageWrapper>
             <div id="reviews">
               <ReviewsSection />
+            </div>
+          </PageWrapper>
+          <PageWrapper>
+            <div id="footer">
+              <Footer />
             </div>
           </PageWrapper>
           {/* <div id="home">
