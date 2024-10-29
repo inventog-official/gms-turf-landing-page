@@ -41,29 +41,43 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
   return (
     <div
       className={`top-0 left-0 w-full h-full z-[99999999] bg-primary duration-500 ease-out ${
-      // className={`top-0 left-0 w-full h-full z-[99999999] bg-gradient-to-b from-primary to-primary/90 duration-500 ease-out ${
+        // className={`top-0 left-0 w-full h-full z-[99999999] bg-gradient-to-b from-primary to-primary/90 duration-500 ease-out ${
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
       <div className="relative h-full">
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
-          <div className="absolute flex items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
-            {["South", "India's", "No.1"].map((word, index) => (
-            // {["Sports", "Infrastructure"].map((word, index) => (
+          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
+            {/* {["South", "India's", "No.1"].map((word, index) => ( */}
+            {["South India's No.1"].map((word, index) => (
               <p
                 key={index}
-                className={`text-4xl md:text-6xl uppercase font-primary mr-4 transition-all duration-700 ${
+                className={`text-2xl md:text-4xl uppercase font-primary mr-4 transition-all duration-700 ${
                   currentWord >= index + 1
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-[10px] translate-y-10"
-                } ${
-                  index === 2 ? "text-secondary" : "text-white" // Apply a different color for the first word
                 }`}
               >
                 {word}
               </p>
             ))}
+            <div className="flex">
+              {["Sports", "Infrastructure"].map((word, index) => (
+                <p
+                  key={index}
+                  className={`text-4xl md:text-6xl uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
+                    currentWord >= index + 1
+                      ? "opacity-100 blur-none translate-y-0"
+                      : "opacity-0 blur-[10px] translate-y-10"
+                  } ${
+                    index === 1 ? "text-secondary" : "text-white" // Apply a different color for the first word
+                  }`}
+                >
+                  {word}
+                </p>
+              ))}
+            </div>
           </div>
         )}
 
