@@ -4,7 +4,7 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col gap-10 lg:gap-0 justify-center items-center select-none min-h-[80vh] bg-primary px-12 md:px-20 lg:px-0 pb-16"
+      className="flex flex-col gap-10 lg:gap-0 justify-center items-center select-none min-h-[80vh] bg-primary px-12 md:px-20 lg:px-0 pb-16 lg:pb-28"
     >
       {/* Header */}
       <div className="w-full lg:hidden flex justify-start">

@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="relative flex flex-col lg:flex-row bg-primary min-h-screen md:min-h-[80vh] justify-center items-center gap-10 lg:gap-4 px-6 sm:px-8 md:px-16 lg:px-4 xl:px-10 2xl:px-16 pb-16 lg:pb-0 select-none">
+    <section className="relative flex flex-col lg:flex-row bg-primary min-h-screen md:min-h-[85vh] lg:min-h-[90vh] justify-center items-center gap-10 lg:gap-4 px-6 sm:px-8 md:px-16 lg:px-4 xl:px-10 2xl:px-16 pb-16 select-none">
       {/* // <section className="relative flex flex-col lg:flex-row w-full min-h-screen justify-center items-center border-4 border-red-900 gap-10 lg:gap-4 bg-primary px-6 sm:px-8 lg:px-4 xl:px-12 2xl:px-16 py-2 lg:py-0"> */}
       {/* Mobile "About Us" Heading */}
       <div className="flex flex-col lg:hidden w-full px-2 gap-10">

@@ -4,7 +4,7 @@ import { servicesObj } from "@/common/servicesObj";
 
 const Services: React.FC = () => {
   return (
-    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-[90vh] bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16">
+    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       {/* Header */}
       <div className="text-left w-full">
         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">

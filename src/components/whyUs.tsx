@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyUs: React.FC = () => {
   return (
-    <section className="flex flex-col gap-10 lg:gap-24 justify-center items-center select-none min-h-[70vh] bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16">
+    <section className="flex flex-col gap-10 lg:gap-24 justify-center items-center select-none min-h-[80vh] bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       {/* <h1 className="text-5xl font-extrabold text-gray-800">Why Us</h1> */}
       {/* Header */}
       <div className="text-left w-full">
@@ -99,7 +99,7 @@ const WhyUs: React.FC = () => {
           contributing to football turf business plans and turf investments.
           Whether it's Futsal courts or synthetic{" "}
           <span className="text-secondary">lawn</span> installations, we lead
-          the way in gully cricket and football turf manufacturing.˝
+          the way in gully cricket and football turf manufacturing.
         </p>
       </div>
     </section>

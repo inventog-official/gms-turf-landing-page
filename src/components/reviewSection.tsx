@@ -40,13 +40,16 @@ const ReviewsSection = () => {
   return (
     <section
       id="reviews"
-      className="flex w-full flex-col items-center select-none min-h-[50vh] bg-primary md:px-10 lg:px-16 pb-16"
+      className="flex w-full flex-col items-center select-none min-h-[60vh] gap-20 bg-primary md:px-10 lg:px-16 pb-16 lg:pb-28"
     >
-      <div className="text-center">
-        <p className="uppercase text-lg font-semibold text-orange-600">
-          Reviews
-        </p>
-        <h2 className="text-4xl font-bold font-primary">
+      <div className="text-center w-full flex flex-col gap-10">
+        {/* Header */}
+        <div className="w-full flex justify-center">
+          <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+            Reviews
+          </p>
+        </div>
+        <h2 className="text-4xl font-bold text-white font-primary">
           Customer Voices: <br /> Hear What{" "}
           <span className="text-secondary">They Say</span>!
         </h2>
@@ -79,7 +82,7 @@ const ReviewsSection = () => {
           {reviews.map((review, index) => (
             <SwiperSlide
               key={index}
-              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 border-2 border-yellow-500"
+              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 border-2 border-yellow-500 blur-lg"
             >
               <div className="text-center px-6 py-8 rounded-lg transition-all duration-500 ease-in-out">
                 <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-orange-500">
@@ -89,11 +92,11 @@ const ReviewsSection = () => {
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <h4 className="text-lg font-semibold text-gray-900">
+                <h4 className="text-lg font-semibold text-white">
                   {review.name}
                 </h4>
-                <p className="text-sm text-gray-500">{review.position}</p>
-                <p className="text-base text-gray-700">{review.review}</p>
+                <p className="text-sm">{review.position}</p>
+                <p className="text-base">{review.review}</p>
               </div>
             </SwiperSlide>
           ))}
