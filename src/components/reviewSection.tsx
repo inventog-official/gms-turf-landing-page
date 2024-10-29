@@ -29,13 +29,13 @@ const ReviewsSection = () => {
       <div className="relative w-full md:w-[70%] lg:w-[50%]">
         {/* Navigation Buttons for Mobile and Tablet */}
         <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
-          <div className="border border-yellow-600 p-5 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
-            <FaChevronLeft className="text-3xl cursor-pointer" id="prevBtn" />
+          <div id="prevBtn" className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
+            <FaChevronLeft className="text-3xl cursor-pointer" />
           </div>
         </div>
         <div className="absolute inset-y-0 lg:right-0 lg:flex items-center text-secondary z-10 hidden">
-          <div className="border border-yellow-600 p-5 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
-            <FaChevronRight className="text-3xl cursor-pointer" id="nextBtn" />
+          <div id="nextBtn" className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
+            <FaChevronRight className="text-3xl cursor-pointer"  />
           </div>
         </div>
 
