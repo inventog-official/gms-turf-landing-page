@@ -10,6 +10,7 @@ import PageWrapper from "./components/pageWrapper";
 import ScrollProgress from "./components/scrollProgress";
 import AboutUs from "./components/aboutUs";
 import WhyUs from "./components/whyUs";
+import ReviewsSection from "./components/reviewSection";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -70,6 +71,11 @@ const App: React.FC = () => {
           <PageWrapper>
             <div id="contact">
               <Contact />
+            </div>
+          </PageWrapper>
+          <PageWrapper>
+            <div id="reviews">
+              <ReviewsSection />
             </div>
           </PageWrapper>
           {/* <div id="home">
