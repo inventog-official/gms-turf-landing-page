@@ -55,7 +55,7 @@ const App: React.FC = () => {
 
           <PageWrapper>
             <div id="aboutUs">
-              <AboutUs/>
+              <AboutUs />
             </div>
           </PageWrapper>
 
@@ -71,10 +71,10 @@ const App: React.FC = () => {
             </div>
           </PageWrapper>
 
-         {/* <PageWrapper> */}
-         <div id="whyUs">
-              <Testimonials />
-            </div>
+          {/* <PageWrapper> */}
+          <div id="whyUs">
+            <Testimonials />
+          </div>
           {/* </PageWrapper> */}
 
           <PageWrapper>
