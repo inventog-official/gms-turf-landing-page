@@ -1,6 +1,6 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
-import { servicesObj } from "@/common/servicesObj";
+// import { FaArrowRight } from "react-icons/fa";
+// import { servicesObj } from "@/common/servicesObj";
 
 const Services: React.FC = () => {
 
