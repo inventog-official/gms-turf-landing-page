@@ -5,7 +5,7 @@ const WhyUs: React.FC = () => {
     <section className="flex flex-col gap-10 lg:gap-24 justify-center items-center select-none min-h-[80vh] bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       {/* <h1 className="text-5xl font-extrabold text-gray-800">Why Us</h1> */}
       {/* Header */}
-      <div className="text-left w-full">
+      <div className="text-center w-full">
         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
           Why Us
         </p>

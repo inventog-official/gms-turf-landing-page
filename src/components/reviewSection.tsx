@@ -4,43 +4,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { reviewsObj } from "@/common/reviewsObj";
 
 const ReviewsSection = () => {
-  const reviews = [
-    {
-      name: "Paul Trueman",
-      position: "Envato Market",
-      review:
-        "I had the pleasure of working with this creative agency, and I must say, they truly impressed me. They consistently think outside the box, resulting in impressive and impactful work.",
-      img: "img/reviews/2.jpg",
-    },
-    {
-      name: "Emma Newman",
-      position: "Envato Market",
-      review:
-        "This creative agency stands out with their exceptional talent and expertise. Their ability to think outside the box and bring unique ideas to life is truly impressive.",
-      img: "img/reviews/1.jpg",
-    },
-    {
-      name: "Viktoria Freeman",
-      position: "Envato Market",
-      review:
-        "With meticulous attention to detail, they consistently deliver visually stunning and impactful work.",
-      img: "img/reviews/3.jpg",
-    },
-    {
-      name: "Oscar Oldman",
-      position: "Envato Market",
-      review:
-        "I highly recommend this agency for their consistent delivery of exceptional creative solutions.",
-      img: "img/reviews/4.jpg",
-    },
-  ];
-
   return (
     <section
       id="reviews"
-      className="flex w-full flex-col items-center select-none min-h-[60vh] gap-20 bg-primary md:px-10 lg:px-16 pb-16 lg:pb-28"
+      className="flex w-full flex-col items-center select-none min-h-[65vh] gap-20 bg-primary md:px-10 lg:px-16 pb-16 lg:pb-28"
     >
       <div className="text-center w-full flex flex-col gap-10">
         {/* Header */}
@@ -57,17 +27,22 @@ const ReviewsSection = () => {
 
       {/* Swiper Slider */}
       <div className="relative w-full md:w-[70%] lg:w-[50%]">
-        {/* Navigation Buttons */}
-        <div className="absolute inset-y-0 left-2 lg:left-4 flex items-center text-secondary z-10">
-          <FaChevronLeft className="text-3xl cursor-pointer" id="prevBtn" />
+        {/* Navigation Buttons for Mobile and Tablet */}
+        <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
+          <div className="border border-yellow-600 p-5 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
+            <FaChevronLeft className="text-3xl cursor-pointer" id="prevBtn" />
+          </div>
         </div>
-        <div className="absolute inset-y-0 right-2 lg:right-4 flex items-center text-secondary z-10">
-          <FaChevronRight className="text-3xl cursor-pointer" id="nextBtn" />
+        <div className="absolute inset-y-0 lg:right-0 lg:flex items-center text-secondary z-10 hidden">
+          <div className="border border-yellow-600 p-5 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
+            <FaChevronRight className="text-3xl cursor-pointer" id="nextBtn" />
+          </div>
         </div>
+
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
-          slidesPerView={1.3} // Show parts of neighboring slides
+          slidesPerView={1.3}
           centeredSlides
           loop
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -79,24 +54,20 @@ const ReviewsSection = () => {
           speed={800}
           className="mil-reviews-slider"
         >
-          {reviews.map((review, index) => (
+          {reviewsObj.map((review, index) => (
             <SwiperSlide
               key={index}
-              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 border-2 border-yellow-500 blur-lg"
+              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 bg-white/10 blur-xl border-4 border-opacity-20 border-yellow-500 h-96 flex items-center"
             >
-              <div className="text-center px-6 py-8 rounded-lg transition-all duration-500 ease-in-out">
-                <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-orange-500">
+              <div className="flex flex-col gap-5 text-center px-5 rounded-lg transition-all duration-500 ease-in-out h-full justify-center">
+                <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-secondary">
                   <img
                     src={review.img}
                     alt="Client"
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <h4 className="text-lg font-semibold text-white">
-                  {review.name}
-                </h4>
-                <p className="text-sm">{review.position}</p>
-                <p className="text-base">{review.review}</p>
+                <p className="text-lg font-secondary">{review.review}</p>
               </div>
             </SwiperSlide>
           ))}
@@ -117,13 +88,14 @@ const ReviewsSection = () => {
             filter: blur(0);
             transform: scale(1);
           }
-          /* Enhanced styling for pagination dots */
+          /* Enhanced styling for pagination dashes */
           .swiper-pagination-bullet {
             background-color: #febc12;
-            width: 8px;
-            height: 8px;
-            opacity: 0.1;
+            width: 16px; /* Dash width */
+            height: 4px; /* Dash height */
+            opacity: 0.3;
             transition: opacity 0.3s;
+            border-radius: 2px;
           }
           .swiper-pagination-bullet-active {
             opacity: 1;
