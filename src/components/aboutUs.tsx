@@ -54,13 +54,13 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
         {/* Main Content */}
-        <div className="flex flex-col gap-6 md:gap-10 text-base md:text-lg lg:text-2xl xl:text-3xl text-white font-primary">
+        <div className="flex flex-col gap-5 md:gap-6 text-base md:text-lg lg:text-2xl xl:text-3xl text-white font-secondary">
           <div className="text-left hidden lg:flex">
             <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white font-semibold uppercase leading-tight">
               Managing <span className="text-secondary">Director</span>
             </p>
           </div>
-          <p className="text-base md:text-lg lg:text-2xl">
+          <p className="text-lg md:text-xl lg:text-2xl">
             GameOn Solution specializes in constructing sports grounds,
             artificial football turf, cricket pitches, volleyball courts,
             basketball courts, and badminton courts, primarily serving customers
@@ -68,7 +68,7 @@ const AboutUs: React.FC = () => {
             services, including building turf grounds, athletic tracks, and
             sports flooring solutions.
           </p>
-          <p className="text-base md:text-lg lg:text-xl">
+          <p className="text-lg md:text-xl lg:text-2xl">
             Their services cover everything from consultancy and planning stages
             to the construction and execution of sports complexes and grounds.
             Additionally, GameOn Solution undertakes maintenance, repair, and
