@@ -63,10 +63,9 @@ const AboutUs: React.FC = () => {
             GameOn Solution specializes in constructing sports grounds,
             artificial football turf, cricket pitches, volleyball courts,
             basketball courts, and badminton courts, primarily serving customers
-            in South India. Similar to Meckavo Sports Infrastructure, GameOn
-            Solution offers a comprehensive range of services, including
-            building turf grounds, athletic tracks, and sports flooring
-            solutions.
+            in South India. GameOn Solution offers a comprehensive range of
+            services, including building turf grounds, athletic tracks, and
+            sports flooring solutions.
           </p>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
             Their services cover everything from consultancy and planning stages
