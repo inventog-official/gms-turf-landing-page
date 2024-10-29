@@ -4,16 +4,15 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="flex flex-col gap-10 lg:gap-0 items-center select-none min-h-screen bg-primary px-12 md:px-20 lg:px-0 py-20 md:py-10 lg:py-20"
+      className="flex flex-col gap-10 lg:gap-0 justify-center items-center select-none min-h-[80vh] bg-primary px-12 md:px-20 lg:px-0 pb-16"
     >
-      {/* <section id="contact" className="flex flex-col gap-10 items-center select-none min-h-screen bg-primary border-4 border-red-900 px-10 md:px-20 lg:px-32 py-10 lg:py-20"> */}
       {/* Header */}
-      <div className="w-full lg:hidden flex justify-center">
+      <div className="w-full lg:hidden flex justify-start">
         <p className="text-[12px] font-secondary text-center font-semibold uppercase tracking-[1px]">
           Contact
         </p>
       </div>
-      <div className="w-full">
+      <div className="w-full flex flex-col h-full justify-center items-center">
         <div className="flex flex-col lg:flex-row justify-center w-full gap-5 lg:gap-0">
           <div className="w-full lg:w-1/2 lg:bg-slate-500/5 flex flex-col justify-center items-center">
             <div className="w-full lg:w-[50%] flex flex-col justify-center gap-5 lg:gap-10">

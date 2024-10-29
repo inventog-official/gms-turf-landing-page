@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyUs: React.FC = () => {
   return (
-    <section className="flex flex-col gap-10 lg:gap-24 justify-center items-center select-none min-h-[90vh] bg-primary px-10 md:px-20 lg:px-32 lg:py-20">
+    <section className="flex flex-col gap-10 lg:gap-24 justify-center items-center select-none min-h-[70vh] bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16">
       {/* <h1 className="text-5xl font-extrabold text-gray-800">Why Us</h1> */}
       {/* Header */}
       <div className="text-left w-full">

@@ -40,7 +40,7 @@ const ReviewsSection = () => {
   return (
     <section
       id="reviews"
-      className="flex w-full flex-col items-center select-none min-h-screen bg-primary md:px-10 lg:px-16 py-10 lg:py-20 border border-red-900"
+      className="flex w-full flex-col items-center select-none min-h-[50vh] bg-primary md:px-10 lg:px-16 pb-16"
     >
       <div className="text-center">
         <p className="uppercase text-lg font-semibold text-orange-600">
