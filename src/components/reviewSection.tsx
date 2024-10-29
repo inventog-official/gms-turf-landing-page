@@ -40,20 +40,20 @@ const ReviewsSection = () => {
   return (
     <section
       id="reviews"
-      className="flex w-full flex-col items-center select-none min-h-[65vh] bg-primary px-6 md:px-10 lg:px-16 py-16 lg:py-20"
+      className="flex w-full flex-col items-center select-none min-h-screen bg-primary md:px-10 lg:px-16 py-10 lg:py-20 border border-red-900"
     >
-      <div className="text-center mb-10">
+      <div className="text-center">
         <p className="uppercase text-lg font-semibold text-orange-600">
           Reviews
         </p>
-        <h2 className="text-4xl font-bold">
+        <h2 className="text-4xl font-bold font-primary">
           Customer Voices: <br /> Hear What{" "}
-          <span className="text-teal-600">They Say</span>!
+          <span className="text-secondary">They Say</span>!
         </h2>
       </div>
 
       {/* Swiper Slider */}
-      <div className="relative w-[50%]">
+      <div className="relative w-full md:w-[70%] lg:w-[50%]">
         {/* Navigation Buttons */}
         <div className="absolute inset-y-0 left-2 lg:left-4 flex items-center text-secondary z-10">
           <FaChevronLeft className="text-3xl cursor-pointer" id="prevBtn" />
