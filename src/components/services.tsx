@@ -14,7 +14,7 @@ const Services: React.FC = () => {
 
       {/* Main Title */}
       <div className="w-full flex flex-col gap-8 lg:gap-10">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary font-bold text-white/70 uppercase leading-tight text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary font-bold text-white uppercase leading-tight text-left">
           Installation<span className="text-secondary">,</span> Maintenance
           <span className="text-secondary">,</span> Renovation
           <span className="text-secondary"></span>
@@ -26,7 +26,7 @@ const Services: React.FC = () => {
           return (
             <div
               key={index}
-              className={`group w-full flex flex-col lg:flex-row ${index===0 ? "border-t-[0.5px] border-b-[0.5px]" : "border-b-[0.5px]"} border-secondary py-10 transition-all duration-300 ease-in-out relative`}
+              className={`group w-full flex flex-col gap-5 lg:flex-row ${index===0 ? "lg:border-t-[0.5px] lg:border-b-[0.5px]" : "lg:border-b-[0.5px]"} lg:border-secondary py-5 lg:py-10 transition-all duration-300 ease-in-out relative`}
               // className={`group w-full flex flex-col lg:flex-row ${index===0 ? "border-t-[0.5px] border-b-[0.5px]" : "border-b-[0.5px]"} border-secondary py-5 transition-all duration-300 ease-in-out relative`}
             >
               {/* Service Info */}
@@ -44,10 +44,10 @@ const Services: React.FC = () => {
               </div>
 
               {/* Call to Action */}
-              <div className="w-full lg:w-[30%] flex justify-end">
-                <div className="flex flex-row-reverse lg:flex-col h-full w-[30%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border-2 border-secondary opacity-80 shadow-lg transform transition-transform duration-300 ease-out hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary group-hover:scale-105">
+              <div className="w-full lg:w-[30%] flex justify-start lg:justify-end">
+                <div className="flex flex-row-reverse lg:flex-col h-full w-[35%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border-2 border-secondary opacity-80 shadow-lg transform transition-transform duration-300 ease-out hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary group-hover:scale-105">
                   <FaArrowRight className="text-lg lg:text-3xl text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
-                  <p className="text-[12px] md:text-base text-white/80 font-primary tracking-wide uppercase ml-2 transition-colors duration-300 group-hover:text-primary">
+                  <p className="text-[12px] md:text-base text-white/80 font-primary tracking-wide uppercase transition-colors duration-300 group-hover:text-primary">
                     Read more
                   </p>
                 </div>
