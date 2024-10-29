@@ -1,5 +1,4 @@
 // NewsPage.js
-import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFutbol, FaTrophy } from 'react-icons/fa';
 

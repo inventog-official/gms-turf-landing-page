@@ -1,5 +1,3 @@
-import React from "react";
- 
 const BrandsCarousel = () => {
   return (
     <div className="marquee border-t border-black border-double bg-gray-100 flex flex-col justify-center items-center h-[40vh] p-2">
