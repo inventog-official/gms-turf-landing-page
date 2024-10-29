@@ -1,11 +1,10 @@
 import React from "react";
-// import { FaArrowRight } from "react-icons/fa";
-// import { servicesObj } from "@/common/servicesObj";
+import { FaArrowRight } from "react-icons/fa";
+import { servicesObj } from "@/common/servicesObj";
 
 const Services: React.FC = () => {
-
   return (
-    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-12 md:px-20 lg:px-32 py-20 md:py-10 border-4 border-red-900">
+    <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-12 md:px-20 lg:px-32 py-20 md:py-10">
       {/* Header */}
       <div className="text-left w-full">
         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
@@ -20,6 +19,42 @@ const Services: React.FC = () => {
           <span className="text-secondary">,</span> Renovation
           <span className="text-secondary"></span>
         </h2>
+      </div>
+      {/* Services List */}
+      <div className="w-full select-none">
+        {servicesObj.map((service, index) => {
+          return (
+            <div
+              key={index}
+              className={`group w-full flex flex-col lg:flex-row ${index===0 ? "border-t-[0.5px] border-b-[0.5px]" : "border-b-[0.5px]"} border-secondary py-10 transition-all duration-300 ease-in-out relative`}
+              // className={`group w-full flex flex-col lg:flex-row ${index===0 ? "border-t-[0.5px] border-b-[0.5px]" : "border-b-[0.5px]"} border-secondary py-5 transition-all duration-300 ease-in-out relative`}
+            >
+              {/* Service Info */}
+              <div
+                className={`w-full lg:w-[70%] flex flex-col gap-4 lg:gap-6 transition-all duration-300 ease-in-out`}
+              >
+                <h3 className="text-lg font-bold font-primary tracking-[1.5px] uppercase text-secondary">
+                  {service.title}
+                </h3>
+                <div className="border-l-4 border-secondary pl-4 pr-2">
+                  <p className="text-sm md:text-base font-secondary leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Call to Action */}
+              <div className="w-full lg:w-[30%] flex justify-end">
+                <div className="flex flex-row-reverse lg:flex-col h-full w-[30%] md:w-[20%] lg:w-[30%] gap-3 lg:gap-5 lg:justify-end lg:items-end justify-center items-center p-2 lg:p-4 border-2 border-secondary opacity-80 shadow-lg transform transition-transform duration-300 ease-out hover:cursor-pointer group-hover:bg-secondary group-hover:border-primary group-hover:scale-105">
+                  <FaArrowRight className="text-lg lg:text-3xl text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
+                  <p className="text-[12px] md:text-base text-white/80 font-primary tracking-wide uppercase ml-2 transition-colors duration-300 group-hover:text-primary">
+                    Read more
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
