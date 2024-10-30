@@ -613,7 +613,7 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        <div className="hidden bg-[#181817] w-[70%] md:w-[60%] lg:w-[60%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
+        <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
           <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
             <li>
               <Link
@@ -729,7 +729,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        <div className="flex gap-7 h-full w-[50%] md:w-[20%] justify-end items-center">
+        <div className="flex gap-7 h-full w-[50%] md:w-[10%] justify-end items-center">
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
           <HamburgerMenu />
         </div>
