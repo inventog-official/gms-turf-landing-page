@@ -1,9 +1,10 @@
+import { Footer } from "./footer";
 import { ExpandableCardDemo } from "./news/main";
 import TextHoverAnimation from "./textHoverAnimation";
 
 function News_Page() {
   return (
-    <div className="text-center flex-col flex gap-10 md:pt-[10%] pt-32 px-32">
+    <div className="text-center flex-col flex gap-10 md:pt-[15%] pt-32 px-36">
       <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary flex gap-2 text-white  uppercase leading-tight">
         <TextHoverAnimation text="News" />
         <span className="text-secondary">
@@ -15,6 +16,7 @@ function News_Page() {
       {/* <NewsPage /> */}
       <ExpandableCardDemo />
       {/* <BrandsCarousel /> */}
+      <Footer/>
     </div>
   );
 }
