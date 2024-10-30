@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
     if (path.startsWith("#")) {
       if (location.pathname !== "/") {
         // If not on the home page, navigate to it first
-        navigate("/");
+        navigate("/", {replace: true});
         setTimeout(() => {
           const section = document.querySelector(path);
           if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -53,7 +53,7 @@ const Navbar: React.FC = () => {
       }
     } else {
       // External route navigation
-      navigate(path);
+      navigate(path, {replace: true});
       setActiveTab(path);
     }
   };
