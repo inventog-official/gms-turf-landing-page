@@ -741,18 +741,456 @@
 // export default Navbar;
 
 
+// import React, { useState, useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+// import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
+// import { Link, useLocation } from "react-router-dom";
+// import HamburgerMenu from "./hamburgar";
+
+// const Navbar: React.FC = () => {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//   const [activeTab, setActiveTab] = useState<string | null>(null); // New activeTab state
+//   const dropdownRef = useRef<HTMLDivElement | null>(null);
+//   const location = useLocation();
+
+//   const handleScroll = () => {
+//     setScrolled(window.scrollY > 50);
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+//         setIsDropdownOpen(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, []);
+
+//   // Conditionally render Navbar only on specific pages
+//   if (location.pathname === "/news" || location.pathname === "/testimonials") {
+//     return null;
+//   }
+
+//   return (
+//     <nav
+//       className={`fixed w-full top-0 left-0 z-[1000] transition-all duration-500 ease-out
+//       ${scrolled ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]" : "bg-transparent h-[15%]"} 
+//       flex items-center justify-center px-8 lg:px-[10rem]`}
+//     >
+//       <div className="flex items-center w-full h-full">
+//         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
+//           <a href="#home" className="w-full h-full flex justify-center items-center">
+//             <img src="./game_on_logo.webp" alt="Logo" className="w-full" />
+//           </a>
+//         </div>
+
+//         <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
+//           <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
+//             {[
+//               { path: "#home", label: "Home" },
+//               { path: "#aboutUs", label: "About" },
+//               { path: "#services", label: "Services" },
+//               { path: "#contact", label: "Contact" },
+//               { path: "/news", label: "News" },
+//               { path: "/testimonials", label: "Testimonials" }
+//             ].map((item) => (
+//               <li key={item.label}>
+//                 <Link
+//                   to={item.path}
+//                   className={`font-medium uppercase ${
+//                     activeTab === item.path ? "text-secondary" : "text-[#D2D2D0]"
+//                   } transition-all hover:text-secondary`}
+//                   onClick={() => setActiveTab(item.path)} // Update activeTab on click
+//                 >
+//                   {item.label}
+//                 </Link>
+//               </li>
+//             ))}
+//             <li className="relative">
+//               <button
+//                 className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
+//                   isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
+//                 } transition-all hover:text-secondary`}
+//                 onClick={() => setIsDropdownOpen((prev) => !prev)}
+//               >
+//                 More
+//                 <FaChevronDown className="ml-1" />
+//               </button>
+//               {isDropdownOpen && (
+//                 <motion.div
+//                   ref={dropdownRef}
+//                   initial={{ opacity: 0, y: -10 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   exit={{ opacity: 0, y: -10 }}
+//                   transition={{ duration: 0.3 }}
+//                   className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-white/40 rounded-md shadow-lg z-10"
+//                 >
+//                   <ul className="flex flex-col">
+//                     {[
+//                       { path: "/item1", label: "Item 1" },
+//                       { path: "/item2", label: "Item 2" },
+//                       { path: "/item3", label: "Item 3" }
+//                     ].map((item) => (
+//                       <li key={item.label}>
+//                         <Link
+//                           to={item.path}
+//                           className="block px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+//                           onClick={() => {
+//                             setIsDropdownOpen(false);
+//                             setActiveTab(item.path); // Update activeTab when clicking dropdown items
+//                           }}
+//                         >
+//                           {item.label}
+//                         </Link>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </motion.div>
+//               )}
+//             </li>
+//           </ul>
+//         </div>
+
+//         <div className="flex gap-7 h-full w-[50%] md:w-[10%] justify-end items-center">
+//           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
+//           <HamburgerMenu />
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+// import React, { useState, useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+// import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
+// import { Link, useLocation } from "react-router-dom";
+// import HamburgerMenu from "./hamburgar";
+
+// const Navbar: React.FC = () => {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//   const [activeTab, setActiveTab] = useState<string | null>(null);
+//   const dropdownRef = useRef<HTMLDivElement | null>(null);
+//   const location = useLocation();
+
+//   // Set initial active tab based on location path
+//   useEffect(() => {
+//     setActiveTab(location.pathname === "/" ? "#home" : location.pathname);
+//   }, [location.pathname]);
+
+//   const handleScroll = () => {
+//     setScrolled(window.scrollY > 50);
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+//         setIsDropdownOpen(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, []);
+
+//   // Conditionally render Navbar only on specific pages
+//   if (location.pathname === "/news" || location.pathname === "/testimonials") {
+//     return null;
+//   }
+
+//   return (
+//     <nav
+//       className={`fixed w-full top-0 left-0 z-[1000] transition-all duration-500 ease-out
+//       ${scrolled ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]" : "bg-transparent h-[15%]"} 
+//       flex items-center justify-center px-8 lg:px-[10rem]`}
+//     >
+//       <div className="flex items-center w-full h-full">
+//         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
+//           <a href="#home" className="w-full h-full flex justify-center items-center">
+//             <img src="./game_on_logo.webp" alt="Logo" className="w-full" />
+//           </a>
+//         </div>
+
+//         <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
+//           <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
+//             {[
+//               { path: "#home", label: "Home" },
+//               { path: "#aboutUs", label: "About" },
+//               { path: "#services", label: "Services" },
+//               { path: "#contact", label: "Contact" },
+//               { path: "/news", label: "News" },
+//               { path: "/testimonials", label: "Testimonials" }
+//             ].map((item) => (
+//               <li key={item.label}>
+//                 <Link
+//                   to={item.path}
+//                   className={`font-medium uppercase ${
+//                     activeTab === item.path ? "text-secondary" : "text-[#D2D2D0]"
+//                   } transition-all hover:text-secondary`}
+//                   onClick={() => setActiveTab(item.path)}
+//                 >
+//                   {item.label}
+//                 </Link>
+//               </li>
+//             ))}
+//             <li className="relative">
+//               <button
+//                 className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
+//                   isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
+//                 } transition-all hover:text-secondary`}
+//                 onClick={() => setIsDropdownOpen((prev) => !prev)}
+//               >
+//                 More
+//                 <FaChevronDown className="ml-1" />
+//               </button>
+//               {isDropdownOpen && (
+//                 <motion.div
+//                   ref={dropdownRef}
+//                   initial={{ opacity: 0, y: -10 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   exit={{ opacity: 0, y: -10 }}
+//                   transition={{ duration: 0.3 }}
+//                   className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-white/40 rounded-md shadow-lg z-10"
+//                 >
+//                   <ul className="flex flex-col">
+//                     {[
+//                       { path: "/item1", label: "Item 1" },
+//                       { path: "/item2", label: "Item 2" },
+//                       { path: "/item3", label: "Item 3" }
+//                     ].map((item) => (
+//                       <li key={item.label}>
+//                         <Link
+//                           to={item.path}
+//                           className="block px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+//                           onClick={() => {
+//                             setIsDropdownOpen(false);
+//                             setActiveTab(item.path);
+//                           }}
+//                         >
+//                           {item.label}
+//                         </Link>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </motion.div>
+//               )}
+//             </li>
+//           </ul>
+//         </div>
+
+//         <div className="flex gap-7 h-full w-[50%] md:w-[10%] justify-end items-center">
+//           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
+//           <HamburgerMenu />
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
+// import React, { useState, useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+// import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
+// import { Link, useLocation, useNavigate } from "react-router-dom";
+// import HamburgerMenu from "./hamburgar";
+
+// const Navbar: React.FC = () => {
+//   const [scrolled, setScrolled] = useState(false);
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//   const [activeTab, setActiveTab] = useState<string | null>(null);
+//   const dropdownRef = useRef<HTMLDivElement | null>(null);
+//   const location = useLocation();
+//   const navigate = useNavigate();
+
+//   // Set initial active tab based on location path
+//   useEffect(() => {
+//     if (location.hash) {
+//       setActiveTab(location.hash);
+//     } else {
+//       setActiveTab(location.pathname);
+//     }
+//   }, [location.pathname, location.hash]);
+
+//   const handleScroll = () => {
+//     setScrolled(window.scrollY > 50);
+//   };
+
+//   useEffect(() => {
+//     window.addEventListener("scroll", handleScroll);
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     const handleClickOutside = (event: MouseEvent) => {
+//       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+//         setIsDropdownOpen(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, []);
+
+//   const handleNavClick = (path: string) => {
+//     if (path.startsWith("#")) {
+//       // In-page navigation
+//       setActiveTab(path);
+//       const section = document.querySelector(path);
+//       if (section) {
+//         section.scrollIntoView({ behavior: "smooth" });
+//       }
+//     } else {
+//       // External route navigation
+//       navigate(path);
+//       setActiveTab(path);
+//     }
+//   };
+
+//   //   // Set initial active tab based on location path
+//   useEffect(() => {
+//     setActiveTab(location.pathname === "/" ? "#home" : location.pathname);
+//   }, [location.pathname]);
+
+//   if (location.pathname === "/news" || location.pathname === "/testimonials") {
+//     return null;
+//   }
+
+//   return (
+//     <nav
+//       className={`fixed w-full top-0 left-0 z-[1000] transition-all duration-500 ease-out
+//       ${scrolled ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]" : "bg-transparent h-[15%]"} 
+//       flex items-center justify-center px-8 lg:px-[10rem]`}
+//     >
+//       <div className="flex items-center w-full h-full">
+//         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
+//           <a href="#home" className="w-full h-full flex justify-center items-center">
+//             <img src="./game_on_logo.webp" alt="Logo" className="w-full" />
+//           </a>
+//         </div>
+
+//         <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
+//           <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
+//             {[
+//               { path: "#home", label: "Home" },
+//               { path: "#aboutUs", label: "About" },
+//               { path: "#services", label: "Services" },
+//               { path: "#contact", label: "Contact" },
+//               { path: "/news", label: "News" },
+//               { path: "/testimonials", label: "Testimonials" }
+//             ].map((item) => (
+//               <li key={item.label}>
+//                 <button
+//                   className={`font-medium uppercase ${
+//                     activeTab === item.path ? "text-secondary" : "text-[#D2D2D0]"
+//                   } transition-all hover:text-secondary`}
+//                   onClick={() => handleNavClick(item.path)}
+//                 >
+//                   {item.label}
+//                 </button>
+//               </li>
+//             ))}
+//             <li className="relative">
+//               <button
+//                 className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
+//                   isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
+//                 } transition-all hover:text-secondary`}
+//                 onClick={() => setIsDropdownOpen((prev) => !prev)}
+//               >
+//                 More
+//                 <FaChevronDown className="ml-1" />
+//               </button>
+//               {isDropdownOpen && (
+//                 <motion.div
+//                   ref={dropdownRef}
+//                   initial={{ opacity: 0, y: -10 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   exit={{ opacity: 0, y: -10 }}
+//                   transition={{ duration: 0.3 }}
+//                   className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-white/40 rounded-md shadow-lg z-10"
+//                 >
+//                   <ul className="flex flex-col">
+//                     {[
+//                       { path: "/item1", label: "Item 1" },
+//                       { path: "/item2", label: "Item 2" },
+//                       { path: "/item3", label: "Item 3" }
+//                     ].map((item) => (
+//                       <li key={item.label}>
+//                         <button
+//                           className="block px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+//                           onClick={() => {
+//                             setIsDropdownOpen(false);
+//                             handleNavClick(item.path);
+//                           }}
+//                         >
+//                           {item.label}
+//                         </button>
+//                       </li>
+//                     ))}
+//                   </ul>
+//                 </motion.div>
+//               )}
+//             </li>
+//           </ul>
+//         </div>
+
+//         <div className="flex gap-7 h-full w-[50%] md:w-[10%] justify-end items-center">
+//           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
+//           <HamburgerMenu />
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// };
+
+// export default Navbar;
+
+
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./hamburgar";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<string | null>(null); // New activeTab state
+  const [activeTab, setActiveTab] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  // Set initial active tab based on location hash or pathname
+  useEffect(() => {
+    const initialPath = location.hash || (location.pathname === "/" ? "#home" : location.pathname);
+    setActiveTab(initialPath);
+  }, [location.pathname, location.hash]);
 
   const handleScroll = () => {
     setScrolled(window.scrollY > 50);
@@ -777,7 +1215,21 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  // Conditionally render Navbar only on specific pages
+  const handleNavClick = (path: string) => {
+    if (path.startsWith("#")) {
+      // In-page navigation
+      setActiveTab(path);
+      const section = document.querySelector(path);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // External route navigation
+      navigate(path);
+      setActiveTab(path);
+    }
+  };
+
   if (location.pathname === "/news" || location.pathname === "/testimonials") {
     return null;
   }
@@ -789,14 +1241,14 @@ const Navbar: React.FC = () => {
       flex items-center justify-center px-8 lg:px-[10rem]`}
     >
       <div className="flex items-center w-full h-full">
-        <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
+        <div className="w-[50%] md:w-[30%] lg:w-[20%] h-full">
           <a href="#home" className="w-full h-full flex justify-center items-center">
             <img src="./game_on_logo.webp" alt="Logo" className="w-full" />
           </a>
         </div>
 
-        <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent md:flex h-full items-center justify-center transition-all duration-500 ease-out">
-          <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-16 text-white md:flex-row md:w-auto font-secondary">
+        <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent lg:flex h-full items-center justify-center transition-all duration-500 ease-out">
+          <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-12 text-white md:flex-row md:w-auto font-secondary">
             {[
               { path: "#home", label: "Home" },
               { path: "#aboutUs", label: "About" },
@@ -806,15 +1258,14 @@ const Navbar: React.FC = () => {
               { path: "/testimonials", label: "Testimonials" }
             ].map((item) => (
               <li key={item.label}>
-                <Link
-                  to={item.path}
+                <button
                   className={`font-medium uppercase ${
                     activeTab === item.path ? "text-secondary" : "text-[#D2D2D0]"
                   } transition-all hover:text-secondary`}
-                  onClick={() => setActiveTab(item.path)} // Update activeTab on click
+                  onClick={() => handleNavClick(item.path)}
                 >
                   {item.label}
-                </Link>
+                </button>
               </li>
             ))}
             <li className="relative">
@@ -843,16 +1294,15 @@ const Navbar: React.FC = () => {
                       { path: "/item3", label: "Item 3" }
                     ].map((item) => (
                       <li key={item.label}>
-                        <Link
-                          to={item.path}
+                        <button
                           className="block px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
                           onClick={() => {
                             setIsDropdownOpen(false);
-                            setActiveTab(item.path); // Update activeTab when clicking dropdown items
+                            handleNavClick(item.path);
                           }}
                         >
                           {item.label}
-                        </Link>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -862,7 +1312,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
 
-        <div className="flex gap-7 h-full w-[50%] md:w-[10%] justify-end items-center">
+        <div className="flex gap-7 h-full w-[50%] md:w-[70%] lg:w-[10%] justify-end items-center">
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
           <HamburgerMenu />
         </div>
