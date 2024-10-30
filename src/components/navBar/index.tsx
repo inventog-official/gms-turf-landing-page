@@ -50,7 +50,7 @@
 //         scrolled
 //           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
 //           : "bg-transparent h-[15%]"
-//       } 
+//       }
 //       flex items-center justify-center px-8 lg:px-[10rem]`}
 //     >
 //       <div className="flex items-center w-full h-full">
@@ -58,7 +58,7 @@
 //         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
 //           <a
 //             href="#home"
-//             className={`transition-all duration-500 ease-out h-full flex justify-center items-center 
+//             className={`transition-all duration-500 ease-out h-full flex justify-center items-center
 //               ${
 //                 scrolled
 //                   ? "w-[70%] md:w-[90%] lg:w-[80%]"
@@ -175,7 +175,6 @@
 
 // export default Navbar;
 
-
 // import React, { useState, useEffect, useRef } from "react";
 // import { motion } from "framer-motion";
 // import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
@@ -232,7 +231,7 @@
 //         scrolled
 //           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
 //           : "bg-transparent h-[15%]"
-//       } 
+//       }
 //       flex items-center justify-center px-8 lg:px-[10rem]`}
 //     >
 //       <div className="flex items-center w-full h-full">
@@ -240,7 +239,7 @@
 //         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
 //           <a
 //             href="#home"
-//             className={`transition-all duration-500 ease-out h-full flex justify-center items-center 
+//             className={`transition-all duration-500 ease-out h-full flex justify-center items-center
 //               ${
 //                 scrolled
 //                   ? "w-[70%] md:w-[90%] lg:w-[80%]"
@@ -364,7 +363,6 @@
 
 // export default Navbar;
 
-
 // import React, { useState, useEffect, useRef } from "react";
 // import { motion } from "framer-motion";
 // import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
@@ -413,7 +411,7 @@
 //         scrolled
 //           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
 //           : "bg-transparent h-[15%]"
-//       } 
+//       }
 //       flex items-center justify-center px-8 lg:px-[10rem]`}
 //     >
 //       <div className="flex items-center w-full h-full">
@@ -550,8 +548,6 @@
 
 // export default Navbar;
 
-
-
 // import React, { useState, useEffect, useRef } from "react";
 // import { motion } from "framer-motion";
 // import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
@@ -603,7 +599,7 @@
 //         scrolled
 //           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
 //           : "bg-transparent h-[15%]"
-//       } 
+//       }
 //       flex items-center justify-center px-8 lg:px-[10rem]`}
 //     >
 //       <div className="flex items-center w-full h-full">
@@ -740,7 +736,6 @@
 
 // export default Navbar;
 
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
@@ -767,7 +762,10 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false);
       }
     };
@@ -785,12 +783,19 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={`fixed w-full top-0 left-0 z-[1000] transition-all duration-500 ease-out
-      ${scrolled ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]" : "bg-transparent h-[15%]"} 
+      ${
+        scrolled
+          ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
+          : "bg-transparent h-[15%]"
+      } 
       flex items-center justify-center px-8 lg:px-[10rem]`}
     >
       <div className="flex items-center w-full h-full">
         <div className="w-[50%] md:w-[20%] lg:w-[20%] h-full">
-          <a href="#home" className="w-full h-full flex justify-center items-center">
+          <a
+            href="#home"
+            className="w-full h-full flex justify-center items-center"
+          >
             <img src="./game_on_logo.webp" alt="Logo" className="w-full" />
           </a>
         </div>
@@ -803,13 +808,15 @@ const Navbar: React.FC = () => {
               { path: "#services", label: "Services" },
               { path: "#contact", label: "Contact" },
               { path: "/news", label: "News" },
-              { path: "/testimonials", label: "Testimonials" }
+              { path: "/testimonials", label: "Testimonials" },
             ].map((item) => (
               <li key={item.label}>
                 <Link
                   to={item.path}
                   className={`font-medium uppercase ${
-                    activeTab === item.path ? "text-secondary" : "text-[#D2D2D0]"
+                    activeTab === item.path
+                      ? "text-secondary"
+                      : "text-[#D2D2D0]"
                   } transition-all hover:text-secondary`}
                   onClick={() => setActiveTab(item.path)} // Update activeTab on click
                 >
@@ -840,7 +847,7 @@ const Navbar: React.FC = () => {
                     {[
                       { path: "/item1", label: "Item 1" },
                       { path: "/item2", label: "Item 2" },
-                      { path: "/item3", label: "Item 3" }
+                      { path: "/item3", label: "Item 3" },
                     ].map((item) => (
                       <li key={item.label}>
                         <Link
