@@ -153,13 +153,13 @@ const Testimonials = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col md:pt-[10%] pt-32 px-32 ">
       <div className="flex flex-col gap-2 text-center items-center justify-center">
-        <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+        <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           what client says
         </p>
 
-        <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary  font-semibold uppercase leading-tight">
+        <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary   uppercase leading-tight">
           <TextHoverAnimation text="Testimonials" />
         </p>
         <p className="text-lg text-white ">
@@ -170,13 +170,13 @@ const Testimonials = () => {
       </div>
 
       <section ref={targetRef} className="  md:h-[300vh]">
-        <div className="sticky top-0 md:flex h-screen items-center mx-10 md:visible hidden overflow-hidden">
+        <div className="sticky top-0 md:flex h-screen items-center  md:visible hidden overflow-hidden">
           <motion.div style={{ x }} className="flex gap-10">
             {data.map((test, i) => (
               <div className="flex flex-col gap-2">
                 <HorizontalCard key={i} videoSrc={test.mediaUrl} />
 
-                <p className="text-3xl  font-primary text-white font-semibold uppercase leading-tight">
+                <p className="text-3xl  font-primary text-white  uppercase leading-tight">
                   Author <span className="text-secondary">name</span>
                 </p>
                 <div>content</div>
@@ -189,7 +189,7 @@ const Testimonials = () => {
           {data.map((test, i) => (
             <div className="flex flex-col gap-2">
               <VerticalCard key={i} videoSrc={test.mediaUrl} />
-              <p className="text-3xl  font-primary  text-white font-semibold uppercase leading-tight">
+              <p className="text-3xl  font-primary  text-white  uppercase leading-tight">
                 Author <span className="text-secondary">name</span>
               </p>
               <div>content</div>
