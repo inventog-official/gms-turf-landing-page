@@ -59,10 +59,11 @@ import { SlBadge } from "react-icons/sl";
 
 const Home: React.FC = () => {
   const images = [
-    "./bg-image.webp",
-    "/Football/1.jpg",
-    "/Football/2.jpg",
-    "/Football/3.jpg",
+    "/homepageSlideImages/4.webp",
+    "/homepageSlideImages/1.jpg",
+    "/homepageSlideImages/2.jpg",
+    "/homepageSlideImages/3.jpg",
+    "/homepageSlideImages/5.jpeg",
   ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
