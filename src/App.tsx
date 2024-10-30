@@ -16,6 +16,7 @@ import { Footer } from "./components/footer";
 import News_Page from "./components/newsPage";
 import Testimonials from "./components/testimonials";
 import HomeNewsFeed from "./components/homeNewsFeed";
+import { ContactsPage } from "./components/contactsPage";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -98,6 +99,7 @@ const App: React.FC = () => {
             />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/news" element={<News_Page />} />
+            <Route path="/get-in-touch" element={<ContactsPage />} />
           </Routes>
         </div>
       )}

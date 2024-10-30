@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contact: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="contact"
@@ -43,7 +45,10 @@ const Contact: React.FC = () => {
           <div className="w-1/2 hidden lg:flex"></div>
           <div className="w-full lg:w-1/2 lg:bg-slate-500/5">
             <div className="bg-secondary p-4 lg:w-[30%] flex justify-center">
-              <button className="w-[60%] md:w-[40%] lg:w-full border-2 border-primary p-5 rounded-full text-center transform transition-transform duration-300 hover:scale-105">
+              <button 
+                className="w-[60%] md:w-[40%] lg:w-full border-2 border-primary p-5 rounded-full text-center transform transition-transform duration-300 hover:scale-105"
+                onClick={() => navigate('/get-in-touch')}
+              >
                 <p className="uppercase text-primary font-primary tracking-[1.5px]">
                   Get in Touch
                 </p>
