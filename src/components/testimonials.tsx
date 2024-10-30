@@ -159,9 +159,9 @@ const Testimonials = () => {
           what client says
         </p>
 
-        <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary   uppercase leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary  uppercase leading-tight">
           <TextHoverAnimation text="Testimonials" />
-        </p>
+        </h1>
         <p className="text-lg text-white ">
           Discover the heartfelt words of those we've had the privilege to
           serve. Our client's stories reflect the passion and dedication we
@@ -173,7 +173,7 @@ const Testimonials = () => {
         <div className="sticky top-0 md:flex h-screen items-center  md:visible hidden overflow-hidden">
           <motion.div style={{ x }} className="flex gap-10">
             {data.map((test, i) => (
-              <div className="flex flex-col gap-2">
+              <div key={i} className="flex flex-col gap-2">
                 <HorizontalCard key={i} videoSrc={test.mediaUrl} />
 
                 <p className="text-3xl  font-primary text-white  uppercase leading-tight">
@@ -187,7 +187,7 @@ const Testimonials = () => {
 
         <div className="sticky top-0 justify-center items-center py-12 gap-12 md:hidden flex flex-col ">
           {data.map((test, i) => (
-            <div className="flex flex-col gap-2">
+            <div key={i} className="flex flex-col gap-2">
               <VerticalCard key={i} videoSrc={test.mediaUrl} />
               <p className="text-3xl  font-primary  text-white  uppercase leading-tight">
                 Author <span className="text-secondary">name</span>
