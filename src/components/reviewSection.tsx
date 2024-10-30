@@ -57,7 +57,8 @@ const ReviewsSection = () => {
           {reviewsObj.map((review, index) => (
             <SwiperSlide
               key={index}
-              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 bg-white/10 blur-xl border-4 border-opacity-20 border-yellow-500 h-96 flex items-center"
+              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 h-96 flex items-center"
+              // className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 bg-white/10 blur-xl border-4 border-opacity-20 border-yellow-500 h-96 flex items-center"
             >
               <div className="flex flex-col gap-5 text-center px-5 rounded-lg transition-all duration-500 ease-in-out h-full justify-center">
                 <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-secondary">
