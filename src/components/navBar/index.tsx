@@ -141,7 +141,7 @@ const Navbar: React.FC = () => {
                     ].map((item) => (
                       <li key={item.label}>
                         <button
-                          className="block px-4 py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+                          className="block px-4 w-full py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
                           onClick={() => {
                             setIsDropdownOpen(false);
                             handleNavClick(item.path);
