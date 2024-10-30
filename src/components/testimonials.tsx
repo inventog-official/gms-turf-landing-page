@@ -153,12 +153,11 @@ const Testimonials = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <div className="flex flex-col md:pt-[10%] pt-32 px-32 ">
-      <div className="flex flex-col gap-2 text-center items-center justify-center">
+    <div className="flex flex-col md:pt-[15%] pt-32 px-32 ">
+      <div className="flex flex-col gap-10 text-center items-center justify-center">
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           what client says
         </p>
-
         <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary  uppercase leading-tight">
           <TextHoverAnimation text="Testimonials" />
         </h1>
@@ -169,8 +168,8 @@ const Testimonials = () => {
         </p>
       </div>
 
-      <section ref={targetRef} className="  md:h-[300vh]">
-        <div className="sticky top-0 md:flex h-screen items-center  md:visible hidden overflow-hidden">
+      <section ref={targetRef} className="md:h-[300vh]">
+        <div className="sticky top-0 md:flex h-screen items-center md:visible hidden overflow-hidden">
           <motion.div style={{ x }} className="flex gap-10">
             {data.map((test, i) => (
               <div key={i} className="flex flex-col gap-2">
