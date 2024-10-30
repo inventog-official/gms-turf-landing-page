@@ -118,6 +118,7 @@ import ReviewsSection from "./components/reviewSection";
 import { Footer } from "./components/footer";
 import News_Page from "./components/newsPage";
 import Testimonials from "./components/testimonials";
+import HomeNewsFeed from "./components/homeNewsFeed";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -180,6 +181,11 @@ const App: React.FC = () => {
                       </div>
                     </PageWrapper>
                     <PageWrapper>
+                      <div id="homeNewsFeed">
+                        <HomeNewsFeed />
+                      </div>
+                    </PageWrapper>
+                    <PageWrapper>
                       <div id="reviews">
                         <ReviewsSection />
                       </div>
@@ -189,14 +195,6 @@ const App: React.FC = () => {
                         <Footer />
                       </div>
                     </PageWrapper>
-                    {/* <Home />
-                    <IconsWithContent />
-                    <AboutUs />
-                    <Services />
-                    <WhyUs />
-                    <Contact />
-                    <ReviewsSection />
-                    <Footer /> */}
                   </div>
                 </PageWrapper>
               }
