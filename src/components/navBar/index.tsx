@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect, useRef } from "react";
+// import { motion } from "framer-motion";
+import { FaRegEnvelope } from "react-icons/fa";
+// import { FaRegEnvelope, FaChevronDown } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./hamburgar";
 import MenuDrawer from "./menuDrawer";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMenuClick, setIsMenuClick] = useState(false);
   const [activeTab, setActiveTab] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  // const dropdownRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -37,20 +39,20 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (
+  //       dropdownRef.current &&
+  //       !dropdownRef.current.contains(event.target as Node)
+  //     ) {
+  //       setIsDropdownOpen(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
 
   const handleNavClick = (path: string) => {
     if (path.startsWith("#")) {
@@ -114,7 +116,7 @@ const Navbar: React.FC = () => {
                 </button>
               </li>
             ))}
-            <li className="relative">
+            {/* <li className="relative">
               <button
                 className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
                   isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
@@ -154,7 +156,7 @@ const Navbar: React.FC = () => {
                   </ul>
                 </motion.div>
               )}
-            </li>
+            </li> */}
           </ul> : null}
         </div>
 
