@@ -128,6 +128,7 @@ import React, { useRef } from "react";
 import TextHoverAnimation from "./textHoverAnimation";
 import { useTestimonials } from "@/hook/useTestimonials";
 import VideoCard from "./videoCard/main";
+import { Footer } from "./footer";
 
 type Testimonial = {
   id: number;
@@ -154,22 +155,22 @@ const Testimonials = () => {
 
   return (
     <div className="flex flex-col md:pt-[15%] pt-32 px-32 ">
-      <div className="flex flex-col gap-10 text-center items-center justify-center">
+      <div className="flex flex-col gap-16 text-center items-center justify-center">
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           what client says
         </p>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary  uppercase leading-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-secondary uppercase leading-tight">
           <TextHoverAnimation text="Testimonials" />
         </h1>
-        <p className="text-lg text-white ">
+        <p className="text-lg md:text-2xl text-white font-secondary ">
           Discover the heartfelt words of those we've had the privilege to
           serve. Our client's stories reflect the passion and dedication we
           bring to every moment."
         </p>
       </div>
 
-      <section ref={targetRef} className="md:h-[300vh]">
-        <div className="sticky top-0 md:flex h-screen items-center md:visible hidden overflow-hidden">
+      <section ref={targetRef} className="md:h-[120vh] flex flex-col justify-center">
+        <div className="sticky top-0 md:flex h-[90vh] justify-center items-center md:visible hidden overflow-hidden">
           <motion.div style={{ x }} className="flex gap-10">
             {data.map((test, i) => (
               <div key={i} className="flex flex-col gap-2">
@@ -196,6 +197,9 @@ const Testimonials = () => {
           ))}
         </div>
       </section>
+      <div className="">
+        <Footer />
+      </div>
     </div>
   );
 };
