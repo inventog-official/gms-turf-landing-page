@@ -105,7 +105,29 @@ const Services: React.FC = () => {
       </div>
 
       {/* Marquee Section */}
-      <div className="w-full py-4">
+      <div className="relative w-full py-4">
+        {/* Left Inner Shadow */}
+        <div className="absolute left-0 top-0 h-full w-[80px] lg:w-[150px] z-10 bg-gradient-to-r from-primary to-transparent pointer-events-none"></div>
+        {/* Right Inner Shadow */}
+        <div className="absolute right-0 top-0 h-full w-[80px] lg:w-[150px] z-10 bg-gradient-to-l from-primary to-transparent pointer-events-none"></div>
+
+        <Marquee speed={40} gradient={false}>
+          {marqueeImages.map((image, index) => (
+            <div
+              key={index}
+              className="w-80 h-72 m-4 shadow-lg overflow-hidden transition-transform transform hover:scale-105"
+            >
+              <img
+                src={image} // Replace with actual paths
+                alt={`image ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
+
+      {/* <div className="w-full py-4">
         <Marquee speed={40} gradient={false}>
           {marqueeImages.map((image, index) => (
             // {[...Array(10)].map((_, index) => (
@@ -122,7 +144,7 @@ const Services: React.FC = () => {
             </div>
           ))}
         </Marquee>
-      </div>
+      </div> */}
 
       {/* Services List */}
       <div className="w-full select-none">
