@@ -17,6 +17,11 @@ import News_Page from "./components/newsPage";
 import Testimonials from "./components/testimonials";
 import HomeNewsFeed from "./components/homeNewsFeed";
 import { ContactsPage } from "./components/contactsPage";
+import FootballTurf from "./components/products/football";
+import CricketTurf from "./components/products/cricket";
+import VolleyballTurf from "./components/products/volleyball";
+import MultiSportsTurf from "./components/products/multisports";
+import IndoorTurf from "./components/products/indoor";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -100,6 +105,15 @@ const App: React.FC = () => {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/news" element={<News_Page />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
+
+            {/* products pages */}
+            <Route path="/football-turf" element={<FootballTurf />} />
+            <Route path="/cricket-turf" element={<CricketTurf />} />
+            <Route path="/multi-sports-turf" element={<IndoorTurf />} />
+            <Route path="/indoor-turf" element={<VolleyballTurf />} />
+            <Route path="/volleyball-turf" element={<MultiSportsTurf />} />
+
+
           </Routes>
         </div>
       )}
