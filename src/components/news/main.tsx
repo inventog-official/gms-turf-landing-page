@@ -79,7 +79,7 @@ const NewsPage = () => {
             </div>
           </div>
           <div className="space-y-10 w-[90%] mx-auto">
-            {newsItems.map((item) => (
+            {newsItems?.map((item) => (
               <motion.div
                 key={item.id}
                 initial="hidden"
@@ -126,37 +126,43 @@ export default NewsPage;
 import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useOutsideClick } from "@/hook/use-outside-click";
+import { NewsFeed, useNewsFeed } from "@/hook/useNewsFeed";
 
-const newsItems = [
-  {
-    id: 2,
-    type: "video",
-    title:
-      "Sivakarthikeyan, Nelson லாம் இங்கதான் கிரிக்கெட் ஆடுறாங்க! - Growth of Turf Business",
-    content: "Game On Solution",
-    videoUrl: "https://www.youtube.com/embed/HNlNcOWH4xg",
-  },
-  {
-    id: 3,
-    type: "image",
-    title: "SOUTH INDIAS BEST SPORTS INFRASTRUCTURE FIRM AWARDED BY",
-    content: "Game On Solution",
-    imageUrl:
-      "https://static.wixstatic.com/media/4c43d3_f588d4ee70264f2dab3bed9f20e705e5~mv2.png/v1/crop/x_11,y_49,w_1274,h_524/fill/w_738,h_296,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/award.png",
-  },
-  {
-    id: 4,
-    type: "video",
-    title:
-      "சென்னையில் அதிகரித்து வரும் Turf Grounds -இளைஞர்கள் அமோக வரவேற்பு -அப்படி என்ன சிறப்புக்கள் இருக்கு?",
-    content: "Game On Solution",
-    videoUrl: "https://www.youtube.com/embed/dZV22FFKUUI?si=tt2vUqXyl1grVJGu",
-  },
-];
+// const newsItems = [
+//   {
+//     id: 2,
+//     type: "video",
+//     title:
+//       "Sivakarthikeyan, Nelson லாம் இங்கதான் கிரிக்கெட் ஆடுறாங்க! - Growth of Turf Business",
+//     content: "Game On Solution",
+//     url: "https://www.youtube.com/watch?v=HNlNcOWH4xg",
+//   },
+//   {
+//     id: 3,
+//     type: "image",
+//     title: "SOUTH INDIAS BEST SPORTS INFRASTRUCTURE FIRM AWARDED BY",
+//     content: "Game On Solution",
+//     url:
+//       "https://static.wixstatic.com/media/4c43d3_f588d4ee70264f2dab3bed9f20e705e5~mv2.png/v1/crop/x_11,y_49,w_1274,h_524/fill/w_738,h_296,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/award.png",
+//   },
+//   {
+//     id: 4,
+//     type: "video",
+//     title:
+//       "சென்னையில் அதிகரித்து வரும் Turf Grounds -இளைஞர்கள் அமோக வரவேற்பு -அப்படி என்ன சிறப்புக்கள் இருக்கு?",
+//     content: "Game On Solution",
+//     url: "https://www.youtube.com/watch?v=dZV22FFKUUI",
+//   },
+// ];
 
 export function ExpandableCardDemo() {
+  const {queryClient} = useNewsFeed()
+
+  const data =  queryClient.getQueryData(['newsfeeds']) as NewsFeed[]
+
+  console.log(data)
   const [active, setActive] = useState<
-    (typeof newsItems)[number] | boolean | null
+    (typeof data)[number] | NewsFeed | any
   >(null);
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
@@ -179,6 +185,11 @@ export function ExpandableCardDemo() {
   }, [active]);
 
   useOutsideClick(ref, () => setActive(null));
+  const getYoutubeId = (url: string) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11 ? match[2] : null;
+  };
 
   return (
     <>
@@ -196,7 +207,7 @@ export function ExpandableCardDemo() {
         {active && typeof active === "object" ? (
           <div className="fixed inset-0 grid place-items-center z-[100]">
             <motion.button
-              key={`button-${active.title}-${id}`}
+              key={`button-${active.details}-${id}`}
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -207,17 +218,17 @@ export function ExpandableCardDemo() {
               <CloseIcon />
             </motion.button>
             <motion.div
-              layoutId={`card-${active.title}-${id}`}
+              layoutId={`card-${active.details}-${id}`}
               ref={ref}
               className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-primary overflow-hidden"
             >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                {active.type === "video" ? (
+              <motion.div layoutId={`image-${active.details}-${id}`}>
+                {active.fileType === "youtube" ? (
                   <iframe
                     width="100%"
                     height="315"
-                    src={active.videoUrl}
-                    title={active.title}
+                  src={`https://www.youtube.com/embed/${getYoutubeId(active.mediaUrl)}`}
+                    title={active.details}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -226,8 +237,8 @@ export function ExpandableCardDemo() {
                   <img
                     width={200}
                     height={200}
-                    src={active.imageUrl}
-                    alt={active.title}
+                    src={active.mediaUrl}
+                    alt={active.details}
                     className="w-full h-80 lg:h-80 object-cover object-top"
                   />
                 )}
@@ -236,9 +247,9 @@ export function ExpandableCardDemo() {
               <div>
                 <div className="flex  items-start p-4">
                   <div>
-                    <motion.h3 layoutId={`title-${active.title}-${id}`}>
+                    <motion.h3 layoutId={`title-${active.details}-${id}`}>
                       <p className=" font-primary text-white text-base uppercase leading-tight">
-                        {active.title}
+                        {active.details}
                       </p>
                     </motion.h3>
                     {/* <motion.p
@@ -255,39 +266,39 @@ export function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
       <ul className="w-full grid grid-cols-1 md:grid-cols-3 items-start gap-4">
-        {newsItems.map((item) => (
+        {data.map((item) => (
           <motion.div
-            layoutId={`card-${item.title}-${id}`}
-            key={item.title}
+            layoutId={`card-${item.details}-${id}`}
+            key={item.details}
             onClick={() => setActive(item)}
             className="p-4 flex flex-col cursor-pointer"
           >
             <div className="flex gap-4 flex-col w-full">
-              <motion.div layoutId={`image-${item.title}-${id}`}>
-                {item.type === "video" ? (
+              <motion.div layoutId={`image-${item.details}-${id}`}>
+                {item.fileType === "youtube" ? (
                   <img
                     width={100}
                     height={100}
-                    src="https://img.youtube.com/vi/dZV22FFKUUI/0.jpg"
-                    alt={item.title}
+                    src={`https://img.youtube.com/vi/${getYoutubeId(item.mediaUrl)}/0.jpg`}
+                    alt={item.details}
                     className="h-60 w-full object-cover object-top"
                   />
                 ) : (
                   <img
                     width={100}
                     height={100}
-                    src={item.imageUrl}
-                    alt={item.title}
+                    src={item.mediaUrl}
+                    alt={item.details}
                     className="h-60 w-full object-cover object-top"
                   />
                 )}
               </motion.div>
               <div className="flex justify-start items-start flex-col">
                 <motion.h3
-                  layoutId={`title-${item.title}-${id}`}
+                  layoutId={`title-${item.details}-${id}`}
                   className="font-primary text-left text-base text-white"
                 >
-                  {item.title}
+                  {item.details}
                 </motion.h3>
                 {/* <motion.p
                   layoutId={`description-${item.content}-${id}`}

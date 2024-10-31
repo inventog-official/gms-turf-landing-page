@@ -2,32 +2,37 @@ import React, { useState, useEffect } from "react";
 import FootballAnimation from "./footballAnimation";
 import TextHoverAnimation from "./textHoverAnimation";
 import { SlBadge } from "react-icons/sl";
+import { useCarousel } from "@/hook/useCarousel";
 
 const Home: React.FC = () => {
-  const images = [
-    "/homepageSlideImages/4.webp",
-    "/homepageSlideImages/1.jpg",
-    "/homepageSlideImages/2.jpg",
-    "/homepageSlideImages/3.jpg",
-    "/homepageSlideImages/5.jpeg",
-  ];
+
+  const {queryClient} =  useCarousel()
+
+  const data  = queryClient.getQueryData(['carousels']) as {id:number,url:string}[]
+  // const images = [
+  //   "/homepageSlideImages/4.webp",
+  //   "/homepageSlideImages/1.jpg",
+  //   "/homepageSlideImages/2.jpg",
+  //   "/homepageSlideImages/3.jpg",
+  //   "/homepageSlideImages/5.jpeg",
+  // ];
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data?.length);
     }, 4000); // 4 seconds per slide
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [data?.length]);
 
   return (
     <section className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
       {/* Background Image Slideshow */}
-      {images.map((image, index) => (
+      {data?.map((image, index) => (
         <img
           key={index}
-          src={image}
+          src={image.url}
           alt={`Background ${index + 1}`}
           className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1000 ${
             index === currentImageIndex ? "opacity-100" : "opacity-0"
