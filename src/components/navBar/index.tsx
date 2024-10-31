@@ -143,11 +143,11 @@ const Navbar: React.FC = () => {
                   >
                     <ul className="flex flex-col">
                       {[
-                        { path: "/football", label: "Football" },
-                        { path: "/cricket", label: "Cricket" },
-                        { path: "/indoor", label: "Indoor Turf" },
-                        { path: "/volleyball", label: "Volleyball" },
-                        { path: "/multi-sports", label: "MultiSports Turf" },
+                        { path: "/football-turf", label: "Football" },
+                        { path: "/cricket-turf", label: "Cricket" },
+                        { path: "/indoor-turf", label: "Indoor Turf" },
+                        { path: "/volleyball-turf", label: "Volleyball" },
+                        { path: "/multi-sports-turf", label: "MultiSports Turf" },
                       ].map((item) => (
                         <li key={item.label}>
                           <button
