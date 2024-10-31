@@ -57,6 +57,7 @@ const Navbar: React.FC = () => {
   const handleNavClick = (path: string) => {
     if (path.startsWith("#")) {
       if (location.pathname !== "/") {
+        console.log(9)
         // If not on the home page, navigate to it first
         navigate("/", { replace: true });
         setTimeout(() => {
