@@ -134,14 +134,14 @@ const newsItems = [
     title:
       "Sivakarthikeyan, Nelson லாம் இங்கதான் கிரிக்கெட் ஆடுறாங்க! - Growth of Turf Business",
     content: "Game On Solution",
-    videoUrl: "https://www.youtube.com/embed/HNlNcOWH4xg",
+    url: "https://www.youtube.com/watch?v=HNlNcOWH4xg",
   },
   {
     id: 3,
     type: "image",
     title: "SOUTH INDIAS BEST SPORTS INFRASTRUCTURE FIRM AWARDED BY",
     content: "Game On Solution",
-    imageUrl:
+    url:
       "https://static.wixstatic.com/media/4c43d3_f588d4ee70264f2dab3bed9f20e705e5~mv2.png/v1/crop/x_11,y_49,w_1274,h_524/fill/w_738,h_296,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/award.png",
   },
   {
@@ -150,7 +150,7 @@ const newsItems = [
     title:
       "சென்னையில் அதிகரித்து வரும் Turf Grounds -இளைஞர்கள் அமோக வரவேற்பு -அப்படி என்ன சிறப்புக்கள் இருக்கு?",
     content: "Game On Solution",
-    videoUrl: "https://www.youtube.com/embed/dZV22FFKUUI?si=tt2vUqXyl1grVJGu",
+    url: "https://www.youtube.com/watch?v=dZV22FFKUUI",
   },
 ];
 
@@ -179,6 +179,11 @@ export function ExpandableCardDemo() {
   }, [active]);
 
   useOutsideClick(ref, () => setActive(null));
+  const getYoutubeId = (url: string) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11 ? match[2] : null;
+  };
 
   return (
     <>
@@ -216,7 +221,7 @@ export function ExpandableCardDemo() {
                   <iframe
                     width="100%"
                     height="315"
-                    src={active.videoUrl}
+                  src={`https://www.youtube.com/embed/${getYoutubeId(active.url)}`}
                     title={active.title}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -226,7 +231,7 @@ export function ExpandableCardDemo() {
                   <img
                     width={200}
                     height={200}
-                    src={active.imageUrl}
+                    src={active.url}
                     alt={active.title}
                     className="w-full h-80 lg:h-80 object-cover object-top"
                   />
@@ -268,7 +273,7 @@ export function ExpandableCardDemo() {
                   <img
                     width={100}
                     height={100}
-                    src="https://img.youtube.com/vi/dZV22FFKUUI/0.jpg"
+                    src={`https://img.youtube.com/vi/${getYoutubeId(item.url)}/0.jpg`}
                     alt={item.title}
                     className="h-60 w-full object-cover object-top"
                   />
@@ -276,7 +281,7 @@ export function ExpandableCardDemo() {
                   <img
                     width={100}
                     height={100}
-                    src={item.imageUrl}
+                    src={item.url}
                     alt={item.title}
                     className="h-60 w-full object-cover object-top"
                   />

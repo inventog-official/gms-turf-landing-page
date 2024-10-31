@@ -1,17 +1,18 @@
+import { useTestimonials } from "@/hook/useTestimonials";
 import React, { useState, useEffect } from "react";
 
 interface PreloaderProps {
   isLoading: boolean;
   onComplete: () => void;
 }
-
 const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
+  const {getAllTestimonials} =  useTestimonials()
   const [firstSectionComplete, setFirstSectionComplete] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
 
   useEffect(() => {
-    if (isLoading) {
+    if (isLoading||getAllTestimonials.isLoading) {
       // Animate each word
       let wordTimeouts: NodeJS.Timeout[] = [];
       for (let i = 0; i < 3; i++) {
