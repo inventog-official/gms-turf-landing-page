@@ -7,6 +7,9 @@ module.exports = {
     },
   },
   theme: {
+    animation: {
+      "carousel-move": "carousel-move var(--duration,80s) infinite",
+    },
     extend: {
       spacing: {
         "cursor-size": "40px",
@@ -90,7 +93,22 @@ module.exports = {
       blur: {
         "10px": "10px",
       },
+      fontSize: {
+        xs: "0.75rem", // 12px
+        sm: "0.875rem", // 14px
+        base: "1.0625rem", // 17px
+        lg: ["1.1875rem", "1.21"], // 19px
+        xl: "1.3125rem", // 21px
+        "2xl": "1.5rem", // 24px
+        "3xl": "1.75rem", // 28px
+        "4xl": ["2.5rem", "1.1"], // 40px
+        "5xl": ["4.5rem", "1.05"], // 72px
+      },
       keyframes: {
+        "carousel-move": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
         "shimmer-slide": {
           to: {
             transform: "translate(calc(100cqw - 100%), 0)",
@@ -117,10 +135,22 @@ module.exports = {
         },
         revealText: {
           "0%": { opacity: 0, transform: "scale(0.95)", filter: "blur(4px)" },
-          "40%": { opacity: 0, transform: "translateY(0)", filter: "blur(0px)" },
+          "40%": {
+            opacity: 0,
+            transform: "translateY(0)",
+            filter: "blur(0px)",
+          },
           "60%": { opacity: 1, transform: "scale(1)", filter: "blur(0px)" }, // Fully reveals with no blur
-          "70%": { opacity: 1, transform: "translateY(0%)", filter: "blur(0px)" }, // Brief pause
-          "100%": { opacity: 0, transform: "translateY(-200%)", filter: "blur(9px)" } // Moves up with blur and fades out
+          "70%": {
+            opacity: 1,
+            transform: "translateY(0%)",
+            filter: "blur(0px)",
+          }, // Brief pause
+          "100%": {
+            opacity: 0,
+            transform: "translateY(-200%)",
+            filter: "blur(9px)",
+          }, // Moves up with blur and fades out
         },
         // revealText: {
         //   "0%": { opacity: 0, transform: "scale(0.95)" }, // Text starts hidden and slightly smaller
