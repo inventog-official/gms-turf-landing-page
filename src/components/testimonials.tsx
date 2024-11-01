@@ -128,7 +128,8 @@ import React, { useRef } from "react";
 import TextHoverAnimation from "./textHoverAnimation";
 import { useTestimonials } from "@/hook/useTestimonials";
 import VideoCard from "./videoCard/main";
-import { Footer } from "./footer";
+// import { Footer } from "./footer";
+import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 type Testimonial = {
   id: number;
@@ -154,7 +155,7 @@ const Testimonials = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <div className="flex flex-col md:pt-[15%] pt-32 px-32 ">
+    <div className="flex flex-col md:pt-[15%] pt-32 px-10 lg:px-32 ">
       <div className="flex flex-col gap-16 text-center items-center justify-center">
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           what client says
@@ -197,9 +198,38 @@ const Testimonials = () => {
           ))}
         </div>
       </section>
-      <div className="">
-        <Footer />
+      <div className="w-full">
+        <div className="flex flex-col gap-10 mt-10">
+          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
+            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary font-semibold uppercase">
+              <p className="hover:cursor-pointer hover:text-white">Home</p>
+              <p className="hover:cursor-pointer hover:text-white">About</p>
+              <p className="hover:cursor-pointer hover:text-white">Services</p>
+              <p className="hover:cursor-pointer hover:text-white">Contact</p>
+            </div>
+            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary font-semibold lg:justify-end">
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaInstagram />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaYoutube />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaFacebook />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaWhatsapp />
+              </div>
+            </div>
+          </div>
+          <div className="flex py-5">
+            <p>©2024. All rights reserved.</p>
+          </div>
+        </div>
       </div>
+      {/* <div className="">
+        <Footer />
+      </div> */}
     </div>
   );
 };

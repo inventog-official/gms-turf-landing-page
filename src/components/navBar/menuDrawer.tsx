@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 interface drawerProps {
-    isCloseMenu : () => void;
+  isCloseMenu: () => void;
 }
 
-const MenuDrawer:React.FC<drawerProps> = ({isCloseMenu}) => {
+const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -72,7 +72,28 @@ const MenuDrawer:React.FC<drawerProps> = ({isCloseMenu}) => {
                 transition={{ duration: 0.3 }}
                 className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-white/40 rounded-md shadow-lg z-10"
               >
-                <ul className="flex flex-col w-full">
+                <ul className="flex flex-col">
+                  {[
+                    { path: "/football-turf", label: "Football" },
+                    { path: "/cricket-turf", label: "Cricket" },
+                    { path: "/indoor-turf", label: "Indoor Turf" },
+                    { path: "/volleyball-turf", label: "Volleyball" },
+                    { path: "/multi-sports-turf", label: "MultiSports Turf" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <button
+                        className="block px-4 w-full py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
+                        onClick={() => {
+                          setIsDropdownOpen(false);
+                          handleNavClick(item.path);
+                        }}
+                      >
+                        {item.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+                {/* <ul className="flex flex-col w-full">
                   {[
                     { path: "/item1", label: "Item 1" },
                     { path: "/item2", label: "Item 2" },
@@ -90,7 +111,7 @@ const MenuDrawer:React.FC<drawerProps> = ({isCloseMenu}) => {
                       </button>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </motion.div>
             )}
           </li>
