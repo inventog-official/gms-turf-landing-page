@@ -13,22 +13,50 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
+
   const handleNavClick = (path: string) => {
     if (path.startsWith("#")) {
-      // In-page navigation
-      setActiveTab(path);
-      const section = document.querySelector(path);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-        isCloseMenu();
+      if (location.pathname !== "/") {
+        console.log(9);
+        // If not on the home page, navigate to it first
+        navigate("/", { replace: true });
+        setTimeout(() => {
+          const section = document.querySelector(path);
+          if (section) section.scrollIntoView({ behavior: "smooth" });
+          setActiveTab(path); // Set the active tab only for the clicked section
+        }, 100);
+      } else {
+        // Scroll directly if already on the home page
+        const section = document.querySelector(path);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+        setActiveTab(path);
       }
+      isCloseMenu();
     } else {
       // External route navigation
       navigate(path);
+      // navigate(path, { replace: true });
       setActiveTab(path);
       isCloseMenu();
     }
   };
+
+  // const handleNavClick = (path: string) => {
+  //   if (path.startsWith("#")) {
+  //     // In-page navigation
+  //     setActiveTab(path);
+  //     const section = document.querySelector(path);
+  //     if (section) {
+  //       section.scrollIntoView({ behavior: "smooth" });
+  //       isCloseMenu();
+  //     }
+  //   } else {
+  //     // External route navigation
+  //     navigate(path);
+  //     setActiveTab(path);
+  //     isCloseMenu();
+  //   }
+  // };
 
   return (
     <div className="flex justify-center items-start py-16 h-full w-full px-12">

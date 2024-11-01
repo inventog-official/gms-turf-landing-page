@@ -73,7 +73,8 @@ const Navbar: React.FC = () => {
       }
     } else {
       // External route navigation
-      navigate(path, { replace: true });
+      navigate(path);
+      // navigate(path, { replace: true });
       setActiveTab(path);
     }
   };
