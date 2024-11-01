@@ -7,18 +7,20 @@ interface Contact {
     phone: string;
     message: string;
   }
-  const API_URL = "https://api-gms.vercel.app/api/v1/newsfeed";
+  const API_URL = "https://api-gms.vercel.app/api/v1/contacts";
 
-export function useCarousel() {
+export function useCantacts() {
   const queryClient = useQueryClient();
   const createContact = useMutation({
     mutationFn: async (newContact: Omit<Contact, 'id'>) => {
-      const response = await axios.post(`${API_URL}`, newContact);
+      const response = await axios.post(`${API_URL}`, newContact,{headers:{
+        authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwic3ViIjoxLCJpYXQiOjE3MzAzOTQyMzh9._7MAwb4HYLH2uSaiOwN61xAqSfgekUg9kWJQbgtxNgY"        
+      }});
       return response.data;
     },
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['carousels'] }); 
-    },
+    // onSuccess: () => {
+    //   queryClient.invalidateQueries({ queryKey: ['carousels'] }); 
+    // },
   });
   return {
     createContact,
