@@ -174,11 +174,11 @@ export const ContactsPage = () => {
       
           </div>
           <div className="w-full flex gap-10">
-            <div className="hidden lg:flex px-12 bg-yellow-500/80 w-1/2 justify-center items-center">
+            {/* <div className="hidden lg:flex px-12 bg-yellow-500/80 w-1/2 justify-center items-center">
               <p className="text-3xl text-white text-center font-special">
                 Fall seven times, stand up eight. Champions refuse to give up.
               </p>
-            </div>
+            </div> */}
             <div className="bg-white w-full lg:w-1/2 flex">
               <div
                 style={{
