@@ -60,7 +60,7 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
               } transition-all hover:text-secondary`}
               onClick={() => setIsDropdownOpen((prev) => !prev)}
             >
-              More
+              Products
               <FaChevronDown className="ml-1" />
             </button>
             {isDropdownOpen && (
