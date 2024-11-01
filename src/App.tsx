@@ -109,9 +109,9 @@ const App: React.FC = () => {
             {/* products pages */}
             <Route path="/football-turf" element={<FootballTurf />} />
             <Route path="/cricket-turf" element={<CricketTurf />} />
-            <Route path="/multi-sports-turf" element={<IndoorTurf />} />
-            <Route path="/indoor-turf" element={<VolleyballTurf />} />
-            <Route path="/volleyball-turf" element={<MultiSportsTurf />} />
+            <Route path="/multi-sports-turf" element={<MultiSportsTurf />} />
+            <Route path="/indoor-turf" element={<IndoorTurf />} />
+            <Route path="/volleyball-turf" element={<VolleyballTurf/>} />
 
 
           </Routes>
