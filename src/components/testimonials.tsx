@@ -169,8 +169,8 @@ const Testimonials = () => {
         </p>
       </div>
 
-      <section ref={targetRef} className="md:h-[120vh] flex flex-col justify-center">
-        <div className="sticky top-0 md:flex h-[90vh] justify-center items-center md:visible hidden overflow-hidden">
+      <section ref={targetRef} className="md:h-[300vh] flex flex-col">
+        <div className="sticky top-0 md:flex h-screen justify-center items-center md:visible hidden overflow-hidden">
           <motion.div style={{ x }} className="flex gap-10">
             {data.map((test, i) => (
               <div key={i} className="flex flex-col gap-2">
