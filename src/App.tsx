@@ -45,7 +45,7 @@ const App: React.FC = () => {
         </div>
       )}
       {!isLoading && (
-        <div className={`w-screen h-screen bg-primary no-scrollbar`}>
+        <div className={`w-screen h-screen  bg-primary no-scrollbar`}>
           <Navbar />
           <CursorFollower />
           <ScrollProgress />
@@ -111,9 +111,7 @@ const App: React.FC = () => {
             <Route path="/cricket-turf" element={<CricketTurf />} />
             <Route path="/multi-sports-turf" element={<MultiSportsTurf />} />
             <Route path="/indoor-turf" element={<IndoorTurf />} />
-            <Route path="/volleyball-turf" element={<VolleyballTurf/>} />
-
-
+            <Route path="/volleyball-turf" element={<VolleyballTurf />} />
           </Routes>
         </div>
       )}

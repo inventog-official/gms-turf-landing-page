@@ -21,12 +21,11 @@ interface Errors {
   message?: string;
 }
 export const ContactsPage = () => {
-
-  const {createContact}  = useCantacts()
+  const { createContact } = useCantacts();
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   // const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
@@ -43,21 +42,25 @@ export const ContactsPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-     
+
     if (validate()) {
-      await createContact.mutateAsync({phone:"1234567890",...formData}).then(() =>{
-        setFormData({ name: '', email: '', message: '' });
-        setErrors({});
-        // setIsSubmitted(true); 
-        // setTimeout(() => setIsSubmitted(false), 3000);
-      })
+      await createContact
+        .mutateAsync({ phone: "1234567890", ...formData })
+        .then(() => {
+          setFormData({ name: "", email: "", message: "" });
+          setErrors({});
+          // setIsSubmitted(true);
+          // setTimeout(() => setIsSubmitted(false), 3000);
+        });
       console.log("Form submitted successfully", formData);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -113,8 +116,8 @@ export const ContactsPage = () => {
           </div>
         </div>
         <div className="py-5 flex flex-col gap-10">
-              {/* {isSubmitted && (
-        <div className="absolute  left-1/2 transform -translate-x-1/2 mt-10 bg-green-500 text-white text-sm font-semibold px-6 py-3 rounded-lg shadow-md">
+          {/* {isSubmitted && (
+        <div className="absolute  left-1/2 transform -translate-x-1/2 mt-10 bg-green-500 text-white text-sm  px-6 py-3 rounded-lg shadow-md">
           Form submitted successfully!
         </div>
       )} */}
@@ -122,56 +125,65 @@ export const ContactsPage = () => {
             <p className="text-4xl md:text-5xl lg:text-6xl font-primary uppercase">
               Let's <span className="text-secondary">Talk</span>
             </p>
-            <form onSubmit={handleSubmit} className="py-10 w-full flex flex-col gap-8">
-      <div className="flex md:flex-row flex-col gap-10">
-        <div className="w-full md:w-1/2">
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="bg-transparent border-b-2 text-xs border-gray-300/60 w-full p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600"
-            placeholder="What's your name"
-          />
-          {errors.name&&!formData.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
-        </div>
-        <div className="w-full md:w-1/2">
-          <input
-            type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="bg-transparent border-b-2 text-xs border-gray-300/60 w-full p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600"
-            placeholder="Your Email"
-          />
-          {errors.email&&!formData.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-        </div>
-      </div>
-      <div className="flex flex-col  w-full">
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          className="bg-transparent border-b-2 border-gray-300/60 w-full text-xs p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600 min-h-48 max-h-48"
-          placeholder="Your Message"
-        ></textarea>
-        {errors.message&&!formData.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
-      </div>
-      <div className="w-full flex flex-col gap-5 md:flex-row md:items-center">
-        <p className="text-sm font-normal font-secondary md:w-1/2">
-          *We promise not to disclose your personal information to third parties.
-        </p>
-        <div className="w-full flex justify-center md:justify-end">
-          <button
-            type="submit"
-            className="py-5 px-12 border border-yellow-500 rounded-full bg-secondary text-white font-semibold hover:border-yellow-600 hover:scale-105 transition-transform duration-500 ease-in-out"
-          >
-         {createContact.isPending?"Loading..":"Send Message"}   
-          </button>
-        </div>
-      </div>
-    </form>
-      
+            <form
+              onSubmit={handleSubmit}
+              className="py-10 w-full flex flex-col gap-8"
+            >
+              <div className="flex md:flex-row flex-col gap-10">
+                <div className="w-full md:w-1/2">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="bg-transparent border-b-2 text-xs border-gray-300/60 w-full p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600"
+                    placeholder="What's your name"
+                  />
+                  {errors.name && !formData.name && (
+                    <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                  )}
+                </div>
+                <div className="w-full md:w-1/2">
+                  <input
+                    type="text"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-transparent border-b-2 text-xs border-gray-300/60 w-full p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600"
+                    placeholder="Your Email"
+                  />
+                  {errors.email && !formData.email && (
+                    <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                  )}
+                </div>
+              </div>
+              <div className="flex flex-col  w-full">
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="bg-transparent border-b-2 border-gray-300/60 w-full text-xs p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600 min-h-48 max-h-48"
+                  placeholder="Your Message"
+                ></textarea>
+                {errors.message && !formData.message && (
+                  <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                )}
+              </div>
+              <div className="w-full flex flex-col gap-5 md:flex-row md:items-center">
+                <p className="text-sm font-normal font-secondary md:w-1/2">
+                  *We promise not to disclose your personal information to third
+                  parties.
+                </p>
+                <div className="w-full flex justify-center md:justify-end">
+                  <button
+                    type="submit"
+                    className="py-5 px-12 border border-yellow-500 rounded-full bg-secondary text-white  hover:border-yellow-600 hover:scale-105 transition-transform duration-500 ease-in-out"
+                  >
+                    {createContact.isPending ? "Loading.." : "Send Message"}
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
           <div className="w-full flex gap-10">
             {/* <div className="hidden lg:flex px-12 bg-yellow-500/80 w-1/2 justify-center items-center">
@@ -228,7 +240,7 @@ export const ContactsPage = () => {
           <div>
             <div className="flex flex-col gap-10 mt-10">
               <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-                <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary font-semibold uppercase">
+                <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
                   <p className="hover:cursor-pointer hover:text-white">Home</p>
                   <p className="hover:cursor-pointer hover:text-white">About</p>
                   <p className="hover:cursor-pointer hover:text-white">
@@ -238,7 +250,7 @@ export const ContactsPage = () => {
                     Contact
                   </p>
                 </div>
-                <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary font-semibold lg:justify-end">
+                <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
                   <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
                     <FaInstagram />
                   </div>
@@ -260,7 +272,6 @@ export const ContactsPage = () => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };

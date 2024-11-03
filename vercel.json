@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "turf-landing-page.vercel.app", "destination": "turf-landing-page.vercel.app" }
+    ]
+  }
+  

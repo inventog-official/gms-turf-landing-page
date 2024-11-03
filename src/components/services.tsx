@@ -7,7 +7,7 @@
 //     <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
 //       {/* Header */}
 //       <div className="text-left w-full">
-//         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+//         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
 //           Our Products
 //         </p>
 //       </div>
@@ -91,7 +91,7 @@ const Services: React.FC = () => {
     <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       {/* Header */}
       <div className="text-left w-full">
-        <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+        <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           Our Products
         </p>
       </div>
@@ -213,7 +213,7 @@ export default Services;
 //     <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-12 md:px-20 lg:px-32 py-20 md:py-10">
 //       {/* Header */}
 //       <div className="text-left w-full">
-//         <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+//         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
 //           Our Products
 //         </p>
 //       </div>
