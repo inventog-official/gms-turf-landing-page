@@ -13,5 +13,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ["swiper"],
   },
-  base: "turf-landing-page.vercel.app",
 });
