@@ -8,15 +8,20 @@ interface PreloaderProps {
   onComplete: () => void;
 }
 const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
-  const {getAllTestimonials} =  useTestimonials()
-  const {getCarousels} = useCarousel()
-  const {getNewsFeeds} = useNewsFeed()
+  const { getAllTestimonials } = useTestimonials();
+  const { getCarousels } = useCarousel();
+  const { getNewsFeeds } = useNewsFeed();
   const [firstSectionComplete, setFirstSectionComplete] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
 
   useEffect(() => {
-    if (isLoading||getAllTestimonials.isLoading||getCarousels.isLoading||getNewsFeeds.isLoading) {
+    if (
+      isLoading ||
+      getAllTestimonials.isLoading ||
+      getCarousels.isLoading ||
+      getNewsFeeds.isLoading
+    ) {
       // Animate each word
       let wordTimeouts: NodeJS.Timeout[] = [];
       for (let i = 0; i < 3; i++) {
@@ -53,12 +58,24 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
       <div className="relative h-full">
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
-          <div className="absolute flex flex-col gap-2 items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
+          <div className="absolute flex flex-col gap-10 items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
             {/* {["South", "India's", "No.1"].map((word, index) => ( */}
-            {["South India's No.1"].map((word, index) => (
+            <p
+              className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 ${
+                currentWord >= 1
+                  ? "opacity-100 blur-none translate-y-0"
+                  : "opacity-0 blur-[10px] translate-y-10"
+              }`}
+            >
+              {"South India's "}
+              <span className="text-yellow-500">No.1</span>
+            </p>
+
+            {/* {["South India's No.1"].map((word, index) => (
               <p
                 key={index}
-                className={`text-2xl md:text-4xl uppercase font-primary mr-4 transition-all duration-700 ${
+                className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 ${
+                // className={`text-2xl md:text-4xl uppercase font-primary mr-4 transition-all duration-700 ${
                   currentWord >= index + 1
                     ? "opacity-100 blur-none translate-y-0"
                     : "opacity-0 blur-[10px] translate-y-10"
@@ -66,8 +83,22 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
               >
                 {word}
               </p>
-            ))}
-            <div className="flex">
+            ))} */}
+            <div className="flex flex-col text-center gap-3">
+              {["Sports", "Infrastructure"].map((word, index) => (
+                <p
+                  key={index}
+                  className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
+                    currentWord >= index + 1
+                      ? "opacity-100 blur-none translate-y-0"
+                      : "opacity-0 blur-[10px] translate-y-10"
+                  }`}
+                >
+                  {word}
+                </p>
+              ))}
+            </div>
+            {/* <div className="flex flex-col text-center gap-3">
               {["Sports", "Infrastructure"].map((word, index) => (
                 <p
                   key={index}
@@ -82,7 +113,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                   {word}
                 </p>
               ))}
-            </div>
+            </div> */}
           </div>
         )}
 
