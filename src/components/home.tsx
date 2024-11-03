@@ -5,18 +5,13 @@ import { SlBadge } from "react-icons/sl";
 import { useCarousel } from "@/hook/useCarousel";
 
 const Home: React.FC = () => {
+  const { queryClient } = useCarousel();
 
-  const {queryClient} =  useCarousel()
+  const data = queryClient.getQueryData(["carousels"]) as {
+    id: number;
+    url: string;
+  }[];
 
-  const data  = queryClient.getQueryData(['carousels']) as {id:number,url:string}[]
-  // const images = [
-  //   "/homepageSlideImages/4.webp",
-  //   "/homepageSlideImages/1.jpg",
-  //   "/homepageSlideImages/2.jpg",
-  //   "/homepageSlideImages/3.jpg",
-  //   "/homepageSlideImages/5.jpeg",
-  // ];
-  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -41,7 +36,7 @@ const Home: React.FC = () => {
       ))}
 
       {/* Inner Shadow Effect */}
-      <div
+      {/* <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`,
@@ -49,12 +44,12 @@ const Home: React.FC = () => {
           backgroundPosition: "center",
           boxShadow: "inset 20px 20px 100px 100px rgba(0, 0, 0, 0.9)",
         }}
-      />
+      /> */}
 
       {/* Text and Animations */}
-      <div className="flex flex-col select-none min-h-full w-full z-10 justify-center items-center">
+      <div className="flex flex-col select-none min-h-full w-full z-10 md:justify-center py-28  items-center">
         <div className="flex flex-col md:flex-row md:justify-center items-center gap-3 md:gap-2">
-          <div className="w-full flex justify-start animate-bounce transition-all duration-1000">
+          <div className="w-full flex md:justify-start justify-end  animate-bounce transition-all duration-1000">
             <FootballAnimation />
           </div>
           <div className="flex flex-col gap-3">
@@ -91,7 +86,7 @@ export default Home;
 //     "/homepageSlideImages/3.jpg",
 //     "/homepageSlideImages/5.jpeg",
 //   ];
-  
+
 //   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 //   useEffect(() => {
@@ -175,7 +170,6 @@ export default Home;
 // };
 
 // export default Home;
-
 
 // import React from "react";
 // import FootballAnimation from "./footballAnimation";
