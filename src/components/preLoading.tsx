@@ -55,13 +55,13 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
-      <div className="relative h-full">
+      <div className="relative h-full text-center">
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
-          <div className="absolute flex flex-col gap-10 items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
+          <div className="absolute flex flex-col items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
             {/* {["South", "India's", "No.1"].map((word, index) => ( */}
             <p
-              className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 ${
+              className={`text-[2rem] md:text-[2.5rem] leading-none text-white uppercase font-primary mr-4 transition-all duration-700 ${
                 currentWord >= 1
                   ? "opacity-100 blur-none translate-y-0"
                   : "opacity-0 blur-[10px] translate-y-10"
@@ -84,7 +84,26 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                 {word}
               </p>
             ))} */}
-            <div className="flex flex-col text-center gap-3">
+            <div className="flex flex-col text-center leading-none">
+              {["Sports", "Infrastructure"].map((word, index) => (
+                <p
+                  key={index}
+                  className={`${
+                    word === "Sports"
+                      ? "text-[5.1rem] md:text-[6.5rem]"
+                      : "text-[2.25rem] md:text-[2.8rem]"
+                  } text-white uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
+                    currentWord >= index + 1
+                      ? "opacity-100 blur-none translate-y-0"
+                      : "opacity-0 blur-[10px] translate-y-10"
+                  }`}
+                >
+                  {word}
+                </p>
+              ))}
+            </div>
+
+            {/* <div className="flex flex-col text-center gap-3">
               {["Sports", "Infrastructure"].map((word, index) => (
                 <p
                   key={index}
@@ -97,7 +116,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                   {word}
                 </p>
               ))}
-            </div>
+            </div> */}
             {/* <div className="flex flex-col text-center gap-3">
               {["Sports", "Infrastructure"].map((word, index) => (
                 <p
