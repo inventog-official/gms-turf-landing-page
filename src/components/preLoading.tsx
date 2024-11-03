@@ -67,8 +67,8 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                   : "opacity-0 blur-[10px] translate-y-10"
               }`}
             >
-              {"South India's "}
-              <span className="text-yellow-500">No.1</span>
+              {"South India's No.1"}
+              {/* <span className="text-yellow-500">No.1</span> */}
             </p>
 
             {/* {["South India's No.1"].map((word, index) => (
@@ -90,9 +90,9 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                   key={index}
                   className={`${
                     word === "Sports"
-                      ? "text-[5.1rem] md:text-[6.5rem]"
-                      : "text-[2.25rem] md:text-[2.8rem]"
-                  } text-white uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
+                      ? "text-[5.1rem] md:text-[6.5rem] text-secondary"
+                      : "text-[2.25rem] md:text-[2.8rem] text-white"
+                  } uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
                     currentWord >= index + 1
                       ? "opacity-100 blur-none translate-y-0"
                       : "opacity-0 blur-[10px] translate-y-10"
