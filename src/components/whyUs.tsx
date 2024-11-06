@@ -67,9 +67,9 @@ const WhyUs: React.FC = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-6 w-full font-primary text-white  leading-relaxed">
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+      <div className="flex flex-col gap-6 w-full  text-white  leading-relaxed">
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           We specialize in delivering{" "}
           <span className="text-secondary">high-quality</span> sports systems
           that prioritize top performance and sustainability. Our meticulously
@@ -77,8 +77,8 @@ const WhyUs: React.FC = () => {
           cartilage injuries, ensuring the well-being of athletes and sports
           <span className="text-secondary"> enthusiasts</span>.
         </p>
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Our expertise lies in{" "}
           <span className="text-secondary">FIFA-approved</span> soccer pitches
           and artificial grass football grounds, making us{" "}
@@ -89,8 +89,8 @@ const WhyUs: React.FC = () => {
           encompassing <span className="text-secondary">transparent cost</span>{" "}
           structures for turf construction and installation.
         </p>
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Renowned for our football turf construction, we provide comprehensive
           sports ground construction{" "}
           <span className="text-secondary">services</span>. Moreover, we are
