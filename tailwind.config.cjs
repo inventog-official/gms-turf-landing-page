@@ -80,6 +80,8 @@ module.exports = {
       //     sm: "calc(var(--radius) - 4px)",
       //   },
       animation: {
+        "rotate-circle": "rotate-circle 10s linear infinite",
+        "rotate-reverse": "rotate-reverse 5s linear infinite",
         "shimmer-slide":
           "shimmer-slide var(--speed) ease-in-out infinite alternate",
         fadeIn: "fadeIn 1s ease-in-out forwards",
@@ -105,6 +107,12 @@ module.exports = {
         "5xl": ["4.5rem", "1.05"], // 72px
       },
       keyframes: {
+        "rotate-circle": {
+          to: { transform: "rotate(1turn)" },
+        },
+        "rotate-reverse": {
+          to: { transform: "rotate(-1turn)" },
+        },
         "carousel-move": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-100%)" },
