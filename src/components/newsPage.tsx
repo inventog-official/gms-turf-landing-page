@@ -56,7 +56,9 @@ import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 import YouTube from "react-youtube";
 
+
 const News_Page = () => {
+
   const { queryClient } = useNewsFeed();
 
   console.log(queryClient.getQueryData(["newsfeeds"]));
@@ -64,7 +66,11 @@ const News_Page = () => {
   const data = queryClient.getQueryData(["newsfeeds"]) as NewsFeed[];
   const [active, setActive] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false); // Track video play state
-
+  const newsFeedImages = [
+    "/sunNewsLogo.png",
+    "/sitaLogo.png",
+    "/vikadanLogo.png",
+  ];
   useEffect(() => {
     if (!isPlaying) {
       const timer = setInterval(() => {
@@ -90,20 +96,55 @@ const News_Page = () => {
       setIsPlaying(false);
     }
   };
+  function getCurrentDay() {
+    const monthsOfYear = [
+      "January", "February", "March", "April", "May", "June", 
+      "July", "August", "September", "October", "November", "December"
+    ];
 
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const today = new Date();
+    const dayIndex = today.getDay();
+    const day = today.getDate();
+    const monthIndex = today.getMonth();
+    const monthName = monthsOfYear[monthIndex];
+    const getCurrentYear = today.getFullYear();
+
+    return { day: daysOfWeek[dayIndex], monthWithDate: `${monthName} ${day}`, currentYear: getCurrentYear };
+  }
+  const awards = [
+    {
+        icon: "/sunNewsLogo.png",
+        date: "2023",
+        title: "Best Sportd Infra Solution by",
+    },
+    {
+        icon: "/sitaLogo.png",
+        date: "2021-2023",
+        title: "South india's best Sports infrastructure Firm Award by  ",
+      
+    },
+    {
+        icon: "/vikadanLogo.png",
+        date: "2023",
+        title: "Best Sportd Infra Solution by",
+  
+    }
+]
   return (
-    <div className="h-full w-full">
+    <div className="h-full relative w-full">
     <div
       className="w-full p-3 mx-auto "
     >
-      <div className="h-[10vh]"></div>
-      {/* <header className="h-[14vh] flex flex-col justify-start items-start border-b border-t  ">
-         <h1 className="text-4xl uppercase">Game on solution</h1>
+      <div className="h-[10vh]">
+      </div>
+      <header className="h-[12vh] px-2 py-3 flex flex-col justify-start items-start border-t border-gray-800  ">
+         <h1 className="text-4xl text-[#febc12] uppercase">news & awards</h1>
         <div className="flex items-center mb-8  border-gray-300 pb-2">
-          <p className="font-bold capitalize mr-2">{getCurrentDay().day} <span className="text-gray-500 font-light border-r border-gray-300 pr-2">{getCurrentDay().monthWithDate} {getCurrentDay().currentYear}</span></p>
-          <p className="text-crimson uppercase font-light">news & awards</p>
+          <p className="font-bold capitalize mr-2">{getCurrentDay().day} <span className="text-gray-500 font-light border-r border-[#febc12] pr-2">{getCurrentDay().monthWithDate} {getCurrentDay().currentYear}</span></p>
+          <p className="text-crimson uppercase font-light">Sports</p>
         </div>
-      </header> */}
+      </header>
 
       <div className="w-full  py-4 px-2 flex flex-col xl:grid md:grid-cols-[2fr_1fr] h-[100%]  gap-6">
         <div className="left flex flex-col gap-2 w-full">
@@ -133,7 +174,7 @@ const News_Page = () => {
         </div>
 
         <div className="right flex flex-col">
-          <h3 className="text-2xl text-[#febc12] uppercase text-crimson mb-2">Latest News & Awards</h3>
+          <h3 className="text-2xl text-[#febc12] uppercase text-crimson mb-2">Latest-2024 </h3>
           <div className="grid grid-cols-1 gap-5">
             {data?.map((item, index) => (
               <div
@@ -173,6 +214,24 @@ const News_Page = () => {
 
      
     </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
+  {awards.map((image, index) => (
+    <div key={index} className="border border-gray-50/10 p-2">
+      <p className="text-2xl text-[#febc12] uppercase justify-center h-20 text-center ">
+        {image.title}
+      </p>
+      <div className="w-full shadow-lg overflow-hidden bg-yellow-100/20 flex items-center justify-center">
+        <img
+          src={image.icon} // Replace with actual paths
+          alt={`image ${index + 1}`}
+          className="w-72 h-60 object-cover"
+        />
+      </div>
+    </div>
+  ))}
+</div>
+    
+ 
     <div className="w-full p-10">
         <div className="flex flex-col gap-10 mt-10">
           <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
