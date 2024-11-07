@@ -146,7 +146,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
 
               {/* Text with reveal effect */}
               <p className="text-white text-4xl md:text-6xl uppercase font-primary animate-revealText">
-                <span className="text-secondary">GameOn</span> Solutions
+                <span className="text-secondary">GameOn</span> Solution
               </p>
             </div>
           </div>
