@@ -22,6 +22,8 @@ import CricketTurf from "./components/products/cricket";
 import VolleyballTurf from "./components/products/volleyball";
 import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
+import Carousel from "./common/carousel";
+import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -61,6 +63,11 @@ const App: React.FC = () => {
                     <PageWrapper>
                       <div id="iconsWithContent">
                         <IconsWithContent />
+                      </div>
+                    </PageWrapper>
+                    <PageWrapper>
+                      <div id="CircleMiniCricketStadiumTurf">
+                        <CircleMiniCricketStadiumTurf />
                       </div>
                     </PageWrapper>
                     <PageWrapper>
@@ -105,6 +112,7 @@ const App: React.FC = () => {
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/news" element={<News_Page />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
+            <Route path="/demo" element={<Carousel />} />
 
             {/* products pages */}
             <Route path="/football-turf" element={<FootballTurf />} />

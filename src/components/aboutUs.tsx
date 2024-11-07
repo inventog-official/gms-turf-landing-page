@@ -90,7 +90,7 @@ import React from "react";
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="relative flex  flex-col  bg-primary min-h-screen md:min-h-[85vh] lg:min-h-[90vh] justify-center items-center lg:gap-40 gap-20 px-6 sm:px-8 md:px-16 lg:px-4 xl:px-10 2xl:px-16 pb-16 select-none">
+    <section className="flex flex-col gap-24 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       <div className="flex flex-col  w-full  text-center    gap-10">
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           About Us
@@ -99,7 +99,7 @@ const AboutUs: React.FC = () => {
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             who <span className="text-secondary">we</span> are
           </p>
-          <p className="text-lg md:text-xl lg:text-2xl">
+          <p className="md:text-2xl text-lg">
             Sports play a crucial role in helping us make the most of our time
             by staying active, refreshed, and engaged. Recognizing this need,
             Game On Solution has developed high-quality sports turfs across
@@ -112,7 +112,7 @@ const AboutUs: React.FC = () => {
             world-class sports infrastructure, the company has established
             itself as South India’s leading sports infrastructure developer.
           </p>
-          <p className="text-lg md:text-xl lg:text-2xl">
+          <p className="md:text-2xl text-lg">
             In just the last two years, Game On Solution’s founder, Ms.
             Dhineshwaran, has set up over 115 sports turfs across South India,
             transforming local communities and inspiring young athletes. This
@@ -165,7 +165,7 @@ const AboutUs: React.FC = () => {
           </p>
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="md:text-2xl text-lg">
               GameOn Solution specializes in constructing sports grounds,
               artificial football turf, cricket pitches, volleyball courts,
               basketball courts, and badminton courts, primarily serving
@@ -173,7 +173,7 @@ const AboutUs: React.FC = () => {
               range of services, including building turf grounds, athletic
               tracks, and sports flooring solutions.
             </p>
-            <p className="text-lg md:text-xl lg:text-2xl">
+            <p className="md:text-2xl text-lg">
               Their services cover everything from consultancy and planning
               stages to the construction and execution of sports complexes and
               grounds. Additionally, GameOn Solution undertakes maintenance,
