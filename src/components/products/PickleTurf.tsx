@@ -12,7 +12,7 @@ const PickleTurf = () => {
         <Hero
           title={"PICKLE TURF"}
           subtitle={"FINDS ITS MARK"}
-          bgImgUrl={" /public/pickleTurf/pickle-turf-005.jpg"}
+          bgImgUrl={" /pickleTurf/pickle-turf-005.jpg"}
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
@@ -91,27 +91,27 @@ export default PickleTurf;
 
 const cricketItems = [
   {
-    poster: "/public/pickleTurf/pickle-turf-001.jpg",
+    poster: "/pickleTurf/pickle-turf-001.jpg",
     name: "Airplane",
   },
   {
-    poster: "/public/pickleTurf/pickle-turf-002.jpg",
+    poster: "/pickleTurf/pickle-turf-002.jpg",
     name: "Family man",
   },
   {
-    poster: "/public/pickleTurf/pickle-turf-003.jpg",
+    poster: "/pickleTurf/pickle-turf-003.jpg",
     name: "Family man",
   },
   {
-    poster: "/public/pickleTurf/pickle-turf-004.jpg",
+    poster: "/pickleTurf/pickle-turf-004.jpg",
     name: "Laboratory",
   },
   {
-    poster: "/public/pickleTurf/pickle-turf-005.jpg",
+    poster: "/pickleTurf/pickle-turf-005.jpg",
     name: "Napoleon",
   },
   {
-    poster: "/public/pickleTurf/pickle-turf-006.jpg",
+    poster: "/pickleTurf/pickle-turf-006.jpg",
     name: "Person in Darkness",
   },
 

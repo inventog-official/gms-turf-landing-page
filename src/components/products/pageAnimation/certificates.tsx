@@ -18,23 +18,23 @@ const Certificates = () => {
           </span>
         </div>
         <div className="bg-white flex items-center justify-center p-2 rounded-xl">
-          <img src="/public/ProductCertificates/BWF.webp" alt="Certificate 1" />
+          <img src="/ProductCertificates/BWF.webp" alt="Certificate 1" />
         </div>
         <div className="bg-white flex items-center justify-center p-2 rounded-xl">
           <img
-            src="/public/ProductCertificates/FIBA.webp"
+            src="/ProductCertificates/FIBA.webp"
             alt="Certificate 2"
           />
         </div>
         <div className="bg-white flex items-center justify-center p-2 rounded-xl">
           <img
-            src="/public/ProductCertificates/FIFA.webp"
+            src="/ProductCertificates/FIFA.webp"
             alt="Certificate 3"
           />
         </div>
         <div className="bg-white flex items-center justify-center p-2 rounded-xl">
           <img
-            src="/public/ProductCertificates/GLOBAL.webp"
+            src="/ProductCertificates/GLOBAL.webp"
             alt="Certificate 3"
           />
         </div>
