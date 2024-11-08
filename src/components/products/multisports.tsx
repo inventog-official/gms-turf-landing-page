@@ -46,6 +46,27 @@ const MultiSportsTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Multi-sports Turf" carouselImages={cricketItems} />
+      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
+        <img
+          alt="Illustration of a volleyball court with players"
+          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
+          width="300"
+        />
+        <div className="flex-1">
+          <h1 className="text-2xl font-bold ">
+            ESSENTIAL CONSIDERATIONS FOR MULTI-SPORT TURF{" "}
+          </h1>
+          <p className=" mt-4">
+            The turf should be designed with customizable dimensions to
+            accommodate multiple activities, typically ranging from 20 meters
+            (65.6 feet) to 40 meters (131 feet) in length and 10 meters (32.8
+            feet) to 20 meters (65.6 feet) in width, depending on the specific
+            sports it will host.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

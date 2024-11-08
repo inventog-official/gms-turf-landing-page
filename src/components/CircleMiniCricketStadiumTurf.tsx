@@ -1,7 +1,10 @@
 import { cn } from "@/lib/utils";
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const CircleMiniCricketStadiumTurf = () => {
+
+  const navigate = useNavigate()
   return (
     <div
       id="CircleMiniCricketStadiumTurf"
@@ -48,7 +51,9 @@ const CircleMiniCricketStadiumTurf = () => {
         </section>
         <div className="flex flex-row-reverse    gap-2  items-center justify-center border border-opacity-10 hover:bg-secondary bg-slate-200/10 p-2 group hover:cursor-pointer transition-all duration-300">
           <FaArrowRight className="text-lg sm:text-xl md:text-2xl group-hover:text-primary text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
-          <p className="text-xs sm:text-sm md:text-base group-hover:text-primary text-white/80 font-primary uppercase tracking-widest transition-colors duration-300 ">
+          <p  onClick={() =>{
+            navigate('/circle-turf')
+          }} className="text-xs sm:text-sm md:text-base group-hover:text-primary text-white/80 font-primary uppercase tracking-widest transition-colors duration-300 ">
             Read more
           </p>
         </div>

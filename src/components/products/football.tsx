@@ -49,7 +49,30 @@ const FootballTurf = () => {
           </FadeIn>
         </Container>
       </div>
+     
       <VideoCarousel title="Football Turf" carouselImages={cricketItems} />
+
+      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
+        <img
+          alt="Illustration of a volleyball court with players"
+          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
+          width="300"
+        />
+        <div className="flex-1">
+          <h1 className="text-2xl font-bold ">
+          FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES
+          </h1>
+          <p className=" mt-4">
+          The dimensions of football turf must adhere to the Laws of the Game, ensuring a rectangular field of play.
+                The length of the touchline must exceed the length of the goal line. For professional 11-a-side football,
+                FIFA recommends dimensions ranging from 100-130 yards(90-120m) in length and 50-100 yards(45-90m) in width.
+                The penalty area should be positioned 18 yards(16.45m) from the centre of the goal line,
+                with the penalty spot set 12 yards(10.9m) from the goal, irrespective of the overall pitch size.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

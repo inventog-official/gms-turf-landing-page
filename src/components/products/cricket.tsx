@@ -41,11 +41,30 @@ const CricketTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
+      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-4xl mx-auto">
+        <img
+          alt="Illustration of a volleyball court with players"
+          className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/QlCBU7weLtWDcapaMWsrh9to1bi0ceL8E0ybMf0Gqmag0TdnA.jpg"
+          width="300"
+        />
+        <div className="flex-1">
+          <h1 className="text-2xl font-bold ">
+            CRICKET TURF DIMENSIONS ACCORDING TO ICC GUIDELINES
+          </h1>
+          <p className=" mt-4">
+            A typical cricket pitch is 66 feet (20.12 meters) long and 10 feet
+            (3.05 meters) wide, with a total turf area of at least 30 yards
+            (27.43 meters) by 15 yards (13.72 meters) to accommodate bowlers and
+            fielders. The turf should be created with exact proportions.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
 export default CricketTurf;
-
 const cricketItems = [
   {
     poster:

@@ -24,6 +24,8 @@ import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
 import Carousel from "./common/carousel";
 import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
+import PickleTurf from "./components/products/PickleTurf";
+import CircleTurf from "./components/products/circleMiniCriketStadium";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -115,6 +117,9 @@ const App: React.FC = () => {
             <Route path="/demo" element={<Carousel />} />
 
             {/* products pages */}
+            CircleTurf
+            <Route path="/pickle-turf" element={<PickleTurf />} />
+            <Route path="/circle-turf" element={<CircleTurf />} />
             <Route path="/football-turf" element={<FootballTurf />} />
             <Route path="/cricket-turf" element={<CricketTurf />} />
             <Route path="/multi-sports-turf" element={<MultiSportsTurf />} />

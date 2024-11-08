@@ -49,6 +49,27 @@ const IndoorTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Indoor Turf" carouselImages={cricketItems} />
+      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
+        <img
+          alt="Illustration of a volleyball court with players"
+          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
+          width="300"
+        />
+        <div className="flex-1">
+          <h1 className="text-2xl font-bold ">
+            ESSENTIAL CONSIDERATIONS FOR INDOOR TURF
+          </h1>
+          <p className=" mt-4">
+            Depending on the intended purpose, the grass should be constructed
+            with precise measurements to meet the particular interior space.
+            Typically, these measurements range from 60 feet (18.29 meters) to
+            120 feet (36.58 meters) in length and 30 feet (9.14 meters) to 60
+            feet (18.29 meters) in width.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

@@ -52,6 +52,30 @@ const VolleyballTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Volleyball Turf" carouselImages={cricketItems} />
+
+      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
+        <img
+          alt="Illustration of a volleyball court with players"
+          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
+          height="200"
+          src="https://storage.googleapis.com/a1aa/image/cOI0WQ1AEFLPD1FgjM1Fpj73nvF8e7egZf9KpfjhUGcbml6OB.jpg"
+          width="300"
+        />
+        <div className="flex-1">
+          <h1 className="text-2xl font-bold ">
+            VOLLEYBALL COURT DIMENSIONS ACCORDING TO FIVB
+          </h1>
+          <p className=" mt-4">
+            The court should adhere to standard dimensions, which are 18 meters
+            (59 feet) in length and 9 meters (29.5 feet) in width. The playing
+            area should include an additional free zone of at least 3 meters
+            (9.8 feet) on all sides, allowing players ample space to move during
+            play. The net, which should be 2.43 meters (7 feet 11 5/8 inches)
+            high for men's play and 2.24 meters (7 feet 4 1/8 inches) for
+            women's play, must be securely anchored and positioned centrally.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
