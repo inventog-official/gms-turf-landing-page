@@ -6,7 +6,7 @@ const WhyUs: React.FC = () => {
       {/* <h1 className="text-5xl font-extrabold text-gray-800">Why Us</h1> */}
       {/* Header */}
       <div className="text-center w-full">
-        <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+        <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           Why Us
         </p>
       </div>
@@ -20,7 +20,7 @@ const WhyUs: React.FC = () => {
               className="w-full"
             />
           </div>
-          <p className="uppercase text-center font-primary tracking-[1.5px] font-semibold text-[12px] lg:text-base px-4">
+          <p className="uppercase text-center font-primary tracking-[1.5px]  text-[12px] lg:text-base px-4">
             100% Quality Products
           </p>
         </div>
@@ -34,7 +34,7 @@ const WhyUs: React.FC = () => {
               className="w-full"
             />
           </div>
-          <p className="uppercase text-center font-primary tracking-[1.5px] font-semibold text-[12px] lg:text-base px-4">
+          <p className="uppercase text-center font-primary tracking-[1.5px]  text-[12px] lg:text-base px-4">
             Skilled Professionals
           </p>
         </div>
@@ -48,7 +48,7 @@ const WhyUs: React.FC = () => {
               className="w-full"
             />
           </div>
-          <p className="uppercase text-center font-primary tracking-[1.5px] font-semibold text-[12px] lg:text-base px-2">
+          <p className="uppercase text-center font-primary tracking-[1.5px]  text-[12px] lg:text-base px-2">
             Resurfacing & Maintenance
           </p>
         </div>
@@ -62,14 +62,14 @@ const WhyUs: React.FC = () => {
               className="w-full"
             />
           </div>
-          <p className="uppercase text-center font-primary tracking-[1.5px] font-semibold text-[12px] lg:text-base px-2">
+          <p className="uppercase text-center font-primary tracking-[1.5px]  text-[12px] lg:text-base px-2">
             Comprehensive Maintenance Service
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-6 w-full font-primary text-white font-semibold leading-relaxed">
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+      <div className="flex flex-col gap-6 w-full  text-white  leading-relaxed">
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           We specialize in delivering{" "}
           <span className="text-secondary">high-quality</span> sports systems
           that prioritize top performance and sustainability. Our meticulously
@@ -77,8 +77,8 @@ const WhyUs: React.FC = () => {
           cartilage injuries, ensuring the well-being of athletes and sports
           <span className="text-secondary"> enthusiasts</span>.
         </p>
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Our expertise lies in{" "}
           <span className="text-secondary">FIFA-approved</span> soccer pitches
           and artificial grass football grounds, making us{" "}
@@ -89,8 +89,8 @@ const WhyUs: React.FC = () => {
           encompassing <span className="text-secondary">transparent cost</span>{" "}
           structures for turf construction and installation.
         </p>
-        <p className="text-lg lg:text-4xl text-center">
-          {/* <p className="text-base sm:text-lg md:text-xl lg:text-2xl"> */}
+        <p className="md:text-2xl text-lg text-center">
+          {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Renowned for our football turf construction, we provide comprehensive
           sports ground construction{" "}
           <span className="text-secondary">services</span>. Moreover, we are

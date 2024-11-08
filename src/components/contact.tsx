@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     >
       {/* Header */}
       <div className="w-full lg:hidden flex justify-center">
-        <p className="text-[12px] font-secondary text-center font-semibold uppercase tracking-[1px]">
+        <p className="text-[12px] font-secondary text-center  uppercase tracking-[1px]">
           Contact
         </p>
       </div>
@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
           <div className="w-full lg:w-1/2 lg:bg-slate-500/5 flex flex-col justify-center items-center">
             <div className="w-full lg:w-[50%] flex flex-col justify-center gap-5 lg:gap-10">
               {/* Header */}
-              <p className="text-[12px] hidden lg:flex font-secondary font-semibold uppercase tracking-[1px]">
+              <p className="text-[12px] hidden lg:flex font-secondary  uppercase tracking-[1px]">
                 Contact
               </p>
               <div className="lg:pr-10 w-full flex text-center lg:text-left px-5 lg:px-0 justify-center items-center">
@@ -45,9 +45,9 @@ const Contact: React.FC = () => {
           <div className="w-1/2 hidden lg:flex"></div>
           <div className="w-full lg:w-1/2 lg:bg-slate-500/5">
             <div className="bg-secondary p-4 lg:w-[30%] flex justify-center">
-              <button 
+              <button
                 className="w-[60%] md:w-[40%] lg:w-full border-2 border-primary p-5 rounded-full text-center transform transition-transform duration-300 hover:scale-105"
-                onClick={() => navigate('/get-in-touch')}
+                onClick={() => navigate("/get-in-touch")}
               >
                 <p className="uppercase text-primary font-primary tracking-[1.5px]">
                   Get in Touch

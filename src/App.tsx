@@ -22,6 +22,10 @@ import CricketTurf from "./components/products/cricket";
 import VolleyballTurf from "./components/products/volleyball";
 import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
+import Carousel from "./common/carousel";
+import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
+import PickleTurf from "./components/products/PickleTurf";
+import CircleTurf from "./components/products/circleMiniCriketStadium";
 import Portfolio from "./components/portfolio";
 
 const App: React.FC = () => {
@@ -46,7 +50,7 @@ const App: React.FC = () => {
         </div>
       )}
       {!isLoading && (
-        <div className={`w-screen h-screen bg-primary no-scrollbar`}>
+        <div className={`w-screen h-screen  bg-primary no-scrollbar`}>
           <Navbar />
           <CursorFollower />
           <ScrollProgress />
@@ -62,6 +66,11 @@ const App: React.FC = () => {
                     <PageWrapper>
                       <div id="iconsWithContent">
                         <IconsWithContent />
+                      </div>
+                    </PageWrapper>
+                    <PageWrapper>
+                      <div id="CircleMiniCricketStadiumTurf">
+                        <CircleMiniCricketStadiumTurf />
                       </div>
                     </PageWrapper>
                     <PageWrapper>
@@ -107,15 +116,17 @@ const App: React.FC = () => {
             <Route path="/news" element={<News_Page />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
+            <Route path="/demo" element={<Carousel />} />
 
             {/* products pages */}
+            CircleTurf
+            <Route path="/pickle-turf" element={<PickleTurf />} />
+            <Route path="/circle-turf" element={<CircleTurf />} />
             <Route path="/football-turf" element={<FootballTurf />} />
             <Route path="/cricket-turf" element={<CricketTurf />} />
             <Route path="/multi-sports-turf" element={<MultiSportsTurf />} />
             <Route path="/indoor-turf" element={<IndoorTurf />} />
-            <Route path="/volleyball-turf" element={<VolleyballTurf/>} />
-
-
+            <Route path="/volleyball-turf" element={<VolleyballTurf />} />
           </Routes>
         </div>
       )}

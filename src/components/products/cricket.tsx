@@ -1,3 +1,5 @@
+import { Footer } from "../footer";
+import Certificates from "./pageAnimation/certificates";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
@@ -16,36 +18,86 @@ const CricketTurf = () => {
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p>MEASUREMENTS AND SURFACE MATERIAL</p>
+            <p className=" text-secondary font-primary">CRICKET TURF</p>
           </FadeIn>
           <FadeIn>
-            <p>
-              Dimensions can be customized depending on land availability,
-              ideally requiring a minimum area of 6000 square feet, suitable for
-              rectangular or oval layouts. Implement a permanent cricket pitch
-              featuring 15mm Multisport grass on a concrete surface,
-              supplemented by other areas using dynamic stone bases and premium
-              football grass.
-            </p>
+            <span className="text-secondary">
+              ESSENTIAL CONSIDERATIONS FOR CRICKET TURF
+            </span>
           </FadeIn>
           <FadeIn>
-            <p>SHAPE AND HEIGHT OF THE TURF</p>
-          </FadeIn>
-          <FadeIn>
-            <p>
-              Gameon Solution has designed sports grounds reaching heights of up
-              to 80 feet, facilitated by fabricated poles, and constructed with
-              both circular and box-type turfs.
-            </p>
+            <span>
+              Reviving box cricket in a safer environment presents a remarkable
+              business opportunity, especially as communities increasingly
+              prioritize sports and recreational activities in secure settings.
+              With a soaring demand for dedicated playing areas and the
+              potential for revenue generation through turf rentals, the market
+              is ripe for expansion. Opting for artificial turfs for box cricket
+              offers players enhanced safety, minimizing the risk of accidents
+              while elevating the overall playing experience. These artificial
+              turfs not only furnish a secure, flat grassed playground but also
+              come equipped with protective net fencing, reducing the likelihood
+              of balls straying outside the playing area.
+            </span>
           </FadeIn>
         </Container>
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
+
+      <Certificates />
+
+      <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
+        <div className="flex  md:flex-row flex-col gap-12 ">
+          <div className="relative w-full  flex items-center justify-center ">
+            <div className="relative flex items-center">
+              {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
+              <div className="w-full h-full overflow-hidden group">
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/QlCBU7weLtWDcapaMWsrh9to1bi0ceL8E0ybMf0Gqmag0TdnA.jpg"
+                  className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
+                  alt="Director"
+                />
+                {/* Inner Light Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
+                  <div className="absolute inset-0 bg-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
+
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/50" /> */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/45 to-black/50" />
+                  {/* Text Overlay */}
+                  <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">
+                    <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-center">
+                      <span className="text-secondary">CRICKET TURF</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col justify-center items-start gap-8  ">
+          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+            CRICKET TURF DIMENSIONS ACCORDING TO ICC GUIDELINES
+            <span className="text-secondary"> ICC GUIDELINES</span>
+          </p>
+          {/* Main Content */}
+          <div className="flex flex-col gap-10   text-white font-secondary">
+            <p className="md:text-2xl text-lg">
+              A typical cricket pitch is 66 feet (20.12 meters) long and 10 feet
+              (3.05 meters) wide, with a total turf area of at least 30 yards
+              (27.43 meters) by 15 yards (13.72 meters) to accommodate bowlers
+              and fielders. The turf should be created with exact proportions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };
 export default CricketTurf;
-
 const cricketItems = [
   {
     poster:

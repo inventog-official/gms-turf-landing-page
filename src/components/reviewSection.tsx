@@ -15,7 +15,7 @@ const ReviewsSection = () => {
       <div className="text-center w-full flex flex-col gap-10">
         {/* Header */}
         <div className="w-full flex justify-center">
-          <p className="text-[12px] font-secondary font-semibold uppercase tracking-[1px]">
+          <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
             Reviews
           </p>
         </div>
@@ -29,13 +29,19 @@ const ReviewsSection = () => {
       <div className="relative w-full md:w-[70%] lg:w-[50%]">
         {/* Navigation Buttons for Mobile and Tablet */}
         <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
-          <div id="prevBtn" className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
+          <div
+            id="prevBtn"
+            className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
+          >
             <FaChevronLeft className="text-3xl cursor-pointer" />
           </div>
         </div>
         <div className="absolute inset-y-0 lg:right-0 lg:flex items-center text-secondary z-10 hidden">
-          <div id="nextBtn" className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center">
-            <FaChevronRight className="text-3xl cursor-pointer"  />
+          <div
+            id="nextBtn"
+            className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
+          >
+            <FaChevronRight className="text-3xl cursor-pointer" />
           </div>
         </div>
 

@@ -1,35 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FootballAnimation from "./footballAnimation";
 import TextHoverAnimation from "./textHoverAnimation";
 import { SlBadge } from "react-icons/sl";
 import { useCarousel } from "@/hook/useCarousel";
+import HomeSliderSection from "./homePageCarousel/main";
+import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 
 const Home: React.FC = () => {
+  const { queryClient } = useCarousel();
 
-  const {queryClient} =  useCarousel()
+  const data = queryClient.getQueryData(["carousels"]) as {
+    id: number;
+    url: string;
+  }[];
 
-  const data  = queryClient.getQueryData(['carousels']) as {id:number,url:string}[]
-  // const images = [
-  //   "/homepageSlideImages/4.webp",
-  //   "/homepageSlideImages/1.jpg",
-  //   "/homepageSlideImages/2.jpg",
-  //   "/homepageSlideImages/3.jpg",
-  //   "/homepageSlideImages/5.jpeg",
-  // ];
-  
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data?.length);
-    }, 4000); // 4 seconds per slide
-    return () => clearInterval(interval);
-  }, [data?.length]);
+  const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
+
+  console.log(featureIndex);
+
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data?.length);
+  //   }, 4000); // 4 seconds per slide
+  //   return () => clearInterval(interval);
+  // }, [data?.length]);
 
   return (
     <section className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
       {/* Background Image Slideshow */}
-      {data?.map((image, index) => (
+      {/* {data?.map((image, index) => (
         <img
           key={index}
           src={image.url}
@@ -38,193 +39,102 @@ const Home: React.FC = () => {
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
         />
-      ))}
-
-      {/* Inner Shadow Effect */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          boxShadow: "inset 20px 20px 100px 100px rgba(0, 0, 0, 0.9)",
-        }}
+      ))} */}
+      <HomeSliderSection
+        images={data?.map((item) => {
+          return {
+            poster: item.url,
+            name: `${item.id}`,
+          };
+        })}
+        loop={true}
+        autoPlay={true}
+        breakpoints={false}
+        setCurrentImageIndex={setCurrentImageIndex}
       />
 
-      {/* Text and Animations */}
-      <div className="flex flex-col select-none min-h-full w-full z-10 justify-center items-center">
-        <div className="flex flex-col md:flex-row md:justify-center items-center gap-3 md:gap-2">
-          <div className="w-full flex justify-start animate-bounce transition-all duration-1000">
-            <FootballAnimation />
-          </div>
-          <div className="flex flex-col gap-3">
-            <h1 className="uppercase flex gap-2 text-left items-center text-[8px] md:text-[12px] lg:text-base font-special italic font-extrabold text-white/70 z-[11] opacity-0 animate-lineUp delay-700">
-              <span className="text-secondary">
-                <SlBadge />
-              </span>
-              South india's <span className="text-secondary">no.1</span>
-            </h1>
-            <h1 className="uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-special italic font-extrabold text-white z-[11] opacity-0 animate-lineUp delay-1000">
-              <TextHoverAnimation text="Sports" />
-              <TextHoverAnimation text="infrastructure" />
-            </h1>
-          </div>
-        </div>
+      <div className=" bottom-14 lg:bottom-10 z-20 w-full absolute flex justify-center  animate-bounce  transition-all duration-1000">
+        <FootballAnimation />
       </div>
+      {currentImageIndex == 0 ? (
+        <div className="flex flex-col  py-28 text-center">
+          <h1 className="text-md md:text-2xl uppercase  font-primary text-white flex gap-2 items-center justify-center  z-[11] opacity-0 animate-lineUp delay-700">
+            <span className="text-secondary">
+              <SlBadge />
+            </span>
+            South india's <span className="text-secondary">no.1</span>
+          </h1>
+          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+            <TextHoverAnimation text="Sports" />
+            <div className="text-secondary">
+              <TextHoverAnimation text="infrastructure" />
+            </div>
+          </h1>
+        </div>
+      ) : null}
+      {/* {currentImageIndex==featureIndex+1?   <div className="flex flex-col  py-28 text-center">
+      
+        <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+          <TextHoverAnimation text={`${Features[featureIndex].title}`} />
+          <div className="text-secondary text-4xl">
+            <TextHoverAnimation text={`${Features[featureIndex].description}`}/>
+          </div>
+        </h1>
+      </div>:null} */}
+      {currentImageIndex == 1 ? (
+        <div className="flex flex-col  py-28 text-center">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+            <img
+              src={iconsWithImagesObj[0].imageSrc}
+              className="h-20 w-20 md:h-32 md:w-32 select-none"
+              draggable="false"
+            />
+            <TextHoverAnimation text={`${iconsWithImagesObj[0].title}`} />
+        
+          </h1>
+        </div>
+      ) : null}
+      {currentImageIndex == 2 ? (
+        <div className="flex flex-col  py-28 text-center">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+            <img
+              src={iconsWithImagesObj[1].imageSrc}
+              className="h-20 w-20 md:h-32 md:w-32 select-none"
+              draggable="false"
+            />
+            <TextHoverAnimation text={`${iconsWithImagesObj[1].title}`} />
+           
+          </h1>
+        </div>
+      ) : null}
+      {currentImageIndex == 3 ? (
+        <div className="flex flex-col  py-28 text-center">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+            <img
+              src={iconsWithImagesObj[2].imageSrc}
+              className="h-20 w-20 md:h-32 md:w-32 select-none"
+              draggable="false"
+            />
+            <TextHoverAnimation text={`${iconsWithImagesObj[2].title}`} />
+       
+          </h1>
+        </div>
+      ) : null}
+      {currentImageIndex == 4 ? (
+        <div className="flex flex-col w-full  py-28 text-center">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+            <img
+              src={iconsWithImagesObj[3].imageSrc}
+              className="h-20 w-20 md:h-32 md:w-32 select-none"
+              draggable="false"
+            />
+            <TextHoverAnimation text={`${iconsWithImagesObj[3].title}`} />
+           
+          </h1>
+        </div>
+      ) : null}
     </section>
   );
 };
-
+ 
 export default Home;
-
-// import React, { useState, useEffect } from "react";
-// import FootballAnimation from "./footballAnimation";
-// import TextHoverAnimation from "./textHoverAnimation";
-// import { SlBadge } from "react-icons/sl";
-// // import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
-// const Home: React.FC = () => {
-//   const images = [
-//     "/homepageSlideImages/4.webp",
-//     "/homepageSlideImages/1.jpg",
-//     "/homepageSlideImages/2.jpg",
-//     "/homepageSlideImages/3.jpg",
-//     "/homepageSlideImages/5.jpeg",
-//   ];
-  
-//   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-//     }, 4000); // 4 seconds per slide
-//     return () => clearInterval(interval);
-//   }, [images.length]);
-
-//   // const handlePrev = () => {
-//   //   setCurrentImageIndex((prevIndex) =>
-//   //     prevIndex === 0 ? images.length - 1 : prevIndex - 1
-//   //   );
-//   // };
-
-//   // const handleNext = () => {
-//   //   setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-//   // };
-
-//   return (
-//     <section className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
-//       {/* Background Image Slideshow */}
-//       {images.map((image, index) => (
-//         <img
-//           key={index}
-//           src={image}
-//           alt={`Background ${index + 1}`}
-//           className={`absolute inset-0 object-cover w-full h-full transition-opacity duration-1000 ${
-//             index === currentImageIndex ? "opacity-100" : "opacity-0"
-//           }`}
-//         />
-//       ))}
-
-//       {/* Inner Shadow Effect */}
-//       <div
-//         className="absolute inset-0 pointer-events-none"
-//         style={{
-//           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5))`,
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           boxShadow: "inset 20px 20px 100px 100px rgba(0, 0, 0, 0.9)",
-//         }}
-//       />
-
-//       {/* Navigation Buttons */}
-//       {/* <button
-//         onClick={handlePrev}
-//         className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 text-white text-xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 transition"
-//       >
-//         <FaArrowLeft />
-//       </button>
-//       <button
-//         onClick={handleNext}
-//         className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 text-white text-xl bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-70 transition"
-//       >
-//         <FaArrowRight />
-//       </button> */}
-
-//       {/* Text and Animations */}
-//       <div className="flex flex-col select-none min-h-full w-full z-10 justify-center items-center">
-//         <div className="flex flex-col md:flex-row md:justify-center items-center gap-3 md:gap-2">
-//           <div className="w-full flex justify-start animate-bounce transition-all duration-1000">
-//             <FootballAnimation />
-//           </div>
-//           <div className="flex flex-col gap-3">
-//             <h1 className="uppercase flex gap-2 text-left items-center text-[8px] md:text-[12px] lg:text-base font-special italic font-extrabold text-white/70 z-[11] opacity-0 animate-lineUp delay-700">
-//               <span className="text-secondary">
-//                 <SlBadge />
-//               </span>
-//               South india's <span className="text-secondary">no.1</span>
-//             </h1>
-//             <h1 className="uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-special italic font-extrabold text-white z-[11] opacity-0 animate-lineUp delay-1000">
-//               <TextHoverAnimation text="Sports" />
-//               <TextHoverAnimation text="infrastructure" />
-//             </h1>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Home;
-
-
-// import React from "react";
-// import FootballAnimation from "./footballAnimation";
-// import TextHoverAnimation from "./textHoverAnimation";
-// import { SlBadge } from "react-icons/sl";
-
-// const Home: React.FC = () => {
-//   return (
-//     <section className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
-//       {/* Background Image */}
-//       <img
-//         src="./bg-image.webp"
-//         alt="Background"
-//         className="absolute inset-0 object-cover w-full h-full"
-//       />
-
-//       {/* Inner Shadow Effect */}
-//       <div
-//         className="absolute inset-0 pointer-events-none"
-//         style={{
-//           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./bg-image.webp)`,
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           boxShadow: "inset 20px 20px 100px 100px rgba(0, 0, 0, 0.9)", // Inner shadow on all sides
-//         }}
-//       />
-
-//       {/* Text */}
-//       <div className="flex flex-col select-none min-h-full w-full z-10 justify-center items-center">
-//         <div className="flex flex-col md:flex-row md:justify-center items-center gap-3 md:gap-2">
-//           <div className="w-full flex justify-start animate-bounce transition-all duration-1000">
-//             <FootballAnimation />
-//           </div>
-//           <div className="flex flex-col gap-3">
-//             <h1 className="uppercase flex gap-2 text-left items-center text-[8px] md:text-[12px] lg:text-base font-special italic font-extrabold text-white/70 z-[11] opacity-0 animate-lineUp delay-700">
-//               <span className="text-secondary">
-//                 <SlBadge />
-//               </span>
-//               South india's <span className="text-secondary">no.1</span>
-//             </h1>
-//             <h1 className="uppercase text-lg sm:text-2xl md:text-3xl lg:text-5xl font-special italic font-extrabold text-white z-[11] opacity-0 animate-lineUp delay-1000">
-//               <TextHoverAnimation text="Sports" />
-//               <TextHoverAnimation text="infrastructure" />
-//             </h1>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Home;

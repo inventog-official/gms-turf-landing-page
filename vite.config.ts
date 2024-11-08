@@ -11,6 +11,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['swiper'],
+    include: ["swiper"],
   },
 });

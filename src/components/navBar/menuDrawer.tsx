@@ -103,6 +103,8 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
                 <ul className="flex flex-col">
                   {[
                     { path: "/football-turf", label: "Football" },
+                    { path: "/pickle-turf", label: "Pickle Turf" },
+                    { path: "/circle-turf", label: "Circle Mini Cricket Stadium Turf" },
                     { path: "/cricket-turf", label: "Cricket" },
                     { path: "/indoor-turf", label: "Indoor Turf" },
                     { path: "/volleyball-turf", label: "Volleyball" },

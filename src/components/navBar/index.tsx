@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
   const handleNavClick = (path: string) => {
     if (path.startsWith("#")) {
       if (location.pathname !== "/") {
-        console.log(9)
+        console.log(9);
         // If not on the home page, navigate to it first
         navigate("/", { replace: true });
         setTimeout(() => {
@@ -146,10 +146,18 @@ const Navbar: React.FC = () => {
                     <ul className="flex flex-col">
                       {[
                         { path: "/football-turf", label: "Football" },
+                        { path: "/pickle-turf", label: "Pickle Turf" },
+                        {
+                          path: "/circle-turf",
+                          label: "Circle Mini Cricket Stadium Turf",
+                        },
                         { path: "/cricket-turf", label: "Cricket" },
                         { path: "/indoor-turf", label: "Indoor Turf" },
                         { path: "/volleyball-turf", label: "Volleyball" },
-                        { path: "/multi-sports-turf", label: "MultiSports Turf" },
+                        {
+                          path: "/multi-sports-turf",
+                          label: "MultiSports Turf",
+                        },
                       ].map((item) => (
                         <li key={item.label}>
                           <button
@@ -175,7 +183,10 @@ const Navbar: React.FC = () => {
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
           <HamburgerMenu isClicked={isClicked} isOpen={isMenuClick} />
         </div>
-        <div className="hidden gap-7 h-full w-[50%] md:w-[70%] lg:flex lg:w-[10%] justify-end items-center">
+        <div
+          className="hidden gap-7 h-full w-[50%] md:w-[70%] lg:flex lg:w-[10%] justify-end cursor-pointer items-center"
+          onClick={() => navigate("/get-in-touch")}
+        >
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
         </div>
       </div>
