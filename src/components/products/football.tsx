@@ -7,10 +7,12 @@
 // }
 // export default FootballTurf;
 
+import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import FooterCard from "./card/footerCard";
 
 const FootballTurf = () => {
   return (
@@ -49,28 +51,48 @@ const FootballTurf = () => {
           </FadeIn>
         </Container>
       </div>
-     
+
       <VideoCarousel title="Football Turf" carouselImages={cricketItems} />
 
-      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
-        <img
-          alt="Illustration of a volleyball court with players"
-          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
-          height="200"
-          src="https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
-          width="300"
-        />
-        <div className="flex-1">
-          <h1 className="text-2xl font-bold ">
-          FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES
-          </h1>
-          <p className=" mt-4">
-          The dimensions of football turf must adhere to the Laws of the Game, ensuring a rectangular field of play.
+      <FooterCard
+        desc="           The dimensions of football turf must adhere to the Laws of the Game, ensuring a rectangular field of play.
                 The length of the touchline must exceed the length of the goal line. For professional 11-a-side football,
                 FIFA recommends dimensions ranging from 100-130 yards(90-120m) in length and 50-100 yards(45-90m) in width.
                 The penalty area should be positioned 18 yards(16.45m) from the centre of the goal line,
-                with the penalty spot set 12 yards(10.9m) from the goal, irrespective of the overall pitch size.
-          </p>
+                with the penalty spot set 12 yards(10.9m) from the goal, irrespective of the overall pitch size."
+        title={" FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES"}
+        image={
+          "https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
+        }
+      />
+
+      <div className="w-full p-10">
+        <div className="flex flex-col gap-10 mt-10">
+          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
+            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
+              <p className="hover:cursor-pointer hover:text-white">Home</p>
+              <p className="hover:cursor-pointer hover:text-white">About</p>
+              <p className="hover:cursor-pointer hover:text-white">Services</p>
+              <p className="hover:cursor-pointer hover:text-white">Contact</p>
+            </div>
+            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaInstagram />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaYoutube />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaFacebook />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaWhatsapp />
+              </div>
+            </div>
+          </div>
+          <div className="flex py-5">
+            <p>©2024. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -80,41 +102,34 @@ export default FootballTurf;
 
 const cricketItems = [
   {
-    poster:
-      "/Football/Football-01.png",
+    poster: "/Football/Football-01.png",
     //   "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_824,h_460,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png",
     name: "Airplane",
   },
   {
-    poster:
-      "/Football/Football-02.png",
+    poster: "/Football/Football-02.png",
     //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
   },
   {
-    poster:
-      "/Football/Football-03.png",
+    poster: "/Football/Football-03.png",
     //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
   },
   {
-    poster:
-      "/Football/Football-04.png",
+    poster: "/Football/Football-04.png",
     name: "Napoleon",
   },
   {
-    poster:
-      "/Football/Football-05.png",
+    poster: "/Football/Football-05.png",
     name: "Person in Darkness",
   },
   {
-    poster:
-      "/Football/Football-06.png",
+    poster: "/Football/Football-06.png",
     name: "Scary Building",
   },
   {
-    poster:
-      "/contactSideImg.webp",
+    poster: "/contactSideImg.webp",
     //   "/Football/Football-07.png",
     name: "Stars",
   },

@@ -13,39 +13,44 @@ interface  Props {
       loop:boolean,
       autoPlay:boolean,
       breakpoints:boolean
+      setCurrentImageIndex:(value:number) => void
 
 }  
-const SliderSection: React.FC<Props> = ({images,autoPlay,breakpoints,loop}) => {
- 
+const HomeSliderSection: React.FC<Props> = ({images,autoPlay,breakpoints,setCurrentImageIndex}) => {
 
   return (
-    <section className="section slider-sections absolute py-20 w-full flex justify-center items-center">
+    <section className="section slider-sections absolute  w-full flex justify-center items-center">
         
       <div className="h-full w-full mx-auto">
       <Swiper
           modules={autoPlay? [Autoplay, Pagination, Navigation]:[ Pagination, Navigation]}
           centeredSlides
-          slidesPerView={1} // Default to 1 slide per view for smaller screens
-          loop={loop}
+          slidesPerView={1} 
+          loop
           autoplay={{
-            delay: 3000,
+            delay: 9000,
             disableOnInteraction: false
           }}
           pagination={{ clickable: true }}
           navigation
           breakpoints={breakpoints?{
-            480: { slidesPerView: 1, spaceBetween: 10 }, // Show 1 image on phone screens
-            640: { slidesPerView: 1.5, spaceBetween: 20 }, // Show 1.5 images for slightly larger screens
-            1024: { slidesPerView: 2.5, spaceBetween: 20 } // Show 2.5 images for desktops
+            480: { slidesPerView: 1, spaceBetween: 10 }, 
+            640: { slidesPerView: 1.5, spaceBetween: 20 },
+            1024: { slidesPerView: 2.5, spaceBetween: 20 } 
           }:{}}
           className="swiper-container"
+          allowTouchMove={true}
+          allowSlideNext={true}
+          allowSlidePrev={true}
+          onSlideChange={(swiper) => setCurrentImageIndex(swiper.realIndex)}
+
         >
-          {images.map((src, index) => (
+          {images?.map((src, index) => (
             <SwiperSlide key={index} className="swiper-slide">
               <img
                 src={src.poster}
                 alt={`Slide ${index + 1}`}
-                className="w-full object-cover rounded-lg transition-transform duration-300 h-[75vh] md:h-[50vh] lg:h-[70vh] xl:h-[75vh]"
+                className="w-full object-cover  transition-transform duration-300 h-screen "
               />
             </SwiperSlide>
           ))}
@@ -56,4 +61,4 @@ const SliderSection: React.FC<Props> = ({images,autoPlay,breakpoints,loop}) => {
   );
 };
 
-export default SliderSection;
+export default HomeSliderSection;

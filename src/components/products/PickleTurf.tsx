@@ -1,3 +1,4 @@
+import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
@@ -16,7 +17,7 @@ const PickleTurf = () => {
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p className="uppercase">
+            <p className="uppercase text-[#febc12]">
               Premium Playing Surface for Pickleball EnthusiastsL
             </p>
           </FadeIn>
@@ -43,7 +44,7 @@ const PickleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="uppercase">Features of Pickle Turf </p>
+            <p className="uppercase text-[#febc12]">Features of Pickle Turf </p>
           </FadeIn>
           <FadeIn>
             <p>
@@ -81,6 +82,36 @@ const PickleTurf = () => {
           </p>
         </div>
       </div> */}
+
+<div className="w-full p-10">
+        <div className="flex flex-col gap-10 mt-10">
+          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
+            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
+              <p className="hover:cursor-pointer hover:text-white">Home</p>
+              <p className="hover:cursor-pointer hover:text-white">About</p>
+              <p className="hover:cursor-pointer hover:text-white">Services</p>
+              <p className="hover:cursor-pointer hover:text-white">Contact</p>
+            </div>
+            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaInstagram />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaYoutube />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaFacebook />
+              </div>
+              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+                <FaWhatsapp />
+              </div>
+            </div>
+          </div>
+          <div className="flex py-5">
+            <p>©2024. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

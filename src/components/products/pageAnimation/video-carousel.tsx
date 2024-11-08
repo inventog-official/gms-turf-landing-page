@@ -82,7 +82,7 @@ export const VideoCarousel = ({
       >
         <div className="sticky top-0 flex h-[40%] w-full  items-center">
 
-          <SliderSection images={carouselImages}/>
+          <SliderSection autoPlay={true} images={carouselImages} loop={true} breakpoints={true}/>
           {/* <div className="relative left-1/2 mb-5 flex -translate-x-1/2 gap-5">
             <motion.div
               style={{ opacity: postersOpacity, x: posterTranslateXLeft }}

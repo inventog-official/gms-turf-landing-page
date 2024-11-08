@@ -55,9 +55,11 @@ import { useEffect, useState } from "react";
 import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 
 import YouTube from "react-youtube";
+import TextHoverAnimation from "./textHoverAnimation";
 
 const News_Page = () => {
-  const { queryClient } = useNewsFeed();
+  const { queryClient ,getNewsFeeds} = useNewsFeed();
+  console.log(getNewsFeeds)
 
   const data = queryClient.getQueryData(["newsfeeds"]) as NewsFeed[];
   const [active, setActive] = useState(0);
@@ -141,16 +143,23 @@ const News_Page = () => {
       title: "Best Sportd Infra Solution by",
     },
   ];
+  console.log(data)
   return (
     <div className="h-full relative w-full">
       <div className="w-full p-3 mx-auto ">
         <div className="h-[10vh]"></div>
-        <header className="h-[12vh] px-2 py-3 flex flex-col justify-start items-start border-t border-gray-800  ">
-          <h1 className="text-4xl text-[#febc12] uppercase">news & awards</h1>
+        <header className="h-[13vh] px-2 py-3 flex flex-col justify-start items-start border-t border-gray-800  ">
+          <h1 className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl font-primary text-secondary uppercase leading-tight flex gap-2">
+            <TextHoverAnimation text="news" />{" "}
+            <span className="text-white">
+              <TextHoverAnimation text="&" />
+            </span>{" "}
+            <TextHoverAnimation text="awards" />
+          </h1>
           <div className="flex items-center mb-8  border-gray-300 pb-2">
             <p className="font-bold capitalize mr-2">
               {getCurrentDay().day}{" "}
-              <span className="text-gray-500 font-light border-r border-[#febc12] pr-2">
+              <span className="text-gray-500 font-light border-r border-secondary pr-2">
                 {getCurrentDay().monthWithDate} {getCurrentDay().currentYear}
               </span>
             </p>
@@ -160,7 +169,7 @@ const News_Page = () => {
 
         <div className="w-full  py-4 px-2 flex flex-col xl:grid md:grid-cols-[2fr_1fr] h-[100%]  gap-6">
           <div className="left flex flex-col gap-2 w-full">
-            {data[active].fileType == "youtube" ? (
+            {data[active]?.fileType == "youtube" ? (
               <YouTube
                 className="w-full xl:h-[70vh] h-[50vh] "
                 opts={{
@@ -186,8 +195,16 @@ const News_Page = () => {
           </div>
 
           <div className="right flex flex-col">
-            <h3 className="text-2xl text-[#febc12] uppercase text-crimson mb-2">
-              Latest-2024{" "}
+            <h3 className=" text-3xl md:text-2xl lg:text-3xl xl:text-3xl font-primary text-secondary uppercase leading-tight flex ">
+              <TextHoverAnimation text="Latest" />
+              <span className="text-white">
+                {" "}
+                <TextHoverAnimation text="-" />
+              </span>
+              <span className="text-white">
+                {" "}
+                <TextHoverAnimation text="2024" />
+              </span>
             </h3>
             <div className="grid grid-cols-1 gap-5">
               {data?.map((item, index) => (
@@ -228,18 +245,22 @@ const News_Page = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
         {awards.map((image, index) => (
-          <div key={index} className="border border-gray-50/10 p-2">
-            <p className="text-2xl text-[#febc12] uppercase justify-center h-20 text-center ">
-              {image.title}
-            </p>
-            <div className="w-full shadow-lg overflow-hidden bg-yellow-100/20 flex items-center justify-center">
-              <img
-                src={image.icon} // Replace with actual paths
-                alt={`image ${index + 1}`}
-                className="w-72 h-60 object-cover"
-              />
-            </div>
+          <div
+          key={index}
+          className="border border-gray-50/10 p-1 transform transition duration-500 ease-in-out hover:scale-105"
+        >
+          <p className="text-xl flex md:text-xl lg:text-xl xl:text-xl   font-primary   leading-tight text-wrap  items-center justify-center text-secondary uppercase text-center h-14">
+           {image.title}
+          </p>
+          <div className="w-full shadow-md overflow-hidden bg-yellow-100/20 flex items-center justify-center">
+            <img
+              src={image.icon} // Replace with actual paths
+              alt={`image ${index + 1}`}
+              className="w-32 h-28 object-cover"
+            />
           </div>
+        </div>
+        
         ))}
       </div>
 

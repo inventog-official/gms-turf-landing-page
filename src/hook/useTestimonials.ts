@@ -27,8 +27,8 @@ export function useTestimonials() {
         throw error;
       }
     },
-    refetchInterval: false, // Disable refetching
-    staleTime: 600000, // Testimonials will stay fresh for 10 minutes
+       refetchInterval:60000,
+    staleTime: 6000,
   });
 
   return {
