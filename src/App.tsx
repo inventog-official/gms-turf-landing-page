@@ -22,7 +22,6 @@ import CricketTurf from "./components/products/cricket";
 import VolleyballTurf from "./components/products/volleyball";
 import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
-import Carousel from "./common/carousel";
 import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
 import PickleTurf from "./components/products/PickleTurf";
 import CircleTurf from "./components/products/circleMiniCriketStadium";
@@ -116,7 +115,6 @@ const App: React.FC = () => {
             <Route path="/news" element={<News_Page />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
-            <Route path="/demo" element={<Carousel />} />
 
             {/* products pages */}
             CircleTurf
