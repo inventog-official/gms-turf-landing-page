@@ -7,6 +7,8 @@
 // }
 // export default MultiSportsTurf;
 
+import { Footer } from "../footer";
+import Certificates from "./pageAnimation/certificates";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
@@ -23,50 +25,79 @@ const MultiSportsTurf = () => {
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p>New Apple Originals every month — always ad‑free.</p>
+            <p className="text-secondary font-primary">MULTI-SPORT TURF</p>
           </FadeIn>
           <FadeIn>
-            <p>
-              Our multi-sport turf ground is one of our most popular offerings,
-              and for good reason. We understand that every client has unique
-              requirements, which is why we offer a completely customizable
-              solution.
+            <p className="text-secondary">
+              ESSENTIAL CONSIDERATIONS FOR MULTI-SPORT TURF
             </p>
           </FadeIn>
           <FadeIn>
             <p>
-              Whether you have a limited budget or a small space, we can create
-              a multi-sport turf ground that meets your needs both Indoor and
-              Outdoor.
+              A multisport turf's construction must take into account elements
+              that guarantee player safety, longevity, and adaptability to
+              different sports. High-grade synthetic materials are used to
+              create the surface, which provides a good mix of cushioning and
+              grip for a variety of sports, including basketball, tennis, and
+              soccer. For a variety of uses, our multisport turf may offer a
+              dependable, entertaining, and safe playing surface.
             </p>
           </FadeIn>
-          {/* <FadeIn>
-            <p>Share a single subscription with up to five people.</p>
-          </FadeIn> */}
         </Container>
       </div>
       <VideoCarousel title="Multi-sports Turf" carouselImages={cricketItems} />
-      <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-5xl mx-auto">
-        <img
-          alt="Illustration of a volleyball court with players"
-          className="w-full md:w-1/4 rounded-lg mb-4 md:mb-0"
-          height="200"
-          src="https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
-          width="300"
-        />
-        <div className="flex-1">
-          <h1 className="text-2xl font-bold ">
-            ESSENTIAL CONSIDERATIONS FOR MULTI-SPORT TURF{" "}
-          </h1>
-          <p className=" mt-4">
-            The turf should be designed with customizable dimensions to
-            accommodate multiple activities, typically ranging from 20 meters
-            (65.6 feet) to 40 meters (131 feet) in length and 10 meters (32.8
-            feet) to 20 meters (65.6 feet) in width, depending on the specific
-            sports it will host.
+
+      <Certificates />
+
+      <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
+        <div className="flex  md:flex-row flex-col gap-12 ">
+          <div className="relative w-full  flex items-center justify-center ">
+            <div className="relative flex items-center">
+              {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
+              <div className="w-full h-full overflow-hidden group">
+                <img
+                  src="https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
+                  className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
+                  alt="Director"
+                />
+                {/* Inner Light Effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
+                  <div className="absolute inset-0 bg-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
+
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/50" /> */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/45 to-black/50" />
+                  {/* Text Overlay */}
+                  <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">
+                    <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-center">
+                      <span className="text-secondary"> MULTI-SPORT TURF</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full flex flex-col justify-center items-start gap-8  ">
+          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+            ESSENTIAL CONSIDERATIONS FOR
+            <span className="text-secondary"> MULTI-SPORT TURF</span>
           </p>
+          {/* Main Content */}
+          <div className="flex flex-col gap-10   text-white font-secondary">
+            <p className="md:text-2xl text-lg">
+              The turf should be designed with customizable dimensions to
+              accommodate multiple activities, typically ranging from 20 meters
+              (65.6 feet) to 40 meters (131 feet) in length and 10 meters (32.8
+              feet) to 20 meters (65.6 feet) in width, depending on the specific
+              sports it will host.
+            </p>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

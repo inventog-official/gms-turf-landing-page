@@ -1,12 +1,5 @@
-// const FootballTurf = () => {
-//     return(
-//         <div className="border border-red-900 h-full p-5">
-//             <h1 className="text-white">Football Turf</h1>
-//         </div>
-//     );
-// }
-// export default FootballTurf;
-
+import { Footer } from "../footer";
+import Certificates from "./pageAnimation/certificates";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
@@ -19,18 +12,16 @@ const CircleTurf = () => {
         <Hero
           title={"UNLEASH YOUR GAME ON GREEN: "}
           subtitle={"Circle Mini Cricket Stadium Turf"}
-          bgImgUrl={
-            "/public/CircleMiniCricketStadiumTurff/PLT_00017.jpg"
-            // "/contactSideImg.webp"
-            // "https://static.wixstatic.com/media/4c43d3_f327577b6eca48acb7752d3d746c1a58~mv2.jpeg/v1/fill/w_1216,h_257,al_c,q_80,enc_auto/bg.jpeg "
-          }
+          bgImgUrl={"/public/CircleMiniCricketStadiumTurff/PLT_00017.jpg"}
         />
         <Container className="relative z-10 max-w-[692px] space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p className="uppercase">Circle Mini Cricket Stadium Turf</p>
+            <p className="uppercase text-secondary font-primary">
+              Circle Mini Cricket Stadium Turf
+            </p>
           </FadeIn>
           <FadeIn>
-            <p className="uppercase">
+            <p className="uppercase text-secondary">
               ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium Turf
             </p>
           </FadeIn>
@@ -55,7 +46,7 @@ const CircleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="uppercase">
+            <p className="uppercase text-secondary">
               Features of the Circle Mini Cricket Stadium Turf:{" "}
             </p>
           </FadeIn>
@@ -70,7 +61,12 @@ const CircleTurf = () => {
           </FadeIn>
         </Container>
       </div>
-      <VideoCarousel title="Circle Mini Cricket Turf" carouselImages={cricketItems} />
+      <VideoCarousel
+        title="Circle Mini Cricket Turf"
+        carouselImages={cricketItems}
+      />
+      <Certificates />
+      <Footer />
     </div>
   );
 };
@@ -79,17 +75,14 @@ export default CircleTurf;
 const cricketItems = [
   {
     poster: "/public/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
-    //   "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_824,h_460,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png",
     name: "Airplane",
   },
   {
     poster: "/public/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
-    //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
   },
   {
     poster: "/public/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
-    //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
   },
   {
@@ -106,12 +99,10 @@ const cricketItems = [
   },
   {
     poster: "/public/CircleMiniCricketStadiumTurff/PLT_00017.jpg",
-    //   "/Football/Football-07.png",
     name: "Stars",
   },
   {
     poster: "/public/CircleMiniCricketStadiumTurff/PLT_00022.jpg",
-    //   "/Football/Football-07.png",
     name: "Stars",
   },
 ];

@@ -1,14 +1,8 @@
 import { useCantacts } from "@/hook/useContact";
 import { useState } from "react";
 import { AiOutlineMobile } from "react-icons/ai";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaMapMarkerAlt,
-  FaRegCommentAlt,
-  FaWhatsapp,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaMapMarkerAlt, FaRegCommentAlt } from "react-icons/fa";
+import { Footer } from "./footer";
 interface FormData {
   name: string;
   email: string;
@@ -74,7 +68,7 @@ export const ContactsPage = () => {
           </p>
         </div>
         <div className="flex justify-center items-center p-2 w-full">
-          <p className="font-primary uppercase font-medium tracking-[1.5px] text-5xl md:text-6xl lg:text-8xl">
+          <p className="font-primary uppercase font-medium tracking-[1.5px] text-4xl md:text-6xl lg:text-8xl">
             Get in <span className="text-secondary">Touch</span>
           </p>
         </div>
@@ -237,39 +231,7 @@ export const ContactsPage = () => {
               </div>
             </div>
           </div>
-          <div>
-            <div className="flex flex-col gap-10 mt-10">
-              <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-                <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
-                  <p className="hover:cursor-pointer hover:text-white">Home</p>
-                  <p className="hover:cursor-pointer hover:text-white">About</p>
-                  <p className="hover:cursor-pointer hover:text-white">
-                    Services
-                  </p>
-                  <p className="hover:cursor-pointer hover:text-white">
-                    Contact
-                  </p>
-                </div>
-                <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
-                  <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                    <FaInstagram />
-                  </div>
-                  <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                    <FaYoutube />
-                  </div>
-                  <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                    <FaFacebook />
-                  </div>
-                  <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                    <FaWhatsapp />
-                  </div>
-                </div>
-              </div>
-              <div className="flex py-5">
-                <p>©2024. All rights reserved.</p>
-              </div>
-            </div>
-          </div>
+          <Footer />
         </div>
       </div>
     </div>

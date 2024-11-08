@@ -1,11 +1,11 @@
-import SliderSection from "@/components/ProductCarousel/main";
+import SliderSection from "@/components/products/ProductCarousel/main";
 import {
   useScroll,
   // useTransform,
   motion,
   useMotionValueEvent,
 } from "framer-motion";
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 // import { useWindowSize } from "react-use";
 
 export type CarouselImage = {
@@ -20,8 +20,8 @@ interface VideoCarouselProps {
 
 export const VideoCarousel = ({
   carouselImages,
-  // title,
-}: VideoCarouselProps) => {
+}: // title,
+VideoCarouselProps) => {
   // const { width, height } = useWindowSize();
   const carouselWrapperRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -72,17 +72,15 @@ export const VideoCarousel = ({
     .concat(carouselImages.sort(() => Math.random() - 0.5))
     .concat(carouselImages.sort(() => Math.random() - 0.5))
     .sort(() => Math.random() - 0.5);
-   
+
   return (
     <motion.div animate={carouselVariant} className="bg-background pb-16">
-
       <div
         ref={carouselWrapperRef}
         className="mt-[-100vh] h-[300vh] overflow-clip"
       >
         <div className="sticky top-0 flex h-[40%] w-full  items-center">
-
-          <SliderSection images={carouselImages}/>
+          <SliderSection images={carouselImages} />
           {/* <div className="relative left-1/2 mb-5 flex -translate-x-1/2 gap-5">
             <motion.div
               style={{ opacity: postersOpacity, x: posterTranslateXLeft }}

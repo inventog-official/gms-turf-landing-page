@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <div className="px-10 md:px-20 lg:px-[7.5rem] flex flex-col gap-10 pb-28">
+    <div className="flex flex-col gap-10 mt-10 px-10 lg:px-48">
       <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
         <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
           <p className="hover:cursor-pointer hover:text-white">Home</p>

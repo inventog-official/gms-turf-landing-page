@@ -1,3 +1,5 @@
+import { Footer } from "../footer";
+import Certificates from "./pageAnimation/certificates";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
@@ -10,13 +12,11 @@ const PickleTurf = () => {
         <Hero
           title={"PICKLE TURF"}
           subtitle={"FINDS ITS MARK"}
-          bgImgUrl={
-            " /public/pickleTurf/pickle-turf-005.jpg"
-          }
+          bgImgUrl={" /public/pickleTurf/pickle-turf-005.jpg"}
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p className="uppercase">
+            <p className="uppercase font-primary">
               Premium Playing Surface for Pickleball EnthusiastsL
             </p>
           </FadeIn>
@@ -57,6 +57,7 @@ const PickleTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
+      <Certificates />
 
       {/* <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-4xl mx-auto">
         <img
@@ -81,6 +82,8 @@ const PickleTurf = () => {
           </p>
         </div>
       </div> */}
+
+      <Footer />
     </div>
   );
 };
@@ -88,33 +91,27 @@ export default PickleTurf;
 
 const cricketItems = [
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-001.jpg",
+    poster: "/public/pickleTurf/pickle-turf-001.jpg",
     name: "Airplane",
   },
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-002.jpg",
+    poster: "/public/pickleTurf/pickle-turf-002.jpg",
     name: "Family man",
   },
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-003.jpg",
+    poster: "/public/pickleTurf/pickle-turf-003.jpg",
     name: "Family man",
   },
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-004.jpg",
+    poster: "/public/pickleTurf/pickle-turf-004.jpg",
     name: "Laboratory",
   },
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-005.jpg",
+    poster: "/public/pickleTurf/pickle-turf-005.jpg",
     name: "Napoleon",
   },
   {
-    poster:
-      "/public/pickleTurf/pickle-turf-006.jpg",
+    poster: "/public/pickleTurf/pickle-turf-006.jpg",
     name: "Person in Darkness",
   },
 
