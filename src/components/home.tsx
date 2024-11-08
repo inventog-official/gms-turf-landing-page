@@ -53,7 +53,7 @@ const Home: React.FC = () => {
         setCurrentImageIndex={setCurrentImageIndex}
       />
 
-      <div className="  bottom-5 z-20  absolute   animate-bounce  transition-all duration-1000">
+      <div className=" bottom-14 lg:bottom-10 z-20 w-full absolute flex justify-center  animate-bounce  transition-all duration-1000">
         <FootballAnimation />
       </div>
       {currentImageIndex == 0 ? (
