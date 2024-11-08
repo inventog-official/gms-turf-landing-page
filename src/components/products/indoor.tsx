@@ -7,12 +7,10 @@
 // }
 // export default IndoorTurf;
 
-import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
-import FooterCard from "./card/footerCard";
 
 const IndoorTurf = () => {
   return (
@@ -52,46 +50,8 @@ const IndoorTurf = () => {
       </div>
       <VideoCarousel title="Indoor Turf" carouselImages={cricketItems} />
 
-      <FooterCard
-        desc="            Depending on the intended purpose, the grass should be constructed
-            with precise measurements to meet the particular interior space.
-            Typically, these measurements range from 60 feet (18.29 meters) to
-            120 feet (36.58 meters) in length and 30 feet (9.14 meters) to 60
-            feet (18.29 meters) in width."
-        title={"             ESSENTIAL CONSIDERATIONS FOR INDOOR TURF"}
-        image={
-          "https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
-        }
-      />
-      <div className="w-full p-10">
-        <div className="flex flex-col gap-10 mt-10">
-          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
-              <p className="hover:cursor-pointer hover:text-white">Home</p>
-              <p className="hover:cursor-pointer hover:text-white">About</p>
-              <p className="hover:cursor-pointer hover:text-white">Services</p>
-              <p className="hover:cursor-pointer hover:text-white">Contact</p>
-            </div>
-            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaInstagram />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaYoutube />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaFacebook />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaWhatsapp />
-              </div>
-            </div>
-          </div>
-          <div className="flex py-5">
-            <p>©2024. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
+   
+    
     </div>
   );
 };

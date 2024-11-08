@@ -7,12 +7,10 @@
 // }
 // export default VolleyballTurf;
 
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
-import FooterCard from "./card/footerCard";
 
 const VolleyballTurf = () => {
   return (
@@ -56,48 +54,8 @@ const VolleyballTurf = () => {
       <VideoCarousel title="Volleyball Turf" carouselImages={cricketItems} />
 
      
-      <FooterCard
-        desc="   The court should adhere to standard dimensions, which are 18 meters
-            (59 feet) in length and 9 meters (29.5 feet) in width. The playing
-            area should include an additional free zone of at least 3 meters
-            (9.8 feet) on all sides, allowing players ample space to move during
-            play. The net, which should be 2.43 meters (7 feet 11 5/8 inches)
-            high for men's play and 2.24 meters (7 feet 4 1/8 inches) for
-            women's play, must be securely anchored and positioned centrally."
-        title={" VOLLEYBALL COURT DIMENSIONS ACCORDING TO FIVB"}
-        image={
-          "https://storage.googleapis.com/a1aa/image/cOI0WQ1AEFLPD1FgjM1Fpj73nvF8e7egZf9KpfjhUGcbml6OB.jpg"
-        }
-      />
-      <div className="w-full p-10">
-        <div className="flex flex-col gap-10 mt-10">
-          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
-              <p className="hover:cursor-pointer hover:text-white">Home</p>
-              <p className="hover:cursor-pointer hover:text-white">About</p>
-              <p className="hover:cursor-pointer hover:text-white">Services</p>
-              <p className="hover:cursor-pointer hover:text-white">Contact</p>
-            </div>
-            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaInstagram />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaYoutube />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaFacebook />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaWhatsapp />
-              </div>
-            </div>
-          </div>
-          <div className="flex py-5">
-            <p>©2024. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
+     
+   
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import SliderSection from "@/components/ProductCarousel/main";
+import SliderSection from "@/components/products/ProductCarousel/main";
 import {
   useScroll,
   // useTransform,

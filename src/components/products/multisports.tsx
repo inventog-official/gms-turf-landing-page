@@ -7,12 +7,10 @@
 // }
 // export default MultiSportsTurf;
 
-import { FaInstagram, FaYoutube, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
-import FooterCard from "./card/footerCard";
 
 const MultiSportsTurf = () => {
   return (
@@ -66,46 +64,7 @@ const MultiSportsTurf = () => {
       </div>
 
 
-      <FooterCard
-        desc="  The turf should be designed with customizable dimensions to
-            accommodate multiple activities, typically ranging from 20 meters
-            (65.6 feet) to 40 meters (131 feet) in length and 10 meters (32.8
-            feet) to 20 meters (65.6 feet) in width, depending on the specific
-            sports it will host."
-        title={"ESSENTIAL CONSIDERATIONS FOR MULTI-SPORT TURF"}
-        image={
-          "https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
-        }
-      />
-      <div className="w-full p-10">
-        <div className="flex flex-col gap-10 mt-10">
-          <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-            <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
-              <p className="hover:cursor-pointer hover:text-white">Home</p>
-              <p className="hover:cursor-pointer hover:text-white">About</p>
-              <p className="hover:cursor-pointer hover:text-white">Services</p>
-              <p className="hover:cursor-pointer hover:text-white">Contact</p>
-            </div>
-            <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaInstagram />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaYoutube />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaFacebook />
-              </div>
-              <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-                <FaWhatsapp />
-              </div>
-            </div>
-          </div>
-          <div className="flex py-5">
-            <p>©2024. All rights reserved.</p>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 };

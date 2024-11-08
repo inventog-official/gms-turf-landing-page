@@ -30,7 +30,7 @@ const CircleTurf = () => {
             <p className="uppercase">Circle Mini Cricket Stadium Turf</p>
           </FadeIn> */}
           <FadeIn>
-            <p className="uppercase text-[#febc12]">
+            <p className="uppercase ">
               ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium Turf
             </p>
           </FadeIn>
@@ -55,7 +55,7 @@ const CircleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="uppercase text-[#febc12]">
+            <p className="uppercase ">
               Features of the Circle Mini Cricket Stadium Turf:{" "}
             </p>
           </FadeIn>

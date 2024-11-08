@@ -83,69 +83,53 @@ const Home: React.FC = () => {
       </div>:null} */}
       {currentImageIndex == 1 ? (
         <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
             <img
               src={iconsWithImagesObj[0].imageSrc}
               className="h-20 w-20 md:h-32 md:w-32 select-none"
               draggable="false"
             />
             <TextHoverAnimation text={`${iconsWithImagesObj[0].title}`} />
-            <div className="text-secondary  flex justify-center  text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[70%]">
-              <TextHoverAnimation
-                text={`${iconsWithImagesObj[0].description}`}
-              />
-            </div>
+        
           </h1>
         </div>
       ) : null}
       {currentImageIndex == 2 ? (
         <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
             <img
               src={iconsWithImagesObj[1].imageSrc}
               className="h-20 w-20 md:h-32 md:w-32 select-none"
               draggable="false"
             />
             <TextHoverAnimation text={`${iconsWithImagesObj[1].title}`} />
-            <div className="text-secondary  flex justify-center  text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[70%]">
-              <TextHoverAnimation
-                text={`${iconsWithImagesObj[1].description}`}
-              />
-            </div>
+           
           </h1>
         </div>
       ) : null}
       {currentImageIndex == 3 ? (
         <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
             <img
               src={iconsWithImagesObj[2].imageSrc}
               className="h-20 w-20 md:h-32 md:w-32 select-none"
               draggable="false"
             />
             <TextHoverAnimation text={`${iconsWithImagesObj[2].title}`} />
-            <div className="text-secondary  flex justify-center  text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[70%]">
-              <TextHoverAnimation
-                text={`${iconsWithImagesObj[2].description}`}
-              />
-            </div>
+       
           </h1>
         </div>
       ) : null}
       {currentImageIndex == 4 ? (
         <div className="flex flex-col w-full  py-28 text-center">
-          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
+          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
             <img
               src={iconsWithImagesObj[3].imageSrc}
               className="h-20 w-20 md:h-32 md:w-32 select-none"
               draggable="false"
             />
             <TextHoverAnimation text={`${iconsWithImagesObj[3].title}`} />
-            <div className="text-secondary  flex justify-center  text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-[70%]">
-              <TextHoverAnimation
-                text={`${iconsWithImagesObj[3].description}`}
-              />
-            </div>
+           
           </h1>
         </div>
       ) : null}
