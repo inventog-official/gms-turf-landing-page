@@ -12,7 +12,7 @@ const CircleTurf = () => {
         <Hero
           title={"UNLEASH YOUR GAME ON GREEN: "}
           subtitle={"Circle Mini Cricket Stadium Turf"}
-          bgImgUrl={"/public/CircleMiniCricketStadiumTurff/PLT_00017.jpg"}
+          bgImgUrl={"/CircleMiniCricketStadiumTurff/PLT_00017.jpg"}
         />
         <Container className="relative z-10 max-w-[692px] space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
@@ -74,35 +74,35 @@ export default CircleTurf;
 
 const cricketItems = [
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
     name: "Airplane",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
     name: "Family man",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
     name: "Laboratory",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00011.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00011.jpg",
     name: "Napoleon",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Person in Darkness",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Scary Building",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00017.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00017.jpg",
     name: "Stars",
   },
   {
-    poster: "/public/CircleMiniCricketStadiumTurff/PLT_00022.jpg",
+    poster: "/CircleMiniCricketStadiumTurff/PLT_00022.jpg",
     name: "Stars",
   },
 ];
