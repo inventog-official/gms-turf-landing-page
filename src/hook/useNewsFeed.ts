@@ -24,7 +24,8 @@ export function useNewsFeed() {
         throw error;
       }
     },
-    staleTime: 60000, // 10 minutes
+    staleTime: 6000,
+    refetchInterval:60000
   });
 
   
