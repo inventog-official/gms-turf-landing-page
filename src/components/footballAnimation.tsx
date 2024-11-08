@@ -31,7 +31,7 @@ const FootballAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   return (
-    <div className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] bg-transparent">
+    <div className="min-w-[100px] max-w-[100px] flex justify-center items-center min-h-[100px] max-h-[100px] md:min-w-[150px] md:min-h-[150px] md:max-w-[150px] md:max-h-[150px]  bg-transparent">
       {/* Adjust width and height as needed */}
       <Canvas ref={canvasRef}>
         <OrbitControls

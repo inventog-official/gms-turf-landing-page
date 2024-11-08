@@ -31,6 +31,7 @@ const HomeSliderSection: React.FC<Props> = ({images,autoPlay,breakpoints,setCurr
             delay: 9000,
             disableOnInteraction: false
           }}
+          
           pagination={{ clickable: true }}
           navigation
           breakpoints={breakpoints?{
@@ -50,7 +51,7 @@ const HomeSliderSection: React.FC<Props> = ({images,autoPlay,breakpoints,setCurr
               <img
                 src={src.poster}
                 alt={`Slide ${index + 1}`}
-                className="w-full object-cover  transition-transform duration-300 h-screen "
+                className="w-full object-cover transition-transform duration-300 min-h-screen "
               />
             </SwiperSlide>
           ))}
