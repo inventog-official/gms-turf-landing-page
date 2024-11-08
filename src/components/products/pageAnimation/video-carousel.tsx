@@ -80,7 +80,7 @@ export const VideoCarousel = ({
         ref={carouselWrapperRef}
         className="mt-[-100vh] h-[300vh] overflow-clip"
       >
-        <div className="sticky top-0 flex h-[40%] w-full  items-center">
+        <div className="sticky top-0 flex xl:h-[40%] md:h-[43%] lg:h-[50%]  h-[40%] w-full  items-center">
 
           <SliderSection autoPlay={true} images={carouselImages} loop={true} breakpoints={true}/>
           {/* <div className="relative left-1/2 mb-5 flex -translate-x-1/2 gap-5">
