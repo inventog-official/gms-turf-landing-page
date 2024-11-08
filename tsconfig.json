@@ -10,6 +10,7 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "types": ["@types/three", "@types/react-three-fiber"],
     "paths": {
       "@/*": [
         "./src/*"

@@ -22,6 +22,7 @@ import CricketTurf from "./components/products/cricket";
 import VolleyballTurf from "./components/products/volleyball";
 import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
+import Portfolio from "./components/portfolio";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -104,6 +105,7 @@ const App: React.FC = () => {
             />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/news" element={<News_Page />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
 
             {/* products pages */}
