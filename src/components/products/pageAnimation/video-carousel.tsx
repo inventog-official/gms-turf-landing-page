@@ -1,5 +1,3 @@
-import SliderSection from "@/components/products/ProductCarousel/main";
-import SliderSection from "@/components/products/ProductCarousel/main";
 import {
   useScroll,
   // useTransform,
@@ -7,6 +5,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { useRef, useState } from "react";
+import SliderSection from "../ProductCarousel/main";
 // import { useWindowSize } from "react-use";
 
 export type CarouselImage = {
@@ -81,8 +80,7 @@ VideoCarouselProps) => {
         className="mt-[-100vh] h-[300vh] overflow-clip"
       >
         <div className="sticky top-0 flex xl:h-[40%] md:h-[43%] lg:h-[50%]  h-[40%] w-full  items-center">
-
-          <SliderSection autoPlay={true} images={carouselImages} loop={true} breakpoints={true}/>
+          <SliderSection images={carouselImages} />
           {/* <div className="relative left-1/2 mb-5 flex -translate-x-1/2 gap-5">
             <motion.div
               style={{ opacity: postersOpacity, x: posterTranslateXLeft }}

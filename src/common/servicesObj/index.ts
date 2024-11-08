@@ -8,6 +8,7 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/football-turf",
   },
   {
     title: "Cricket",
@@ -18,6 +19,7 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/cricket-turf",
   },
   {
     title: "indoor",
@@ -28,6 +30,7 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/indoor-turf",
   },
   {
     title: "volleyball",
@@ -38,6 +41,7 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/volleyball-turf",
   },
   {
     title: "multi sports",
@@ -53,17 +57,19 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/multi-sports-turf",
   },
   {
     title: "Pickle Turf",
     description:
       " Introducing Pickle Turf, an exclusive, top-quality surface designed specifically for pickleball enthusiasts looking for a superior playing experience",
     images: [
-      "/public/pickleTurf/pickle-turf-001.jpg",
-      "/public/pickleTurf/pickle-turf-002.jpg",
-      "/public/pickleTurf/pickle-turf-003.jpg",
-      "/public/pickleTurf/pickle-turf-004.jpg",
+      "/pickleTurf/pickle-turf-001.jpg",
+      "/pickleTurf/pickle-turf-002.jpg",
+      "/pickleTurf/pickle-turf-003.jpg",
+      "/pickleTurf/pickle-turf-004.jpg",
     ],
+    redirect: "/pickle-turf",
   },
   {
     title: "Circle Mini Cricket Stadium Turf",
@@ -74,5 +80,6 @@ export const servicesObj = [
       "/Football/Football-02.png",
       "/Football/Football-03.png",
     ],
+    redirect: "/circle-turf",
   },
 ];

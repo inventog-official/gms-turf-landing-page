@@ -77,15 +77,23 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { servicesObj } from "@/common/servicesObj";
 import Marquee from "react-fast-marquee"; // Optional: for easy marquee handling
+import { useNavigate } from "react-router-dom";
 
 const Services: React.FC = () => {
+  const navigate = useNavigate();
+
   const marqueeImages = [
     "/Football/Football-01.png",
     "/Football/Football-02.png",
     "/Football/Football-03.png",
-    "/Football/Football-04.png",
-    "/Football/Football-05.png",
-    "/Football/Football-06.png",
+    "/CircleMiniCricketStadiumTurff/PLT_000018.jpeg",
+    "/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
+    "/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
+    "/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
+    "/pickleTurf/pickle-turf-001.jpg",
+    "/pickleTurf/pickle-turf-002.jpg",
+    "/pickleTurf/pickle-turf-003.jpg",
+    "/pickleTurf/pickle-turf-004.jpg",
   ];
   return (
     <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
@@ -169,7 +177,12 @@ const Services: React.FC = () => {
 
             {/* Call to Action */}
             <div className="w-full h-full md:w-[30%] flex justify-start md:justify-end items-center">
-              <div className="flex flex-row-reverse md:flex-col w-[40%] md:w-[60%] lg:w-[30%] md:h-[70%] lg:h-full gap-3 md:gap-5 md:items-end justify-center items-center border opacity-80 border-yellow-600 border-opacity-10 bg-slate-200/10 p-2 md:p-3 lg:p-4 group-hover:bg-secondary hover:cursor-pointer">
+              <div
+                className="flex flex-row-reverse md:flex-col w-[40%] md:w-[60%] lg:w-[30%] md:h-[70%] lg:h-full gap-3 md:gap-5 md:items-end justify-center items-center border opacity-80 border-yellow-600 border-opacity-10 bg-slate-200/10 p-2 md:p-3 lg:p-4 group-hover:bg-secondary hover:cursor-pointer"
+                onClick={() =>
+                  navigate(`${service.redirect}`, { replace: true })
+                }
+              >
                 <FaArrowRight className="text-lg md:text-xl lg:3xl text-white/80 transform transition-transform duration-300 -rotate-45 ease-out group-hover:-rotate-0" />
                 <p className="text-[12px] md:text-sm lg:text-base text-white/80 font-primary tracking-[1.5px] uppercase transition-colors duration-300 group-hover:text-primary">
                   Read more

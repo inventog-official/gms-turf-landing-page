@@ -129,7 +129,7 @@ const AboutUs: React.FC = () => {
       </div>
 
       {/* Image Section with Enhanced Inner Light Effect */}
-      <div className="flex  md:flex-row flex-col gap-12 ">
+      <div className="flex  md:flex-row flex-col gap-12  ">
         <div className="relative w-full  flex items-center justify-center ">
           <div className="relative flex items-center">
             <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div>
@@ -159,7 +159,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Text Section */}
-        <div className="w-full flex flex-col justify-center items-start gap-8  ">
+        <div className="w-full flex flex-col justify-center items-center lg:text-left text-center lg:items-start gap-8  ">
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             Managing <span className="text-secondary">Director</span>
           </p>
