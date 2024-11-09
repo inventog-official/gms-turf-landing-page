@@ -26,15 +26,15 @@ const Portfolio: React.FC = () => {
         />
       </Canvas>
     </div>
-    // <div style={{ width: '100vw', height: '100vh', overflowY: 'scroll' }}>
-    //   <Canvas camera={{ position: [0, 3, 5], fov: 50 }}>
-    //     <ambientLight intensity={0.8} />
-    //     <directionalLight position={[10, 10, 5]} intensity={1.5} />
-    //     <CharacterScene />
-    //     <OrbitControls enableZoom={false} enableRotate={true}/>
-    //   </Canvas>
-    // </div>
   )
 }
 
 export default Portfolio
+// <div style={{ width: '100vw', height: '100vh', overflowY: 'scroll' }}>
+//   <Canvas camera={{ position: [0, 3, 5], fov: 50 }}>
+//     <ambientLight intensity={0.8} />
+//     <directionalLight position={[10, 10, 5]} intensity={1.5} />
+//     <CharacterScene />
+//     <OrbitControls enableZoom={false} enableRotate={true}/>
+//   </Canvas>
+// </div>
