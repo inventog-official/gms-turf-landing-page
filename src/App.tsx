@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navBar";
 import Home from "./components/home";
-import IconsWithContent from "./components/iconsWithContent";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
@@ -33,11 +32,9 @@ import Portfolio from "./components/portfolio";
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  const {getNewsFeeds} =  useNewsFeed()
-  const {getCarousels} =  useCarousel()
-  const {getAllTestimonials} =  useTestimonials()
-
-
+  const { getNewsFeeds } = useNewsFeed();
+  const { getCarousels } = useCarousel();
+  const { getAllTestimonials } = useTestimonials();
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -52,7 +49,10 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      {(isLoading ||getNewsFeeds.isLoading||getAllTestimonials.isLoading||getCarousels.isLoading) && (
+      {(isLoading ||
+        getNewsFeeds.isLoading ||
+        getAllTestimonials.isLoading ||
+        getCarousels.isLoading) && (
         <div className="w-screen h-screen bg-primary">
           <Preloader isLoading={isLoading} onComplete={handleLoadingComplete} />
         </div>
@@ -124,7 +124,6 @@ const App: React.FC = () => {
             <Route path="/news" element={<News_Page />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
-
             {/* products pages */}
             CircleTurf
             <Route path="/pickle-turf" element={<PickleTurf />} />
