@@ -117,28 +117,27 @@ const Home: React.FC = () => {
               </h1>
             </div>{" "}
             {index === 1 && (
-              <div className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+              <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4  ">
                 <div
                   ref={(el) => (sectionRefs.current[2] = el!)}
-                  className="flex flex-col  items-center   text-center   "
+                  className="flex  flex-col md:w-full w-[75%] items-start md:items-center text-left md:text-center"
                 >
-                  <div className="flex flex-col items-center space-y-1">
-                    <img
-                      src={iconsWithImagesObj[0].imageSrc}
-                      className="h-28 w-32 sm:h-40 sm:w-52 md:h-32 md:w-32 lg:h-52 lg:w-52 select-none"
-                      draggable="false"
-                    />
+                  <div className="flex flex-col md:items-center items-start  space-y-1">
+                    <div className="  items-start w-[50%] md:items-center md:justify-center md:w-full flex justify-start ">
+                      <img
+                        src={iconsWithImagesObj[0].imageSrc}
+                        className="h-full w-full  md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                        draggable="false"
+                      />
+                    </div>
 
-                    <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                      <h1 className="text-xs sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
-                        {/* <TextHoverAnimation
-                        text={`${iconsWithImagesObj[0].title}`}
-                      /> */}
+                    <span className="flex w-full  flex-col items-start sm:items-center text-left sm:text-center gap-1 md:gap-3">
+                      <h1 className="text-xl  md:text-xl lg:text-lg font-primary uppercase text-white z-[11] opacity-0 animate-lineUp">
                         {iconsWithImagesObj[0].title}
                       </h1>
 
-                      <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
-                        {`${iconsWithImagesObj[0].description}`}
+                      <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 w-[80%] break-words">
+                        {iconsWithImagesObj[0].description}
                       </p>
                     </span>
                   </div>
@@ -146,10 +145,10 @@ const Home: React.FC = () => {
               </div>
             )}
             {index === 2 && (
-              <div className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+              <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4 ">
                 <div
-                  ref={(el) => (sectionRefs.current[3] = el!)}
-                  className="flex flex-col   justify-center items-center  text-center   "
+                  // ref={(el) => (sectionRefs.current[3] = el!)}
+                  className="flex flex-col relative  hidden md:flex   justify-center items-center "
                 >
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
@@ -158,47 +157,47 @@ const Home: React.FC = () => {
                   />
 
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl   md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                       text={`${iconsWithImagesObj[0].title}`}
                     /> */}
                       {iconsWithImagesObj[0].title}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[0].description}`}
                     </p>
                   </span>
                 </div>
                 <div
                   ref={(el) => (sectionRefs.current[4] = el!)}
-                  className="flex flex-col text-center justify-center items-center "
+                  className="flex flex-col md:w-full w-[75%] items-start sm:items-center text-left sm:text-center justify-center"
                 >
-                  <img
-                    src={iconsWithImagesObj[1].imageSrc}
-                    className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
-                    draggable="false"
-                  />
-                  <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    {" "}
-                    <h1 className="text-[8px] sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
-                      {/* <TextHoverAnimation
-                      text={`${iconsWithImagesObj[1].title}`}
-                    /> */}
-                      {iconsWithImagesObj[1].title}
-                    </h1>
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
-                      {`${iconsWithImagesObj[1].description}`}
-                    </p>
-                  </span>
+                  <div className="flex flex-col items-start sm:items-center">
+                    <div className=" items-start w-[50%] md:items-center md:justify-center md:w-full flex justify-start ">
+                      <img
+                        src={iconsWithImagesObj[1].imageSrc}
+                        className="h-full w-full sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                        draggable="false"
+                      />
+                    </div>
+                    <span className="flex flex-col items-start sm:items-center text-left sm:text-center gap-1 md:gap-3">
+                      <h1 className="text-xl md:text-xl lg:text-lg font-primary uppercase text-white z-[11] opacity-0 animate-lineUp">
+                        {iconsWithImagesObj[1].title}
+                      </h1>
+                      <p className="text-md md:text-[14px] lg:text-[14px] text-gray-300 w-[80%] break-words">
+                        {iconsWithImagesObj[1].description}
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
             )}
             {index === 3 && (
-              <div className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+              <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4 ">
                 <div
-                  ref={(el) => (sectionRefs.current[5] = el!)}
-                  className="flex flex-col justify-center items-center    text-center   "
+                  // ref={(el) => (sectionRefs.current[5] = el!)}
+                  className="flex flex-col relative  hidden md:flex justify-center items-center    text-center   "
                 >
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
@@ -206,21 +205,21 @@ const Home: React.FC = () => {
                     draggable="false"
                   />
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl   md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                       text={`${iconsWithImagesObj[0].title}`}
                     /> */}
                       {iconsWithImagesObj[0].title}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[0].description}`}
                     </p>
                   </span>
                 </div>
                 <div
-                  ref={(el) => (sectionRefs.current[7] = el!)}
-                  className="flex flex-col text-center justify-center items-center "
+                  // ref={(el) => (sectionRefs.current[7] = el!)}
+                  className="flex flex-col relative  hidden md:flex  text-center justify-center items-center "
                 >
                   <img
                     src={iconsWithImagesObj[1].imageSrc}
@@ -228,126 +227,124 @@ const Home: React.FC = () => {
                     draggable="false"
                   />
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl  md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                       text={`${iconsWithImagesObj[1].title}`}
                     /> */}
                       {iconsWithImagesObj[1].title}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[1].description}`}
                     </p>
                   </span>
                 </div>
-
                 <div
-                  ref={(el) => (sectionRefs.current[8] = el!)}
-                  className="flex flex-col items-center justify-center text-center"
+                  ref={(el) => (sectionRefs.current[10] = el!)}
+                  className="flex flex-col md:w-full w-[75%] items-start sm:items-center text-left sm:text-center justify-center"
                 >
-                  <img
-                    src={iconsWithImagesObj[2].imageSrc}
-                    className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
-                    draggable="false"
-                  />
-                  <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px] sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
-                      {/* <TextHoverAnimation
-                        text={`${iconsWithImagesObj[2].title}`}
-                      /> */}
-                      {`${iconsWithImagesObj[2].title}`}
-                    </h1>
-
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
-                      {`${iconsWithImagesObj[2].description}`}
-                    </p>
-                  </span>
+                  <div className="flex flex-col items-start sm:items-center">
+                    <div className=" items-start w-[50%] md:items-center md:justify-center md:w-full flex justify-start ">
+                      <img
+                        src={iconsWithImagesObj[2].imageSrc}
+                        className="h-full w-full sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                        draggable="false"
+                      />
+                    </div>
+                    <span className="flex flex-col items-start sm:items-center text-left sm:text-center gap-1 md:gap-3">
+                      <h1 className="text-xl md:text-xl lg:text-lg font-primary uppercase text-white z-[11] opacity-0 animate-lineUp">
+                        {iconsWithImagesObj[2].title}
+                      </h1>
+                      <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 w-[80%] break-words">
+                        {iconsWithImagesObj[2].description}
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
             )}
             {index === 4 && (
-              <div
-                ref={(el) => (sectionRefs.current[13] = el!)}
-                className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 gap-3"
-              >
-                <div className="flex flex-col  items-center justify-center   text-center   ">
+              <div className="w-full    px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4  gap-3">
+                <div className="flex flex-col relative  hidden md:flex   items-center justify-center   text-center   ">
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
                     draggable="false"
                   />
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl   md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                       text={`${iconsWithImagesObj[0].title}`}
                     /> */}
                       {`${iconsWithImagesObj[0].title}`}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[0].description}`}
                     </p>
                   </span>{" "}
                 </div>
-                <div className="flex flex-col text-center justify-center items-center ">
+                <div className="flex flex-col relative  hidden md:flex  text-center justify-center items-center ">
                   <img
                     src={iconsWithImagesObj[1].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
                     draggable="false"
                   />
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px] sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                       text={`${iconsWithImagesObj[1].title}`}
                     /> */}
                       {`${iconsWithImagesObj[1].title}`}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[1].description}`}
                     </p>
                   </span>
                 </div>
 
-                <div className="flex flex-col items-center justify-center  text-center">
+                <div className="flex flex-col   hidden md:flex relative items-center justify-center  text-center">
                   <img
                     src={iconsWithImagesObj[2].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
                     draggable="false"
                   />
                   <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    <h1 className="text-xl  md:text-xl lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
                       {/* <TextHoverAnimation
                         text={`${iconsWithImagesObj[2].title}`}
                       /> */}
                       {`${iconsWithImagesObj[2].title}`}
                     </h1>
 
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
                       {`${iconsWithImagesObj[2].description}`}
                     </p>
                   </span>
                 </div>
 
-                <div className="flex flex-col w-full items-center justify-center text-center">
-                  <img
-                    src={iconsWithImagesObj[3].imageSrc}
-                    className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
-                    draggable="false"
-                  />
-                  <span className="flex flex-col justify-center items-center text-center gap-1 md:gap-3">
-                    {" "}
-                    <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
-                      {/* <TextHoverAnimation
-                    
-                      text={`${iconsWithImagesObj[3].title}`}
-                    /> */}
-                      {iconsWithImagesObj[3].title}
-                    </h1>
-                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
-                      {`${iconsWithImagesObj[3].description}`}
-                    </p>
-                  </span>
+                <div
+                  ref={(el) => (sectionRefs.current[8] = el!)}
+                  className="flex flex-col md:w-full w-[75%] items-start sm:items-center text-left sm:text-center justify-center"
+                >
+                  <div className="flex flex-col items-start sm:items-center">
+                    <div className=" items-start w-[50%]  md:items-center md:justify-center md:w-full flex justify-start ">
+                      <img
+                        src={iconsWithImagesObj[3].imageSrc}
+                        className="h-full w-full sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                        draggable="false"
+                      />
+                    </div>
+                    <span className="flex flex-col items-start sm:items-center text-left sm:text-center gap-1 md:gap-3">
+                      <h1 className="text-xl  md:text-xl lg:text-lg font-primary uppercase text-white z-[11] opacity-0 animate-lineUp">
+                        {iconsWithImagesObj[3].title}
+                      </h1>
+                      <p className="text-md  md:text-[14px] lg:text-[14px] text-gray-300 w-[80%] break-words">
+                        {iconsWithImagesObj[3].description}
+                      </p>
+                    </span>
+                  </div>
                 </div>
               </div>
             )}
