@@ -55,10 +55,11 @@ import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
 import TextHoverAnimation from "./textHoverAnimation";
 import { Footer } from "./footer";
+import { RiAwardFill } from "react-icons/ri";
+import Preloader from "./preLoading";
 
 const News_Page = () => {
   const { queryClient, getNewsFeeds } = useNewsFeed();
-  console.log(getNewsFeeds);
 
   const data = queryClient.getQueryData(["newsfeeds"]) as NewsFeed[];
   const [active, setActive] = useState(0);
@@ -142,8 +143,11 @@ const News_Page = () => {
       title: "Best Sportd Infra Solution by",
     },
   ];
-  console.log(data);
-  return (
+  return getNewsFeeds.isFetching?(
+    <div className="w-screen h-screen bg-primary">
+    <Preloader isLoading={getNewsFeeds.isFetching} onComplete={() =>{}} />
+  </div>
+  ): (
     <div className="  w-full pt-28 ">
       <div className="w-full   px-10 lg:px-48">
         <header className=" pb-10   flex flex-col justify-start items-center  ">
@@ -245,6 +249,9 @@ const News_Page = () => {
      <div className="px-10 lg:px-48">
      <div className=" flex flex-col items-center justify-center border-t border-secondary  ">
         <h3 className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl  py-10  font-primary text-secondary uppercase leading-tight flex gap-3">
+
+        <RiAwardFill className="h-10" />
+
         <TextHoverAnimation text="Awards" />
         <span className="text-white">
             <TextHoverAnimation text="From" />

@@ -1,24 +1,68 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
 import FootballAnimation from "./footballAnimation";
 import TextHoverAnimation from "./textHoverAnimation";
 import { SlBadge } from "react-icons/sl";
 import { useCarousel } from "@/hook/useCarousel";
-import HomeSliderSection from "./homePageCarousel/main";
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
+import "swiper/css";
+import "swiper/css/pagination";
+
+
+import VerticalCardSlider from "./snappingAnimation/main";
+
 
 const Home: React.FC = () => {
   const { queryClient } = useCarousel();
-
   const data = queryClient.getQueryData(["carousels"]) as {
     id: number;
     url: string;
   }[];
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
+  // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
 
-  console.log(featureIndex);
+  // console.log(featureIndex);
+
+  const sectionRefs = useRef<HTMLParagraphElement[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              "opacity-100",
+              "animate-lineUp",
+              "translate-y-0"
+            );
+          } else {
+            entry.target.classList.remove(
+              "opacity-100",
+              "animate-lineUp",
+              "translate-y-0"
+            );
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    sectionRefs.current.forEach((text) => {
+      if (text) {
+        text.classList.add(
+          "opacity-0",
+          "translate-y-10",
+          "transition",
+          "duration-700",
+          "ease-in-out"
+        );
+        observer.observe(text);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -27,8 +71,18 @@ const Home: React.FC = () => {
   //   return () => clearInterval(interval);
   // }, [data?.length]);
 
+ 
+  
+
+
+
+ 
+
+  
+
+
   return (
-    <section className="relative flex animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
+    <section className="relative flex flex-col animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
       {/* Background Image Slideshow */}
       {/* {data?.map((image, index) => (
         <img
@@ -40,7 +94,772 @@ const Home: React.FC = () => {
           }`}
         />
       ))} */}
-      <HomeSliderSection
+      {data?.map((item, index) => {
+        return (
+          <div className=" flex relative justify-center items-center h-screen">
+            <VerticalCardSlider index={index} images={item.url} />
+            {index === 0 && (
+              <div className="bottom-14  lg:bottom-10 z-30 w-full absolute flex justify-center animate-bounce transition-all duration-1000">
+                <FootballAnimation />
+              </div>
+            )}
+            <div
+              ref={(el) => (sectionRefs.current[0] = el!)}
+              className="flex gap-3 top-28  absolute z-30 flex-col  text-center "
+            >
+              <h1 className="text-2xl md:text-4xl uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp ">
+                <span className="text-secondary">
+                  <SlBadge />
+                </span>
+                South India's <span className="text-secondary">no.1</span>
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-2xl md:text-4xl font-primary uppercase flex gap-3 justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+                <TextHoverAnimation text="Sports" />
+                <div className="text-secondary">
+                  <TextHoverAnimation text="infrastructure" />
+                </div>
+              </h1>
+            </div>{" "}
+            {index === 1 && (
+              <div className="w-full   px-10  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[2] = el!)}
+                  className="flex flex-col  items-center   text-center   "
+                >
+                  <div className="flex flex-col items-center space-y-2">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                      draggable="false"
+                    />
+
+                    <h1 className="text-xs sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                      {/* <TextHoverAnimation
+                        text={`${iconsWithImagesObj[0].title}`}
+                      /> */}
+                      {iconsWithImagesObj[0].title}
+                    </h1>
+
+                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                      {`${iconsWithImagesObj[0].description}`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+            {index === 2 && (
+              <div className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[3] = el!)}
+                  className="flex flex-col   justify-center items-center  text-center   "
+                >
+                  <img
+                    src={iconsWithImagesObj[0].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    /> */}
+                    {iconsWithImagesObj[0].title}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[4] = el!)}
+                  className="flex flex-col text-center justify-center items-center "
+                >
+                  <img
+                    src={iconsWithImagesObj[1].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px] sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    /> */}
+                    {iconsWithImagesObj[1].title}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+            {index === 3 && (
+              <div className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[5] = el!)}
+                  className="flex flex-col justify-center items-center    text-center   "
+                >
+                  <img
+                    src={iconsWithImagesObj[0].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px]  sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    /> */}
+                    {iconsWithImagesObj[0].title}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[7] = el!)}
+                  className="flex flex-col text-center justify-center items-center "
+                >
+                  <img
+                    src={iconsWithImagesObj[1].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px] w-72 sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    /> */}
+                    {iconsWithImagesObj[1].title}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div
+                  ref={(el) => (sectionRefs.current[8] = el!)}
+                  className="flex flex-col items-center justify-center text-center"
+                >
+                  <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                      draggable="false"
+                    />
+
+                    <h1 className="text-[8px] w-72 sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                      {/* <TextHoverAnimation
+                        text={`${iconsWithImagesObj[2].title}`}
+                      /> */}
+                                              {`${iconsWithImagesObj[2].title}`}
+
+                    </h1>
+
+                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                      {`${iconsWithImagesObj[2].description}`}
+                    </p>
+                </div>
+              </div>
+            )}
+            {index === 4 && (
+              <div
+                ref={(el) => (sectionRefs.current[13] = el!)}
+                className="w-full   px-3  items- bottom-4 justify-start  absolute grid grid-cols-4 gap-3"
+              >
+               <div
+                  className="flex flex-col  items-center justify-center   text-center   "
+                >
+                  <img
+                    src={iconsWithImagesObj[0].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px] w-72 sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    /> */}
+                    {`${iconsWithImagesObj[0].title}`}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  className="flex flex-col text-center justify-center items-center "
+                >
+                  <img
+                    src={iconsWithImagesObj[1].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px] sm:text-sm md:text-base lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    /> */}
+                    {`${iconsWithImagesObj[1].title}`}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div
+                  className="flex flex-col items-center justify-center  text-center"
+                >
+                  <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                      draggable="false"
+                    />
+
+                    <h1 className="text-[8px] w-72 sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                      {/* <TextHoverAnimation
+                        text={`${iconsWithImagesObj[2].title}`}
+                      /> */}
+                      {`${iconsWithImagesObj[2].title}`}
+                    </h1>
+
+                    <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                      {`${iconsWithImagesObj[2].description}`}
+                    </p>
+                </div>
+
+                <div className="flex flex-col w-full items-center justify-center text-center">
+                <img
+                    src={iconsWithImagesObj[3].imageSrc}
+                    className="h-32 w-40 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
+                    draggable="false"
+                  />
+
+                  <h1 className="text-[8px] w-72 sm:text-sm md:text-[10px] lg:text-lg font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp">
+                    {/* <TextHoverAnimation
+                    
+                      text={`${iconsWithImagesObj[3].title}`}
+                    /> */}
+                    ${iconsWithImagesObj[3].title}
+                  </h1>
+
+                  <p className="text-[6px] sm:text-[10px] md:text-[12px] lg:text-[14px] text-gray-300 text-center w-[80%] break-words">
+                    {`${iconsWithImagesObj[3].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })}
+      {/* <div className="flex justify-center items-center h-screen bg-gray-100">
+      <Swiper
+        direction="vertical"
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        mousewheel={ true}
+        modules={[Pagination, Mousewheel]}
+        className="w-full h-screen mySwiper"
+      >
+         {data?.map((image, index) => {
+        return (
+        <SwiperSlide>
+            <div key={index} className="relative w-full ">
+            <img
+              src={image.url}
+              className="w-full h-screen object-cover absolute transition-transform duration-300"
+              style={{ minHeight: "100vh" }} // Ensures full-screen height
+            />
+
+            {index === 0 && (
+              <div className="bottom-14  lg:bottom-10 z-30 w-full absolute flex justify-center animate-bounce transition-all duration-1000">
+                <FootballAnimation />
+              </div>
+            )}
+
+            <div className="flex flex-col py-28 text-center ">
+              <h1
+                ref={(el) => (sectionRefs.current[0] = el!)}
+                className="text-md md:text-2xl uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp "
+              >
+                <span className="text-secondary">
+                  <SlBadge />
+                </span>
+                South India's <span className="text-secondary">no.1</span>
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+                <TextHoverAnimation text="Sports" />
+                <div className="text-secondary">
+                  <TextHoverAnimation text="infrastructure" />
+                </div>
+              </h1>
+            </div>
+
+            {index === 1 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[2] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-[10px] md:text-[10px] font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 2 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[3] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[4] = el!)}
+                  className="flex flex-col text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 3 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[5] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[6] = el!)}
+                  className="flex flex-col text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div
+                  ref={(el) => (sectionRefs.current[7] = el!)}
+                  className="flex flex-col  text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[2].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[2].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 4 && (
+              <div
+                ref={(el) => (sectionRefs.current[14] = el!)}
+                className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 gap-3"
+              >
+                <div className="flex flex-col    text-start   ">
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[11] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div className="flex flex-col  text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[12] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[2].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[2].description}`}
+                  </p>
+                </div>
+
+                <div className="flex flex-col w-full  text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[13] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[3].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[3].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[3].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div> 
+        </SwiperSlide>
+      
+        );
+      })}
+       
+      </Swiper>
+    </div> */}
+
+      {/* {data?.map((image, index) => {
+        return (
+          <div key={index} className="relative w-full min-h-screen">
+            <img
+              src={image.url}
+              className="w-full h-screen object-cover absolute transition-transform duration-300"
+              style={{ minHeight: "100vh" }} // Ensures full-screen height
+            />
+
+            {index === 0 && (
+              <div className="bottom-14  lg:bottom-10 z-30 w-full absolute flex justify-center animate-bounce transition-all duration-1000">
+                <FootballAnimation />
+              </div>
+            )}
+
+            {index === 0 && (
+            <div className="flex flex-col py-28 text-center ">
+              <h1
+                ref={(el) => (sectionRefs.current[0] = el!)}
+                className="text-md md:text-2xl uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp "
+              >
+                <span className="text-secondary">
+                  <SlBadge />
+                </span>
+                South India's <span className="text-secondary">no.1</span>
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+                <TextHoverAnimation text="Sports" />
+                <div className="text-secondary">
+                  <TextHoverAnimation text="infrastructure" />
+                </div>
+              </h1>
+            </div>
+   )}  
+
+            {index === 1 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[2] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-[10px] md:text-[10px] font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 2 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[3] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[4] = el!)}
+                  className="flex flex-col text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 3 && (
+              <div className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 ">
+                <div
+                  ref={(el) => (sectionRefs.current[5] = el!)}
+                  className="flex flex-col    text-start   "
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div
+                  ref={(el) => (sectionRefs.current[6] = el!)}
+                  className="flex flex-col text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div
+                  ref={(el) => (sectionRefs.current[7] = el!)}
+                  className="flex flex-col  text-center"
+                >
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[2].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[2].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {index === 4 && (
+              <div
+                ref={(el) => (sectionRefs.current[14] = el!)}
+                className="w-full   px-32  items- bottom-4 justify-start  absolute grid grid-cols-4 gap-3"
+              >
+                <div className="flex flex-col    text-start   ">
+                  <h1 className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp ">
+                    <img
+                      src={iconsWithImagesObj[0].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[0].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[0].description}`}
+                  </p>
+                </div>
+                <div className="flex flex-col text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[11] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[1].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[1].title}`}
+                    />
+                  </h1>
+
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[1].description}`}
+                  </p>
+                </div>
+
+                <div className="flex flex-col  text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[12] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[2].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[2].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[2].description}`}
+                  </p>
+                </div>
+
+                <div className="flex flex-col w-full  text-center">
+                  <h1
+                    // ref={(el) => (sectionRefs.current[13] = el!)}
+                    className="text-xl md:text-xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+                  >
+                    <img
+                      src={iconsWithImagesObj[3].imageSrc}
+                      className="h-20 w-20 md:h-24 md:w-24 select-none"
+                      draggable="false"
+                    />
+                    <TextHoverAnimation
+                      text={`${iconsWithImagesObj[3].title}`}
+                    />
+                  </h1>
+                  <p className="flex space-x-1 text-gray-300 flex-wrap w-full h-10  text-center text-sm break-words">
+                    {`${iconsWithImagesObj[3].description}`}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div> 
+        );
+      })} */}
+
+      {/* <HomeSliderSection
         images={data?.map((item) => {
           return {
             poster: item.url,
@@ -51,90 +870,9 @@ const Home: React.FC = () => {
         autoPlay={true}
         breakpoints={false}
         setCurrentImageIndex={setCurrentImageIndex}
-      />
-
-      <div className=" bottom-14 lg:bottom-10 z-20 w-full absolute flex justify-center  animate-bounce  transition-all duration-1000">
-        <FootballAnimation />
-      </div>
-      {currentImageIndex == 0 ? (
-        <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-md md:text-2xl uppercase  font-primary text-white flex gap-2 items-center justify-center  z-[11] opacity-0 animate-lineUp delay-700">
-            <span className="text-secondary">
-              <SlBadge />
-            </span>
-            South india's <span className="text-secondary">no.1</span>
-          </h1>
-          <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-            <TextHoverAnimation text="Sports" />
-            <div className="text-secondary">
-              <TextHoverAnimation text="infrastructure" />
-            </div>
-          </h1>
-        </div>
-      ) : null}
-      {/* {currentImageIndex==featureIndex+1?   <div className="flex flex-col  py-28 text-center">
-      
-        <h1 className="text-3xl md:text-6xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-          <TextHoverAnimation text={`${Features[featureIndex].title}`} />
-          <div className="text-secondary text-4xl">
-            <TextHoverAnimation text={`${Features[featureIndex].description}`}/>
-          </div>
-        </h1>
-      </div>:null} */}
-      {currentImageIndex == 1 ? (
-        <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-            <img
-              src={iconsWithImagesObj[0].imageSrc}
-              className="h-20 w-20 md:h-32 md:w-32 select-none"
-              draggable="false"
-            />
-            <TextHoverAnimation text={`${iconsWithImagesObj[0].title}`} />
-        
-          </h1>
-        </div>
-      ) : null}
-      {currentImageIndex == 2 ? (
-        <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-            <img
-              src={iconsWithImagesObj[1].imageSrc}
-              className="h-20 w-20 md:h-32 md:w-32 select-none"
-              draggable="false"
-            />
-            <TextHoverAnimation text={`${iconsWithImagesObj[1].title}`} />
-           
-          </h1>
-        </div>
-      ) : null}
-      {currentImageIndex == 3 ? (
-        <div className="flex flex-col  py-28 text-center">
-          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-            <img
-              src={iconsWithImagesObj[2].imageSrc}
-              className="h-20 w-20 md:h-32 md:w-32 select-none"
-              draggable="false"
-            />
-            <TextHoverAnimation text={`${iconsWithImagesObj[2].title}`} />
-       
-          </h1>
-        </div>
-      ) : null}
-      {currentImageIndex == 4 ? (
-        <div className="flex flex-col w-full  py-28 text-center">
-          <h1 className="text-3xl md:text-4xl font-primary uppercase flex flex-col justify-center items-center text-white z-[11] opacity-0 animate-lineUp delay-1000">
-            <img
-              src={iconsWithImagesObj[3].imageSrc}
-              className="h-20 w-20 md:h-32 md:w-32 select-none"
-              draggable="false"
-            />
-            <TextHoverAnimation text={`${iconsWithImagesObj[3].title}`} />
-           
-          </h1>
-        </div>
-      ) : null}
+      /> */}
     </section>
   );
 };
- 
+
 export default Home;

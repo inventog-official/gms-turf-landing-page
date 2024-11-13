@@ -1,3 +1,5 @@
+import AnimatedCard from "./AnimateCard/main";
+
 const HomeNewsFeed: React.FC = () => {
   const newsFeedImages = [
     "/sunNewsLogo.png",
@@ -8,24 +10,33 @@ const HomeNewsFeed: React.FC = () => {
     <section className="flex flex-col gap-10 items-center select-none bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       <div className="border-opacity-15 w-full lg:w-[80%] lg:px-10 flex flex-col gap-10">
         <div className="w-full flex justify-center">
+          <AnimatedCard>
           <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
             News feed
           </p>
+          </AnimatedCard>
+        
         </div>
         <div className="flex flex-col gap-5">
+          <AnimatedCard>
           <p className="text-base lg:text-3xl text-center text-white font-secondary">
             We specialize in bringing sports systems to the market that
             prioritize top quality, high sports performance, and sustainability,
             tailored to meet your specific needs.
           </p>
-          <p className="text-base lg:text-3xl text-center text-white font-secondary">
+          </AnimatedCard>
+        <AnimatedCard>
+        <p className="text-base lg:text-3xl text-center text-white font-secondary">
             Picture meticulously designed installations, grounded in scientific
             principles, aimed at preventing cartilage injuries a groundbreaking
             solution engineered to prioritize the well-being of athletes and
             sports enthusiasts alike.
           </p>
+        </AnimatedCard>
+      
         </div>
       </div>
+      <AnimatedCard>
       <div className="border-opacity-15 w-full lg:w-[80%] lg:px-10 flex justify-center gap-2 md:gap-5">
         {newsFeedImages.map((image, index) => (
           <div
@@ -40,6 +51,8 @@ const HomeNewsFeed: React.FC = () => {
           </div>
         ))}
       </div>
+      </AnimatedCard>
+     
     </section>
   );
 };
