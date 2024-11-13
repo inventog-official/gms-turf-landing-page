@@ -9,9 +9,9 @@ const CircleMiniCricketStadiumTurf = () => {
   return (
     <div
       id="CircleMiniCricketStadiumTurf"
-      className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28"
+      className="flex flex-col gap-10 pt-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28"
     >
-      <AnimatedCard > <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white uppercase leading-tight text-center px-4">
+      <AnimatedCard > <p className="text-2xl pb-2 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white uppercase leading-tight text-center px-4">
         Circle Mini
         <span className="text-secondary"> Cricket</span> Stadium Turf
       </p></AnimatedCard>
