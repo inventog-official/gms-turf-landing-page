@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     animation: {
       "carousel-move": "carousel-move var(--duration,80s) infinite",
+
     },
     extend: {
       spacing: {

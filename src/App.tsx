@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navBar";
 import Home from "./components/home";
-import IconsWithContent from "./components/iconsWithContent";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
@@ -22,13 +21,21 @@ import CricketTurf from "./components/products/cricket";
 import VolleyballTurf from "./components/products/volleyball";
 import MultiSportsTurf from "./components/products/multisports";
 import IndoorTurf from "./components/products/indoor";
+import Carousel from "./common/carousel";
 import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
 import PickleTurf from "./components/products/PickleTurf";
 import CircleTurf from "./components/products/circleMiniCriketStadium";
+import { useNewsFeed } from "./hook/useNewsFeed";
+import { useCarousel } from "./hook/useCarousel";
+import { useTestimonials } from "./hook/useTestimonials";
 import Portfolio from "./components/portfolio";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const { getNewsFeeds } = useNewsFeed();
+  const { getCarousels } = useCarousel();
+  const { getAllTestimonials } = useTestimonials();
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -43,7 +50,10 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      {isLoading && (
+      {(isLoading ||
+        getNewsFeeds.isLoading ||
+        getAllTestimonials.isLoading ||
+        getCarousels.isLoading) && (
         <div className="w-screen h-screen bg-primary">
           <Preloader isLoading={isLoading} onComplete={handleLoadingComplete} />
         </div>
@@ -62,11 +72,11 @@ const App: React.FC = () => {
                     <PageWrapper>
                       <Home />
                     </PageWrapper>
-                    <PageWrapper>
+                    {/* <PageWrapper>
                       <div id="iconsWithContent">
                         <IconsWithContent />
                       </div>
-                    </PageWrapper>
+                    </PageWrapper> */}
                     <PageWrapper>
                       <div id="CircleMiniCricketStadiumTurf">
                         <CircleMiniCricketStadiumTurf />
@@ -115,6 +125,7 @@ const App: React.FC = () => {
             <Route path="/news" element={<News_Page />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
+            <Route path="/demo" element={<Carousel />} />
 
             {/* products pages */}
             CircleTurf

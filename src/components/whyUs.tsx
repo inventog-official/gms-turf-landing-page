@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedCard from "./AnimateCard/main";
 
 const WhyUs: React.FC = () => {
   return (
@@ -6,12 +7,17 @@ const WhyUs: React.FC = () => {
       {/* <h1 className="text-5xl font-extrabold text-gray-800">Why Us</h1> */}
       {/* Header */}
       <div className="text-center w-full">
+        <AnimatedCard>
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           Why Us
         </p>
+        </AnimatedCard>
+       
       </div>
+      <AnimatedCard>
       <div className="grid grid-cols-2 lg:grid-cols-4 w-[100%] md:w-[80%] mx-auto gap-4 md:gap-6">
         {/* 100% Quality Products */}
+
         <div className="flex flex-col gap-2 justify-center items-center text-center py-5 bg-white/85">
           <div className="w-[50%]">
             <img
@@ -24,8 +30,10 @@ const WhyUs: React.FC = () => {
             100% Quality Products
           </p>
         </div>
+      
 
         {/* Skilled Professionals */}
+
         <div className="flex flex-col gap-5 justify-center items-center text-center bg-white/85">
           <div className="w-[45%]">
             <img
@@ -38,8 +46,10 @@ const WhyUs: React.FC = () => {
             Skilled Professionals
           </p>
         </div>
+       
 
         {/* Resurfacing & Maintenance */}
+
         <div className="flex flex-col gap-4 justify-center items-center text-center py-5 bg-white/85">
           <div className="w-[35%]">
             <img
@@ -52,6 +62,7 @@ const WhyUs: React.FC = () => {
             Resurfacing & Maintenance
           </p>
         </div>
+      
 
         {/* Comprehensive Maintenance Service */}
         <div className="flex flex-col gap-4 justify-center items-center text-center py-5 bg-white/85">
@@ -66,8 +77,12 @@ const WhyUs: React.FC = () => {
             Comprehensive Maintenance Service
           </p>
         </div>
+     
       </div>
+      </AnimatedCard>
+     
       <div className="flex flex-col gap-6 w-full  text-white  leading-relaxed">
+        <AnimatedCard>
         <p className="md:text-2xl text-lg text-center">
           {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           We specialize in delivering{" "}
@@ -77,7 +92,9 @@ const WhyUs: React.FC = () => {
           cartilage injuries, ensuring the well-being of athletes and sports
           <span className="text-secondary"> enthusiasts</span>.
         </p>
-        <p className="md:text-2xl text-lg text-center">
+        </AnimatedCard>
+    <AnimatedCard>
+    <p className="md:text-2xl text-lg text-center">
           {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Our expertise lies in{" "}
           <span className="text-secondary">FIFA-approved</span> soccer pitches
@@ -89,7 +106,9 @@ const WhyUs: React.FC = () => {
           encompassing <span className="text-secondary">transparent cost</span>{" "}
           structures for turf construction and installation.
         </p>
-        <p className="md:text-2xl text-lg text-center">
+    </AnimatedCard>
+      <AnimatedCard>
+      <p className="md:text-2xl text-lg text-center">
           {/* <p className="text-base sm:text-lg md:text-xl 2xl"> */}
           Renowned for our football turf construction, we provide comprehensive
           sports ground construction{" "}
@@ -101,6 +120,8 @@ const WhyUs: React.FC = () => {
           <span className="text-secondary">lawn</span> installations, we lead
           the way in gully cricket and football turf manufacturing.
         </p>
+      </AnimatedCard>
+       
       </div>
     </section>
   );
