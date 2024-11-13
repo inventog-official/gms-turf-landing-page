@@ -1,41 +1,13 @@
-// import React from 'react';
-// import { useGLTF } from '@react-three/drei';
-// import * as THREE from 'three';
-
-// const Character: React.FC = () => {
-//   const { scene } = useGLTF('man_player.glb') as { scene: THREE.Group };
-//   // const { scene } = useGLTF('https://modelviewer.dev/shared-assets/models/Astronaut.glb') as { scene: THREE.Group };
-
-//   // Add some ambient animation to the character
-//   scene.traverse((child) => {
-//     if (child instanceof THREE.Mesh) {
-//       child.castShadow = true;
-//       child.receiveShadow = true;
-//     }
-//   });
-
-//   return (
-//     <primitive 
-//       object={scene} 
-//       scale={3.5} 
-//       position={[0, -3.5, -1]} 
-//       rotation={[0, Math.PI/9, 0]}
-//     />
-//   );
-// };
-
-// export default Character;
-
 import React, { useEffect, useState } from 'react';
 import { useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 const Character: React.FC = () => {
-  const { scene } = useGLTF('/man_player.glb') as { scene: THREE.Group };
+  const { scene } = useGLTF('/player.glb') as { scene: THREE.Group };
   
   // State to hold dynamic scale and position values
-  const [scale, setScale] = useState(3.5);
-  const [position, setPosition] = useState([0, -3.5, -1]);
+  const [scale, setScale] = useState(0.03);
+  const [position, setPosition] = useState([0, -0.03, 0]);
 
   useEffect(() => {
     // Function to handle window resize and adjust scale and position
@@ -44,14 +16,14 @@ const Character: React.FC = () => {
 
       // Adjust scale based on the window width
       if (width < 768) {
-        setScale(2.5); // Smaller scale for mobile
-        setPosition([0, -2, -1]); // Adjust position for mobile
+        setScale(0.03); // Smaller scale for mobile
+        setPosition([0, -3.75, 0]); // Adjust position for mobile
       } else if (width < 1024) {
-        setScale(3); // Medium scale for tablets
-        setPosition([0, -3, -1]); // Adjust position for tablets
+        setScale(0.03); // Medium scale for tablets
+        setPosition([0, -3.8, 0]); // Adjust position for tablets
       } else {
-        setScale(3.5); // Larger scale for desktop
-        setPosition([0, -3.5, -1]); // Default position for desktop
+        setScale(0.035); // Larger scale for desktop
+        setPosition([0, -3.9 , 0]); // Default position for desktop
       }
     };
 
@@ -73,12 +45,29 @@ const Character: React.FC = () => {
     }
   });
 
+  useEffect(() => {
+    // Traverse through each mesh in the model and apply metallic material
+    scene.traverse((child) => {
+      if (child instanceof THREE.Mesh) {
+        // Set up silver material properties
+        if (child.material instanceof THREE.MeshStandardMaterial) {
+          child.material.metalness = 0.45; // Full metal effect
+          child.material.roughness = 0.35; // Low roughness for shiny silver
+          child.material.color = new THREE.Color(0xc0c0c0); // Silver color
+        }
+        
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+  }, [scene]);
+
   return (
     <primitive 
       object={scene} 
       scale={scale} 
       position={position} 
-      rotation={[0, Math.PI/9, 0]} 
+      rotation={[0, -6.9, 0]} 
     />
   );
 };
