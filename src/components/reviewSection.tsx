@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { reviewsObj } from "@/common/reviewsObj";
+import AnimatedCard from "./AnimateCard/main";
 
 const ReviewsSection = () => {
   return (
@@ -15,17 +16,24 @@ const ReviewsSection = () => {
       <div className="text-center w-full flex flex-col gap-10">
         {/* Header */}
         <div className="w-full flex justify-center">
+          <AnimatedCard>
           <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
             Reviews
           </p>
+          </AnimatedCard>
+          
         </div>
+        <AnimatedCard>
         <h2 className="text-4xl font-bold text-white font-primary">
           Customer Voices: <br /> Hear What{" "}
           <span className="text-secondary">They Say</span>!
         </h2>
+        </AnimatedCard>
+        
       </div>
 
       {/* Swiper Slider */}
+      <AnimatedCard>
       <div className="relative w-full md:w-[70%] lg:w-[50%]">
         {/* Navigation Buttons for Mobile and Tablet */}
         <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
@@ -80,6 +88,8 @@ const ReviewsSection = () => {
           ))}
         </Swiper>
       </div>
+      </AnimatedCard>
+   
 
       <style>
         {`

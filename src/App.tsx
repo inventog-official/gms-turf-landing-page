@@ -25,10 +25,19 @@ import IndoorTurf from "./components/products/indoor";
 import CircleMiniCricketStadiumTurf from "./components/CircleMiniCricketStadiumTurf";
 import PickleTurf from "./components/products/PickleTurf";
 import CircleTurf from "./components/products/circleMiniCriketStadium";
+import { useNewsFeed } from "./hook/useNewsFeed";
+import { useCarousel } from "./hook/useCarousel";
+import { useTestimonials } from "./hook/useTestimonials";
 import Portfolio from "./components/portfolio";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  const {getNewsFeeds} =  useNewsFeed()
+  const {getCarousels} =  useCarousel()
+  const {getAllTestimonials} =  useTestimonials()
+
+
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -43,7 +52,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      {isLoading && (
+      {(isLoading ||getNewsFeeds.isLoading||getAllTestimonials.isLoading||getCarousels.isLoading) && (
         <div className="w-screen h-screen bg-primary">
           <Preloader isLoading={isLoading} onComplete={handleLoadingComplete} />
         </div>
@@ -62,11 +71,11 @@ const App: React.FC = () => {
                     <PageWrapper>
                       <Home />
                     </PageWrapper>
-                    <PageWrapper>
+                    {/* <PageWrapper>
                       <div id="iconsWithContent">
                         <IconsWithContent />
                       </div>
-                    </PageWrapper>
+                    </PageWrapper> */}
                     <PageWrapper>
                       <div id="CircleMiniCricketStadiumTurf">
                         <CircleMiniCricketStadiumTurf />

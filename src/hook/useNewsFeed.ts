@@ -24,8 +24,8 @@ export function useNewsFeed() {
         throw error;
       }
     },
-    staleTime: 6000,
-    refetchInterval:60000
+    staleTime: 600000,
+    refetchInterval:600000
   });
 
   

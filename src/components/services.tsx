@@ -78,6 +78,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { servicesObj } from "@/common/servicesObj";
 import Marquee from "react-fast-marquee"; // Optional: for easy marquee handling
 import { useNavigate } from "react-router-dom";
+import AnimatedCard from "./AnimateCard/main";
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
@@ -99,21 +100,28 @@ const Services: React.FC = () => {
     <section className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       {/* Header */}
       <div className="text-left w-full">
+        <AnimatedCard>
         <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
           Our Products
         </p>
+        </AnimatedCard>
+      
       </div>
 
       {/* Main Title */}
+      <AnimatedCard>
       <div className="w-full flex flex-col gap-8 lg:gap-10">
         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-primary font-bold text-white uppercase leading-tight text-left">
           Installation<span className="text-secondary">,</span> Maintenance
           <span className="text-secondary">,</span> Renovation
         </h2>
       </div>
+      </AnimatedCard>
+    
 
       {/* Marquee Section */}
-      <div className="relative w-full py-4">
+<AnimatedCard>
+<div className="relative w-full py-4">
         {/* Left Inner Shadow */}
         <div className="absolute left-0 top-0 h-full w-[80px] lg:w-[150px] z-10 bg-gradient-to-r from-primary to-transparent pointer-events-none"></div>
         {/* Right Inner Shadow */}
@@ -134,6 +142,8 @@ const Services: React.FC = () => {
           ))}
         </Marquee>
       </div>
+</AnimatedCard>
+     
 
       {/* <div className="w-full py-4">
         <Marquee speed={40} gradient={false}>
@@ -157,7 +167,8 @@ const Services: React.FC = () => {
       {/* Services List */}
       <div className="w-full select-none">
         {servicesObj.map((service, index) => (
-          <div
+          <AnimatedCard>
+ <div
             key={index}
             className={`group w-full flex flex-col gap-5 items-end md:flex-row ${
               index === 0 ? "lg:border-t lg:border-b" : "lg:border-b"
@@ -190,6 +201,8 @@ const Services: React.FC = () => {
               </div>
             </div>
           </div>
+          </AnimatedCard>
+         
         ))}
       </div>
     </section>
