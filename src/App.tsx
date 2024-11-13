@@ -29,6 +29,7 @@ import CircleTurf from "./components/products/circleMiniCriketStadium";
 import { useNewsFeed } from "./hook/useNewsFeed";
 import { useCarousel } from "./hook/useCarousel";
 import { useTestimonials } from "./hook/useTestimonials";
+import Portfolio from "./components/portfolio";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -122,6 +123,7 @@ const App: React.FC = () => {
             />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/news" element={<News_Page />} />
+            <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
             <Route path="/demo" element={<Carousel />} />
 

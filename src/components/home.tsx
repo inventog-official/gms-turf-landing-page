@@ -21,6 +21,7 @@ const Home: React.FC = () => {
   // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
+  // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
 
   // console.log(featureIndex);
 
