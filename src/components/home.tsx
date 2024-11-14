@@ -148,7 +148,7 @@ const Home: React.FC = () => {
               <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4 ">
                 <div
                   // ref={(el) => (sectionRefs.current[3] = el!)}
-                  className="flex flex-col relative  hidden md:flex   justify-center items-center "
+                  className="flex-col relative  hidden md:flex   justify-center items-center "
                 >
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
@@ -197,7 +197,7 @@ const Home: React.FC = () => {
               <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4 ">
                 <div
                   // ref={(el) => (sectionRefs.current[5] = el!)}
-                  className="flex flex-col relative  hidden md:flex justify-center items-center    text-center   "
+                  className="flex-col relative  hidden md:flex justify-center items-center    text-center   "
                 >
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
                 </div>
                 <div
                   // ref={(el) => (sectionRefs.current[7] = el!)}
-                  className="flex flex-col relative  hidden md:flex  text-center justify-center items-center "
+                  className="flex-col relative  hidden md:flex  text-center justify-center items-center "
                 >
                   <img
                     src={iconsWithImagesObj[1].imageSrc}
@@ -265,7 +265,7 @@ const Home: React.FC = () => {
             )}
             {index === 4 && (
               <div className="w-full    px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4  gap-3">
-                <div className="flex flex-col relative  hidden md:flex   items-center justify-center   text-center   ">
+                <div className="flex-col relative  hidden md:flex   items-center justify-center   text-center   ">
                   <img
                     src={iconsWithImagesObj[0].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
@@ -284,7 +284,7 @@ const Home: React.FC = () => {
                     </p>
                   </span>{" "}
                 </div>
-                <div className="flex flex-col relative  hidden md:flex  text-center justify-center items-center ">
+                <div className="flex-col relative  hidden md:flex  text-center justify-center items-center ">
                   <img
                     src={iconsWithImagesObj[1].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
@@ -304,7 +304,7 @@ const Home: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="flex flex-col   hidden md:flex relative items-center justify-center  text-center">
+                <div className="flex-col   hidden md:flex relative items-center justify-center  text-center">
                   <img
                     src={iconsWithImagesObj[2].imageSrc}
                     className="h-28 w-32 sm:h-40 sm:w-52 md:h-52 md:w-52 lg:h-52 lg:w-52 select-none"
