@@ -7,7 +7,8 @@ interface Contact {
     phone: string;
     message: string;
   }
-  const API_URL = "https://api-gms.vercel.app/api/v1/contacts";
+  // const API_URL = "https://api-gms.vercel.app/api/v1/contacts";
+  const API_URL = "https://api-gms-theta.vercel.app/api/v1/contacts";
 
 export function useCantacts() {
   const queryClient = useQueryClient();

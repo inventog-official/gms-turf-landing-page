@@ -126,7 +126,6 @@ const App: React.FC = () => {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
             <Route path="/demo" element={<Carousel />} />
-
             {/* products pages */}
             CircleTurf
             <Route path="/pickle-turf" element={<PickleTurf />} />

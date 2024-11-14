@@ -4,7 +4,9 @@ type Carousel = {
     id: number;
     url: string;
   };
-  const API_URL = "https://api-gms.vercel.app/api/v1/carousel";
+  // const API_URL = "https://api-gms.vercel.app/api/v1/carousel";
+    const API_URL = "https://api-gms-theta.vercel.app/api/v1/carousel";
+
 
 export function useCarousel() {
   const queryClient = useQueryClient();
@@ -21,8 +23,8 @@ export function useCarousel() {
         throw error;
       }
     },
-    staleTime: 6000,
-    refetchInterval:60000
+    staleTime: 600000,
+    refetchInterval:600000
   });
 
 

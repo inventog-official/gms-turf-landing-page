@@ -10,7 +10,8 @@ type Testimonial = {
   mediaUrl: string;
 };
 // Define the API URL base for testimonials (adjust if needed)
-const API_URL = "https://api-gms.vercel.app/api/v1/testimonials";
+// const API_URL = "https://api-gms.vercel.app/api/v1/testimonials";
+const API_URL = "https://api-gms-theta.vercel.app/api/v1/testimonials"
 
 export function useTestimonials() {
   const queryClient = useQueryClient();
@@ -27,8 +28,8 @@ export function useTestimonials() {
         throw error;
       }
     },
-       refetchInterval:60000,
-    staleTime: 6000,
+    staleTime: 600000,
+    refetchInterval:600000
   });
 
   return {
