@@ -50,7 +50,7 @@ const Portfolio: React.FC = () => {
       {/* Transparent overlay for inspection */}
       <div
         className="absolute inset-0 z-10 cursor-default"
-        style={{ background: "rgba(0, 0, 0, 0)", pointerEvents: "auto" }}
+        style={{ background: "rgba(0, 0, 0, 0)", pointerEvents: "auto", touchAction: "auto" }}
       />
     </div>
   );
