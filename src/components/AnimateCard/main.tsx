@@ -53,7 +53,7 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({ children }) => {
             opacity:scrollYProgress
         }}
          ref={cardRef} 
-         className="card  flex justify-center duration-800 w-full transform translate-y-5">
+         className="card  fade-in-10 fade-out-10 flex justify-center duration-800 w-full transform translate-y-5">
             {children}
         </motion.div>
     );
