@@ -38,7 +38,7 @@ const Portfolio: React.FC = () => {
       <Canvas
         camera={{ position: [0, 3, 5], fov: 50 }}
         gl={{ antialias: true }}
-        style={{ pointerEvents: "auto", touchAction: "auto" }}
+        style={{ pointerEvents: "auto" }}
       >
         <color attach="background" args={["#0f150e"]} />
         <fog attach="fog" args={["#0f150e", 5, 0]} />

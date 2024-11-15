@@ -42,6 +42,11 @@
   display: none;
 }
 
+* {
+  touch-action: auto !important;
+}
+
+
 /* Hide scrollbar for Firefox */
 * {
   scrollbar-width: none;
