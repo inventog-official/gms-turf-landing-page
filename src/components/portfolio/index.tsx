@@ -18,6 +18,21 @@ const Portfolio: React.FC = () => {
       window.removeEventListener("keydown", openDevTools);
     };
   }, []);
+
+  useEffect(() => {
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.touches.length > 1) {
+        e.preventDefault(); // Prevent default on multi-touch to avoid issues
+      }
+    };
+
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+  
   return (
     <div className="w-screen h-screen overflow-y-scroll bg-primary relative">
       <Canvas
