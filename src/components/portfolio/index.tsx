@@ -53,7 +53,7 @@ const Portfolio: React.FC = () => {
   // const isDesktop = screenWidth > 1024
 
   return (
-    <div className="w-screen h-screen overflow-y-scroll bg-primary">
+    <div className="w-screen h-screen overflow-y-scroll bg-primary relative">
       <Canvas
         camera={{
           position: isMobile ? [0, 2, 4] : isTablet ? [0, 2.5, 5] : [0, 3, 6],
@@ -88,6 +88,11 @@ const Portfolio: React.FC = () => {
           minPolarAngle={Math.PI / 3}
         />
       </Canvas>
+      {/* Transparent overlay for inspection */}
+      <div 
+        className="absolute inset-0 z-10 cursor-default"
+        style={{ background: 'rgba(0, 0, 0, 0)', pointerEvents: 'auto' }}
+      />
     </div>
   )
 }
