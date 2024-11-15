@@ -36,11 +36,11 @@ const IndoorTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              When constructing an indoor turf, key considerations must be
-              addressed to ensure functionality, durability, and player safety.
+            When constructing an indoor turf, key considerations must be
+              Addressed to ensure functionality, durability, and player safety.
               Organizations like FIFA, FIBA, FIH provide recommended dimensions
-              and specifications to ensure that indoor facilities meet the
-              requirements for professional or competitive play. However, for
+              And specifications to ensure that indoor facilities meet the
+              Requirements for professional or competitive play. However, for
               multi-purpose or recreational indoor turfs, the dimensions are
               often customized based on the intended use, available space, and
               client requirements.
@@ -91,11 +91,11 @@ const IndoorTurf = () => {
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
             <p className="md:text-2xl text-lg">
-              Depending on the intended purpose, the grass should be constructed
-              with precise measurements to meet the particular interior space.
+            Depending on the intended purpose, the grass should be constructed
+              With precise measurements to meet the particular interior space.
               Typically, these measurements range from 60 feet (18.29 meters) to
               120 feet (36.58 meters) in length and 30 feet (9.14 meters) to 60
-              feet (18.29 meters) in width.
+              Feet (18.29 meters) in width.
             </p>
           </div>
         </div>

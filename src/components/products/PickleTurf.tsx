@@ -17,13 +17,13 @@ const PickleTurf = () => {
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
             <p className="uppercase font-primary">
-              Premium Playing Surface for Pickleball EnthusiastsL
+              Premium Playing Surface for Pickle ball EnthusiastsL
             </p>
           </FadeIn>
           <FadeIn>
             <p>
               Introducing Pickle Turf, an exclusive, top-quality surface
-              designed specifically for pickleball enthusiasts looking for a
+              designed specifically for pickle ball enthusiasts looking for a
               superior playing experience. With precise attention to texture,
               resilience, and court dynamics, Pickle Turf provides a surface
               that complements every aspect of the game. This high-performance
@@ -31,7 +31,7 @@ const PickleTurf = () => {
               traction, and comfort, enhancing your play while preserving
               agility and control. Whether for training, friendly matches, or
               competitive play, Pickle Turf transforms any space into a
-              professional-grade pickleball court. Our turf combines advanced
+              professional-grade pickle ball court. Our turf combines advanced
               materials and a specialized design to withstand heavy play and
               varied weather conditions, providing durability and longevity.
               It’s crafted for minimal maintenance, so you can enjoy more
@@ -47,8 +47,8 @@ const PickleTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              Professional-grade artificial turf tailored for pickleball
-              gameplay Optimized surface for consistent ball bounce and precise
+              Professional-grade artificial turf tailored for pickle ball
+              game play Optimized surface for consistent ball bounce and precise
               movement Weather-resistant materials, suitable for outdoor and
               indoor play Shock-absorbing layer for reduced impact on players'
               joints Low-maintenance design for hassle-free play

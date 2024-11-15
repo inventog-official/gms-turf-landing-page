@@ -112,7 +112,7 @@ const AboutUs: React.FC = () => {
               Game On Solution has developed high-quality sports turfs across
               South India, specially designed to enhance the playing experience.
               From football fields to outdoor cricket pitches, each turf is
-              arranged with precision to support optimal gameplay and comfort
+              arranged with precision to support optimal game play and comfort
               for athletes. Notably, Game On Solution is a certified provider of
               FIFA-standard turf, ensuring that players enjoy top-tier
               facilities that meet international standards. With a commitment to

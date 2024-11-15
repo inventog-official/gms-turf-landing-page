@@ -25,17 +25,17 @@ const FootballTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              Verify Compliance with FIFA and UEFA Standards: Ensure that the
-              artificial turf meets the criteria outlined by FIFA (Federation
-              Internationale de Football Association) and UEFA(Union of European
+            Verify Compliance with FIFA and UEFA Standards: Ensure that the
+              Artificial turf meets the criteria outlined by FIFA (Federation
+              Internationale de Football Association) and UEFA (Union of European
               Football Associations).
             </p>
           </FadeIn>
           <FadeIn>
             <p>
-              These bodies establish regulations concerning the quality and
-              performance of artificial football surfaces, including
-              certifications such as FIFA Quality Pro.
+            These bodies establish regulations concerning the quality and
+              Performance of artificial football surfaces, including
+              Certifications such as FIFA Quality Pro.
             </p>
           </FadeIn>
         </Container>

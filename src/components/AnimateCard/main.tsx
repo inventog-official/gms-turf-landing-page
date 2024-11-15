@@ -26,7 +26,7 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({ children }) => {
                     opacity: 1, 
                     y: 0, 
                     scale: 1, 
-                    duration: 1.5,  // Increased duration to 1.5 seconds
+                    duration: 1,  // Increased duration to 1.5 seconds
                     ease: "power4.out",  // Changed easing to power4 for a smoother effect
                     scrollTrigger: {
                         trigger: card,
