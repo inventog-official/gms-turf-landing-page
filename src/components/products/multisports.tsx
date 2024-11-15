@@ -34,12 +34,12 @@ const MultiSportsTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              A multisport turf's construction must take into account elements
+              A multi-sport turf's construction must take into account elements
               that guarantee player safety, longevity, and adaptability to
               different sports. High-grade synthetic materials are used to
               create the surface, which provides a good mix of cushioning and
               grip for a variety of sports, including basketball, tennis, and
-              soccer. For a variety of uses, our multisport turf may offer a
+              soccer. For a variety of uses, our multi-sport turf may offer a
               dependable, entertaining, and safe playing surface.
             </p>
           </FadeIn>

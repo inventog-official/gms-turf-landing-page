@@ -92,7 +92,9 @@ export const Footer = () => {
           </p>
         </div>
         <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary lg:justify-end">
-          <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+          <div onClick={() =>{
+            window.open("https://www.instagram.com/gameon_solution")
+          }} className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
             <FaInstagram />
           </div>
           <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
@@ -101,7 +103,9 @@ export const Footer = () => {
           <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
             <FaFacebook />
           </div>
-          <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
+          <div onClick={() =>{
+            window.open("https://wa.me/8428972983")
+          }} className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
             <FaWhatsapp />
           </div>
         </div>

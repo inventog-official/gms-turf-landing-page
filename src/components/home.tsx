@@ -16,6 +16,12 @@ const Home: React.FC = () => {
     url: string;
   }[];
 
+
+ const BlurHash =  ["NGBWPd^ODPNHI.Na^n-UkPR+M|Na4?NLxsoboLjF",
+ "N44MUytQ4UMyq8kUHce:y,oymtV[8wV[.kt7R7oM",
+"N68qWq?H019YO+SRxwRjbXofoLa{01E1?@-q#ss*",
+ "N64{6YV^4Uo[.7rxWEbGoen*RkX74Vow?[RUIBXM",
+ "N54L{vRQ8z%fpFMyQ;kBtiWBi|kB4VtQ.jIBVux[",]
   // const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
@@ -86,7 +92,8 @@ const Home: React.FC = () => {
       {data?.map((item, index) => {
         return (
           <div className=" flex relative justify-center items-center h-screen">
-            <VerticalCardSlider index={index} images={item.url} />
+            
+            <VerticalCardSlider index={index} blurHash={BlurHash[index]} images={item.url} />
             {index === 0 && (
               <div className="bottom-14  lg:bottom-10 z-30 w-full absolute flex justify-center animate-bounce transition-all duration-1000">
                 <FootballAnimation />
@@ -112,8 +119,20 @@ const Home: React.FC = () => {
               >
                 <TextHoverAnimation text="Sports" />
                 <div className="text-secondary">
-                  <TextHoverAnimation text="infrastructure" />
+                  <TextHoverAnimation text="infrastructure " />
                 </div>
+                <span className="md:block hidden">
+                <TextHoverAnimation text="developer" />
+                </span>
+
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-2xl  md:hidden md:text-4xl font-primary uppercase flex gap-3 justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+             
+                <TextHoverAnimation text="developer" />
+
               </h1>
             </div>{" "}
             {index === 1 && (

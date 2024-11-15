@@ -29,6 +29,7 @@ import { useNewsFeed } from "./hook/useNewsFeed";
 import { useCarousel } from "./hook/useCarousel";
 import { useTestimonials } from "./hook/useTestimonials";
 import Portfolio from "./components/portfolio";
+import InstagramEmbed from "./components/instagram";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -112,6 +113,13 @@ const App: React.FC = () => {
                         <ReviewsSection />
                       </div>
                     </PageWrapper>
+
+                    <PageWrapper>
+                      <div id="instagram" className="">
+                      <InstagramEmbed/>
+                      </div>
+                    </PageWrapper>
+
                     <PageWrapper>
                       <div id="footer">
                         <Footer />

@@ -85,7 +85,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
               </p>
             ))} */}
             <div className="flex flex-col text-center leading-none">
-              {["Sports", "Infrastructure"].map((word, index) => (
+              {["Sports", "Infrastructure" ,"developer"].map((word, index) => (
                 <p
                   key={index}
                   className={`${

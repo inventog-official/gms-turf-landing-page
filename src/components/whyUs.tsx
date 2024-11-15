@@ -114,9 +114,9 @@ const WhyUs: React.FC = () => {
           sports ground construction{" "}
           <span className="text-secondary">services</span>. Moreover, we are
           proud dealers for CC Grass and{" "}
-          <span className="text-secondary">Bellinturf</span> in India,
+          <span className="text-secondary">Bellin turf</span> in India,
           contributing to football turf business plans and turf investments.
-          Whether it's Futsal courts or synthetic{" "}
+          Whether it's Festal courts or synthetic{" "}
           <span className="text-secondary">lawn</span> installations, we lead
           the way in gully cricket and football turf manufacturing.
         </p>
