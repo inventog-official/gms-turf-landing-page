@@ -42,6 +42,25 @@
   display: none;
 }
 
+/* * {
+  touch-action: auto !important;
+} */
+
+.canvas-container {
+  pointer-events: auto !important;  /* Ensure pointer events are enabled */
+}
+
+canvas {
+  position: relative !important;
+  z-index: 10 !important; /* Ensure canvas is on top */
+
+  touch-action: none !important; /* Prevent browser from intercepting touch gestures */
+  width: 100%; /* Ensure full width */
+  height: 100%; /* Ensure full height */
+  display: block !important; /* Optional, to prevent inline block spacing */
+}
+
+
 /* Hide scrollbar for Firefox */
 * {
   scrollbar-width: none;
