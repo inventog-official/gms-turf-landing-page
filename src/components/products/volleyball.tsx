@@ -43,7 +43,7 @@ const VolleyballTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              The Fédération Internationale de Volleyball (FIVB), which is the
+              The Federation Internationale de Volleyball (FIVB), which is the
               worldwide governing organization of volleyball, establishes the
               size of a volleyball court. The FIVB sets the official volleyball
               rules and regulations, including the court's exact measurements,

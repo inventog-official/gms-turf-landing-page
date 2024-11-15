@@ -18,7 +18,7 @@ const CricketTurf = () => {
         />
         <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
-            <p className=" text-secondary font-primary">CRICKET TURF</p>
+            <p className=" text-secondary font-primary">CRICKET NETS</p>
           </FadeIn>
           <FadeIn>
             <span className="text-secondary">
@@ -27,11 +27,11 @@ const CricketTurf = () => {
           </FadeIn>
           <FadeIn>
             <span>
-              Reviving box cricket in a safer environment presents a remarkable
-              business opportunity, especially as communities increasingly
-              prioritize sports and recreational activities in secure settings.
+            Reviving box cricket in a safer environment presents a remarkable
+              Business opportunity, especially as communities increasingly
+              Prioritize sports and recreational activities in secure settings.
               With a soaring demand for dedicated playing areas and the
-              potential for revenue generation through turf rentals, the market
+              Potential for revenue generation through turf rentals, the market
               is ripe for expansion. Opting for artificial turfs for box cricket
               offers players enhanced safety, minimizing the risk of accidents
               while elevating the overall playing experience. These artificial

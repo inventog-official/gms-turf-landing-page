@@ -17,7 +17,7 @@ const CircleTurf = () => {
         <Container className="relative z-10 max-w-[692px] space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
             <p className="uppercase text-secondary font-primary">
-              Circle Mini Cricket Stadium Turf
+              Mini Cricket Stadium
             </p>
           </FadeIn>
           <FadeIn>
@@ -27,22 +27,22 @@ const CircleTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              Welcome to the Circle Mini Cricket Stadium Turf, where passion for
-              cricket meets high-quality, exclusive playing surfaces. Designed
-              with the perfect blend of aesthetics and functionality, our turf
+              Welcome to the Circle Mini Cricket Stadium turf, where passion for
+              Cricket meets high-quality, exclusive playing surfaces. Designed
+              With the perfect blend of aesthetics and functionality, our turf
               offers an unmatched experience for players of all skill levels.
               The turf’s professional-grade quality ensures optimal ball bounce,
               pace, and spin, bringing a true stadium feel to every game.
-              Whether you’re looking to play a friendly match or host a
+              Whether you’re looking to play a friendly match or host
               competitive tournament, Circle Mini Stadium is crafted to offer a
               first-rate cricketing experience in a compact setting. Our
-              exclusive turf has been meticulously engineered to provide
+              Exclusive turf has been meticulously engineered to provide
               durability and safety, allowing players to focus solely on their
-              game. With shock-absorbing materials, the surface minimizes impact
-              on joints, making it ideal for extended play sessions. At Circle
-              Mini Stadium, every aspect has been designed to create an
+              game. With shock-absorbing materials, the surface minimizes
+              impact. on joints, making it ideal for extended play sessions. At
+              Circle Mini Stadium, every aspect has been designed to create an
               environment that brings out the best in every cricketer, from
-              beginners to seasoned professionals.
+              beginners to seasoned professionals.  
             </p>
           </FadeIn>
           <FadeIn>
