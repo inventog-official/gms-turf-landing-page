@@ -108,6 +108,7 @@ const Navbar: React.FC = () => {
                 { path: "#aboutUs", label: "About" },
                 { path: "#services", label: "Services" },
                 { path: "#contact", label: "Contact" },
+                { path: "/portfolio", label: "Portfolio" },
                 { path: "/news", label: "News" },
                 { path: "/testimonials", label: "Testimonials" },
               ].map((item) => (
