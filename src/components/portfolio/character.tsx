@@ -16,10 +16,10 @@ const Character: React.FC = () => {
 
       // Adjust scale based on the window width
       if (width < 768) {
-        setScale(0.03); // Smaller scale for mobile
-        setPosition([0, -3.75, 0]); // Adjust position for mobile
+        setScale(0.045); // Smaller scale for mobile
+        setPosition([-0.5, -3.75, 0]); // Adjust position for mobile
       } else if (width < 1024) {
-        setScale(0.03); // Medium scale for tablets
+        setScale(0.04); // Medium scale for tablets
         setPosition([0, -3.8, 0]); // Adjust position for tablets
       } else {
         setScale(0.045); // Larger scale for desktop
