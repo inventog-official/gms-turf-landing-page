@@ -7,7 +7,7 @@ interface TextHoverAnimationProps {
 
 const TextHoverAnimation: React.FC<TextHoverAnimationProps> = ({ text }) => {
   return (
-    <div className="flex space-x-1">
+    <div className="flex ">
       {text.split("").map((char, index) => (
         <motion.span
           key={index}

@@ -10,7 +10,7 @@ const CricketTurf = () => {
     <div className="">
       <div className="bg-background relative z-10 select-none">
         <Hero
-          title={"CRICKET TURF"}
+          title={"CRICKET NETS"}
           subtitle={"FINDS ITS MARK"}
           bgImgUrl={
             "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_968,h_540,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png "
@@ -22,7 +22,7 @@ const CricketTurf = () => {
           </FadeIn>
           <FadeIn>
             <span className="text-secondary">
-              ESSENTIAL CONSIDERATIONS FOR CRICKET TURF
+              ESSENTIAL CONSIDERATIONS FOR CRICKET NETS
             </span>
           </FadeIn>
           <FadeIn>
@@ -68,7 +68,7 @@ const CricketTurf = () => {
                   {/* Text Overlay */}
                   <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">
                     <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-center">
-                      <span className="text-secondary">CRICKET TURF</span>
+                      <span className="text-secondary">CRICKET NETS</span>
                     </p>
                   </div>
                 </div>

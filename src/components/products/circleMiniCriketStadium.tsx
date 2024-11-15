@@ -22,12 +22,12 @@ const CircleTurf = () => {
           </FadeIn>
           <FadeIn>
             <p className="uppercase text-secondary">
-              ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium Turf
+              ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium 
             </p>
           </FadeIn>
           <FadeIn>
             <p>
-              Welcome to the Circle Mini Cricket Stadium turf, where passion for
+              Welcome to the Circle Mini Cricket Stadium , where passion for
               Cricket meets high-quality, exclusive playing surfaces. Designed
               With the perfect blend of aesthetics and functionality, our turf
               offers an unmatched experience for players of all skill levels.

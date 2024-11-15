@@ -10,7 +10,7 @@ const PickleTurf = () => {
     <div className="">
       <div className="bg-background relative z-10 select-none">
         <Hero
-          title={"PICKLE TURF"}
+          title={"PICKLE BALL"}
           subtitle={"FINDS ITS MARK"}
           bgImgUrl={" /pickleTurf/pickle-turf-005.jpg"}
         />
@@ -43,7 +43,7 @@ const PickleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p className="uppercase">Features of Pickle Turf </p>
+            <p className="uppercase">Features of Pickle</p>
           </FadeIn>
           <FadeIn>
             <p>

@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import AnimatedCard from "./AnimateCard/main";
+import TextHoverAnimation from "./textHoverAnimation";
 
 const CircleMiniCricketStadiumTurf = () => {
 
@@ -11,9 +12,12 @@ const CircleMiniCricketStadiumTurf = () => {
       id="CircleMiniCricketStadiumTurf"
       className="flex flex-col gap-10 pt-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28"
     >
-      <AnimatedCard > <p className="text-2xl pb-2 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white uppercase leading-tight text-center px-4">
-        Circle Mini
-        <span className="text-secondary"> Cricket</span> Stadium Turf
+      <AnimatedCard > <p className="text-2xl flex  gap-2 pb-2 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white uppercase leading-tight text-center px-4">
+         <TextHoverAnimation text={"Mini"} />
+         
+        <span className="text-secondary">          <TextHoverAnimation text={"Cricket"} />
+        </span>         <TextHoverAnimation text={"Stadium"} />
+         
       </p></AnimatedCard>
      <AnimatedCard>
      <div className="w-full max-w-[1200px] px-4">
@@ -30,7 +34,7 @@ const CircleMiniCricketStadiumTurf = () => {
         >
           <div className="relative z-50 px-2">
             <h1 className="font-bold text-lg sm:text-xl md:text-3xl text-gray-50">
-              Circle Mini Cricket Stadium Turf
+               Mini Cricket Stadium 
             </h1>
             {/* <p className="font-normal text-sm sm:text-base text-gray-50 mt-2 sm:mt-4">
               This card is for some special elements, like displaying background

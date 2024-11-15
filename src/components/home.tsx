@@ -103,7 +103,7 @@ const Home: React.FC = () => {
               ref={(el) => (sectionRefs.current[0] = el!)}
               className="flex gap-3 top-28  absolute z-30 flex-col  text-center "
             >
-              <h1 className="text-2xl md:text-4xl uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp ">
+              <h1 className="text-2xl md:text-4xl  uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp ">
                 <span className="text-secondary">
                   <SlBadge />
                 </span>
@@ -134,7 +134,7 @@ const Home: React.FC = () => {
                 <TextHoverAnimation text="developer" />
 
               </h1>
-            </div>{" "}
+            </div>
             {index === 1 && (
               <div className="w-full   px-3  items- bottom-4 justify-start  absolute lg:grid lg:grid-cols-4 md:grid md:grid-cols-4  ">
                 <div
