@@ -91,15 +91,16 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
                   className={`${
                     word === "Sports"
                       ? "text-[5.1rem] md:text-[6.5rem] text-secondary"
-                      : "text-[2.25rem] md:text-[2.8rem] text-white"
-                  } ${word === "developer"?"text-[3.5rem] md:text-[4.3rem] text-secondary":""
+                      : "text-[2.25rem] md:text-[2.8rem] t"
+                  } ${word === "developer"?"text-[3.5rem] md:text-[4.3rem] text-[#febc12]":""
                   }
                   uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
                     currentWord >= index + 1
                       ? "opacity-100 blur-none translate-y-0"
                       : "opacity-0 blur-[10px] translate-y-10"
                   }
-                  ${word==="developer"?"text-[#febc12]":""}`}
+                   ${word==="developer"?"text-[#febc12]":""}
+                  ${word==="Infrastructure"?"text-white":""}`}
                 >
                   {word}
                 </p>
