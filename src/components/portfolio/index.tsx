@@ -71,7 +71,7 @@ const Portfolio: React.FC = () => {
         <CharacterScene />
         <OrbitControls
           enableZoom={false}
-          // enableRotate={false}
+          enableRotate={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 3}
         />
