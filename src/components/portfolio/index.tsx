@@ -81,9 +81,9 @@ const Portfolio: React.FC = () => {
         <CharacterScene />
 
         <OrbitControls
-          enableZoom={true} // Enable zoom on all devices
-          enableRotate={true} // Ensure rotation is enabled for mobile
-          enablePan={true} // Enable panning if needed on mobile
+          enableZoom={false} // Enable zoom on all devices
+          enableRotate={false} // Ensure rotation is enabled for mobile
+          enablePan={false} // Enable panning if needed on mobile
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 3}
         />
