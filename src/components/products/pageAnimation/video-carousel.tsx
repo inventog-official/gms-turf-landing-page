@@ -6,11 +6,13 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import SliderSection from "../ProductCarousel/main";
+import { OptimizedImage } from "@/components/LazyLoading/OptimizedImage";
 // import { useWindowSize } from "react-use";
 
 export type CarouselImage = {
   poster: string;
   name: string;
+  blurHash?:string
 };
 
 interface VideoCarouselProps {
@@ -133,7 +135,7 @@ VideoCarouselProps) => {
         transition={{ duration: 0.4 }}
         className="-mt-[calc((100vh-(300px*(16/9)))/2)] space-y-3 pt-4 md:-mt-[calc((100vh-(60vw*(9/16)))/2)]"
       >
-        <SmallVideoCarousel carouselImages={randomcarouselImagesSet1} />
+        <SmallVideoCarousel  carouselImages={randomcarouselImagesSet1} />
         <div className="[--carousel-offset:-32px] [--duration:74s]">
           <SmallVideoCarousel carouselImages={randomcarouselImagesSet2} />
         </div>
@@ -147,6 +149,7 @@ const SmallVideoCarousel = ({
 }: {
   carouselImages: CarouselImage[];
 }) => {
+
   return (
     <div className="overflow-clip">
       <div className="animate-carousel-move relative left-[var(--carousel-offset,0px)] flex gap-3">
@@ -155,11 +158,12 @@ const SmallVideoCarousel = ({
             className="aspect-video w-[40vw] shrink-0 md:w-[23vw]"
             key={`${carouselImage.name}-${index}`}
           >
-            <img
+            <OptimizedImage classNames="h-52 rounded-xl  object-cover w-80" imageUrl={carouselImage.poster} blurhash={carouselImage.blurHash ??"L85#@1ay02WCbaayjGoL8#ay??ay"} height={600} width={320} />
+            {/* <img
               className="h-full w-full rounded-xl object-cover"
               src={carouselImage.poster}
               alt={carouselImage.name}
-            />
+            /> */}
           </div>
         ))}
       </div>

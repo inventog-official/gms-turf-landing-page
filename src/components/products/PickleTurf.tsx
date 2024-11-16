@@ -4,6 +4,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const PickleTurf = () => {
   return (
@@ -57,7 +58,10 @@ const PickleTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
+      <AnimateCard>
       <Certificates />
+
+      </AnimateCard>
 
       {/* <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-4xl mx-auto">
         <img
@@ -93,26 +97,38 @@ const cricketItems = [
   {
     poster: "/pickleTurf/pickle-turf-001.jpg",
     name: "Airplane",
+    blurHash:"LDD9*K~BMeS0_NIUWUR*x_IVx@%3"
+
   },
   {
     poster: "/pickleTurf/pickle-turf-002.jpg",
     name: "Family man",
+    blurHash:"L26R[Gb]00nh0Nj@--oeu%V@O_a$"
+
   },
   {
     poster: "/pickleTurf/pickle-turf-003.jpg",
     name: "Family man",
+    blurHash:"LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:"
+
   },
   {
     poster: "/pickleTurf/pickle-turf-004.jpg",
     name: "Laboratory",
+    blurHash:"LE8hnHRk00$_HXoboxR;.TWZIWs*"
+
   },
   {
     poster: "/pickleTurf/pickle-turf-005.jpg",
     name: "Napoleon",
+    blurHash:"LWEV{pt6xTocR5n+s:a{~RWBIpR+"
+
   },
   {
     poster: "/pickleTurf/pickle-turf-006.jpg",
     name: "Person in Darkness",
+    blurHash:"LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:"
+
   },
 
   // {

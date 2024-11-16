@@ -13,6 +13,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const VolleyballTurf = () => {
   return (
@@ -53,7 +54,10 @@ const VolleyballTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Volleyball Turf" carouselImages={cricketItems} />
+      <AnimateCard>
       <Certificates />
+
+      </AnimateCard>
 
       <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
         <div className="flex  md:flex-row flex-col gap-12 ">
@@ -61,11 +65,14 @@ const VolleyballTurf = () => {
             <div className="relative flex items-center">
               {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
               <div className="w-full h-full overflow-hidden group">
+                <AnimateCard>
                 <img
                   src="https://storage.googleapis.com/a1aa/image/cOI0WQ1AEFLPD1FgjM1Fpj73nvF8e7egZf9KpfjhUGcbml6OB.jpg"
                   className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
                   alt="Director"
                 />
+                </AnimateCard>
+              
                 {/* Inner Light Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
                   <div className="absolute inset-0 bg-black/25" />
@@ -87,12 +94,15 @@ const VolleyballTurf = () => {
         </div>
 
         <div className="w-full flex flex-col justify-center items-start gap-8  ">
+          <AnimateCard>
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             VOLLEYBALL COURT DIMENSIONS ACCORDING TO
             <span className="text-secondary"> FIVB</span>
           </p>
+          </AnimateCard>
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
+            <AnimateCard>
             <p className="md:text-2xl text-lg">
               The court should adhere to standard dimensions, which are 18
               meters (59 feet) in length and 9 meters (29.5 feet) in width. The
@@ -103,6 +113,8 @@ const VolleyballTurf = () => {
               inches) for women's play, must be securely anchored and positioned
               centrally.
             </p>
+            </AnimateCard>
+           
           </div>
         </div>
       </div>
@@ -116,31 +128,42 @@ const cricketItems = [
   {
     poster: "https://www.meckavosports.com//uploads/volleyball_court_1.webp",
     name: "Airplane",
+    blurHash:'L~Lgtvt6Rjt6_NoLf6a~o#s:j[WC'
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_108dfb94ec234a17a6d8cdc9026bfc8d~mv2.png/v1/fill/w_466,h_326,fp_0.15_0.48,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-05.png",
     name: "Family man",
+    blurHash:"LUEM?@D$kqRj_MV[j]W=tpxZaet7"
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_14b3e64472704a399f224c9b7999145f~mv2.png/v1/fill/w_488,h_326,fp_0.44_0.52,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-03.png",
     name: "Laboratory",
+    blurHash:"LB8=EGsm8^IB?[xvM}IUs_xvNQf5"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_cbfa6596676b4692a4f70ba8069553ba~mv2.png/v1/fill/w_488,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-04.png",
     name: "Napoleon",
+    blurHash:"LQK^sL00^*My9YO?D%x[~AnmR6tk"
+
+    
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_06ddf9fa58a143e4bcc20f2b25e1ad05~mv2.png/v1/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-02.png",
     name: "Person in Darkness",
+    blurHash:"LWEV{pt6xTocR5n+s:a{~RWBIpR+"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_bb5250c3415947e8b6a9d1cdad06f9e7~mv2.png/v1/fill/w_484,h_662,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-06.png",
     name: "Scary Building",
+    blurHash:"L3Ac0{KK1Cov00nm%3V@0J-B+VbF"
+
   },
   //   {
   //     poster:

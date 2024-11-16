@@ -13,6 +13,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const MultiSportsTurf = () => {
   return (
@@ -46,8 +47,9 @@ const MultiSportsTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Multi-sports Turf" carouselImages={cricketItems} />
-
-      <Certificates />
+<AnimateCard>
+<Certificates />
+</AnimateCard>
 
       <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
         <div className="flex  md:flex-row flex-col gap-12 ">
@@ -55,11 +57,14 @@ const MultiSportsTurf = () => {
             <div className="relative flex items-center">
               {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
               <div className="w-full h-full overflow-hidden group">
+                <AnimateCard>
                 <img
                   src="https://storage.googleapis.com/a1aa/image/9FeWw1HWmeg2WkAUfZBmvn8eZTSzLKm82E1PA3z0jo4AYm6OB.jpg"
                   className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
                   alt="Director"
                 />
+                </AnimateCard>
+               
                 {/* Inner Light Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
                   <div className="absolute inset-0 bg-black/25" />
@@ -81,12 +86,16 @@ const MultiSportsTurf = () => {
         </div>
 
         <div className="w-full flex flex-col justify-center items-start gap-8  ">
+          <AnimateCard>
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             ESSENTIAL CONSIDERATIONS FOR
             <span className="text-secondary"> MULTI-SPORT TURF</span>
           </p>
+          </AnimateCard>
+       
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
+            <AnimateCard>
             <p className="md:text-2xl text-lg">
               The turf should be designed with customizable dimensions to
               accommodate multiple activities, typically ranging from 20 meters
@@ -94,6 +103,8 @@ const MultiSportsTurf = () => {
               feet) to 20 meters (65.6 feet) in width, depending on the specific
               sports it will host.
             </p>
+            </AnimateCard>
+           
           </div>
         </div>
       </div>
@@ -107,34 +118,47 @@ const cricketItems = [
   {
     poster: "/Football/Football-01.png",
     name: "Airplane",
+    blurHash:"LE8hnHRk00$_HXoboxR;.TWZIWs*"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
+    blurHash:"LQEgpQIAB-xs9+Rlbot9~mouIVoL"
+
   },
   {
     poster: "/Football/Football-02.png",
     name: "Laboratory",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_93db6e485dbf44e58148ef38aa5db9d1~mv2.png/v1/fill/w_420,h_662,fp_0.52_0.64,q_85,usm_0.66_1.00_0.01,enc_auto/Indoor-06.png",
     name: "Napoleon",
+    blurHash:"L17n]o4T~p0100yoTJxZ00~p4T_M"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_26585cf912084d5ab27ee8ae33a06fbd~mv2.png/v1/crop/x_208,y_0,w_1669,h_1167/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-03.png",
     name: "Person in Darkness",
+    blurHash:"LE8hnHRk00$_HXoboxR;.TWZIWs*"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_cbfa6596676b4692a4f70ba8069553ba~mv2.png/v1/fill/w_488,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-04.png",
     name: "Scary Building",
+    blurHash:"L17n]o4T~p0100yoTJxZ00~p4T_M"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_a42f5b921efb4985b64fa716c98ed47b~mv2.png/v1/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indoor-03.png",
     name: "Stars",
+    blurHash:"L77n:SDm4U%K8|%KyCMz01tO?@W="
+
   },
 ];

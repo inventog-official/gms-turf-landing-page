@@ -4,6 +4,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const FootballTurf = () => {
   return (
@@ -43,8 +44,9 @@ const FootballTurf = () => {
 
 
       <VideoCarousel title="Football Turf" carouselImages={cricketItems} />
-
-      <Certificates />
+<AnimateCard>
+<Certificates />
+</AnimateCard>
 
       <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
         <div className="flex  md:flex-row flex-col gap-12 ">
@@ -52,11 +54,14 @@ const FootballTurf = () => {
             <div className="relative flex items-center">
               {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
               <div className="w-full h-full overflow-hidden group">
+                <AnimateCard>
                 <img
                   src="https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
                   className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
                   alt="Director"
                 />
+                </AnimateCard>
+               
                 {/* Inner Light Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
                   <div className="absolute inset-0 bg-black/25" />
@@ -78,12 +83,16 @@ const FootballTurf = () => {
         </div>
 
         <div className="w-full flex flex-col justify-center items-start gap-8  ">
+          <AnimateCard>
           <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES
             <span className="text-secondary"> FIFA GUIDELINES</span>
           </p>
+          </AnimateCard>
+         
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
+            <AnimateCard>
             <p className="md:text-2xl text-lg">
               The dimensions of football turf must adhere to the Laws of the
               Game, ensuring a rectangular field of play. The length of the
@@ -95,6 +104,7 @@ const FootballTurf = () => {
               spot set 12 yards(10.9m) from the goal, irrespective of the
               overall pitch size.
             </p>
+            </AnimateCard>
           </div>
         </div>
       </div>
@@ -109,32 +119,45 @@ const cricketItems = [
     poster: "/Football/Football-01.png",
     //   "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_824,h_460,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png",
     name: "Airplane",
+    blurHash:"L29R8gWR01D;0ot3}9xt?qxu02xt"
   },
+
   {
     poster: "/Football/Football-02.png",
     //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
+
   },
   {
     poster: "/Football/Football-03.png",
     //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
+   blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
   },
   {
     poster: "/Football/Football-04.png",
     name: "Napoleon",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
+
   },
   {
     poster: "/Football/Football-05.png",
     name: "Person in Darkness",
+    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
+
   },
   {
     poster: "/Football/Football-06.png",
     name: "Scary Building",
+    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
+
   },
   {
     poster: "/contactSideImg.webp",
     //   "/Football/Football-07.png",
     name: "Stars",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
+
   },
 ];
