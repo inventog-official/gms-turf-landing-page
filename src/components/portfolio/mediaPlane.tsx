@@ -1,22 +1,27 @@
-import React, { useRef, useEffect, useState } from 'react';
-import * as THREE from 'three';
-import { gsap } from 'gsap';
+import React, { useRef, useEffect, useState } from "react";
+import * as THREE from "three";
+import { gsap } from "gsap";
 
 interface MediaPlaneProps {
   imagePath: string;
   position: [number, number, number];
+  onClick: () => void;
 }
 
-const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
+const MediaPlane: React.FC<MediaPlaneProps> = ({
+  imagePath,
+  position,
+  onClick,
+}) => {
   const ref = useRef<THREE.Mesh>(null);
   const overlayRef = useRef<THREE.Mesh>(null);
   const initialRotation = useRef(new THREE.Euler(0, 0, 0));
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
-  const isVideo = imagePath.endsWith('.mp4');
-  const [isPlaying, setIsPlaying] = useState(false);
+  const isVideo = imagePath.endsWith(".mp4");
 
   const [planeSize, setPlaneSize] = useState<[number, number]>([3, 1.7]);
-  const [planePosition, setPlanePosition] = useState<[number, number, number]>(position);
+  const [planePosition, setPlanePosition] =
+    useState<[number, number, number]>(position);
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,36 +40,26 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [position]);
 
   useEffect(() => {
-    let videoElement: HTMLVideoElement | null = null;
-
     if (isVideo) {
-      videoElement = document.createElement('video');
+      const videoElement = document.createElement("video");
       videoElement.src = imagePath;
       videoElement.loop = true;
       videoElement.muted = true;
+      videoElement.play();
       const videoTexture = new THREE.VideoTexture(videoElement);
       setTexture(videoTexture);
-
-      if (isPlaying) videoElement.play();
     } else {
       const imageTexture = new THREE.TextureLoader().load(imagePath);
       setTexture(imageTexture);
     }
-
-    return () => {
-      if (videoElement) {
-        videoElement.pause();
-        videoElement.remove();
-      }
-    };
-  }, [imagePath, isPlaying]);
+  }, [imagePath]);
 
   useEffect(() => {
     if (ref.current) {
@@ -73,7 +68,7 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
         repeat: -1,
         yoyo: true,
         duration: 3,
-        ease: 'sine.inOut',
+        ease: "sine.inOut",
       });
 
       gsap.to(ref.current.rotation, {
@@ -81,7 +76,7 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
         repeat: -1,
         yoyo: true,
         duration: 3,
-        ease: 'power1.inOut',
+        ease: "power1.inOut",
       });
 
       gsap.to(ref.current.material, {
@@ -89,7 +84,7 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
         repeat: -1,
         yoyo: true,
         duration: 3,
-        ease: 'power1.inOut',
+        ease: "power1.inOut",
       });
     }
   }, [planePosition]);
@@ -104,13 +99,13 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
             x: -skewAmount * 100,
             z: skewAmount * 100,
             duration: 9.8,
-            ease: 'power1.out',
+            ease: "power1.out",
             onComplete: () => {
               gsap.to(ref.current!.rotation, {
                 x: initialRotation.current.x,
                 z: -initialRotation.current.z,
                 duration: 1.5,
-                ease: 'elastic.out(1, 0.5)',
+                ease: "elastic.out(1, 0.5)",
               });
             },
           });
@@ -118,8 +113,8 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
       }
     };
 
-    window.addEventListener('wheel', handleScroll);
-    return () => window.removeEventListener('wheel', handleScroll);
+    window.addEventListener("wheel", handleScroll);
+    return () => window.removeEventListener("wheel", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -130,47 +125,59 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({ imagePath, position }) => {
       const geometry = ref.current.geometry;
       const positions = geometry.attributes.position.array;
 
-      gsap.to({}, {
-        duration: 2,
-        repeat: -1,
-        onUpdate: () => {
-          const time = Date.now() * 0.005;
-          for (let i = 0; i < positions.length; i += 3) {
-            const x = positions[i];
-            positions[i + 2] = Math.sin(x * 1 + time) * 0.05;
-          }
-          geometry.attributes.position.needsUpdate = true;
+      gsap.to(
+        {},
+        {
+          duration: 2,
+          repeat: -1,
+          onUpdate: () => {
+            const time = Date.now() * 0.005;
+            for (let i = 0; i < positions.length; i += 3) {
+              const x = positions[i];
+              positions[i + 2] = Math.sin(x * 1 + time) * 0.05;
+            }
+            geometry.attributes.position.needsUpdate = true;
+          },
         }
-      });
+      );
     }
   }, [planePosition]);
 
-  const handlePlayToggle = () => {
-    if (isVideo) {
-      setIsPlaying((prev) => !prev);
-    }
+  const handlePointerOver = () => {
+    document.body.style.cursor = "pointer";
+  };
+
+  const handlePointerOut = () => {
+    document.body.style.cursor = "default";
   };
 
   return (
-    <mesh ref={ref} position={planePosition} onClick={handlePlayToggle}>
-      <planeGeometry args={[planeSize[0], planeSize[1], 50, 10]} />
-      <meshPhysicalMaterial
-        map={texture}
-        side={THREE.DoubleSide}
-        opacity={0.9}
-        emissiveIntensity={0.9}
-        roughness={0.6}
-        metalness={0.1}
-      />
-      
-      {/* Conditional Play Button Overlay */}
-      {isVideo && !isPlaying && (
-        <mesh ref={overlayRef} position={[0, 0, 0.07]}>
-          <circleGeometry args={[0.2, 3]} />
-          <meshBasicMaterial color="white" opacity={0.9} />
-        </mesh>
-      )}
-    </mesh>
+    <>
+      <mesh 
+        ref={ref} 
+        position={planePosition}
+        onPointerOver={isVideo ? handlePointerOver : undefined}
+        onPointerOut={isVideo ? handlePointerOut : undefined}
+      >
+        <planeGeometry args={[planeSize[0], planeSize[1], 50, 10]} />
+        <meshPhysicalMaterial
+          map={texture}
+          side={THREE.DoubleSide}
+          opacity={0.9}
+          emissiveIntensity={0.9}
+          roughness={0.6}
+          metalness={0.1}
+        />
+
+        {/* Conditional Play Button Overlay */}
+        {isVideo && (
+          <mesh ref={overlayRef} position={[0, 0, 0.07]} onClick={onClick}>
+            <circleGeometry args={[0.2, 3]} />
+            <meshBasicMaterial color="white" opacity={0.9} />
+          </mesh>
+        )}
+      </mesh>
+    </>
   );
 };
 
