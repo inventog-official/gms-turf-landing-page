@@ -5,8 +5,12 @@ import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
 import AnimateCard from "../AnimateCard/main";
+import { useEffect } from "react";
 
 const FootballTurf = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}, []); 
   return (
     <div className="">
       <div className="bg-background relative z-10 select-none">
