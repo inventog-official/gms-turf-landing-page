@@ -79,6 +79,7 @@ import { servicesObj } from "@/common/servicesObj";
 import Marquee from "react-fast-marquee"; // Optional: for easy marquee handling
 import { useNavigate } from "react-router-dom";
 import AnimatedCard from "./AnimateCard/main";
+import { OptimizedImage } from "./LazyLoading/OptimizedImage";
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
@@ -133,11 +134,12 @@ const Services: React.FC = () => {
               key={index}
               className="w-80 h-72 m-4 shadow-lg overflow-hidden transition-transform transform hover:scale-105"
             >
-              <img
+              <OptimizedImage classNames="w-80 h-72" imageUrl={image} blurhash={"N44MUytQ4UMyq8kUHce:y,oymtV[8wV[.kt7R7oM"} height={1000} width={500} />
+              {/* <img
                 src={image} // Replace with actual paths
                 alt={`image ${index + 1}`}
                 className="w-full h-full object-cover"
-              />
+              /> */}
             </div>
           ))}
         </Marquee>

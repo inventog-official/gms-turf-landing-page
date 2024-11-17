@@ -4,6 +4,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const CricketTurf = () => {
   return (
@@ -27,7 +28,7 @@ const CricketTurf = () => {
           </FadeIn>
           <FadeIn>
             <span>
-            Reviving box cricket in a safer environment presents a remarkable
+              Reviving box cricket in a safer environment presents a remarkable
               Business opportunity, especially as communities increasingly
               Prioritize sports and recreational activities in secure settings.
               With a soaring demand for dedicated playing areas and the
@@ -43,8 +44,9 @@ const CricketTurf = () => {
         </Container>
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
-
-      <Certificates />
+      <AnimateCard>
+        <Certificates />
+      </AnimateCard>
 
       <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
         <div className="flex  md:flex-row flex-col gap-12 ">
@@ -52,11 +54,14 @@ const CricketTurf = () => {
             <div className="relative flex items-center">
               {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
               <div className="w-full h-full overflow-hidden group">
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/QlCBU7weLtWDcapaMWsrh9to1bi0ceL8E0ybMf0Gqmag0TdnA.jpg"
-                  className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
-                  alt="Director"
-                />
+                <AnimateCard>
+                  <img
+                    src="https://storage.googleapis.com/a1aa/image/QlCBU7weLtWDcapaMWsrh9to1bi0ceL8E0ybMf0Gqmag0TdnA.jpg"
+                    className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
+                    alt="Director"
+                  />
+                </AnimateCard>
+
                 {/* Inner Light Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
                   <div className="absolute inset-0 bg-black/25" />
@@ -78,18 +83,24 @@ const CricketTurf = () => {
         </div>
 
         <div className="w-full flex flex-col justify-center items-start gap-8  ">
-          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
-            CRICKET TURF DIMENSIONS ACCORDING TO ICC GUIDELINES
-            <span className="text-secondary"> ICC GUIDELINES</span>
-          </p>
+          <AnimateCard>
+            <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+              CRICKET TURF DIMENSIONS ACCORDING TO ICC GUIDELINES
+              <span className="text-secondary"> ICC GUIDELINES</span>
+            </p>
+          </AnimateCard>
+
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
-            <p className="md:text-2xl text-lg">
-              A typical cricket pitch is 66 feet (20.12 meters) long and 10 feet
-              (3.05 meters) wide, with a total turf area of at least 30 yards
-              (27.43 meters) by 15 yards (13.72 meters) to accommodate bowlers
-              and fielders. The turf should be created with exact proportions.
-            </p>
+            <AnimateCard>
+              <p className="md:text-2xl text-lg">
+                A typical cricket pitch is 66 feet (20.12 meters) long and 10
+                feet (3.05 meters) wide, with a total turf area of at least 30
+                yards (27.43 meters) by 15 yards (13.72 meters) to accommodate
+                bowlers and fielders. The turf should be created with exact
+                proportions.
+              </p>
+            </AnimateCard>
           </div>
         </div>
       </div>
@@ -103,31 +114,43 @@ const cricketItems = [
     poster:
       "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_488,h_326,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Airplane",
+    blurHash:"LQEqA]D%B-x?9+Rlbot9~mouIVj@"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_488,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Family man",
+    blurHash:"LdIY5eVtnQs:00WEafR+~BofbbR*"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_177ae28dd7534c0b9961d0a1957f8f3c~mv2.png/v1/fill/w_420,h_662,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-06.png",
     name: "Laboratory",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_1144c12f5a5a4357b6f0617becae9e4b~mv2.png/v1/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-05.png",
     name: "Napoleon",
+    blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_26585cf912084d5ab27ee8ae33a06fbd~mv2.png/v1/crop/x_208,y_0,w_1669,h_1167/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-03.png",
     name: "Person in Darkness",
+    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
+
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_62c3430cd87440309a736d2a6aae8a9d~mv2.png/v1/crop/x_29,y_0,w_1714,h_2371/fill/w_484,h_662,fp_0.50_0.54,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-01.png",
     name: "Scary Building",
+    blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
+
   },
   // {
   //   poster:

@@ -57,6 +57,7 @@ import TextHoverAnimation from "./textHoverAnimation";
 import { Footer } from "./footer";
 import { RiAwardFill } from "react-icons/ri";
 import Preloader from "./preLoading";
+import AnimateCard from "./AnimateCard/main";
 
 const News_Page = () => {
   const { queryClient, getNewsFeeds } = useNewsFeed();
@@ -198,6 +199,7 @@ const News_Page = () => {
           </div>
 
           <div className="right flex flex-col gap-7">
+            <AnimateCard>
             <h3 className=" text-3xl md:text-2xl lg:text-3xl xl:text-3xl font-primary text-secondary uppercase leading-tight flex ">
               <TextHoverAnimation text="Latest" />
               <span className="text-white">
@@ -209,9 +211,11 @@ const News_Page = () => {
                 <TextHoverAnimation text="2024" />
               </span>
             </h3>
+            </AnimateCard>
             <div className="grid grid-cols-1 gap-5">
               {data?.map((item, index) => (
-                <div
+                <AnimateCard>
+ <div
                   key={item.id}
                   className={`flex list transition-transform duration-500 cursor-pointer ${
                     active === index ? "bg-gray-100/10" : ""
@@ -241,6 +245,8 @@ const News_Page = () => {
                     </p>
                   </div>
                 </div>
+                </AnimateCard>
+               
               ))}
             </div>
           </div>
@@ -259,7 +265,8 @@ const News_Page = () => {
         </h3>
         <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-4 ">
           {awards.map((image, index) => (
-            <div
+            <AnimateCard>
+   <div
               key={index}
               className="border border-gray-50/10 p-1 transform transition duration-500 ease-in-out hover:scale-105"
             >
@@ -275,6 +282,8 @@ const News_Page = () => {
                 {image.title}
               </p>
             </div>
+            </AnimateCard>
+         
           ))}
         </div>
       </div>

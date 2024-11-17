@@ -4,6 +4,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
+import AnimateCard from "../AnimateCard/main";
 
 const CircleTurf = () => {
   return (
@@ -65,7 +66,9 @@ const CircleTurf = () => {
         title="Circle Mini Cricket Turf"
         carouselImages={cricketItems}
       />
+      <AnimateCard>
       <Certificates />
+      </AnimateCard>
       <Footer />
     </div>
   );
@@ -76,33 +79,49 @@ const cricketItems = [
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
     name: "Airplane",
+    blurHash:"L9DJhL~qKkk=?J$+$zIoE0D%4nZ#"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
     name: "Family man",
+    blurHash:"LnHoH_RPX9bE_NozxFf6_3n%W;ju"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
     name: "Laboratory",
+    blurHash:"L2CPz#0iPVPw7TI;[.0d}]R;0L0e"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00011.jpg",
     name: "Napoleon",
+    blurHash:"L*Jb4|t7R-bI_4oft6bH?bNGRjn$"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Person in Darkness",
+    blurHash:"LsIX~espxHoM?wS2oybF_3s.t6fk"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Scary Building",
+    blurHash:"L85#@1ay02WCbaayjGoL8#ay??ay"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00017.jpg",
     name: "Stars",
+    blurHash:"LsIX~espxHoM?wS2oybF_3s.t6fk"
+
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00022.jpg",
     name: "Stars",
+    blurHash:"L85#@1ay02WCbaayjGoL8#ay??ay"
+
   },
 ];

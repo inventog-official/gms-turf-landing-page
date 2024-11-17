@@ -5,10 +5,12 @@ import "./style.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { OptimizedImage } from "@/components/LazyLoading/OptimizedImage";
 interface Props {
   images: {
     poster: string;
     name: string;
+    blurHash?:string;
   }[];
 }
 const SliderSection: React.FC<Props> = ({ images }) => {
@@ -35,11 +37,12 @@ const SliderSection: React.FC<Props> = ({ images }) => {
         >
           {images.map((src, index) => (
             <SwiperSlide key={index} className="swiper-slide">
-              <img
+              <OptimizedImage imageUrl={src.poster} classNames="w-full object-cover rounded-lg transition-transform duration-300 h-[75vh] md:h-[50vh] lg:h-[70vh] xl:h-[75vh]" blurhash={src.blurHash??"N44MUytQ4UMyq8kUHce:y,oymtV[8wV[.kt7R7oM"} height={660} width={770}/>
+              {/* <img
                 src={src.poster}
                 alt={`Slide ${index + 1}`}
                 className="w-full object-cover rounded-lg transition-transform duration-300 h-[75vh] md:h-[50vh] lg:h-[70vh] xl:h-[75vh]"
-              />
+              /> */}
             </SwiperSlide>
           ))}
         </Swiper>
