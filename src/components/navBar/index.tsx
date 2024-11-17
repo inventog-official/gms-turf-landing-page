@@ -89,7 +89,7 @@ const Navbar: React.FC = () => {
       } 
       flex items-center justify-center  lg:px-[5rem] xl:px-[20rem]`}
     >
-      <div className="flex  absolute px-3 md:px-10 lg:px-3 xl:px-20 items-center w-full h-full">
+      <div className="flex  absolute px-9 md:px-10 lg:px-5 xl:px-20 items-center w-full h-full">
         <div className="w-[30%] lg:w-[20%] h-full">
           <a
             href="#home"
