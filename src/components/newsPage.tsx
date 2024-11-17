@@ -127,6 +127,9 @@ const News_Page = () => {
       currentYear: getCurrentYear,
     };
   }
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}, []); 
   const awards = [
     {
       icon: "/sunNewsLogo.png",

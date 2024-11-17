@@ -87,9 +87,9 @@ const Navbar: React.FC = () => {
           ? "bg-white/5 bg-opacity-70 backdrop-blur-md shadow-lg h-[10%]"
           : `h-[15%] ${isMenuClick ? "bg-primary" : "bg-transparent"}`
       } 
-      flex items-center justify-center px-8 lg:px-[5rem] xl:px-[10rem]`}
+      flex items-center justify-center  lg:px-[5rem] xl:px-[20rem]`}
     >
-      <div className="flex items-center w-full h-full">
+      <div className="flex  absolute px-3 md:px-10 lg:px-3 xl:px-20 items-center w-full h-full">
         <div className="w-[30%] lg:w-[20%] h-full">
           <a
             href="#home"
@@ -100,7 +100,7 @@ const Navbar: React.FC = () => {
           </a>
         </div>
 
-        <div className="hidden bg-[#181817] w-[70%] lg:w-[70%] md:bg-transparent lg:flex h-full items-center justify-center transition-all duration-500 ease-out">
+        <div className="hidden bg-[#181817] w-[70%] lg:w-[90%] md:bg-transparent lg:flex h-full items-center justify-center transition-all duration-500 ease-out">
           {!isMenuClick ? (
             <ul className="flex flex-col items-center justify-center w-full gap-8 md:gap-6 lg:gap-10 xl:gap-12 text-white md:flex-row md:w-auto font-secondary">
               {[
@@ -180,12 +180,12 @@ const Navbar: React.FC = () => {
           ) : null}
         </div>
 
-        <div className="flex gap-7 h-full w-[70%] lg:w-[10%] lg:hidden justify-end items-center">
+        <div className="flex gap-7  h-full w-[70%] lg:w-[10%] lg:hidden justify-end items-center">
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
           <HamburgerMenu isClicked={isClicked} isOpen={isMenuClick} />
         </div>
         <div
-          className="hidden gap-7 h-full w-[50%] md:w-[70%] lg:flex lg:w-[10%] justify-end cursor-pointer items-center"
+          className="hidden  gap-7 h-full w-[50%] md:w-[70%] lg:flex lg:w-[10%] justify-center cursor-pointer items-center"
           onClick={() => navigate("/get-in-touch")}
         >
           <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
