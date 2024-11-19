@@ -313,19 +313,23 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
   useEffect(() => {
     if (showMediaPlanes && groupRef.current) {
       groupRef.current.children.forEach((child, idx) => {
-        const initialY = idx * 4.5;
-        const radius = 6 + Math.sin(initialY * 0.1) * 0.5;
+        // Set initial position to place the planes straight in front of the camera
+        const initialY = -idx * 4.5;
+        const radius = 7 + Math.sin(initialY * 0.1) * 0.5;
+        
+        // Place planes initially in front of the camera
         const initialX = Math.cos(initialY) * radius;
         const initialZ = Math.sin(initialY) * radius;
-        
+  
+        // GSAP animation for media plane movement
         gsap.fromTo(child.position, {
           x: initialX,
           y: initialY - 3, // Adjusted starting Y for initial animation
           z: initialZ,
         }, {
-          x: Math.cos(initialY) * 2,
-          y: initialY - 3, // Final adjusted Y position
-          z: Math.sin(initialY) * 2,
+          x: Math.cos(initialY) * 2, // Final X
+          y: initialY - 3, // Final Y
+          z: Math.sin(initialY) * 2, // Final Z
           duration: 1.5,
           ease: 'power2.out',
         });
