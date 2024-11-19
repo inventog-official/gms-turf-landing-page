@@ -222,7 +222,7 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
       {
         x: 2,
         y: -5,
-        z: 11,
+        z: 9.5,
         duration: 3.5,
         ease: 'power1.out',
         onComplete: () => setShowMediaPlanes(true),
