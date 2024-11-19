@@ -41,23 +41,6 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
     }
   };
 
-  // const handleNavClick = (path: string) => {
-  //   if (path.startsWith("#")) {
-  //     // In-page navigation
-  //     setActiveTab(path);
-  //     const section = document.querySelector(path);
-  //     if (section) {
-  //       section.scrollIntoView({ behavior: "smooth" });
-  //       isCloseMenu();
-  //     }
-  //   } else {
-  //     // External route navigation
-  //     navigate(path);
-  //     setActiveTab(path);
-  //     isCloseMenu();
-  //   }
-  // };
-
   return (
     <div className="flex justify-center items-start py-16 h-full w-full px-12">
       <div className="w-full">
@@ -130,50 +113,10 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
                     </li>
                   ))}
                 </ul>
-                {/* <ul className="flex flex-col w-full">
-                  {[
-                    { path: "/item1", label: "Item 1" },
-                    { path: "/item2", label: "Item 2" },
-                    { path: "/item3", label: "Item 3" },
-                  ].map((item) => (
-                    <li key={item.label}>
-                      <button
-                        className="block px-4 w-full py-2 text-white hover:bg-secondary font-medium uppercase rounded-md"
-                        onClick={() => {
-                          setIsDropdownOpen(false);
-                          handleNavClick(item.path);
-                        }}
-                      >
-                        {item.label}
-                      </button>
-                    </li>
-                  ))}
-                </ul> */}
               </motion.div>
             )}
           </li>
         </ul>
-        {/* {[
-              { path: "#home", label: "Home" },
-              { path: "#aboutUs", label: "About" },
-              { path: "#services", label: "Services" },
-              { path: "#contact", label: "Contact" },
-              { path: "/news", label: "News" },
-              { path: "/testimonials", label: "Testimonials" },
-            ].map((item) => (
-              <li key={item.label}>
-                <button
-                  className={`font-medium uppercase ${
-                    activeTab === item.path
-                      ? "text-secondary"
-                      : "text-[#D2D2D0]"
-                  } transition-all hover:text-secondary`}
-                  onClick={() => handleNavClick(item.path)}
-                >
-                  {item.label}
-                </button>
-              </li>
-            ))} */}
       </div>
     </div>
   );
