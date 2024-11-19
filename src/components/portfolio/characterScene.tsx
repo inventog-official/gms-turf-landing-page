@@ -221,9 +221,9 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
       { x: -50, z: 35 },
       {
         x: 2,
-        y: -2.5,
+        y: -5,
         z: 11,
-        duration: 4,
+        duration: 3.5,
         ease: 'power1.out',
         onComplete: () => setShowMediaPlanes(true),
       }
@@ -275,8 +275,8 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
       // Update MediaPlane positions
       if (groupRef.current) {
         groupRef.current.children.forEach((child, idx) => {
-          const positionY = scrollY.current * 2.5 + idx * 2.5;
-          const radius = 6 + Math.sin(positionY * 0.1) * 0.5;
+          const positionY = scrollY.current - 1.35 + idx * 1.75;
+          const radius = 6.5 + Math.sin(positionY * 0.1) * 0.5;
           const positionX = Math.cos(positionY) * radius;
           const positionZ = -Math.sin(positionY) * radius;
           const adjustedY = -positionY - 1.5;
@@ -286,7 +286,7 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
             y: adjustedY,
             z: positionZ,
             duration: 1.2,
-            ease: 'power2.out',
+            ease: 'power3.out',
           });
 
           if (characterRef.current) {
@@ -309,33 +309,7 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
 
     return () => cancelAnimationFrame(requestAnimationFrame(animate));
   }, []);
-
-  useEffect(() => {
-    if (showMediaPlanes && groupRef.current) {
-      groupRef.current.children.forEach((child, idx) => {
-        // Set initial position to place the planes straight in front of the camera
-        const initialY = -idx * 4.5;
-        const radius = 7 + Math.sin(initialY * 0.1) * 0.5;
-        
-        // Place planes initially in front of the camera
-        const initialX = Math.cos(initialY) * radius;
-        const initialZ = Math.sin(initialY) * radius;
   
-        // GSAP animation for media plane movement
-        gsap.fromTo(child.position, {
-          x: initialX,
-          y: initialY - 3, // Adjusted starting Y for initial animation
-          z: initialZ,
-        }, {
-          x: Math.cos(initialY) * 2, // Final X
-          y: initialY - 3, // Final Y
-          z: Math.sin(initialY) * 2, // Final Z
-          duration: 1.5,
-          ease: 'power2.out',
-        });
-      });
-    }
-  }, [showMediaPlanes]);
 
   const handleMediaPlaneClick = (path: string) => {
     if (path.endsWith('.mp4')) {
