@@ -95,7 +95,6 @@ useEffect(() => {
   } else {
     document.body.style.overflow = 'auto'; // or 'scroll' depending on your needs
   }
-
   // Cleanup function to reset overflow when component unmounts
   return () => {
     document.body.style.overflow = 'auto';

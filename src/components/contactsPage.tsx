@@ -60,7 +60,8 @@ export const ContactsPage = () => {
   };
 
   return (
-    <div className="flex relative flex-col justify-center select-none items-center min-h-screen w-full pt-32 px-10 lg:px-48 pb-16">
+    <div>
+<div className="flex relative flex-col justify-center select-none items-center min-h-screen w-full pt-32 px-10 lg:px-48 pb-16">
       <div className="w-full h-full flex flex-col pt-10 lg:pt-20 gap-5 lg:gap-10">
         <div className="flex justify-center items-center p-2">
           <p className="font-secondary uppercase font-medium tracking-[1.5px] text-[12px]">
@@ -82,7 +83,7 @@ export const ContactsPage = () => {
                 Call
               </p>
               <p className="font-secondary uppercase text-xs font-medium text-white">
-                Office : +91 9876543210
+                Office : +91 9615737373 or +91 9715131313
               </p>
             </div>
           </div>
@@ -93,7 +94,7 @@ export const ContactsPage = () => {
                 Write
               </p>
               <p className="font-secondary uppercase text-xs font-medium text-white">
-                Demo@gmail.com
+              gameon.solution.317@gmail.com
               </p>
             </div>
           </div>
@@ -104,7 +105,7 @@ export const ContactsPage = () => {
                 Visit
               </p>
               <p className="font-secondary uppercase text-xs font-medium text-white">
-                300 St. Mary's L, Suite 8060
+              Seethammal Colony 2nd Cross St,  Lubdhi Colony, Alwarpet, Chennai, Tamil Nadu 600018
               </p>
             </div>
           </div>
@@ -179,13 +180,70 @@ export const ContactsPage = () => {
               </div>
             </form>
           </div>
-          <div className="w-full flex gap-10">
+          <div className="w-full flex flex-col gap-10">
             {/* <div className="hidden lg:flex px-12 bg-yellow-500/80 w-1/2 justify-center items-center">
               <p className="text-3xl text-white text-center font-special">
                 Fall seven times, stand up eight. Champions refuse to give up.
               </p>
             </div> */}
-            <div className="bg-white w-full lg:w-1/2 flex">
+        <div>
+        <p className="font-primary uppercase text-xl md:text-2xl text-white">
+        Head Office Dindigul
+              </p>
+          
+
+        <div className="bg-white w-full lg:w-1/2 flex">
+            <div
+               style={{
+                 position: "relative",
+                 textAlign: "right",
+                 width: "100%",
+                 height: "250px", // Default height for mobile
+               }}
+             >
+               <div
+                 style={{
+                   overflow: "hidden",
+                   background: "none",
+                   width: "100%",
+                   height: "100%",
+                 }}
+               >
+                 <iframe
+                   title="Google Map"
+                   style={{
+                     width: "100%", // Responsive width
+                     height: "100%", // Responsive height
+                     border: "0",
+                   }}
+                   src="https://www.google.com/maps/embed/v1/place?q=Game+ON+·+Dindigul,+Tamil+Nadu&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                 />
+               </div>
+
+               {/* Inline media queries as an alternative */}
+               <style>
+                 {`
+                   @media (min-width: 640px) {
+                     div[style*="relative"] {
+                       height: 350px; /* Height for tablets */
+                     }
+                   }
+                   @media (min-width: 1024px) {
+                     div[style*="relative"] {
+                       height: 450px; /* Height for desktops */
+                     }
+                   }
+                 `}
+               </style>
+             </div>
+            
+           </div>
+        </div>
+           <div>
+           <p className="font-primary uppercase text-xl md:text-2xl text-white">
+        Head Office Chennai
+              </p>
+           <div className="bg-white w-full lg:w-1/2 flex">
               <div
                 style={{
                   position: "relative",
@@ -229,11 +287,67 @@ export const ContactsPage = () => {
                   `}
                 </style>
               </div>
+            </div> 
+           </div>
+            <div>
+            <p className="font-primary uppercase text-xl md:text-2xl text-white">
+            Bangalore Office
+              </p>
+              <div className="bg-white w-full lg:w-1/2 flex">
+              <div
+                style={{
+                  position: "relative",
+                  textAlign: "right",
+                  width: "100%",
+                  height: "250px", // Default height for mobile
+                }}
+              >
+                <div
+                  style={{
+                    overflow: "hidden",
+                    background: "none",
+                    width: "100%",
+                    height: "100%",
+                  }}
+                >
+                  <iframe
+                    title="Google Map"
+                    style={{
+                      width: "100%", // Responsive width
+                      height: "100%", // Responsive height
+                      border: "0",
+                    }}
+                    src="https://www.google.com/maps/embed/v1/place?q=Ennar+Eminence+Aradhana+Apartments+·+Bengaluru,+Karnataka&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                  />
+                </div>
+
+                {/* Inline media queries as an alternative */}
+                <style>
+                  {`
+                    @media (min-width: 640px) {
+                      div[style*="relative"] {
+                        height: 350px; /* Height for tablets */
+                      }
+                    }
+                    @media (min-width: 1024px) {
+                      div[style*="relative"] {
+                        height: 450px; /* Height for desktops */
+                      }
+                    }
+                  `}
+                </style>
+              </div>
+            </div>
             </div>
           </div>
-          <Footer />
         </div>
+
       </div>
+      
     </div>
+    <Footer />
+
+    </div>
+    
   );
 };
