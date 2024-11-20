@@ -63,12 +63,6 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
       if (scrollY.current > 0) {
         scrollY.current = 0; // Prevent scrolling beyond the last plane
       }
-      // // Boundary check for scrolling
-      // if (scrollY.current < 0) {
-      //   scrollY.current = 0; // Prevent scrolling above the first plane
-      // } else if (scrollY.current > maxScrollY) {
-      //   scrollY.current = maxScrollY; // Prevent scrolling beyond the last plane
-      // }
 
       // Apply smooth rotation to character model
       if (characterRef.current) {
