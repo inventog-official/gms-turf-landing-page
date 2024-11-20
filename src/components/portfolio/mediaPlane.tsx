@@ -20,9 +20,11 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
   const isVideo = imagePath.endsWith(".mp4");
 
   const [planeSize, setPlaneSize] = useState<[number, number]>([3, 1.7]);
-  const [planePosition, setPlanePosition] =
-    useState<[number, number, number]>(position);
+  const [planePosition, setPlanePosition] = useState<[number, number, number]>(
+    position
+  );
 
+  // Resize handler
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -39,16 +41,19 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
       }
     };
 
-    handleResize();
+    handleResize(); // Initial call to set values
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [position]);
 
+  // Load textures (image or video)
   useEffect(() => {
+    let videoElement: HTMLVideoElement | null = null;
+
     if (isVideo) {
-      const videoElement = document.createElement("video");
+      videoElement = document.createElement("video");
       videoElement.src = imagePath;
       videoElement.loop = true;
       videoElement.muted = true;
@@ -59,63 +64,16 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
       const imageTexture = new THREE.TextureLoader().load(imagePath);
       setTexture(imageTexture);
     }
-  }, [imagePath]);
 
-  useEffect(() => {
-    if (ref.current) {
-      gsap.to(ref.current.position, {
-        y: planePosition[1] + 0.3,
-        repeat: -1,
-        yoyo: true,
-        duration: 3,
-        ease: "sine.inOut",
-      });
-
-      gsap.to(ref.current.rotation, {
-        z: 0.05,
-        repeat: -1,
-        yoyo: true,
-        duration: 3,
-        ease: "power1.inOut",
-      });
-
-      gsap.to(ref.current.material, {
-        opacity: 0.9,
-        repeat: -1,
-        yoyo: true,
-        duration: 3,
-        ease: "power1.inOut",
-      });
-    }
-  }, [planePosition]);
-
-  useEffect(() => {
-    const handleScroll = (event: WheelEvent) => {
-      if (ref.current) {
-        if (event.deltaY < 0) {
-          const skewAmount = Math.min(Math.abs(event.deltaY) * 9.9, 0.25);
-
-          gsap.to(ref.current.rotation, {
-            x: -skewAmount * 100,
-            z: skewAmount * 100,
-            duration: 9.8,
-            ease: "power1.out",
-            onComplete: () => {
-              gsap.to(ref.current!.rotation, {
-                x: initialRotation.current.x,
-                z: -initialRotation.current.z,
-                duration: 1.5,
-                ease: "elastic.out(1, 0.5)",
-              });
-            },
-          });
-        }
+    // Cleanup video texture on unmount
+    return () => {
+      if (videoElement) {
+        videoElement.pause();
+        videoElement.src = "";
+        setTexture(null); // Clear texture state
       }
     };
-
-    window.addEventListener("wheel", handleScroll);
-    return () => window.removeEventListener("wheel", handleScroll);
-  }, []);
+  }, [imagePath]);
 
   useEffect(() => {
     if (ref.current) {
@@ -123,23 +81,25 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
       initialRotation.current = ref.current.rotation.clone();
 
       const geometry = ref.current.geometry;
-      const positions = geometry.attributes.position.array;
+      if (geometry && geometry.attributes && geometry.attributes.position) {
+        const positions = geometry.attributes.position.array;
 
-      gsap.to(
-        {},
-        {
-          duration: 2,
-          repeat: -1,
-          onUpdate: () => {
-            const time = Date.now() * 0.005;
-            for (let i = 0; i < positions.length; i += 3) {
-              const x = positions[i];
-              positions[i + 2] = Math.sin(x * 1 + time) * 0.05;
-            }
-            geometry.attributes.position.needsUpdate = true;
-          },
-        }
-      );
+        gsap.to(
+          {},
+          {
+            duration: 2,
+            repeat: -1,
+            onUpdate: () => {
+              const time = Date.now() * 0.005;
+              for (let i = 0; i < positions.length; i += 3) {
+                const x = positions[i];
+                positions[i + 2] = Math.sin(x * 1 + time) * 0.05;
+              }
+              geometry.attributes.position.needsUpdate = true;
+            },
+          }
+        );
+      }
     }
   }, [planePosition]);
 
@@ -153,8 +113,8 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
 
   return (
     <>
-      <mesh 
-        ref={ref} 
+      <mesh
+        ref={ref}
         position={planePosition}
         onPointerOver={isVideo ? handlePointerOver : undefined}
         onPointerOut={isVideo ? handlePointerOut : undefined}
