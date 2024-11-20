@@ -209,7 +209,7 @@ export const ContactsPage = () => {
                       height: "100%", // Responsive height
                       border: "0",
                     }}
-                    src="https://maps.google.com/maps?width=600&height=150&hl=en&q=University of Oxford&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                    src="https://www.google.com/maps/embed/v1/place?q=GameOn+Solution+-+South+India’s+leading+Sports+infra+developers+·+Chennai,+Tamil+Nadu&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                   />
                 </div>
 

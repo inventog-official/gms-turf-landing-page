@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FootballAnimation from "./footballAnimation";
 import TextHoverAnimation from "./textHoverAnimation";
 import { SlBadge } from "react-icons/sl";
@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import VerticalCardSlider from "./snappingAnimation/main";
+import { Popup } from "./popup/main";
+import ContactForm from "./popup/contactsPopup";
 
 const Home: React.FC = () => {
   const { queryClient } = useCarousel();
@@ -15,6 +17,17 @@ const Home: React.FC = () => {
     id: number;
     url: string;
   }[];
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+	const popupRef = useRef<HTMLDivElement>(null);
+
+	const PopupState =  JSON.parse( localStorage.getItem("contacts-gms") as any) as {value:boolean}
+
+
+	const handleClosePopup = () => {
+    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
+		setIsPopupOpen(false);
+    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
+	};
 
 
  const BlurHash =  ["NGBWPd^ODPNHI.Na^n-UkPR+M|Na4?NLxsoboLjF",
@@ -22,7 +35,7 @@ const Home: React.FC = () => {
 "N68qWq?H019YO+SRxwRjbXofoLa{01E1?@-q#ss*",
  "N64{6YV^4Uo[.7rxWEbGoen*RkX74Vow?[RUIBXM",
  "N54L{vRQ8z%fpFMyQ;kBtiWBi|kB4VtQ.jIBVux[",]
-  // const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
   // const featureIndex = currentImageIndex > 0 ? currentImageIndex - 1 : 0;
@@ -69,18 +82,31 @@ const Home: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data?.length);
-  //   }, 4000); // 4 seconds per slide
-  //   return () => clearInterval(interval);
-  // }, [data?.length]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % data?.length);
+    }, 4000); // 4 seconds per slide
+    return () => clearInterval(interval);
+  }, [data?.length]);
+// Effect to manage body overflow
+useEffect(() => {
+  if (isPopupOpen&&!PopupState) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto'; // or 'scroll' depending on your needs
+  }
 
+  // Cleanup function to reset overflow when component unmounts
+  return () => {
+    document.body.style.overflow = 'auto';
+  };
+}, [isPopupOpen]);
   return (
     <section className="relative flex flex-col animate-zoomIn justify-center min-h-screen bg-primary overflow-hidden">
       {/* Background Image Slideshow */}
-      {/* {data?.map((image, index) => (
-        <img
+      {data?.map((image, index) => (
+        <div className=" w-full  md:block lg:block xl:hidden justify-center">
+           <img
           key={index}
           src={image.url}
           alt={`Background ${index + 1}`}
@@ -88,10 +114,51 @@ const Home: React.FC = () => {
             index === currentImageIndex ? "opacity-100" : "opacity-0"
           }`}
         />
-      ))} */}
+         <div className="bottom-14   lg:bottom-10 z-30 w-full absolute flex justify-center animate-bounce transition-all duration-1000">
+                <FootballAnimation />
+              </div>
+              <div
+              ref={(el) => (sectionRefs.current[0] = el!)}
+              className="flex gap-3 top-28  w-full justify-center absolute z-30 flex-col  text-center "
+            >
+              <h1 className="text-2xl md:text-4xl  uppercase font-primary text-white flex gap-2 items-center justify-center z-[11] opacity-0 animate-lineUp ">
+                <span className="text-secondary">
+                  <SlBadge />
+                </span>
+                <TextHoverAnimation text="South India's" />
+                <span className="text-secondary">
+                  {" "}
+                  <TextHoverAnimation text="no.1" />
+                </span>
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-2xl md:text-4xl font-primary uppercase flex gap-3 justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+                <TextHoverAnimation text="Sports" />
+                <div className="text-secondary">
+                  <TextHoverAnimation text="infrastructure " />
+                </div>
+                <span className="md:block hidden">
+                <TextHoverAnimation text="developer" />
+                </span>
+
+              </h1>
+              <h1
+                ref={(el) => (sectionRefs.current[1] = el!)}
+                className="text-2xl   md:hidden md:text-4xl font-primary uppercase flex gap-3 justify-center items-center text-white z-[11] opacity-0 animate-lineUp "
+              >
+             
+                <TextHoverAnimation text="developer" />
+
+              </h1>
+            </div>
+        </div>
+       
+      ))}
       {data?.map((item, index) => {
         return (
-          <div className=" flex relative justify-center items-center h-screen">
+          <div className="  xl:flex hidden  relative justify-center items-center h-screen">
             
             <VerticalCardSlider index={index} blurHash={BlurHash[index]} images={item.url} />
             {index === 0 && (
@@ -370,6 +437,16 @@ const Home: React.FC = () => {
           </div>
         );
       })}
+      {PopupState==undefined&&isPopupOpen?
+      
+      <Popup
+      className="w-full md:w-96"
+      ref={popupRef}
+					onClose={handleClosePopup}
+					closeButton={true}
+      >
+        <ContactForm setIsPopupOpen={setIsPopupOpen}/>
+      </Popup>:null}
     </section>
   );
 };

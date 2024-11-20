@@ -111,6 +111,7 @@ const Navbar: React.FC = () => {
                 { path: "/portfolio", label: "Portfolio" },
                 { path: "/news", label: "News" },
                 { path: "/testimonials", label: "Testimonials" },
+
               ].map((item) => (
                 <li key={item.label}>
                   <button
@@ -146,12 +147,14 @@ const Navbar: React.FC = () => {
                   >
                     <ul className="flex flex-col">
                       {[
+                        //360-circle-turf
                         { path: "/football-turf", label: "Football Turf" },
                         { path: "/pickle-turf", label: "Pickle Ball" },
                         {
                           path: "/circle-turf",
                           label: "Mini Cricket Stadium",
                         },
+                       
                         { path: "/cricket-turf", label: "Cricket Nets" },
                         { path: "/indoor-turf", label: "Indoor Turf" },
                         { path: "/volleyball-turf", label: "Volleyball Court" },
@@ -159,6 +162,9 @@ const Navbar: React.FC = () => {
                           path: "/multi-sports-turf",
                           label: "MultiSports Turf",
                         },
+                        { path: "/basket-ball", label: "Basket Ball Court" },
+                        { path: "/badminton-court", label: "Badminton Court" },
+                        { path: "/360-circle-turf", label: "360 Circle Turf" },
                       ].map((item) => (
                         <li key={item.label}>
                           <button

@@ -69,6 +69,9 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
             { path: "#contact", label: "Contact" },
             { path: "/news", label: "News" },
             { path: "/testimonials", label: "Testimonials" },
+                     { path: "/basket-ball", label: "Basket Ball Court" },
+                        { path: "/badminton-court", label: "Badminton Court" },
+                        { path: "/360-circle-turf", label: "360 Circle Turf" },
           ].map((item) => (
             <li key={item.label}>
               <button
@@ -109,6 +112,9 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
                     { path: "/indoor-turf", label: "Indoor Turf" },
                     { path: "/volleyball-turf", label: "Volleyball Court" },
                     { path: "/multi-sports-turf", label: "MultiSports Turf" },
+                    { path: "/basket-ball", label: "Basket Ball Court" },
+                    { path: "/badminton-court", label: "Badminton Court" },
+                    { path: "/360-circle-turf", label: "360 Circle Turf" },
                   ].map((item) => (
                     <li key={item.label}>
                       <button

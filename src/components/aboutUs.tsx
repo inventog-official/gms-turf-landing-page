@@ -165,7 +165,7 @@ const AboutUs: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/45 to-black" />
                   {/* Text Overlay */}
                   <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">
-                    <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-center">
+                    <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-start">
                       <span className="text-secondary">Dhineshwaran</span>
 
                       <span className="font-sans text-xs">

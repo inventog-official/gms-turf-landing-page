@@ -30,6 +30,11 @@ import { useCarousel } from "./hook/useCarousel";
 import { useTestimonials } from "./hook/useTestimonials";
 import Portfolio from "./components/portfolio";
 import InstagramEmbed from "./components/instagram";
+import CircleTurf360 from "./components/products/360CircleTurf";
+import BadmintonCourt from "./components/products/BatimonCourt";
+import BasketBallCourt from "./components/products/basketBall";
+import IconsWithContent from "./components/iconsWithContent";
+
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -73,11 +78,11 @@ const App: React.FC = () => {
                     <PageWrapper>
                       <Home />
                     </PageWrapper>
-                    {/* <PageWrapper>
-                      <div id="iconsWithContent">
+                    <PageWrapper>
+                      <div className="xl:hidden" id="iconsWithContent">
                         <IconsWithContent />
                       </div>
-                    </PageWrapper> */}
+                    </PageWrapper>
                     <PageWrapper>
                       <div id="CircleMiniCricketStadiumTurf">
                         <CircleMiniCricketStadiumTurf />
@@ -134,8 +139,11 @@ const App: React.FC = () => {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
             <Route path="/demo" element={<Carousel />} />
+
             {/* products pages */}
-            CircleTurf
+            <Route path="/360-circle-turf" element={<CircleTurf360 />} />
+            <Route path="/basket-ball" element={<BasketBallCourt />} />
+            <Route path="/badminton-court" element={<BadmintonCourt />} />
             <Route path="/pickle-turf" element={<PickleTurf />} />
             <Route path="/circle-turf" element={<CircleTurf />} />
             <Route path="/football-turf" element={<FootballTurf />} />
