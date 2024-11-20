@@ -17,7 +17,7 @@ const mediaPaths: string[] = [
   "/Football/Football-03.png",
   "/Football/Football-04.png",
   "/Football/Football-05.png",
-  "/videos/sample.mp4",
+  // "/videos/sample.mp4",
 ];
 
 interface CharacterSceneProps {
