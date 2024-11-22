@@ -102,14 +102,14 @@ const AboutUs: React.FC = () => {
 
         <div className="flex flex-col gap-5 md:gap-6 text-base md:text-lg lg:text-2xl xl:text-3xl text-white font-secondary">
           <AnimatedCard>
-            <p className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+            <h1 className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
               <TextHoverAnimation text="who" />
               <span className="text-secondary">
                 {" "}
                 <TextHoverAnimation text="we" />
               </span>{" "}
               <TextHoverAnimation text="are" />
-            </p>
+            </h1>
           </AnimatedCard>
           <AnimatedCard>
             <p className="md:text-2xl text-lg">
@@ -165,7 +165,7 @@ const AboutUs: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/45 to-black" />
                   {/* Text Overlay */}
                   <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">
-                    <p className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-start">
+                    <h1 className="lg:text-xl flex-col flex text-white bg-transparent p-2 font-primary tracking-[3px] w-full text-start">
                       <span className="text-secondary">Dhineshwaran</span>
 
                       <span className="font-sans text-xs">
@@ -175,7 +175,7 @@ const AboutUs: React.FC = () => {
                           <TextHoverAnimation text="Director" />
                         </span>
                       </span>
-                    </p>
+                    </h1>
                   </div>
                 </div>
               </div>
@@ -186,11 +186,11 @@ const AboutUs: React.FC = () => {
         {/* Text Section */}
         <div className="w-full flex flex-col justify-center items-center lg:text-left text-center lg:items-start gap-8  ">
           <AnimatedCard>
-            <p className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+            <h1 className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
             <TextHoverAnimation text={"Managing"} />
              <span className="text-secondary">            <TextHoverAnimation text={"Director"} />
              </span>
-            </p>
+            </h1>
           </AnimatedCard>
 
           {/* Main Content */}

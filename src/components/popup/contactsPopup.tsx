@@ -71,12 +71,12 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-5">
-      <span className="flex gap-2 text-2xl md:text-4xl font-primary uppercase justify-start items-center text-white z-[11] opacity-0 animate-lineUp">
-        <p className="text-white">Let's</p>
+      <h1 className="flex gap-2 text-2xl md:text-4xl font-primary uppercase justify-start items-center text-white z-[11] opacity-0 animate-lineUp">
+        <span className="text-white">Let's</span>
         <span className="text-secondary">
           <TextHoverAnimation text="Talk" />
         </span>
-      </span>
+      </h1>
       <div className="flex flex-col">
         <label className="block text-sm uppercase font-medium text-white mb-1">
           {" "}

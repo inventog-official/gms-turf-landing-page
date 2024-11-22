@@ -57,27 +57,59 @@ const Navbar: React.FC = () => {
   const handleNavClick = (path: string) => {
     if (path.startsWith("#")) {
       if (location.pathname !== "/") {
-        console.log(9);
         // If not on the home page, navigate to it first
         navigate("/", { replace: true });
         setTimeout(() => {
           const section = document.querySelector(path);
-          if (section) section.scrollIntoView({ behavior: "smooth" });
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
           setActiveTab(path); // Set the active tab only for the clicked section
-        }, 100);
+        }, 100); // Delay to ensure the page has loaded
       } else {
         // Scroll directly if already on the home page
         const section = document.querySelector(path);
-        if (section) section.scrollIntoView({ behavior: "smooth" });
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
         setActiveTab(path);
       }
     } else {
       // External route navigation
       navigate(path);
-      // navigate(path, { replace: true });
       setActiveTab(path);
     }
+  
+    // Close dropdown or menu after navigation
+    setIsDropdownOpen(false);
+    setIsMenuClick(false);
   };
+  
+
+  // const handleNavClick = (path: string) => {
+  //   if (path.startsWith("#")) {
+  //     if (location.pathname !== "/") {
+  //       console.log(9);
+  //       // If not on the home page, navigate to it first
+  //       navigate("/", { replace: true });
+  //       setTimeout(() => {
+  //         const section = document.querySelector(path);
+  //         if (section) section.scrollIntoView({ behavior: "smooth" });
+  //         setActiveTab(path); // Set the active tab only for the clicked section
+  //       }, 100);
+  //     } else {
+  //       // Scroll directly if already on the home page
+  //       const section = document.querySelector(path);
+  //       if (section) section.scrollIntoView({ behavior: "smooth" });
+  //       setActiveTab(path);
+  //     }
+  //   } else {
+  //     // External route navigation
+  //     navigate(path);
+  //     // navigate(path, { replace: true });
+  //     setActiveTab(path);
+  //   }
+  // };
 
   return (
     <nav

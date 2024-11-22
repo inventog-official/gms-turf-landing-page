@@ -217,7 +217,7 @@ const News_Page = () => {
             </AnimateCard>
             <div className="grid grid-cols-1 gap-5">
               {data?.map((item, index) => (
-                <AnimateCard>
+                <AnimateCard key={index}>
  <div
                   key={item.id}
                   className={`flex list transition-transform duration-500 cursor-pointer ${
@@ -268,7 +268,7 @@ const News_Page = () => {
         </h3>
         <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-4 ">
           {awards.map((image, index) => (
-            <AnimateCard>
+            <AnimateCard key={index}>
    <div
               key={index}
               className="border border-gray-50/10 p-1 transform transition duration-500 ease-in-out hover:scale-105"

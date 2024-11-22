@@ -36,7 +36,7 @@ const IconsWithContent: React.FC = () => {
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5">
   {iconsWithImagesObj.map((item, index) => {
     return (
-      <AnimatedCard>
+      <AnimatedCard key={index}>
          <div 
         key={index} 
         className="rounded-lg flex flex-col justify-between items-center p-4 h-full" // Use h-full for equal height
