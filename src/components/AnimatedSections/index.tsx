@@ -65,7 +65,6 @@ const AnimatedSections = () => {
     sectionsRef.current.forEach((section, index) => {
       const isLastSection = index === sectionsRef.current.length - 1; // Identify the last section
       if (isLastSection) return; // Skip ScrollTrigger for the last section
-    //   if (isLastSection) return; // Skip ScrollTrigger for the last section
 
       const image = imagesRef.current[index];
       const heading = headingsRef.current[index];
