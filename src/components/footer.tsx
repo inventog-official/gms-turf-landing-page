@@ -3,7 +3,6 @@
 
 // export const Footer = () => {
 //   const navigate = useNavigate();
-
 //   return (
 //     <div className="flex flex-col gap-10 mt-10 px-10 lg:px-48">
 //       <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
