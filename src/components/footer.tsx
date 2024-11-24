@@ -108,7 +108,7 @@ export const Footer = () => {
             <FaFacebook />
           </div>
           <div onClick={() =>{
-            window.open("https://wa.me/8428972983")
+            window.open("https://wa.me/9615737373")
           }} className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
             <FaWhatsapp />
           </div>

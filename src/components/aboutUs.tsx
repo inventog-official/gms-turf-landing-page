@@ -95,7 +95,7 @@ const AboutUs: React.FC = () => {
     <section className="flex flex-col gap-24 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28">
       <div className="flex flex-col  w-full  text-center    gap-10">
         <AnimatedCard>
-          <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
+          <p className="text-[12px] font-secondary uppercase tracking-[1px]">
             About Us
           </p>
         </AnimatedCard>
@@ -186,10 +186,12 @@ const AboutUs: React.FC = () => {
         {/* Text Section */}
         <div className="w-full flex flex-col justify-center items-center lg:text-left text-center lg:items-start gap-8  ">
           <AnimatedCard>
-            <h1 className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
-            <TextHoverAnimation text={"Managing"} />
-             <span className="text-secondary">            <TextHoverAnimation text={"Director"} />
-             </span>
+            <h1 className="text-3xl md:text-4xl flex gap-2 lg:text-5xl xl:text-6xl font-primary text-white uppercase leading-tight">
+              <TextHoverAnimation text={"Managing"} />
+              <span className="text-secondary">
+                {" "}
+                <TextHoverAnimation text={"Director"} />
+              </span>
             </h1>
           </AnimatedCard>
 
