@@ -162,7 +162,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navBar";
-// import Home from "./components/home";
+import Home from "./components/home";
 import Services from "./components/services";
 import Contact from "./components/contact";
 import CursorFollower from "./components/customCursor";
@@ -235,10 +235,10 @@ const App: React.FC = () => {
               path="/"
               element={
                 <div id="home">
-                  {/* <Home /> */}
-                  <div id="parallaxImages">
+                  <Home />
+                  {/* <div id="parallaxImages">
                     <AnimatedSections />
-                  </div>
+                  </div> */}
                   <div className="xl:hidden" id="iconsWithContent">
                     <IconsWithContent />
                   </div>
