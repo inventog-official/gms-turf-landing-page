@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import HamburgerMenu from "./hamburgar";
 import MenuDrawer from "./menuDrawer";
+import { useCarousel } from "@/hook/useCarousel";
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,6 +16,15 @@ const Navbar: React.FC = () => {
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
+  const { queryClient } = useCarousel();
+  const data = queryClient.getQueryData(["carousels"]) as {
+    id: number;
+    url: string;
+    phoneUrl: string;
+  }[];
+
+  if(!data || !data?.length) return;
+
   // Set initial active tab based on location hash or pathname
   useEffect(() => {
     if (location.pathname === "/") {
@@ -25,7 +35,7 @@ const Navbar: React.FC = () => {
   }, [location.pathname, location.hash]);
 
   const handleScroll = () => {
-    setScrolled(window.scrollY > 50);
+    setScrolled(window.scrollY > window.innerHeight * (data?.length - 0.5));
   };
 
   const isClicked = () => {
