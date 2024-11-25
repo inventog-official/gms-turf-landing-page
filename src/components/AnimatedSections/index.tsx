@@ -71,7 +71,7 @@ const AnimatedSections: React.FC = () => {
     const handleScroll = () => {
       if (container.current) {
         const containerBottom =
-          container.current.getBoundingClientRect().bottom * 1.5;
+          container.current.getBoundingClientRect().bottom * 1.25;
 
         // When the last section is about to scroll off the screen
         if (containerBottom <= window.innerHeight) {
