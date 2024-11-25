@@ -63,7 +63,7 @@ const AnimatedSections: React.FC = () => {
   const sections = data?.map((item, index) => ({
     imageSrc: item.url,
     phoneSrc: item.phoneUrl,
-    rotateRange: [0, index % 2 === 0 ? -6.5 : 6.5],
+    rotateRange: [0, index % 2 === 0 ? -5 : 5],
   }));
 
   // Detect if last section is near the bottom of the viewport
