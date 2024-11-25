@@ -222,18 +222,19 @@ const AnimatedSections: React.FC = () => {
   });
 
   useEffect(() => {
-    const lenis = new Lenis();
+    // const lenis = new Lenis();
+    const lenis = new Lenis({
+      smoothWheel: true,
+      touchMultiplier: 1,
+      wheelMultiplier: 1.5, // Adjust to increase or decrease scrolling speed
+    });
 
-    const scrollHandler = (time: number) => {
+    function raf(time: any) {
       lenis.raf(time);
-      requestAnimationFrame(scrollHandler);
-    };
+      requestAnimationFrame(raf);
+    }
 
-    requestAnimationFrame(scrollHandler);
-
-    return () => {
-      lenis.destroy();
-    };
+    requestAnimationFrame(raf);
   }, []);
 
   // Check if data is available before rendering sections
@@ -277,7 +278,8 @@ const AnimatedSections: React.FC = () => {
   return (
     <main
       ref={container}
-      className={`relative h-[${data.length}00vh] select-none`}
+      // className={`relative h-[500vh] select-none`}
+      className={`relative h-[${data?.length}00vh] select-none`}
     >
       {sections.map((section, index) => (
         <Section
