@@ -12,24 +12,26 @@ const ScrollProgress: React.FC = () => {
   };
 
   useEffect(() => {
+    // Attach the scroll event listener directly
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Cleanup the listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <div className="fixed right-0 top-0 h-full w-[0.15rem] bg-primary z-[9999]">
-    {/* <div className="fixed right-0 top-0 h-full w-[0.15rem] bg-primary z-[9999] hidden md:flex"> */}
       <div
-        className="relative bg-secondary w-full rounded transition-all duration-300 ease-out"
+        className="relative bg-secondary w-full rounded transition-all duration-1000 ease-out"
         style={{ height: `${scrollProgress}%` }}
       >
         {/* Lighting Effect */}
         <span className="absolute left-0 bottom-0 w-full h-6 bg-gradient-to-t from-white via-white/90 to-transparent animate-glow"></span>
-        {/* <span className="absolute left-0 bottom-0 w-full h-4 bg-gradient-to-t from-white via-secondary to-transparent animate-glow"></span> */}
       </div>
     </div>
   );
 };
 
 export default ScrollProgress;
-
