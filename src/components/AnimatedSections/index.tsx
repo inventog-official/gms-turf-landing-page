@@ -188,136 +188,12 @@
 
 // export default AnimatedSections;
 
-// import React, { useEffect, useRef } from "react";
-// import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-// import Lenis, { LenisOptions } from "lenis";
-// import { useCarousel } from "@/hook/useCarousel";
-
-// // Define types for props
-// interface SectionProps {
-//   scrollYProgress: MotionValue<number>;
-//   imageSrc: string;
-//   phoneSrc: string;
-//   text: string;
-//   rotateRange: [number, number]; // Unique rotate range for each section
-// }
-
-// const AnimatedSections: React.FC = () => {
-//   const container = useRef<HTMLDivElement | null>(null);
-
-//   const { queryClient } = useCarousel();
-//   const data = queryClient.getQueryData(["carousels"]) as {
-//     id: number;
-//     url: string;
-//     phoneUrl: string;
-//   }[];
-
-//   const { scrollYProgress } = useScroll({
-//     target: container,
-//     offset: ["start start", "end end"],
-//   });
-
-//   useEffect(() => {
-//     // Function to get the Lenis configuration dynamically
-//     const getLenisConfig = (): LenisOptions => {
-//       if (window.innerWidth <= 768) {
-//         // Mobile configuration
-//         return {
-//           smoothWheel: true,
-//           autoRaf: true,
-//           touchMultiplier: 1.2,
-//           orientation: "vertical",
-//           gestureOrientation: "vertical",
-//           touchInertiaMultiplier: 0.8,
-//         };
-//       }
-//       // Desktop configuration
-//       return {
-//         smoothWheel: true,
-//         autoRaf: true,
-//         touchMultiplier: 1.5,
-//         orientation: "vertical",
-//         gestureOrientation: "vertical",
-//         touchInertiaMultiplier: 0.6,
-//       };
-//     };
-
-//     // Initialize Lenis with responsive configuration
-//     const lenis = new Lenis(getLenisConfig()); // Pass the object directly
-
-//     const scrollHandler = (time: number) => {
-//       lenis.raf(time);
-//       requestAnimationFrame(scrollHandler);
-//     };
-
-//     requestAnimationFrame(scrollHandler);
-
-//     return () => {
-//       lenis.destroy();
-//     };
-//   }, []);
-
-//   // Dynamically create the sections from the `data` array
-//   const sections = data?.map((item, index) => ({
-//     imageSrc: item.url,
-//     phoneSrc: item.phoneUrl,
-//     text: `Scroll Perspective ${index + 1}`,
-//     rotateRange: [0, index % 2 === 0 ? -6.5 : 6.5],
-//   }));
-
-//   return (
-//     <main ref={container} className="relative h-[500vh]">
-//       {sections.map((section, index) => (
-//         <Section
-//           key={index}
-//           scrollYProgress={scrollYProgress}
-//           imageSrc={section.imageSrc}
-//           phoneSrc={section.phoneSrc}
-//           text={section.text}
-//           rotateRange={section.rotateRange as [number, number]}
-//         />
-//       ))}
-//     </main>
-//   );
-// };
-
-// const Section: React.FC<SectionProps> = ({
-//   scrollYProgress,
-//   imageSrc,
-//   phoneSrc,
-//   rotateRange,
-// }) => {
-//   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
-//   const rotate = useTransform(scrollYProgress, [0, 1], rotateRange);
-
-//   // Use a media query to dynamically select the background image
-//   const backgroundImage = window.matchMedia("(max-width: 768px)").matches
-//     ? phoneSrc
-//     : imageSrc;
-
-//   return (
-//     <motion.div
-//       style={{ scale, rotate }}
-//       className="sticky top-0 h-screen flex flex-col items-center justify-center text-white"
-//     >
-//       <div
-//         style={{
-//           backgroundImage: `url(${backgroundImage})`,
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           backgroundRepeat: "no-repeat",
-//         }}
-//         className="relative min-h-screen w-full border-4 border-yellow-950 border-opacity-40"
-//       />
-//     </motion.div>
-//   );
-// };
-
-// export default AnimatedSections;
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import Lenis, { LenisOptions } from "lenis";
+import Lenis from "lenis";
 import { useCarousel } from "@/hook/useCarousel";
+import { SlBadge } from "react-icons/sl";
+import TextHoverAnimation from "../textHoverAnimation";
 
 // Define types for props
 interface SectionProps {
@@ -329,6 +205,9 @@ interface SectionProps {
 
 const AnimatedSections: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
+  const headingRef = useRef<HTMLDivElement | null>(null);
+
+  const [hideHeading, setHideHeading] = useState(false);
 
   const { queryClient } = useCarousel();
   const data = queryClient.getQueryData(["carousels"]) as {
@@ -343,32 +222,7 @@ const AnimatedSections: React.FC = () => {
   });
 
   useEffect(() => {
-    // Function to get the Lenis configuration dynamically
-    const getLenisConfig = (): LenisOptions => {
-      if (window.innerWidth <= 768) {
-        // Mobile configuration
-        return {
-          smoothWheel: true,
-          autoRaf: true,
-          touchMultiplier: 1.2,
-          orientation: "vertical",
-          gestureOrientation: "vertical",
-          touchInertiaMultiplier: 0.8,
-        };
-      }
-      // Desktop configuration
-      return {
-        smoothWheel: true,
-        autoRaf: true,
-        touchMultiplier: 1.5,
-        orientation: "vertical",
-        gestureOrientation: "vertical",
-        touchInertiaMultiplier: 0.6,
-      };
-    };
-
-    // Initialize Lenis with responsive configuration
-    const lenis = new Lenis(getLenisConfig()); // Pass the object directly
+    const lenis = new Lenis();
 
     const scrollHandler = (time: number) => {
       lenis.raf(time);
@@ -400,8 +254,31 @@ const AnimatedSections: React.FC = () => {
     rotateRange: [0, index % 2 === 0 ? -6.5 : 6.5],
   }));
 
+  // Detect if last section is near the bottom of the viewport
+  useEffect(() => {
+    const handleScroll = () => {
+      if (container.current) {
+        const containerBottom =
+          container.current.getBoundingClientRect().bottom * 1.5;
+
+        // When the last section is about to scroll off the screen
+        if (containerBottom <= window.innerHeight) {
+          setHideHeading(true);
+        } else {
+          setHideHeading(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [data]);
+
   return (
-    <main ref={container} className={`relative h-[${data.length + 2}00vh]`}>
+    <main
+      ref={container}
+      className={`relative h-[${data.length}00vh] select-none`}
+    >
       {sections.map((section, index) => (
         <Section
           key={index}
@@ -411,6 +288,34 @@ const AnimatedSections: React.FC = () => {
           rotateRange={section.rotateRange as [number, number]}
         />
       ))}
+      <div
+        ref={headingRef}
+        className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
+          hideHeading ? "opacity-0" : "opacity-100"
+        }`}
+      >
+        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight opacity-0 animate-lineUp transition-all duration-300 delay-300">
+          <span className="text-secondary">
+            <SlBadge />
+          </span>
+          <TextHoverAnimation text={"South"} />
+          <TextHoverAnimation text={"India's"} />
+          <span className="text-secondary">
+            {" "}
+            <TextHoverAnimation text={"No.1"} />
+          </span>
+        </h1>
+        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight transition-all duration-300 opacity-0 animate-lineUp delay-500">
+          <TextHoverAnimation text={"Sports"} />
+          <div className="text-secondary">
+            <TextHoverAnimation text={"infrastructure"} />
+          </div>
+          <span className="">
+            {/* <span className="md:block hidden"> */}
+            <TextHoverAnimation text={"Developer"} />
+          </span>
+        </h1>
+      </div>
     </main>
   );
 };
@@ -422,6 +327,7 @@ const Section: React.FC<SectionProps> = ({
   rotateRange,
 }) => {
   const [isInitialRender, setIsInitialRender] = useState(true);
+  const [borderVisible, setBorderVisible] = useState(false); // State for border visibility
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.75]);
   const rotate = useTransform(scrollYProgress, [0, 1], rotateRange);
@@ -431,6 +337,19 @@ const Section: React.FC<SectionProps> = ({
     ? phoneSrc
     : imageSrc;
 
+  // Monitor scroll and show border after a certain scroll threshold
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (value) => {
+      if (value > 0.1) {
+        // Adjust the threshold based on your requirement
+        setBorderVisible(true);
+      } else {
+        setBorderVisible(false);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [scrollYProgress]);
   // Disable initial animation after it completes
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -456,7 +375,9 @@ const Section: React.FC<SectionProps> = ({
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
-        className="relative min-h-screen w-full border-4 border-yellow-800 border-opacity-40"
+        className={`relative min-h-screen w-full ${
+          borderVisible ? "border-4 border-yellow-800 border-opacity-40" : ""
+        }`}
       />
     </motion.div>
   );
