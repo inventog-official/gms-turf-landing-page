@@ -107,7 +107,7 @@ const AnimatedSections: React.FC = () => {
           hideHeading ? "opacity-0" : "opacity-100"
         }`}
       >
-        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight opacity-0 animate-lineUp transition-all duration-300 delay-300">
+        <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight opacity-0 animate-lineUp transition-all duration-300 delay-300">
           <span className="text-secondary">
             <SlBadge />
           </span>
@@ -118,7 +118,7 @@ const AnimatedSections: React.FC = () => {
             <TextHoverAnimation text={"No.1"} />
           </span>
         </h1>
-        <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight transition-all duration-300 opacity-0 animate-lineUp delay-500">
+        <h1 className="text-2xl md:text-3xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight transition-all duration-300 opacity-0 animate-lineUp delay-500">
           <TextHoverAnimation text={"Sports"} />
           <div className="text-secondary">
             <TextHoverAnimation text={"infrastructure"} />
