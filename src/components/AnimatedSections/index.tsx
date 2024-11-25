@@ -37,6 +37,7 @@ const AnimatedSections: React.FC = () => {
       smoothWheel: true,
       touchMultiplier: 1,
       wheelMultiplier: 1.5, // Adjust to increase or decrease scrolling speed
+      autoResize: true,
     });
 
     function raf(time: any) {
