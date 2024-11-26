@@ -64,8 +64,8 @@ export const Footer = () => {
 
   return (
     <div className="flex flex-col gap-3 px-8 lg:px-28 py-16 lg:py-28 h-full w-full">
-      <div className="w-full flex flex-col border-t border-b border-slate-100/20 py-16 px-0 lg:px-1 h-full gap-10">
-        <div className="w-full flex flex-col lg:flex-row">
+      <div className="w-full flex flex-col border-t border-b border-slate-100/20 py-10 px-0 lg:px-1 h-full gap-10">
+        <div className="w-full flex flex-col lg:flex-row gap-10">
           <div className="flex flex-col lg:items-center lg:flex-row lg:w-[50%] w-full text-[12px] gap-5 lg:gap-10 font-secondary uppercase">
             <p
               onClick={() => handleNavClick("#home")}
