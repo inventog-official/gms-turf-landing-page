@@ -8,7 +8,7 @@ export function ExpandableCardDemo() {
 
   const data = queryClient.getQueryData(["newsfeeds"]) as NewsFeed[];
 
-  console.log(data);
+  // console.log(data);
   const [active, setActive] = useState<(typeof data)[number] | NewsFeed | any>(
     null
   );

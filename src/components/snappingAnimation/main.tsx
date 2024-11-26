@@ -48,10 +48,10 @@ const Card: React.FC<CardProps> = ({ imageUrl,  blurHash}) => {
   };
 
   const handleLoadStarted = () => {
-    console.log("Started: ");
+    // console.log("Started: ");
     setLoadStarted(true);
   };
-console.log(imageUrl,"its coming")
+// console.log(imageUrl,"its coming")
   return (
     <section
       ref={ref}

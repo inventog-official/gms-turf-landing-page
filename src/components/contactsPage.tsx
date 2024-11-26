@@ -48,7 +48,7 @@ export const ContactsPage = () => {
           // setIsSubmitted(true);
           // setTimeout(() => setIsSubmitted(false), 3000);
         });
-      console.log("Form submitted successfully", formData);
+      // console.log("Form submitted successfully", formData);
     }
   };
 

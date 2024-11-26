@@ -36,7 +36,7 @@ function OptimizedImage(props: IOptimizedImageProps) {
   };
 
   const handleLoadStarted = () => {
-    console.log("Started: ");
+    // console.log("Started: ");
     setLoadStarted(true);
   };
 
