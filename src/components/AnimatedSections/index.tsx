@@ -130,7 +130,7 @@ const AnimatedSections: React.FC = () => {
       <div
         ref={headingRef}
         className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
-          hideHeading ? "opacity-0" : "opacity-100"
+          hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
         }`}
       >
         <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
