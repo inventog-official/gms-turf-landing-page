@@ -35,7 +35,8 @@ const Navbar: React.FC = () => {
   }, [location.pathname, location.hash]);
 
   const handleScroll = () => {
-    setScrolled(window.scrollY > window.innerHeight * (data?.length - 0.5));
+    setScrolled(window.scrollY > 50);
+    // setScrolled(window.scrollY > window.innerHeight * (data?.length - 0.5));
   };
 
   const isClicked = () => {

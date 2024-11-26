@@ -153,7 +153,7 @@ const AnimatedSections: React.FC = () => {
       </div>
       <div
         className={`w-full min-h-[40vh] z-[1000] fixed bottom-[5%] px-20 hidden lg:flex justify-center items-end transition-all duration-500 ${
-          hideHeading ? "opacity-0" : "opacity-100"
+          hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
         }`}
       >
         <div className="grid lg:grid-cols-5 md:grid-cols-5">
