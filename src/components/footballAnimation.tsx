@@ -24,15 +24,15 @@ const Football = () => {
     }
   });
 
-  return <primitive ref={ballRef} object={scene} scale={[3, 3, 3]} />;
+  return <primitive ref={ballRef} object={scene} scale={[2.5, 2.5, 2.5]} />;
 };
 
 const FootballAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   return (
-    <div className="min-w-[100px] max-w-[100px] flex justify-center items-center min-h-[100px] max-h-[100px] md:min-w-[150px] md:min-h-[150px] md:max-w-[150px] md:max-h-[150px]  bg-transparent">
-      {/* Adjust width and height as needed */}
+    <div className="flex justify-center w-[200px] h-[200px] items-center bg-transparent">
+      {/* Adjust Above div width and height as needed */}
       <Canvas ref={canvasRef}>
         <OrbitControls
           enableZoom={false}
@@ -45,7 +45,7 @@ const FootballAnimation = () => {
         <Football />
       </Canvas>
     </div>
-    // <div className="bg-transparent">
+    // <div className="bg-transparent w-[200px] h-[200px]">
     //   <Canvas ref={canvasRef}>
     //     <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} />
     //     <ambientLight intensity={0.5} />
