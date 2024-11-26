@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const CricketTurf = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}, []); 
+  }, []);
   return (
     <div className="">
       <div className="bg-background relative z-10 select-none">
@@ -21,7 +21,7 @@ const CricketTurf = () => {
             "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_968,h_540,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png "
           }
         />
-        <Container className="relative z-10 max-w-[692px] space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
             <p className=" text-secondary font-primary">CRICKET NETS</p>
           </FadeIn>
@@ -118,43 +118,37 @@ const cricketItems = [
     poster:
       "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_488,h_326,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Airplane",
-    blurHash:"LQEqA]D%B-x?9+Rlbot9~mouIVj@"
-
+    blurHash: "LQEqA]D%B-x?9+Rlbot9~mouIVj@",
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_488,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Family man",
-    blurHash:"LdIY5eVtnQs:00WEafR+~BofbbR*"
-
+    blurHash: "LdIY5eVtnQs:00WEafR+~BofbbR*",
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_177ae28dd7534c0b9961d0a1957f8f3c~mv2.png/v1/fill/w_420,h_662,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-06.png",
     name: "Laboratory",
-    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
-
+    blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_1144c12f5a5a4357b6f0617becae9e4b~mv2.png/v1/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-05.png",
     name: "Napoleon",
-    blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
-
+    blurHash: "L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe",
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_26585cf912084d5ab27ee8ae33a06fbd~mv2.png/v1/crop/x_208,y_0,w_1669,h_1167/fill/w_466,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-03.png",
     name: "Person in Darkness",
-    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
-
+    blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_62c3430cd87440309a736d2a6aae8a9d~mv2.png/v1/crop/x_29,y_0,w_1714,h_2371/fill/w_484,h_662,fp_0.50_0.54,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-01.png",
     name: "Scary Building",
-    blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
-
+    blurHash: "L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe",
   },
   // {
   //   poster:

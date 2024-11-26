@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const CircleTurf = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}, []); 
+  }, []);
   return (
     <div className="">
       <div className="bg-background relative z-10 select-none">
@@ -19,7 +19,7 @@ const CircleTurf = () => {
           subtitle={"Circle Mini Cricket Stadium Turf"}
           bgImgUrl={"/CircleMiniCricketStadiumTurff/PLT_00017.jpg"}
         />
-        <Container className="relative z-10 max-w-[692px] space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
             <p className="uppercase text-secondary font-primary">
               Mini Cricket Stadium
@@ -27,7 +27,7 @@ const CircleTurf = () => {
           </FadeIn>
           <FadeIn>
             <p className="uppercase text-secondary">
-              ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium 
+              ESSENTIAL CONSIDERATIONS FOR Circle Mini Cricket Stadium
             </p>
           </FadeIn>
           <FadeIn>
@@ -71,7 +71,7 @@ const CircleTurf = () => {
         carouselImages={cricketItems}
       />
       <AnimateCard>
-      <Certificates />
+        <Certificates />
       </AnimateCard>
       <Footer />
     </div>
@@ -83,49 +83,41 @@ const cricketItems = [
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
     name: "Airplane",
-    blurHash:"L9DJhL~qKkk=?J$+$zIoE0D%4nZ#"
-
+    blurHash: "L9DJhL~qKkk=?J$+$zIoE0D%4nZ#",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00006.jpg",
     name: "Family man",
-    blurHash:"LnHoH_RPX9bE_NozxFf6_3n%W;ju"
-
+    blurHash: "LnHoH_RPX9bE_NozxFf6_3n%W;ju",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00010.jpg",
     name: "Laboratory",
-    blurHash:"L2CPz#0iPVPw7TI;[.0d}]R;0L0e"
-
+    blurHash: "L2CPz#0iPVPw7TI;[.0d}]R;0L0e",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00011.jpg",
     name: "Napoleon",
-    blurHash:"L*Jb4|t7R-bI_4oft6bH?bNGRjn$"
-
+    blurHash: "L*Jb4|t7R-bI_4oft6bH?bNGRjn$",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Person in Darkness",
-    blurHash:"LsIX~espxHoM?wS2oybF_3s.t6fk"
-
+    blurHash: "LsIX~espxHoM?wS2oybF_3s.t6fk",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00013.jpg",
     name: "Scary Building",
-    blurHash:"L85#@1ay02WCbaayjGoL8#ay??ay"
-
+    blurHash: "L85#@1ay02WCbaayjGoL8#ay??ay",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00017.jpg",
     name: "Stars",
-    blurHash:"LsIX~espxHoM?wS2oybF_3s.t6fk"
-
+    blurHash: "LsIX~espxHoM?wS2oybF_3s.t6fk",
   },
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00022.jpg",
     name: "Stars",
-    blurHash:"L85#@1ay02WCbaayjGoL8#ay??ay"
-
+    blurHash: "L85#@1ay02WCbaayjGoL8#ay??ay",
   },
 ];

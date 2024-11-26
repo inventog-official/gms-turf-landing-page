@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const FootballTurf = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}, []); 
+  }, []);
   return (
     <div className="">
       <div className="bg-background relative z-10 select-none">
@@ -19,7 +19,7 @@ const FootballTurf = () => {
           subtitle={"FOOTBALL TURF REDEFINED"}
           bgImgUrl={"/Football/Football-07.png"}
         />
-        <Container className="relative z-10 max-w-[692px] space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl border-4 border-red-900">
           <FadeIn>
             <p className="text-secondary font-primary">FOOTBALL TURF</p>
           </FadeIn>
@@ -30,15 +30,34 @@ const FootballTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
+              Ensuring compliance with FIFA (Fédération Internationale de
+              Football Association) and UEFA (Union of European Football
+              Associations) standards is essential for artificial turf used in
+              football. These standards guarantee that the playing surface meets
+              high levels of quality, safety, and performance for both
+              professional and amateur matches. The turf must achieve FIFA
+              Quality or FIFA Quality Pro certification and adhere to UEFA’s
+              strict criteria for top-tier competitions. Key aspects include
+              player safety, with requirements for shock absorption, traction,
+              and reduced skin abrasion, ensuring safe play with minimal injury
+              risk. The turf must also withstand heavy usage and varying weather
+              conditions while maintaining consistent ball behavior, such as
+              roll and rebound. Environmental considerations, including
+              sustainable materials and microplastic control, are crucial.
+              Regular maintenance and re-certification ensure the field’s
+              longevity and reliability, making it a sustainable choice for all
+              levels of football.
+            </p>
+            {/* <p>
             Verify Compliance with FIFA and UEFA Standards: Ensure that the
               Artificial turf meets the criteria outlined by FIFA (Federation
               Internationale de Football Association) and UEFA (Union of European
               Football Associations).
-            </p>
+            </p> */}
           </FadeIn>
           <FadeIn>
             <p>
-            These bodies establish regulations concerning the quality and
+              These bodies establish regulations concerning the quality and
               Performance of artificial football surfaces, including
               Certifications such as FIFA Quality Pro.
             </p>
@@ -46,11 +65,10 @@ const FootballTurf = () => {
         </Container>
       </div>
 
-
       <VideoCarousel title="Football Turf" carouselImages={cricketItems} />
-<AnimateCard>
-<Certificates />
-</AnimateCard>
+      <AnimateCard>
+        <Certificates />
+      </AnimateCard>
 
       <div className="flex gap-10 lg:flex-row flex-col px-10 md:px-20 lg:px-[7.5rem] py-20">
         <div className="flex  md:flex-row flex-col gap-12 ">
@@ -59,13 +77,13 @@ const FootballTurf = () => {
               {/* <div className="absolute border-4 border-yellow-600 w-full h-full -top-5 left-5 sm:-top-7 sm:left-6 bg-black/20 blur-sm"></div> */}
               <div className="w-full h-full overflow-hidden group">
                 <AnimateCard>
-                <img
-                  src="https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
-                  className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
-                  alt="Director"
-                />
+                  <img
+                    src="https://storage.googleapis.com/a1aa/image/99jLJ4BLRvoxBB39a3VKYTeR6fsfutMIJvWfzpX3Dey2SM1dC.jpg"
+                    className="lg:w-[400px] w-[250px]  h-full object-cover transition-transform duration-500 ease-out scale-105 transform group-hover:scale-100"
+                    alt="Director"
+                  />
                 </AnimateCard>
-               
+
                 {/* Inner Light Effect */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none">
                   <div className="absolute inset-0 bg-black/25" />
@@ -88,26 +106,26 @@ const FootballTurf = () => {
 
         <div className="w-full flex flex-col justify-center items-start gap-8  ">
           <AnimateCard>
-          <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
-            FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES
-            <span className="text-secondary"> FIFA GUIDELINES</span>
-          </p>
+            <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary text-white  uppercase leading-tight">
+              FOOTBALL TURF DIMENSIONS ACCORDING TO FIFA GUIDELINES
+              <span className="text-secondary"> FIFA GUIDELINES</span>
+            </p>
           </AnimateCard>
-         
+
           {/* Main Content */}
           <div className="flex flex-col gap-10   text-white font-secondary">
             <AnimateCard>
-            <p className="md:text-2xl text-lg">
-              The dimensions of football turf must adhere to the Laws of the
-              Game, ensuring a rectangular field of play. The length of the
-              touchline must exceed the length of the goal line. For
-              professional 11-a-side football, FIFA recommends dimensions
-              ranging from 100-130 yards(90-120m) in length and 50-100
-              yards(45-90m) in width. The penalty area should be positioned 18
-              yards(16.45m) from the centre of the goal line, with the penalty
-              spot set 12 yards(10.9m) from the goal, irrespective of the
-              overall pitch size.
-            </p>
+              <p className="md:text-2xl text-lg">
+                The dimensions of football turf must adhere to the Laws of the
+                Game, ensuring a rectangular field of play. The length of the
+                touchline must exceed the length of the goal line. For
+                professional 11-a-side football, FIFA recommends dimensions
+                ranging from 100-130 yards(90-120m) in length and 50-100
+                yards(45-90m) in width. The penalty area should be positioned 18
+                yards(16.45m) from the centre of the goal line, with the penalty
+                spot set 12 yards(10.9m) from the goal, irrespective of the
+                overall pitch size.
+              </p>
             </AnimateCard>
           </div>
         </div>
@@ -123,45 +141,40 @@ const cricketItems = [
     poster: "/Football/Football-01.png",
     //   "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_824,h_460,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png",
     name: "Airplane",
-    blurHash:"L29R8gWR01D;0ot3}9xt?qxu02xt"
+    blurHash: "L29R8gWR01D;0ot3}9xt?qxu02xt",
   },
 
   {
     poster: "/Football/Football-02.png",
     //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
-    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
-
+    blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
     poster: "/Football/Football-03.png",
     //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
-   blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
+    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
   {
     poster: "/Football/Football-04.png",
     name: "Napoleon",
-    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
-
+    blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
     poster: "/Football/Football-05.png",
     name: "Person in Darkness",
-    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
-
+    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
   {
     poster: "/Football/Football-06.png",
     name: "Scary Building",
-    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-="
-
+    blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
   {
     poster: "/contactSideImg.webp",
     //   "/Football/Football-07.png",
     name: "Stars",
-    blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
-
+    blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
 ];
