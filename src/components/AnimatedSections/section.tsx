@@ -139,7 +139,12 @@ const Section: React.FC<SectionProps> = ({ imageSrc, phoneSrc }) => {
       animate={isInitialRender ? { scale: 1, opacity: 1 } : {}}
       transition={isInitialRender ? { duration: 1, ease: "easeOut" } : {}}
     >
-      <div
+      <img
+        src={backgroundImage}
+        alt={`Section ${backgroundImage}`}
+        className="absolute w-full h-full object-cover z-10"
+      />
+      {/* <div
         style={{
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "cover",
@@ -147,7 +152,7 @@ const Section: React.FC<SectionProps> = ({ imageSrc, phoneSrc }) => {
           backgroundRepeat: "no-repeat",
         }}
         className={`relative min-h-screen w-full`}
-      />
+      /> */}
     </motion.div>
   );
 };
