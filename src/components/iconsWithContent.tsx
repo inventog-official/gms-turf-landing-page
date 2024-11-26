@@ -6,34 +6,37 @@ const IconsWithContent: React.FC = () => {
   return (
     <section
       id="iconsWithContent"
-      className="relative flex flex-col bg-primary shadow-inner  py-32 justify-center items-center select-none"
+      className="relative flex flex-col bg-primary shadow-inner justify-center items-center select-none pb-16"
     >
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none"></div>
-      {/* <div className="flex md:flex-row flex-wrap justify-around px-5">
+      {/* <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none"></div> */}
+      <div className="flex md:flex-row flex-wrap justify-around px-5">
         {iconsWithImagesObj.map((item, index) => {
           return (
-            <div
-              key={index}
-              className="w-full md:w-[40%] lg:w-[20%] rounded-lg flex flex-col justify-center items-center px-10 md:px-6 lg:px-5 py-2 lg:py-5"
-            >
-              <img
-                src={item.imageSrc}
-                className="w-[55%] md:w-[75%] lg:w-full select-none"
-                draggable="false"
-              />
-              <div className="flex flex-col gap-4 text-center">
-                <p className="text-white text-2xl font-primary">{item.title}</p>
-                <p className="text-center w-full font-secondary text-lg">
-                  {item.description}
-                </p>
+            <AnimatedCard key={index}>
+              <div
+                key={index}
+                className="w-full md:w-[40%] lg:w-[20%] rounded-lg flex flex-col justify-center items-center px-10 md:px-6 lg:px-5 py-2 lg:py-5"
+              >
+                <img
+                  src={item.imageSrc}
+                  className="w-[55%] md:w-[75%] lg:w-full select-none"
+                  draggable="false"
+                />
+                <div className="flex flex-col gap-4 text-center">
+                  <p className="text-white text-2xl font-primary">
+                    {item.title}
+                  </p>
+                  <p className="text-center w-full font-secondary text-lg">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </AnimatedCard>
           );
         })}
-      </div> */}
+      </div>
 
-
-<div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5">
+      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5">
   {iconsWithImagesObj.map((item, index) => {
     return (
       <AnimatedCard key={index}>
@@ -57,7 +60,7 @@ const IconsWithContent: React.FC = () => {
      
     );
   })}
-</div>
+</div> */}
     </section>
   );
 };

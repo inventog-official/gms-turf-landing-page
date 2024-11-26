@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
             <div className="w-full lg:w-[50%] flex flex-col justify-center gap-5 lg:gap-10">
               {/* Header */}
               <AnimatedCard>
-              <p className="text-[12px] hidden lg:flex font-secondary  uppercase tracking-[1px]">
+              <p className="text-[12px] hidden lg:flex font-secondary lg:mb-8 uppercase tracking-[1px]">
                 Contact
               </p>
               </AnimatedCard>

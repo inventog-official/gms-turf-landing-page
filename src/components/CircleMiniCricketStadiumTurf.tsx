@@ -9,7 +9,7 @@ const CircleMiniCricketStadiumTurf = () => {
   return (
     <div
       id="CircleMiniCricketStadiumTurf"
-      className="flex flex-col gap-10 pt-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28"
+      className="flex flex-col gap-10 justify-center items-center select-none min-h-screen bg-primary px-10 md:px-20 lg:px-[7.5rem] pb-16 lg:pb-28"
     >
       <AnimatedCard>
         {" "}
@@ -23,13 +23,12 @@ const CircleMiniCricketStadiumTurf = () => {
         </h1>
       </AnimatedCard>
       <AnimatedCard>
-        <div className="w-full max-w-[1200px] px-4">
+        <div className="w-full max-w-[1200px] px-0 lg:px-8">
           <div
             className={cn(
               "group w-full cursor-pointer overflow-hidden relative card h-[60vh] sm:h-[80vh] lg:h-[100vh] rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 sm:p-6 border border-transparent dark:border-neutral-800",
               "bg-[url('/CircleMiniCricketStadiumTurff/PLT_00017.jpg')] bg-cover bg-center",
               // Preload hover image by setting it in a pseudo-element
-              "before:bg-[url('/CircleMiniCricketStadiumTurff/PLT_00022.jpg')] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
               "hover:bg-[url('/CircleMiniCricketStadiumTurff/PLT_00022.jpg')]",
               "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
               "transition-all duration-500"
@@ -48,8 +47,8 @@ const CircleMiniCricketStadiumTurf = () => {
         </div>
       </AnimatedCard>
       <AnimatedCard>
-        <div className="flex flex-col items-center gap-8 px-4">
-          <section className="md:text-2xl text-lg text-white text-center">
+        <div className="flex flex-col items-center gap-8">
+          <section className="md:text-xl lg:text-2xl text-lg text-white text-center">
             Welcome to the Circle Mini Cricket Stadium Turf, where passion for
             cricket meets high-quality, exclusive playing surfaces. Designed
             with the perfect blend of aesthetics and functionality, our turf

@@ -226,7 +226,7 @@ const App: React.FC = () => {
         </div>
       )}
       {!isLoading && (
-        <div className={`w-screen h-screen bg-primary no-scrollbar`}>
+        <div className={`w-screen h-screen bg-primary no-scrollbar select-none`}>
           <Navbar />
           <CursorFollower />
           <ScrollProgress />
@@ -239,7 +239,7 @@ const App: React.FC = () => {
                   <div id="parallaxImages">
                     <AnimatedSections />
                   </div>
-                  <div className="xl:hidden" id="iconsWithContent">
+                  <div className="lg:hidden" id="iconsWithContent">
                     <IconsWithContent />
                   </div>
                   <div id="CircleMiniCricketStadiumTurf">
