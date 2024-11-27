@@ -122,7 +122,7 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center bg-yellow-400/20 px-5 py-5">
+        <div className="w-full flex justify-center bg-yellow-100/20 px-5 py-5">
           <div className="flex flex-col lg:flex-row gap-10 lg:justify-around">
             <div className="flex flex-col justify-center w-full lg:w-[30%] items-center gap-2">
               <MdCall className="text-2xl opacity-80" />
