@@ -316,6 +316,7 @@ const AnimatedSections: React.FC = () => {
       className={`relative h-[${data?.length * 100}vh] select-none lg:mb-[10%]`}
     >
       <div className="absolute bottom-0 left-0 w-full z-[999] h-36 bg-gradient-to-t from-primary to-transparent pointer-events-none"></div>
+      <div className="">
       {data?.map((image, index) => (
         <Section key={index} imageSrc={image.url} phoneSrc={image.phoneUrl} />
       ))}
@@ -325,6 +326,7 @@ const AnimatedSections: React.FC = () => {
           hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
         }`}
       >
+
         <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
           <span className="text-secondary">
             <SlBadge />
@@ -342,6 +344,16 @@ const AnimatedSections: React.FC = () => {
           </div>
           <TextHoverAnimation text={"Developer"} />
         </h1>
+      </div>
+      <div
+           className={`z-10 fixed text-center bottom-6 w-full transition-all duration-500 ${
+            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+          }`}
+          >
+            <div className="flex justify-center items-end">
+              <FootballAnimation />
+            </div>
+          </div>
       </div>
       <div
         className={`w-full min-h-[40vh] z-[1000] fixed bottom-[5%] px-20 hidden lg:flex justify-center items-end transition-all duration-500 ${
