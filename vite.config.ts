@@ -9,6 +9,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      three: path.resolve("./node_modules/three"),
     },
   },
   optimizeDeps: {

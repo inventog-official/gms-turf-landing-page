@@ -135,7 +135,7 @@ const Section: React.FC<SectionProps> = ({ imageSrc, phoneSrc }) => {
   return (
     <motion.div
       className="sticky top-0 h-screen flex flex-col items-center justify-center text-white"
-      initial={isInitialRender ? { scale: 0.8, opacity: 0 } : {}}
+      initial={isInitialRender ? { scale: 1, opacity: 0 } : {}}
       animate={isInitialRender ? { scale: 1, opacity: 1 } : {}}
       transition={isInitialRender ? { duration: 1, ease: "easeOut" } : {}}
     >

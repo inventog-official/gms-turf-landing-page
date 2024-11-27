@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
 import CharacterScene from "./characterScene";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const Portfolio: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
@@ -46,10 +47,34 @@ const Portfolio: React.FC = () => {
     }, 300); // Match animation duration
   };
   if (isLoading) {
-    // Render a loading spinner or message during the initial delay
+    // Split the text into individual letters for animation
+    const text = "Portfolio is Loading...";
+
+    // Split the text into letters and spaces, but preserve the spaces
+    const splitText = text.split("").map((letter, index) =>
+      letter === " " ? (
+        " "
+      ) : (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: index * 0.05, // Delay for smooth staggered effect
+            type: "spring",
+            stiffness: 200,
+            damping: 20,
+          }}
+          style={{ display: "inline-block" }}
+        >
+          {letter}
+        </motion.span>
+      )
+    );
+
     return (
       <div className="flex justify-center items-center h-screen w-full bg-primary text-white">
-        <p className="text-lg font-medium">Loading...</p>
+        <motion.p className="text-xl md:text-2xl lg:text-4xl tracking-widest uppercase font-primary font-semibold">{splitText}</motion.p>
       </div>
     );
   }

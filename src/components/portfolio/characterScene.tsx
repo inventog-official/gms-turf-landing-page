@@ -8,15 +8,14 @@ import MediaPlane from "./mediaPlane";
 const mediaPaths: string[] = [
   "/Football/1.jpg",
   "/Football/2.jpg",
-  "/Football/3.jpg",
   "/videos/football-1.mp4",
   "/videos/football-2.mp4",
   "/videos/football-3.mp4",
-  "/Football/Football-06.png",
-  "/Football/Football-02.png",
-  "/Football/Football-03.png",
-  "/Football/Football-04.png",
-  "/Football/Football-05.png",
+  "/Football/Football-06.webp",
+  "/Football/Football-02.webp",
+  "/Football/Football-03.webp",
+  "/Football/Football-04.webp",
+  "/Football/Football-05.webp",
   // "/videos/sample.mp4",
 ];
 
