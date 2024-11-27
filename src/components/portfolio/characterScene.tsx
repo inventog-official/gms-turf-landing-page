@@ -6,8 +6,8 @@ import Character from "./character";
 import MediaPlane from "./mediaPlane";
 
 const mediaPaths: string[] = [
-  "/Football/1.jpg",
-  "/Football/2.jpg",
+  "/Football/1.webp",
+  "/Football/2.webp",
   "/videos/football-1.mp4",
   "/videos/football-2.mp4",
   "/videos/football-3.mp4",
