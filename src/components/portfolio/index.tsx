@@ -6,6 +6,7 @@ import { AiOutlineCloseCircle } from "react-icons/ai";
 
 const Portfolio: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const [isLoading, setIsLoading] = useState(true); // Loading state
   const [videoUrl, setVideoUrl] = useState<string | null>(null); // For video URL
   const [isModalOpen, setIsModalOpen] = useState(false); // For modal visibility
   const [showModal, setShowModal] = useState(false); // For animation visibility
@@ -17,6 +18,15 @@ const Portfolio: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Simulate loading with a 10-second delay
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // 10 seconds
+
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
   }, []);
 
   const isMobile = screenWidth <= 768;
@@ -35,7 +45,14 @@ const Portfolio: React.FC = () => {
       setVideoUrl(null);
     }, 300); // Match animation duration
   };
-
+  if (isLoading) {
+    // Render a loading spinner or message during the initial delay
+    return (
+      <div className="flex justify-center items-center h-screen w-full bg-primary text-white">
+        <p className="text-lg font-medium">Loading...</p>
+      </div>
+    );
+  }
   return (
     <>
       <div className="w-screen h-screen overflow-y-scroll bg-primary">

@@ -19,7 +19,7 @@ const FootballTurf = () => {
           subtitle={"FOOTBALL TURF REDEFINED"}
           bgImgUrl={"/Football/Football-07.png"}
         />
-        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl border-4 border-red-900">
+        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="text-secondary font-primary">FOOTBALL TURF</p>
           </FadeIn>
