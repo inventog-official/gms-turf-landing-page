@@ -1,17 +1,19 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+
+import Dropdown from "../productsDropdown/main";
 
 interface drawerProps {
   isCloseMenu: () => void;
 }
 
 const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
+  
   const [activeTab, setActiveTab] = useState<string | null>(null);
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
+ 
 
 
   const handleNavClick = (path: string) => {
@@ -40,9 +42,35 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
       isCloseMenu();
     }
   };
+  
+  // const { styles, attributes } = usePopper(buttonRef.current, dropdownRef.current, {
+  //   placement: "auto", // Default placement
+  //   modifiers: [
+  //     {
+  //       name: "offset",
+  //       options: {
+  //         offset: [0, 8], // Adjust dropdown spacing
+  //       },
+  //     },
+  //     {
+  //       name: "preventOverflow",
+  //       options: {
+  //         boundary: "clippingParents",
+  //         rootBoundary:"viewport" // Prevent dropdown from overflowing the viewport
+  //       },
+  //     },
+  //     {
+  //       name: "flip",
+  //       options: {
+  //         fallbackPlacements: ["top", "bottom", "right", "left"], // Allow flipping to these placements
+  //       },
+  //     },
+  
+  //   ],
+  // });
 
   return (
-    <div className="flex justify-center items-start py-16 h-full w-full px-12">
+    <div className="flex justify-center items-start py-16  h-full w-full px-12">
       <div className="w-full">
         <ul className="flex flex-col items-center justify-center w-full gap-8 lg:gap-12 text-white md:w-auto font-secondary">
           {[
@@ -66,8 +94,9 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
               </button>
             </li>
           ))}
-          <li className="relative">
+          {/* <li className="relative">
             <button
+            ref={buttonRef}
               className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
                 isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
               } transition-all hover:text-secondary`}
@@ -78,12 +107,14 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
             </button>
             {isDropdownOpen && (
               <motion.div
+              style={styles.popper}
+              {...attributes.popper}
                 ref={dropdownRef}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-white/40 rounded-md shadow-lg z-10"
+                className="absolute top-2 left-0 mt-2 w-48 backdrop-blur-md bg-gray-400/40 rounded-md shadow-lg z-10"
               >
                 <ul className="flex flex-col">
                   {[
@@ -113,7 +144,36 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
                 </ul>
               </motion.div>
             )}
-          </li>
+          </li> */}
+       <li>
+       <Dropdown
+        onClick={(value:string) => {
+        setIsDropdownOpen(false);
+        handleNavClick(value);
+      }}
+        trigger={ <button
+          // ref={buttonRef}
+            className={`flex gap-1 rounded-lg items-center font-medium uppercase ${
+              isDropdownOpen ? "text-secondary" : "text-[#D2D2D0]"
+            } transition-all hover:text-secondary`}
+            // onClick={() => setIsDropdownOpen((prev) => !prev)}
+          >
+            Products
+            <FaChevronDown className="ml-1" />
+          </button>}
+        items={[
+          { path: "/football-turf", label: "Football Turf" },
+          { path: "/pickle-turf", label: "Pickle Ball" },
+          { path: "/circle-turf", label: " Mini Cricket Stadium " },
+          { path: "/cricket-turf", label: "Cricket Nets" },
+          { path: "/indoor-turf", label: "Indoor Turf" },
+          { path: "/volleyball-turf", label: "Volleyball Court" },
+          { path: "/multi-sports-turf", label: "MultiSports Turf" },
+          { path: "/basket-ball", label: "Basket Ball Court" },
+          { path: "/badminton-court", label: "Badminton Court" },
+          { path: "/360-circle-turf", label: "360 Circle Turf" },
+        ]}
+      />       </li>
         </ul>
       </div>
     </div>
