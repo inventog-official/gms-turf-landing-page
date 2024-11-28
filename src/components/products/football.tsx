@@ -17,7 +17,7 @@ const FootballTurf = () => {
         <Hero
           title={"UNLEASH YOUR GAME ON GREEN: "}
           subtitle={"FOOTBALL TURF REDEFINED"}
-          bgImgUrl={"/Football/Football-07.png"}
+          bgImgUrl={"/Football/Football-07.webp"}
         />
         <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>

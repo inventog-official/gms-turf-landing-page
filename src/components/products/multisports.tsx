@@ -26,7 +26,7 @@ const MultiSportsTurf = () => {
         <Hero
           title={"MULTI SPORT TURF "}
           subtitle={"FINDS ITS MARK"}
-          bgImgUrl={"/Football/Football-03.png"}
+          bgImgUrl={"/Football/Football-03.webp"}
         />
         <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
           <FadeIn>
