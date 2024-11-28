@@ -210,6 +210,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Lenis from "lenis";
+import { Popup } from "../popup/main";
+import ContactForm from "../popup/contactsPopup";
 import { useCarousel } from "@/hook/useCarousel";
 import { SlBadge } from "react-icons/sl";
 import TextHoverAnimation from "../textHoverAnimation";
@@ -224,12 +226,33 @@ const AnimatedSections: React.FC = () => {
   const [visibleIconIndexes, setVisibleIconIndexes] = useState<number[]>([]);
 
   const { queryClient } = useCarousel();
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+	const popupRef = useRef<HTMLDivElement>(null);
+
+	const PopupState =  JSON.parse( localStorage.getItem("contacts-gms") as any) as {value:boolean}
+
   const data = queryClient.getQueryData(["carousels"]) as {
     id: number;
     url: string;
     phoneUrl: string;
   }[];
+	const handleClosePopup = () => {
+    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
+		setIsPopupOpen(false);
+    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
+	};
 
+  useEffect(() => {
+    if (isPopupOpen&&!PopupState) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto'; // or 'scroll' depending on your needs
+    }
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isPopupOpen]);
   useEffect(() => {
     // Initialize Lenis smooth scrolling
     const lenis = new Lenis({
@@ -427,6 +450,14 @@ const AnimatedSections: React.FC = () => {
           ))}
         </div>
       </div>
+      {PopupState==undefined&&isPopupOpen?<Popup
+      className="w-full md:w-96"
+      ref={popupRef}
+					onClose={handleClosePopup}
+					closeButton={true}
+      >
+        <ContactForm setIsPopupOpen={setIsPopupOpen}/>
+      </Popup>:null}
     </main>
   );
 };
