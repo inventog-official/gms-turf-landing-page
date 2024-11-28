@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     animation: {
       "carousel-move": "carousel-move var(--duration,80s) infinite",
+      "bounceUpDown": 'bounceUpDown 1s ease-in-out infinite',
 
     },
     extend: {
@@ -108,6 +109,28 @@ module.exports = {
         "5xl": ["4.5rem", "1.05"], // 72px
       },
       keyframes: {
+        bounceUpDown: {
+          '0%, 100%': {
+            transform: 'translateY(0)',
+          },
+          '50%': {
+            transform: 'translateY(-10px)',
+          },
+        },
+        scrolldown: {
+          '0%': {
+            transform: 'translateY(20%) rotate(45deg)',
+            opacity: '0.7',
+          },
+          '50%': {
+            transform: 'translateY(0%) rotate(45deg)',
+            opacity: '0.2',
+          },
+          '100%': {
+            transform: 'translateY(20%) rotate(45deg)',
+            opacity: '0.7',
+          },
+        },
         "rotate-circle": {
           to: { transform: "rotate(1turn)" },
         },

@@ -216,7 +216,7 @@ import TextHoverAnimation from "../textHoverAnimation";
 import FootballAnimation from "../footballAnimation";
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 import Section from "./section";
-
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 const AnimatedSections: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLDivElement | null>(null);
@@ -346,14 +346,40 @@ const AnimatedSections: React.FC = () => {
         </h1>
       </div>
       <div
-           className={`z-10 fixed text-center bottom-6 w-full transition-all duration-500 ${
+           className={`z-10 fixed text-center  bottom-20 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
           }`}
           >
-            <div className="flex justify-center items-end">
+
+            {/* <div className="flex justify-center  w-full top-0 h-full items-center border "> */}
               <FootballAnimation />
-            </div>
+            {/* </div> */}
+        {/*  */}
+
           </div>
+          <div className={`fixed bottom-5   w-full justify-center items-center ${
+            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+          }`}>
+          <p className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
+            <span className="flex gap-2">
+              <TextHoverAnimation text=" drag "/>
+              <TextHoverAnimation text="to"/>
+
+             <span className="text-secondary">
+             <TextHoverAnimation text=" Rotate  "/>
+
+            </span>
+            <TextHoverAnimation text="  a  "/>
+            <TextHoverAnimation text="  BALL "/>
+
+
+            </span>
+            
+            
+            {/* <MdKeyboardDoubleArrowDown  className={`animate-bounceUpDown h-10 w-14 transition-all `}/> */}
+          </p>
+          </div>
+        
       </div>
       <div
         className={`w-full min-h-[40vh] z-40 fixed bottom-[5%] px-20 hidden lg:flex justify-center items-end transition-all duration-500 ${
