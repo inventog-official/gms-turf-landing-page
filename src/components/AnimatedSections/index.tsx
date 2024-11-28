@@ -316,76 +316,82 @@ const AnimatedSections: React.FC = () => {
     >
       <div className="absolute bottom-0 left-0 w-full z-[999] h-36 bg-gradient-to-t from-primary to-transparent pointer-events-none"></div>
       <div className="">
-      {data?.map((image, index) => (
-        <Section key={index} imageSrc={image.url} phoneSrc={image.phoneUrl} />
-      ))}
-      <div
-        ref={headingRef}
-        className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
-          hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
-        }`}
-      >
-
-        <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
-          <span className="text-secondary">
-            <SlBadge />
-          </span>
-          <TextHoverAnimation text={"South"} />
-          <TextHoverAnimation text={"India's"} />
-          <span className="text-secondary">
-            <TextHoverAnimation text={"No.1"} />
-          </span>
-        </h1>
-        <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
-          <TextHoverAnimation text={"Sports"} />
-          <div className="text-secondary">
-            <TextHoverAnimation text={"infrastructure"} />
-          </div>
-          <TextHoverAnimation text={"Developer"} />
-        </h1>
-      </div>
-      <div
-           className={`z-10 fixed text-center  bottom-10 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
+        {data?.map((image, index) => (
+          <Section key={index} imageSrc={image.url} phoneSrc={image.phoneUrl} />
+        ))}
+        <div
+          ref={headingRef}
+          className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
           }`}
-          >
-
-            {/* <div className="flex justify-center  w-full top-0 h-full items-center border "> */}
-              <FootballAnimation />
-            {/* </div> */}
-        {/*  */}
-
-          </div>
-          <div className={`fixed bottom-8 md:bottom-6  w-full justify-center items-center ${
+        >
+          <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
+            <span className="text-secondary">
+              <SlBadge />
+            </span>
+            <TextHoverAnimation text={"South"} />
+            <TextHoverAnimation text={"India's"} />
+            <span className="text-secondary">
+              <TextHoverAnimation text={"No.1"} />
+            </span>
+          </h1>
+          <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
+            <TextHoverAnimation text={"Sports"} />
+            <div className="text-secondary">
+              <TextHoverAnimation text={"infrastructure"} />
+            </div>
+            <TextHoverAnimation text={"Developer"} />
+          </h1>
+        </div>
+        <div
+          className={`z-10 fixed text-center  bottom-10 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
-          }`}>
+          }`}
+        >
+          {/* <div className="flex justify-center  w-full top-0 h-full items-center border "> */}
+          <FootballAnimation />
+          {/* </div> */}
+          {/*  */}
+        </div>
+        <div
+          className={`fixed bottom-8 md:bottom-6  w-full justify-center items-center ${
+            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+          }`}
+        >
           <p className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
             <span className="flex gap-2">
-              <TextHoverAnimation text=" drag "/>
-              <TextHoverAnimation text="to"/>
+              <TextHoverAnimation text=" drag " />
+              <TextHoverAnimation text="to" />
 
-             <span className="text-secondary">
-             <TextHoverAnimation text=" Rotate  "/>
-
+              <span className="text-secondary">
+                <TextHoverAnimation text=" Rotate  " />
+              </span>
+              <TextHoverAnimation text="  a  " />
+              <TextHoverAnimation text="  BALL " />
             </span>
-            <TextHoverAnimation text="  a  "/>
-            <TextHoverAnimation text="  BALL "/>
 
-
-            </span>
-            
-            
             {/* <MdKeyboardDoubleArrowDown  className={`animate-bounceUpDown h-10 w-14 transition-all `}/> */}
           </p>
-          </div>
-        
+        </div>
       </div>
+
       <div
-        className={`w-full min-h-[40vh] z-40 fixed bottom-[5%] px-20 hidden lg:flex justify-center items-end transition-all duration-500 ${
+        className={`w-full min-h-[40vh] z-40 fixed bottom-[5%] px-20 hidden xl:flex lg:flex justify-center items-end transition-all duration-500 ${
           hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
         }`}
       >
+
         <div className="grid lg:grid-cols-5 md:grid-cols-5">
+          <div
+            className={`z-40 grid col-start-3   row-start-1 transition-all duration-500 ${
+              hideHeading ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            <div className="flex justify-center items-end">
+            {/* <FootballAnimation /> */}
+
+            </div>
+          </div>
           {iconsWithImagesObj.map((icon, index) => (
             <motion.div
               key={index}
@@ -419,15 +425,6 @@ const AnimatedSections: React.FC = () => {
               </div>
             </motion.div>
           ))}
-          <div
-            className={`z-10 grid col-start-3 row-start-1 transition-all duration-500 ${
-              hideHeading ? "opacity-0" : "opacity-100"
-            }`}
-          >
-            <div className="flex justify-center items-end">
-              <FootballAnimation />
-            </div>
-          </div>
         </div>
       </div>
     </main>
