@@ -230,7 +230,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="flex gap-7  h-full w-[70%] lg:w-[10%] lg:hidden justify-end items-center">
-          <FaRegEnvelope className="text-xl md:text-2xl text-[#D2D2D0]" />
+          <FaRegEnvelope   onClick={() => navigate("/get-in-touch")}   className="text-xl md:text-2xl text-[#D2D2D0] cursor-pointer" />
           <HamburgerMenu isClicked={isClicked} isOpen={isMenuClick} />
         </div>
         <div

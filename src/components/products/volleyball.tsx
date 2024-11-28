@@ -30,7 +30,7 @@ const VolleyballTurf = () => {
             "https://static.wixstatic.com/media/4c43d3_108dfb94ec234a17a6d8cdc9026bfc8d~mv2.png/v1/fill/w_466,h_326,fp_0.15_0.48,q_85,usm_0.66_1.00_0.01,enc_auto/Volleyball%20court-05.png"
           }
         />
-        <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="text-secondary font-primary">VOLLEYBALL COURT</p>
           </FadeIn>

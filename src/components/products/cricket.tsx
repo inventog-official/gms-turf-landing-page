@@ -21,7 +21,7 @@ const CricketTurf = () => {
             "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_968,h_540,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png "
           }
         />
-        <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className=" text-secondary font-primary">CRICKET NETS</p>
           </FadeIn>

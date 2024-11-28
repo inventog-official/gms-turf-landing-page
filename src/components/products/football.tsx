@@ -19,7 +19,7 @@ const FootballTurf = () => {
           subtitle={"FOOTBALL TURF REDEFINED"}
           bgImgUrl={"/Football/Football-07.webp"}
         />
-        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl ">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="text-secondary font-primary">FOOTBALL TURF</p>
           </FadeIn>
@@ -30,7 +30,7 @@ const FootballTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              Ensuring compliance with FIFA (Fédération Internationale de
+              Ensuring compliance with FIFA (Federation Internationale de
               Football Association) and UEFA (Union of European Football
               Associations) standards is essential for artificial turf used in
               football. These standards guarantee that the playing surface meets

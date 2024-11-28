@@ -216,7 +216,6 @@ import TextHoverAnimation from "../textHoverAnimation";
 import FootballAnimation from "../footballAnimation";
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 import Section from "./section";
-import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 const AnimatedSections: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLDivElement | null>(null);

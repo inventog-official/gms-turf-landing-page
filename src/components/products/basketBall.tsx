@@ -21,7 +21,7 @@ const BasketBallCourt = () => {
         "public/basketBall/2.webp" // Replace with the appropriate image URL
       }
     />
-    <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+    <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
       <FadeIn>
         <p className="text-secondary font-primary">BASKETBALL COURT</p>
       </FadeIn>

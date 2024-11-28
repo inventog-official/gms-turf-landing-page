@@ -28,7 +28,7 @@ const MultiSportsTurf = () => {
           subtitle={"FINDS ITS MARK"}
           bgImgUrl={"/Football/Football-03.webp"}
         />
-        <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="text-secondary font-primary">MULTI-SPORT TURF</p>
           </FadeIn>

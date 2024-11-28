@@ -19,7 +19,7 @@ const CircleTurf = () => {
           subtitle={"Circle Mini Cricket Stadium Turf"}
           bgImgUrl={"/CircleMiniCricketStadiumTurff/PLT_00017.jpg"}
         />
-        <Container className="relative z-10 space-y-10 py-36 text-3xl font-bold text-white md:text-4xl">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="uppercase text-secondary font-primary">
               Mini Cricket Stadium
