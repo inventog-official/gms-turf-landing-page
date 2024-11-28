@@ -133,7 +133,7 @@ const cricketItems = [
 
   },
   {
-    poster: "/Football/Football-02.png",
+    poster: "/Football/Football-02.webp",
     name: "Laboratory",
     blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
   },

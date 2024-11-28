@@ -145,29 +145,29 @@ const cricketItems = [
   },
 
   {
-    poster: "/Football/Football-02.png",
+    poster: "/Football/Football-02.webp",
     //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
     blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
-    poster: "/Football/Football-03.png",
+    poster: "/Football/Football-03.webp",
     //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
     blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
   {
-    poster: "/Football/Football-04.png",
+    poster: "/Football/Football-04.webp",
     name: "Napoleon",
     blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
-    poster: "/Football/Football-05.png",
+    poster: "/Football/Football-05.webp",
     name: "Person in Darkness",
     blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
   {
-    poster: "/Football/Football-06.png",
+    poster: "/Football/Football-06.webp",
     name: "Scary Building",
     blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },

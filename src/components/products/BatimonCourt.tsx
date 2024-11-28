@@ -110,49 +110,49 @@ export default BadmintonCourt;
 const BatmitonItems = [
   {
     poster:
-      "/public/badminton/1.gif",
+      "/badminton/1.gif",
     name: "Airplane",
     blurHash:"LQEqA]D%B-x?9+Rlbot9~mouIVj@"
 
   },
   {
     poster:
-      "/public/badminton/2.jpg",
+      "/badminton/2.jpg",
     name: "Family man",
     blurHash:"LdIY5eVtnQs:00WEafR+~BofbbR*"
 
   },
   {
     poster:
-      "/public/badminton/3.webp",
+      "/badminton/3.webp",
     name: "Laboratory",
     blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
 
   },
   {
     poster:
-      "/public/badminton/5.webp",
+      "/badminton/5.webp",
     name: "Napoleon",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
   },
   {
     poster:
-      "/public/badminton/6.jpg",
+      "/badminton/6.jpg",
     name: "Person in Darkness",
     blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
 
   },
   {
     poster:
-      "/public/badminton/7.jpg",
+      "/badminton/7.jpg",
     name: "Scary Building",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
   },
   {
     poster:
-      "/public/badminton/4.jpg",
+      "/badminton/4.jpg",
     name: "Scary Building",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
