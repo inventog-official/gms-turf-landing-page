@@ -117,20 +117,7 @@ module.exports = {
             transform: 'translateY(-10px)',
           },
         },
-        scrolldown: {
-          '0%': {
-            transform: 'translateY(20%) rotate(45deg)',
-            opacity: '0.7',
-          },
-          '50%': {
-            transform: 'translateY(0%) rotate(45deg)',
-            opacity: '0.2',
-          },
-          '100%': {
-            transform: 'translateY(20%) rotate(45deg)',
-            opacity: '0.7',
-          },
-        },
+      
         "rotate-circle": {
           to: { transform: "rotate(1turn)" },
         },
