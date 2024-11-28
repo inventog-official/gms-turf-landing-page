@@ -18,7 +18,7 @@ const BadmintonCourt = () => {
       title={"BADMINTON COURT"}
       subtitle={"FINDS ITS MARK"}
       bgImgUrl={
-        "/public/badminton/2.jpg"
+        "/badminton/2.jpg"
       }
     />
     <Container className="relative z-10 space-y-12 py-36 text-3xl font-bold text-white md:text-4xl">
