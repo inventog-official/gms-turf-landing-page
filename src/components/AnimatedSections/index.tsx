@@ -345,7 +345,7 @@ const AnimatedSections: React.FC = () => {
         </h1>
       </div>
       <div
-           className={`z-10 fixed text-center  bottom-20 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
+           className={`z-10 fixed text-center  bottom-10 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
           }`}
           >
@@ -356,7 +356,7 @@ const AnimatedSections: React.FC = () => {
         {/*  */}
 
           </div>
-          <div className={`fixed bottom-5   w-full justify-center items-center ${
+          <div className={`fixed bottom-8 md:bottom-6  w-full justify-center items-center ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
           }`}>
           <p className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
