@@ -35,7 +35,7 @@
 //   );
 // };
 
-import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
+import {  FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { MdCall, MdEmail, MdLocationPin } from "react-icons/md";
 
