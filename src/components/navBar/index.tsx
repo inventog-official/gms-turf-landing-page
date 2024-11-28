@@ -186,7 +186,7 @@ const Navbar: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-gray-400/70 rounded-md shadow-lg z-10"
+                    className="absolute left-0 mt-2 w-48 backdrop-blur-md bg-gray-400/70 rounded-md shadow-lg z-50"
                   >
                     <ul className="flex flex-col">
                       {[
