@@ -385,7 +385,7 @@ const AnimatedSections: React.FC = () => {
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex"
           }`}
         >
-          <p className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
+          <h1 className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
             <span className="flex gap-2">
               <TextHoverAnimation text=" drag " />
               <TextHoverAnimation text="to" />
@@ -398,7 +398,7 @@ const AnimatedSections: React.FC = () => {
             </span>
 
             {/* <MdKeyboardDoubleArrowDown  className={`animate-bounceUpDown h-10 w-14 transition-all `}/> */}
-          </p>
+          </h1>
         </div>
       </div>
 
