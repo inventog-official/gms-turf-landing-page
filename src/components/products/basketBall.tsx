@@ -18,7 +18,7 @@ const BasketBallCourt = () => {
       title={"BASKETBALL COURT"}
       subtitle={"MAKING EVERY SHOT COUNT"}
       bgImgUrl={
-        "public/basketBall/2.webp" // Replace with the appropriate image URL
+        "/basketBall/2.webp" // Replace with the appropriate image URL
       }
     />
     <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
@@ -111,49 +111,49 @@ export default BasketBallCourt;
 const basketballItems = [
   {
     poster:
-      "public/basketBall/1.jpeg",
+      "/basketBall/1.jpeg",
     name: "Airplane",
     blurHash:"LQEqA]D%B-x?9+Rlbot9~mouIVj@"
 
   },
   {
     poster:
-      "public/basketBall/2.webp",
+      "/basketBall/2.webp",
     name: "Family man",
     blurHash:"LdIY5eVtnQs:00WEafR+~BofbbR*"
 
   },
   {
     poster:
-      "public/basketBall/3.webp",
+      "/basketBall/3.webp",
     name: "Laboratory",
     blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
 
   },
   {
     poster:
-      "public/basketBall/4.jpg",
+      "/basketBall/4.jpg",
     name: "Napoleon",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
   },
   {
     poster:
-      "public/basketBall/5.webp",
+      "/basketBall/5.webp",
     name: "Person in Darkness",
     blurHash:"LfE3;nWCRiWB^-t7WAR*xcoMogf6"
 
   },
   {
     poster:
-      "public/basketBall/6.jpeg",
+      "/basketBall/6.jpeg",
     name: "Scary Building",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
   },
   {
     poster:
-      "public/basketBall/7.webp",
+      "/basketBall/7.webp",
     name: "Scary Building",
     blurHash:"L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe"
 
