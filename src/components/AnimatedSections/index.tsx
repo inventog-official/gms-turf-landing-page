@@ -227,30 +227,32 @@ const AnimatedSections: React.FC = () => {
 
   const { queryClient } = useCarousel();
   const [isPopupOpen, setIsPopupOpen] = useState(true);
-	const popupRef = useRef<HTMLDivElement>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
 
-	const PopupState =  JSON.parse( localStorage.getItem("contacts-gms") as any) as {value:boolean}
+  const PopupState = JSON.parse(
+    localStorage.getItem("contacts-gms") as any
+  ) as { value: boolean };
 
   const data = queryClient.getQueryData(["carousels"]) as {
     id: number;
     url: string;
     phoneUrl: string;
   }[];
-	const handleClosePopup = () => {
-    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
-		setIsPopupOpen(false);
-    localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
-	};
+  const handleClosePopup = () => {
+    localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
+    setIsPopupOpen(false);
+    localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
+  };
 
   useEffect(() => {
-    if (isPopupOpen&&!PopupState) {
-      document.body.style.overflow = 'hidden';
+    if (isPopupOpen && !PopupState) {
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto'; // or 'scroll' depending on your needs
+      document.body.style.overflow = "auto"; // or 'scroll' depending on your needs
     }
     // Cleanup function to reset overflow when component unmounts
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [isPopupOpen]);
   useEffect(() => {
@@ -337,15 +339,15 @@ const AnimatedSections: React.FC = () => {
       ref={container}
       className={`relative h-[${data?.length * 100}vh] select-none lg:mb-[10%]`}
     >
-      <div className="absolute bottom-0 left-0 w-full z-[999] h-36 bg-gradient-to-t from-primary to-transparent pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-full z-[9] h-36 bg-gradient-to-t from-primary to-transparent pointer-events-none"></div>
       <div className="">
         {data?.map((image, index) => (
           <Section key={index} imageSrc={image.url} phoneSrc={image.phoneUrl} />
         ))}
         <div
           ref={headingRef}
-          className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
-            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+          className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 border-4 border-red-900 ${
+            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex flex-col"
           }`}
         >
           <h1 className="text-2xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] flex items-center justify-center gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight">
@@ -367,8 +369,10 @@ const AnimatedSections: React.FC = () => {
           </h1>
         </div>
         <div
-          className={`z-20 fixed text-center  bottom-10 md:bottom-10 flex justify-center   w-full  transition-all duration-500 ${
-            hideHeading ? "opacity-0 hidden lg:hidden" : "opacity-100 lg:visible"
+          className={`z-20 fixed text-center bottom-10 md:bottom-10 justify-center w-full transition-all duration-500 ${
+            hideHeading
+              ? "opacity-0 hidden"
+              : "opacity-100 flex"
           }`}
         >
           {/* <div className="flex justify-center  w-full top-0 h-full items-center border "> */}
@@ -377,8 +381,8 @@ const AnimatedSections: React.FC = () => {
           {/*  */}
         </div>
         <div
-          className={`fixed bottom-8 md:bottom-6  w-full justify-center items-center ${
-            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+          className={`fixed bottom-8 md:bottom-6 w-full justify-center items-center ${
+            hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex"
           }`}
         >
           <p className="text-lg md:text-lg  flex  gap-2 font-primary [text-shadow:_7px_7px_7px_rgba(10,10,10,0.25)] text-white uppercase leading-tight  flex-col justify-center items-center">
@@ -399,11 +403,10 @@ const AnimatedSections: React.FC = () => {
       </div>
 
       <div
-        className={`w-full min-h-[40vh] z-10 fixed bottom-[5%] px-20 hidden xl:flex lg:flex justify-center items-end transition-all duration-500 ${
-          hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:visible"
+        className={`w-full min-h-[40vh] z-10 fixed bottom-[5%] px-20 hidden justify-center items-end transition-all duration-500 border-4 border-red-900 ${
+          hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex"
         }`}
       >
-
         <div className="grid lg:grid-cols-5 md:grid-cols-5">
           <div
             className={`z-10 grid col-start-3  row-start-1 transition-all duration-500 ${
@@ -411,8 +414,7 @@ const AnimatedSections: React.FC = () => {
             }`}
           >
             <div className="flex justify-center items-end">
-            {/* <FootballAnimation /> */}
-
+              {/* <FootballAnimation /> */}
             </div>
           </div>
           {iconsWithImagesObj.map((icon, index) => (
@@ -450,14 +452,16 @@ const AnimatedSections: React.FC = () => {
           ))}
         </div>
       </div>
-      {PopupState==undefined&&isPopupOpen?<Popup
-      className="w-full md:w-96"
-      ref={popupRef}
-					onClose={handleClosePopup}
-					closeButton={true}
-      >
-        <ContactForm setIsPopupOpen={setIsPopupOpen}/>
-      </Popup>:null}
+      {PopupState == undefined && isPopupOpen ? (
+        <Popup
+          className="w-full md:w-96"
+          ref={popupRef}
+          onClose={handleClosePopup}
+          closeButton={true}
+        >
+          <ContactForm setIsPopupOpen={setIsPopupOpen} />
+        </Popup>
+      ) : null}
     </main>
   );
 };
