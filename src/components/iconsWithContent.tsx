@@ -9,13 +9,13 @@ const IconsWithContent: React.FC = () => {
       className="relative flex flex-col bg-primary shadow-inner justify-center items-center select-none pb-16"
     >
       {/* <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none"></div> */}
-      <div className="grid grid-cols-1 md:grid-cols-2 px-5 border-4 border-red-900">
+      <div className="grid grid-cols-1 md:grid-cols-2 px-5">
         {iconsWithImagesObj.map((item, index) => {
           return (
             <AnimatedCard key={index}>
               <div
                 key={index}
-                className="w-full border-4 border-yellow-400 rounded-lg flex flex-col justify-center items-center px-10 md:px-6 lg:px-5 py-2 lg:py-5"
+                className="w-full rounded-lg flex flex-col justify-center items-center px-10 md:px-6 lg:px-5 py-2 lg:py-5"
               >
                 <img
                   src={item.imageSrc}
