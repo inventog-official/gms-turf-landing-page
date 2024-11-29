@@ -346,7 +346,7 @@ const AnimatedSections: React.FC = () => {
         ))}
         <div
           ref={headingRef}
-          className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 border-4 border-red-900 ${
+          className={`z-10 fixed text-center top-[15%] w-full transition-all duration-500 ${
             hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex flex-col"
           }`}
         >
@@ -403,7 +403,7 @@ const AnimatedSections: React.FC = () => {
       </div>
 
       <div
-        className={`w-full min-h-[40vh] z-10 fixed bottom-[5%] px-20 hidden justify-center items-end transition-all duration-500 border-4 border-red-900 ${
+        className={`w-full min-h-[40vh] z-10 fixed bottom-[5%] px-20 hidden justify-center items-end transition-all duration-500 ${
           hideHeading ? "opacity-0 lg:hidden" : "opacity-100 lg:flex"
         }`}
       >
