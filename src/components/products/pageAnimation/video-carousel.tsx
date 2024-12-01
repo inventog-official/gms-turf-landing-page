@@ -1,7 +1,7 @@
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import { useRef, useState } from "react";
 import SliderSection from "../ProductCarousel/main";
-import { OptimizedImage } from "../../lazyLoading/OptimizedImage.tsx";
+import { OptimizedImage } from "@/components/lazyLoadingImage";
 
 export type CarouselImage = {
   poster: string;

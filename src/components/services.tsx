@@ -4,7 +4,7 @@ import { servicesObj } from "@/common/servicesObj";
 import Marquee from "react-fast-marquee"; // Optional: for easy marquee handling
 import { useNavigate } from "react-router-dom";
 import AnimatedCard from "./animateCard";
-import { OptimizedImage } from "./lazyLoading/OptimizedImage.tsx";
+import { OptimizedImage } from "./lazyLoadingImage/index.tsx";
 
 const Services: React.FC = () => {
   const navigate = useNavigate();
