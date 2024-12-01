@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 
 const Character: React.FC = () => {
-  const { scene } = useGLTF("/playerWithGrass3dModel.glb") as { scene: THREE.Group };
+  const { scene } = useGLTF("/3dModel/playerWithGrass3dModel.glb") as { scene: THREE.Group };
 
   // State to hold dynamic scale and position values
   const [scale, setScale] = useState(0.03);

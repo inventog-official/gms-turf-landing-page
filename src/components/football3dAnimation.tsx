@@ -5,7 +5,7 @@ import { Mesh } from "three";
 
 const Football = () => {
   const ballRef = useRef<Mesh>(null);
-  const { scene } = useGLTF("./soccer_ball.glb"); // Adjust the path as needed
+  const { scene } = useGLTF("/3dModel/soccer_ball.glb"); // Adjust the path as needed
 
   // Bounce animation variables
   const bounceHeight = 0; // Maximum height for the bounce
