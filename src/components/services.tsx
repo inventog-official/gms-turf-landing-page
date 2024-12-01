@@ -3,8 +3,8 @@ import { FaArrowRight } from "react-icons/fa";
 import { servicesObj } from "@/common/servicesObj";
 import Marquee from "react-fast-marquee"; // Optional: for easy marquee handling
 import { useNavigate } from "react-router-dom";
-import AnimatedCard from "./AnimateCard/main";
-import { OptimizedImage } from "./LazyLoading/OptimizedImage";
+import AnimatedCard from "./animateCard/main";
+import { OptimizedImage } from "./lazyLoading/OptimizedImage";
 
 const Services: React.FC = () => {
   const navigate = useNavigate();

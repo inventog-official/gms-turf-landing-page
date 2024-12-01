@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 import TextHoverAnimation from "./textHoverAnimation";
 
 const CircleMiniCricketStadiumTurf = () => {

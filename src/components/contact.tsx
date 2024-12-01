@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 
 const Contact: React.FC = () => {
   const navigate = useNavigate();

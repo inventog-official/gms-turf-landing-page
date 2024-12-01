@@ -5,7 +5,7 @@ import {
 } from "framer-motion";
 import { useRef, useState } from "react";
 import SliderSection from "../ProductCarousel/main";
-import { OptimizedImage } from "@/components/LazyLoading/OptimizedImage";
+import { OptimizedImage } from "@/components/lazyLoading/OptimizedImage";
 
 export type CarouselImage = {
   poster: string;

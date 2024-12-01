@@ -1,4 +1,4 @@
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 
 const HomeNewsFeed: React.FC = () => {
   const newsFeedImages = [

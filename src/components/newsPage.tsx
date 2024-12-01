@@ -5,7 +5,7 @@ import TextHoverAnimation from "./textHoverAnimation";
 import { Footer } from "./footer";
 import { RiAwardFill } from "react-icons/ri";
 import Preloader from "./preLoading";
-import AnimateCard from "./AnimateCard/main";
+import AnimateCard from "./animateCard/main";
 
 const News_Page = () => {
   const { queryClient, getNewsFeeds } = useNewsFeed();

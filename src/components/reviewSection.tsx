@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { reviewsObj } from "@/common/reviewsObj";
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 
 const ReviewsSection = () => {
   return (

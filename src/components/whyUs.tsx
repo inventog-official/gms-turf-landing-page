@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 
 const WhyUs: React.FC = () => {
   return (

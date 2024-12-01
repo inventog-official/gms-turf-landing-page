@@ -1,6 +1,6 @@
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 import React from "react";
-import AnimatedCard from "./AnimateCard/main";
+import AnimatedCard from "./animateCard/main";
 
 const IconsWithContent: React.FC = () => {
   return (

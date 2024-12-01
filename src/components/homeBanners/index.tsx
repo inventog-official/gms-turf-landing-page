@@ -9,7 +9,7 @@ import TextHoverAnimation from "../textHoverAnimation";
 import FootballAnimation from "../footballAnimation";
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 import Section from "./section";
-const AnimatedSections: React.FC = () => {
+const HomeBanners: React.FC = () => {
   const container = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLDivElement | null>(null);
 
@@ -192,6 +192,16 @@ const AnimatedSections: React.FC = () => {
         }`}
       >
         <div className="grid lg:grid-cols-5 md:grid-cols-5">
+          {/** For 3D Football Space */}
+          <div
+            className={`z-10 grid col-start-3  row-start-1 transition-all duration-500 ${
+              hideHeading ? "opacity-0" : "opacity-100"
+            }`}
+          >
+            <div className="flex justify-center items-end">
+              {/* <FootballAnimation /> */}
+            </div>
+          </div>
           {iconsWithImagesObj.map((icon, index) => (
             <motion.div
               key={index}
@@ -241,4 +251,4 @@ const AnimatedSections: React.FC = () => {
   );
 };
 
-export default AnimatedSections;
+export default HomeBanners;

@@ -31,7 +31,7 @@ import CircleTurf360 from "./components/products/360CircleTurf";
 import BadmintonCourt from "./components/products/BatimonCourt";
 import BasketBallCourt from "./components/products/basketBall";
 import IconsWithContent from "./components/iconsWithContent";
-import AnimatedSections from "./components/AnimatedSections";
+import HomeBanners from "./components/homeBanners";
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -62,7 +62,9 @@ const App: React.FC = () => {
         </div>
       )}
       {!isLoading && (
-        <div className={`w-screen h-screen bg-primary no-scrollbar select-none`}>
+        <div
+          className={`w-screen h-screen bg-primary no-scrollbar select-none`}
+        >
           <Navbar />
           <CursorFollower />
           <ScrollProgress />
@@ -71,9 +73,8 @@ const App: React.FC = () => {
               path="/"
               element={
                 <div id="home">
-                  {/* <Home /> */}
-                  <div id="parallaxImages">
-                    <AnimatedSections />
+                  <div id="parallaxBanners">
+                    <HomeBanners />
                   </div>
                   <div className="lg:hidden" id="iconsWithContent">
                     <IconsWithContent />
@@ -99,11 +100,9 @@ const App: React.FC = () => {
                   <div id="reviews">
                     <ReviewsSection />
                   </div>
-
                   <div id="instagram" className="">
                     <InstagramEmbed />
                   </div>
-
                   <div id="footer">
                     <Footer />
                   </div>
@@ -114,7 +113,6 @@ const App: React.FC = () => {
             <Route path="/news" element={<News_Page />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
-            <Route path="/demo" element={<AnimatedSections />} />
 
             {/* products pages */}
             <Route path="/360-circle-turf" element={<CircleTurf360 />} />
