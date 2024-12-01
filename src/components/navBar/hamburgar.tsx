@@ -1,21 +1,19 @@
-// import { useState } from "react";
-
 interface menuProps {
-  isClicked : () => void;
+  isClicked: () => void;
   isOpen: boolean;
 }
 
-const HamburgerMenu:React.FC<menuProps> = ({isClicked, isOpen}) => {
-  // const [isOpen, setIsOpen] = useState(false);
-
+const HamburgerMenu: React.FC<menuProps> = ({ isClicked, isOpen }) => {
   const toggleMenu = () => {
     isClicked();
-    // setIsOpen(!isOpen);
   };
 
   return (
     <div className="flex items-center justify-center">
-      <button onClick={toggleMenu} className="relative w-5 h-5 flex items-center justify-center">
+      <button
+        onClick={toggleMenu}
+        className="relative w-5 h-5 flex items-center justify-center"
+      >
         {/* Top Line */}
         <div
           className={`w-5 h-[0.15rem] bg-[#D2D2D0] rounded absolute transition-all duration-500 ease-in-out transform ${

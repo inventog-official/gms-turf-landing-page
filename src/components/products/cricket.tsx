@@ -150,9 +150,4 @@ const cricketItems = [
     name: "Scary Building",
     blurHash: "L6Ax%~MkBB-l03o_Dqx?Q2%b?CNe",
   },
-  // {
-  //   poster:
-  //     "https://static.wixstatic.com/media/4c43d3_62c3430cd87440309a736d2a6aae8a9d~mv2.png/v1/crop/x_29,y_0,w_1714,h_2371/fill/w_411,h_563,fp_0.50_0.54,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-01.png",
-  //   name: "Stars",
-  // },
 ];

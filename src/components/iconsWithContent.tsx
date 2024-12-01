@@ -8,7 +8,6 @@ const IconsWithContent: React.FC = () => {
       id="iconsWithContent"
       className="relative flex flex-col bg-primary shadow-inner justify-center items-center select-none pb-16"
     >
-      {/* <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-black via-black/75 to-transparent pointer-events-none"></div> */}
       <div className="grid grid-cols-1 md:grid-cols-2 px-5">
         {iconsWithImagesObj.map((item, index) => {
           return (
@@ -35,32 +34,6 @@ const IconsWithContent: React.FC = () => {
           );
         })}
       </div>
-
-      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-5">
-  {iconsWithImagesObj.map((item, index) => {
-    return (
-      <AnimatedCard key={index}>
-         <div 
-        key={index} 
-        className="rounded-lg flex flex-col justify-between items-center p-4 h-full" // Use h-full for equal height
-      >
-        <img 
-          src={item.imageSrc} 
-          className="w-full max-w-[200px] select-none" 
-          draggable="false" 
-        />
-        <div className="flex flex-col gap-4 text-center mt-4 flex-grow"> 
-          <p className="text-white text-2xl font-primary">{item.title}</p>
-          <p className="text-center w-full font-secondary text-lg">
-            {item.description}
-          </p>
-        </div>
-      </div>
-      </AnimatedCard>
-     
-    );
-  })}
-</div> */}
     </section>
   );
 };

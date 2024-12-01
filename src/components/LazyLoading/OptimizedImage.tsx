@@ -36,7 +36,6 @@ function OptimizedImage(props: IOptimizedImageProps) {
   };
 
   const handleLoadStarted = () => {
-    // console.log("Started: ");
     setLoadStarted(true);
   };
 
@@ -64,23 +63,6 @@ function OptimizedImage(props: IOptimizedImageProps) {
       )}
     </div>
   );
-
-  // return; // <LazyLoadImage
-  //   key={image.name}
-  //   src={`http://localhost:9000/${image.name}`}
-  //   effect="blur"
-  //   height={500}
-  //   width={333}
-  //   placeholderSrc={`http://localhost:9000/${image.name}`}
-  // />
-  // <Blurhash
-  //   hash={image.blurhash}
-  //   width={333}
-  //   height={500}
-  //   resolutionX={32}
-  //   resolutionY={32}
-  //   punch={1}
-  // />;
 }
 
 export { OptimizedImage };

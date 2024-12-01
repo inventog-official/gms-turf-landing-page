@@ -23,7 +23,6 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
     email: "",
     message: "",
   });
-  // const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
   const validate = (): boolean => {
@@ -49,8 +48,6 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
             setIsPopupOpen(false)
             setFormData({ name: "", email: "", message: "" });
           setErrors({});
-          // setIsSubmitted(true);
-          // setTimeout(() => setIsSubmitted(false), 3000);
         });
       console.log("Form submitted successfully", formData);
     }
@@ -62,12 +59,6 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  // 	e.preventDefault();
-  // 	console.log({ name, email, message });
-  //     localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
-  // };
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-5">

@@ -10,7 +10,7 @@ import { useEffect } from "react";
 const PickleTurf = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}, []); 
+  }, []);
   return (
     <div className="">
       <div className="bg-background relative z-10 select-none">
@@ -52,8 +52,8 @@ const PickleTurf = () => {
           </FadeIn>
           <FadeIn>
             <p>
-              Professional-grade artificial turf tailored for pickle ball
-              game play Optimized surface for consistent ball bounce and precise
+              Professional-grade artificial turf tailored for pickle ball game
+              play Optimized surface for consistent ball bounce and precise
               movement Weather-resistant materials, suitable for outdoor and
               indoor play Shock-absorbing layer for reduced impact on players'
               joints Low-maintenance design for hassle-free play
@@ -63,34 +63,8 @@ const PickleTurf = () => {
       </div>
       <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
       <AnimateCard>
-      <Certificates />
-
+        <Certificates />
       </AnimateCard>
-
-      {/* <div className="bg-gray-100/10  text-white rounded-lg shadow-lg p-6 flex flex-col md:flex-row items-center space-x-0 md:space-x-6 max-w-4xl mx-auto">
-        <img
-          alt="Illustration of a volleyball court with players"
-          className="w-full md:w-1/3 rounded-lg mb-4 md:mb-0"
-          height="200"
-          src="https://storage.googleapis.com/a1aa/image/cOI0WQ1AEFLPD1FgjM1Fpj73nvF8e7egZf9KpfjhUGcbml6OB.jpg"
-          width="300"
-        />
-        <div className="flex-1">
-          <h1 className="text-2xl font-bold ">
-            VOLLEYBALL COURT DIMENSIONS ACCORDING TO FIVB
-          </h1>
-          <p className=" mt-4">
-            The court should adhere to standard dimensions, which are 18 meters
-            (59 feet) in length and 9 meters (29.5 feet) in width. The playing
-            area should include an additional free zone of at least 3 meters
-            (9.8 feet) on all sides, allowing players ample space to move during
-            play. The net, which should be 2.43 meters (7 feet 11 5/8 inches)
-            high for men's play and 2.24 meters (7 feet 4 1/8 inches) for
-            women's play, must be securely anchored and positioned centrally.
-          </p>
-        </div>
-      </div> */}
-
       <Footer />
     </div>
   );
@@ -101,43 +75,31 @@ const cricketItems = [
   {
     poster: "/pickleTurf/pickle-turf-001.jpg",
     name: "Airplane",
-    blurHash:"LDD9*K~BMeS0_NIUWUR*x_IVx@%3"
-
+    blurHash: "LDD9*K~BMeS0_NIUWUR*x_IVx@%3",
   },
   {
     poster: "/pickleTurf/pickle-turf-002.jpg",
     name: "Family man",
-    blurHash:"L26R[Gb]00nh0Nj@--oeu%V@O_a$"
-
+    blurHash: "L26R[Gb]00nh0Nj@--oeu%V@O_a$",
   },
   {
     poster: "/pickleTurf/pickle-turf-003.jpg",
     name: "Family man",
-    blurHash:"LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:"
-
+    blurHash: "LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:",
   },
   {
     poster: "/pickleTurf/pickle-turf-004.jpg",
     name: "Laboratory",
-    blurHash:"LE8hnHRk00$_HXoboxR;.TWZIWs*"
-
+    blurHash: "LE8hnHRk00$_HXoboxR;.TWZIWs*",
   },
   {
     poster: "/pickleTurf/pickle-turf-005.jpg",
     name: "Napoleon",
-    blurHash:"LWEV{pt6xTocR5n+s:a{~RWBIpR+"
-
+    blurHash: "LWEV{pt6xTocR5n+s:a{~RWBIpR+",
   },
   {
     poster: "/pickleTurf/pickle-turf-006.jpg",
     name: "Person in Darkness",
-    blurHash:"LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:"
-
+    blurHash: "LPB|Nc%1ROV?~WxaRjoe~Bn$R:s:",
   },
-
-  // {
-  //   poster:
-  //     "https://static.wixstatic.com/media/4c43d3_62c3430cd87440309a736d2a6aae8a9d~mv2.png/v1/crop/x_29,y_0,w_1714,h_2371/fill/w_411,h_563,fp_0.50_0.54,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-01.png",
-  //   name: "Stars",
-  // },
 ];

@@ -48,12 +48,6 @@ const FootballTurf = () => {
               longevity and reliability, making it a sustainable choice for all
               levels of football.
             </p>
-            {/* <p>
-            Verify Compliance with FIFA and UEFA Standards: Ensure that the
-              Artificial turf meets the criteria outlined by FIFA (Federation
-              Internationale de Football Association) and UEFA (Union of European
-              Football Associations).
-            </p> */}
           </FadeIn>
           <FadeIn>
             <p>
@@ -139,20 +133,17 @@ export default FootballTurf;
 const cricketItems = [
   {
     poster: "/Football/Football-01.png",
-    //   "https://static.wixstatic.com/media/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png/v1/fill/w_824,h_460,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/4c43d3_7fc4a48fadee496cb7ac4d59d32dcbc1~mv2.png",
     name: "Airplane",
     blurHash: "L29R8gWR01D;0ot3}9xt?qxu02xt",
   },
 
   {
     poster: "/Football/Football-02.webp",
-    //   "https://static.wixstatic.com/media/4c43d3_ae21e210035347fa8c17e92f7d623b6d~mv2.png/v1/crop/x_167,y_0,w_1751,h_1167/fill/w_416,h_278,fp_0.60_0.31,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-04.png",
     name: "Family man",
     blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },
   {
     poster: "/Football/Football-03.webp",
-    //   "https://static.wixstatic.com/media/4c43d3_8177731fb1f44699946bd36ce43c7997~mv2.png/v1/fill/w_416,h_278,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Cricket-02.png",
     name: "Laboratory",
     blurHash: "L67xEt-=00I9osM_j^xw00D$?@-=",
   },
@@ -173,7 +164,6 @@ const cricketItems = [
   },
   {
     poster: "/contactSideImg.webp",
-    //   "/Football/Football-07.png",
     name: "Stars",
     blurHash: "LfE3;nWCRiWB^-t7WAR*xcoMogf6",
   },

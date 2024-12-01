@@ -1,55 +1,3 @@
-// import { FaFacebook, FaInstagram, FaWhatsapp, FaYoutube } from "react-icons/fa";
-// import { ExpandableCardDemo } from "./news/main";
-// import TextHoverAnimation from "./textHoverAnimation";
-
-// function News_Page() {
-//   return (
-//     <div className="flex flex-col justify-start gap-5 select-none items-center min-h-screen w-full pt-36 md:pt-44 lg:pt-40 px-10 lg:px-48 pb-12">
-//       <p className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-primary flex gap-2 text-white uppercase leading-tight">
-//         <TextHoverAnimation text="News" />
-//         <span className="text-secondary">
-//           <TextHoverAnimation text="&" />
-//         </span>
-//         <TextHoverAnimation text="awards" />
-//       </p>
-//       <div className="border border-secondary"></div>
-//       {/* <NewsPage /> */}
-//       <ExpandableCardDemo />
-//       {/* <BrandsCarousel /> */}
-//       <div className="w-full">
-//         <div className="flex flex-col gap-10 mt-10">
-//           <div className="w-full flex flex-col lg:flex-row border-t border-b border-slate-100/20">
-//             <div className="py-10 lg:py-[3.5rem] px-3 lg:px-1 flex flex-col lg:flex-row w-[60%] text-[12px] gap-5 lg:gap-10 font-secondary  uppercase">
-//               <p className="hover:cursor-pointer hover:text-white">Home</p>
-//               <p className="hover:cursor-pointer hover:text-white">About</p>
-//               <p className="hover:cursor-pointer hover:text-white">Services</p>
-//               <p className="hover:cursor-pointer hover:text-white">Contact</p>
-//             </div>
-//             <div className="pb-10 lg:py-[3.5rem] px-3 lg:px-1 flex w-[40%] text-[12px] gap-8 font-secondary  lg:justify-end">
-//               <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-//                 <FaInstagram />
-//               </div>
-//               <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-//                 <FaYoutube />
-//               </div>
-//               <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-//                 <FaFacebook />
-//               </div>
-//               <div className="border p-2 border-slate-100/20 flex justify-center hover:bg-slate-500/20 hover:cursor-pointer hover:text-white hover:border-white">
-//                 <FaWhatsapp />
-//               </div>
-//             </div>
-//           </div>
-//           <div className="flex py-5">
-//             <p>©2024. All rights reserved.</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default News_Page;
 import { NewsFeed, useNewsFeed } from "@/hook/useNewsFeed";
 import { useEffect, useState } from "react";
 import YouTube from "react-youtube";
@@ -129,7 +77,7 @@ const News_Page = () => {
   }
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-}, []); 
+  }, []);
   const awards = [
     {
       icon: "/sunNewsLogo.png",
@@ -147,11 +95,11 @@ const News_Page = () => {
       title: "Best Sportd Infra Solution by",
     },
   ];
-  return getNewsFeeds.isFetching?(
+  return getNewsFeeds.isFetching ? (
     <div className="w-screen h-screen bg-primary">
-    <Preloader isLoading={getNewsFeeds.isFetching} onComplete={() =>{}} />
-  </div>
-  ): (
+      <Preloader isLoading={getNewsFeeds.isFetching} onComplete={() => {}} />
+    </div>
+  ) : (
     <div className="  w-full pt-28 ">
       <div className="w-full   px-10 lg:px-48">
         <header className=" pb-10   flex flex-col justify-start items-center  ">
@@ -203,96 +151,94 @@ const News_Page = () => {
 
           <div className="right flex flex-col gap-7">
             <AnimateCard>
-            <h3 className=" text-3xl md:text-2xl lg:text-3xl xl:text-3xl font-primary text-secondary uppercase leading-tight flex ">
-              <TextHoverAnimation text="Latest" />
-              <span className="text-white">
-                {" "}
-                <TextHoverAnimation text="-" />
-              </span>
-              <span className="text-white">
-                {" "}
-                <TextHoverAnimation text="2024" />
-              </span>
-            </h3>
+              <h3 className=" text-3xl md:text-2xl lg:text-3xl xl:text-3xl font-primary text-secondary uppercase leading-tight flex ">
+                <TextHoverAnimation text="Latest" />
+                <span className="text-white">
+                  {" "}
+                  <TextHoverAnimation text="-" />
+                </span>
+                <span className="text-white">
+                  {" "}
+                  <TextHoverAnimation text="2024" />
+                </span>
+              </h3>
             </AnimateCard>
             <div className="grid grid-cols-1 gap-5">
               {data?.map((item, index) => (
                 <AnimateCard key={index}>
- <div
-                  key={item.id}
-                  className={`flex list transition-transform duration-500 cursor-pointer ${
-                    active === index ? "bg-gray-100/10" : ""
-                  }`}
-                  onClick={() => handleItemClick(index)}
-                >
-                  {item.fileType === "youtube" ? (
-                    <img
-                      src={`https://img.youtube.com/vi/${
-                        item.mediaUrl.split("v=")[1]
-                      }/hqdefault.jpg
+                  <div
+                    key={item.id}
+                    className={`flex list transition-transform duration-500 cursor-pointer ${
+                      active === index ? "bg-gray-100/10" : ""
+                    }`}
+                    onClick={() => handleItemClick(index)}
+                  >
+                    {item.fileType === "youtube" ? (
+                      <img
+                        src={`https://img.youtube.com/vi/${
+                          item.mediaUrl.split("v=")[1]
+                        }/hqdefault.jpg
 `}
-                      alt={`photo ${item.id}`}
-                      className="w-20 h-20 mr-3 object-cover"
-                    />
-                  ) : (
-                    <img
-                      src={item.mediaUrl}
-                      alt={`photo ${item.id}`}
-                      className="w-20 h-full mr-3 object-cover"
-                    />
-                  )}
-                  <div className="">
-                    <p className="text-[13px]  text-wrap truncate h-16">{item.details}</p>
-                    <p className="text-gray-500 text-xs md:text-sm">
-                      {new Date(item.date).toDateString()}
-                    </p>
+                        alt={`photo ${item.id}`}
+                        className="w-20 h-20 mr-3 object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={item.mediaUrl}
+                        alt={`photo ${item.id}`}
+                        className="w-20 h-full mr-3 object-cover"
+                      />
+                    )}
+                    <div className="">
+                      <p className="text-[13px]  text-wrap truncate h-16">
+                        {item.details}
+                      </p>
+                      <p className="text-gray-500 text-xs md:text-sm">
+                        {new Date(item.date).toDateString()}
+                      </p>
+                    </div>
                   </div>
-                </div>
                 </AnimateCard>
-               
               ))}
             </div>
           </div>
         </div>
       </div>
-     <div className="px-10 lg:px-48">
-     <div className=" flex flex-col items-center justify-center border-t border-secondary  ">
-        <h3 className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl  py-10  font-primary text-secondary uppercase leading-tight flex gap-3">
+      <div className="px-10 lg:px-48">
+        <div className=" flex flex-col items-center justify-center border-t border-secondary  ">
+          <h3 className="text-3xl md:text-3xl lg:text-3xl xl:text-4xl  py-10  font-primary text-secondary uppercase leading-tight flex gap-3">
+            <RiAwardFill className="h-10" />
 
-        <RiAwardFill className="h-10" />
-
-        <TextHoverAnimation text="Awards" />
-        <span className="text-white">
-            <TextHoverAnimation text="From" />
-          </span>
-        </h3>
-        <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-          {awards.map((image, index) => (
-            <AnimateCard key={index}>
-   <div
-              key={index}
-              className="border border-gray-50/10 p-1 transform transition duration-500 ease-in-out hover:scale-105"
-            >
-          
-              <div className="w-full shadow-md overflow-hidden bg-yellow-100/20 flex items-center justify-center">
-                <img
-                  src={image.icon} // Replace with actual paths
-                  alt={`image ${index + 1}`}
-                  className="w-32 h-28 object-cover"
-                />
-              </div>
-              <p className="text-lg flex md:text-lg lg:text-lg p-4  font-primary   leading-tight text-wrap  items-center  justify-center text-secondary uppercase text-center ">
-                {image.title}
-              </p>
-            </div>
-            </AnimateCard>
-         
-          ))}
+            <TextHoverAnimation text="Awards" />
+            <span className="text-white">
+              <TextHoverAnimation text="From" />
+            </span>
+          </h3>
+          <div className="grid grid-cols-1    md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+            {awards.map((image, index) => (
+              <AnimateCard key={index}>
+                <div
+                  key={index}
+                  className="border border-gray-50/10 p-1 transform transition duration-500 ease-in-out hover:scale-105"
+                >
+                  <div className="w-full shadow-md overflow-hidden bg-yellow-100/20 flex items-center justify-center">
+                    <img
+                      src={image.icon} // Replace with actual paths
+                      alt={`image ${index + 1}`}
+                      className="w-32 h-28 object-cover"
+                    />
+                  </div>
+                  <p className="text-lg flex md:text-lg lg:text-lg p-4  font-primary   leading-tight text-wrap  items-center  justify-center text-secondary uppercase text-center ">
+                    {image.title}
+                  </p>
+                </div>
+              </AnimateCard>
+            ))}
+          </div>
         </div>
       </div>
-     </div>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };

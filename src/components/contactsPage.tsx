@@ -21,7 +21,6 @@ export const ContactsPage = () => {
     email: "",
     message: "",
   });
-  // const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Errors>({});
 
   const validate = (): boolean => {
@@ -45,10 +44,7 @@ export const ContactsPage = () => {
         .then(() => {
           setFormData({ name: "", email: "", message: "" });
           setErrors({});
-          // setIsSubmitted(true);
-          // setTimeout(() => setIsSubmitted(false), 3000);
         });
-      // console.log("Form submitted successfully", formData);
     }
   };
 
@@ -117,11 +113,6 @@ export const ContactsPage = () => {
             </div>
           </div>
           <div className="py-5 flex flex-col gap-10">
-            {/* {isSubmitted && (
-        <div className="absolute  left-1/2 transform -translate-x-1/2 mt-10 bg-green-500 text-white text-sm  px-6 py-3 rounded-lg shadow-md">
-          Form submitted successfully!
-        </div>
-      )} */}
             <div className="w-full flex flex-col justify-center items-center">
               <p className="text-4xl md:text-5xl lg:text-6xl font-primary uppercase">
                 Let's <span className="text-secondary">Talk</span>
@@ -191,11 +182,6 @@ export const ContactsPage = () => {
               </form>
             </div>
             <div className="w-full flex flex-col gap-10">
-              {/* <div className="hidden lg:flex px-12 bg-yellow-500/80 w-1/2 justify-center items-center">
-              <p className="text-3xl text-white text-center font-special">
-                Fall seven times, stand up eight. Champions refuse to give up.
-              </p>
-            </div> */}
               <div>
                 <p className="font-primary uppercase text-xl md:text-2xl text-white">
                   Head Office Dindigul

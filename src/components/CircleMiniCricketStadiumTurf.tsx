@@ -38,10 +38,6 @@ const CircleMiniCricketStadiumTurf = () => {
               <h1 className="font-bold text-lg sm:text-xl md:text-3xl text-gray-50">
                 Mini Cricket Stadium
               </h1>
-              {/* <p className="font-normal text-sm sm:text-base text-gray-50 mt-2 sm:mt-4">
-              This card is for some special elements, like displaying background
-              gifs on hover only.
-            </p> */}
             </div>
           </div>
         </div>

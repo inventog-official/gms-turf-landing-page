@@ -17,79 +17,75 @@ const ReviewsSection = () => {
         {/* Header */}
         <div className="w-full flex justify-center">
           <AnimatedCard>
-          <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
-            Reviews
-          </p>
+            <p className="text-[12px] font-secondary  uppercase tracking-[1px]">
+              Reviews
+            </p>
           </AnimatedCard>
-          
         </div>
         <AnimatedCard>
-        <h2 className="text-4xl font-bold text-white font-primary">
-          Customer Voices: <br /> Hear What{" "}
-          <span className="text-secondary">They Say</span>!
-        </h2>
+          <h2 className="text-4xl font-bold text-white font-primary">
+            Customer Voices: <br /> Hear What{" "}
+            <span className="text-secondary">They Say</span>!
+          </h2>
         </AnimatedCard>
-        
       </div>
 
       {/* Swiper Slider */}
       <AnimatedCard>
-      <div className="relative w-full md:w-[70%] lg:w-[50%]">
-        {/* Navigation Buttons for Mobile and Tablet */}
-        <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
-          <div
-            id="prevBtn"
-            className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
-          >
-            <FaChevronLeft className="text-3xl cursor-pointer" />
-          </div>
-        </div>
-        <div className="absolute inset-y-0 lg:right-0 lg:flex items-center text-secondary z-10 hidden">
-          <div
-            id="nextBtn"
-            className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
-          >
-            <FaChevronRight className="text-3xl cursor-pointer" />
-          </div>
-        </div>
-
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1.3}
-          centeredSlides
-          loop
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
-          navigation={{
-            prevEl: "#prevBtn",
-            nextEl: "#nextBtn",
-          }}
-          pagination={{ clickable: true }}
-          speed={800}
-          className="mil-reviews-slider"
-        >
-          {reviewsObj.map((review, index) => (
-            <SwiperSlide
-              key={index}
-              className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 h-96 flex items-center"
-              // className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 bg-white/10 blur-xl border-4 border-opacity-20 border-yellow-500 h-96 flex items-center"
+        <div className="relative w-full md:w-[70%] lg:w-[50%]">
+          {/* Navigation Buttons for Mobile and Tablet */}
+          <div className="absolute inset-y-0 lg:left-0 lg:flex items-center text-secondary z-10 hidden">
+            <div
+              id="prevBtn"
+              className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
             >
-              <div className="flex flex-col gap-5 text-center px-5 rounded-lg transition-all duration-500 ease-in-out h-full justify-center">
-                <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-secondary">
-                  <img
-                    src={review.img}
-                    alt="Client"
-                    className="object-cover w-full h-full"
-                  />
+              <FaChevronLeft className="text-3xl cursor-pointer" />
+            </div>
+          </div>
+          <div className="absolute inset-y-0 lg:right-0 lg:flex items-center text-secondary z-10 hidden">
+            <div
+              id="nextBtn"
+              className="border border-yellow-600 p-3 rounded-full hover:bg-yellow-600/20 hover:cursor-pointer flex justify-center items-center"
+            >
+              <FaChevronRight className="text-3xl cursor-pointer" />
+            </div>
+          </div>
+
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1.3}
+            centeredSlides
+            loop
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            navigation={{
+              prevEl: "#prevBtn",
+              nextEl: "#nextBtn",
+            }}
+            pagination={{ clickable: true }}
+            speed={800}
+            className="mil-reviews-slider"
+          >
+            {reviewsObj.map((review, index) => (
+              <SwiperSlide
+                key={index}
+                className="transition-transform duration-500 ease-in-out transform scale-95 hover:scale-100 h-96 flex items-center"
+              >
+                <div className="flex flex-col gap-5 text-center px-5 rounded-lg transition-all duration-500 ease-in-out h-full justify-center">
+                  <div className="rounded-full overflow-hidden w-32 h-32 mx-auto bg-secondary">
+                    <img
+                      src={review.img}
+                      alt="Client"
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-lg font-secondary">{review.review}</p>
                 </div>
-                <p className="text-lg font-secondary">{review.review}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </AnimatedCard>
-   
 
       <style>
         {`

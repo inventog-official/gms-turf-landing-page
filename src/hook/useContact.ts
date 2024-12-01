@@ -19,9 +19,6 @@ export function useCantacts() {
       }});
       return response.data;
     },
-    // onSuccess: () => {
-    //   queryClient.invalidateQueries({ queryKey: ['carousels'] }); 
-    // },
   });
   return {
     createContact,

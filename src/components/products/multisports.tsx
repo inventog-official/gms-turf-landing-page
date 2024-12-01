@@ -1,12 +1,3 @@
-// const MultiSportsTurf = () => {
-//     return(
-//         <div className="border border-red-900 p-5">
-//             <h1>MultiSports Turf</h1>
-//         </div>
-//     );
-// }
-// export default MultiSportsTurf;
-
 import { Footer } from "../footer";
 import Certificates from "./pageAnimation/certificates";
 import { Container } from "./pageAnimation/container";
@@ -75,7 +66,6 @@ const MultiSportsTurf = () => {
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-purple-800/20 to-yellow-500/50" />
 
-                  {/* <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-black/50" /> */}
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/45 to-black/50" />
                   {/* Text Overlay */}
                   <div className="absolute inset-0 flex  items-end justify-center duration-500 ease-out p-4">

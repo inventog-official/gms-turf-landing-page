@@ -21,45 +21,38 @@ const Contact: React.FC = () => {
             <div className="w-full lg:w-[50%] flex flex-col justify-center gap-5 lg:gap-10">
               {/* Header */}
               <AnimatedCard>
-              <p className="text-[12px] hidden lg:flex font-secondary lg:mb-8 uppercase tracking-[1px]">
-                Contact
-              </p>
+                <p className="text-[12px] hidden lg:flex font-secondary lg:mb-8 uppercase tracking-[1px]">
+                  Contact
+                </p>
               </AnimatedCard>
-            
+
               <div className="lg:pr-10 w-full flex text-center lg:text-left px-5 lg:px-0 justify-center items-center">
                 <AnimatedCard>
-                <p className="text-4xl lg:text-7xl uppercase font-primary text-white">
-                  Let's <span className="text-secondary">Make</span> an{" "}
-                  <span className="text-secondary">Impact</span> together
-                </p>
+                  <p className="text-4xl lg:text-7xl uppercase font-primary text-white">
+                    Let's <span className="text-secondary">Make</span> an{" "}
+                    <span className="text-secondary">Impact</span> together
+                  </p>
                 </AnimatedCard>
-               
               </div>
               <div className="lg:border-l-4 lg:border-secondary lg:pl-7 lg:pr-16">
                 <AnimatedCard>
-                <p className="text-base text-center lg:text-left font-secondary">
-                  where your ideas come to life. We specialize in crafting
-                  unique brands, captivating advertising campaigns, and
-                  effective digital strategies.
-                </p>
+                  <p className="text-base text-center lg:text-left font-secondary">
+                    where your ideas come to life. We specialize in crafting
+                    unique brands, captivating advertising campaigns, and
+                    effective digital strategies.
+                  </p>
                 </AnimatedCard>
-              
               </div>
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-          {/* <AnimatedCard> */}
-          <img src="/contactSideImg.webp" />
-
-          {/* </AnimatedCard> */}
-
+            <img src="/contactSideImg.webp" />
           </div>
         </div>
         <div className="flex w-full">
           <div className="w-1/2 hidden lg:flex"></div>
           <div className="w-full lg:w-1/2 lg:bg-slate-500/5">
             <div className="bg-secondary p-4 lg:w-[30%] flex justify-center">
-              {/* <AnimatedCard> */}
               <button
                 className="w-[60%] md:w-[40%] lg:w-full border-2 border-primary p-5 rounded-full text-center transform transition-transform duration-300 hover:scale-105"
                 onClick={() => navigate("/get-in-touch")}
@@ -68,12 +61,6 @@ const Contact: React.FC = () => {
                   Get in Touch
                 </p>
               </button>
-              {/* </AnimatedCard> */}
-            
-
-              {/* <button className="w-full border-2 border-primary p-5 rounded-full text-center group-hover:">
-              <p className="uppercase text-primary font-primary tracking-[1.5px]">Get in Touch</p>
-            </button> */}
             </div>
           </div>
         </div>

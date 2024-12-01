@@ -10,7 +10,7 @@ const InstagramEmbed = () => {
 
   return (
     <div
-    className="px-9 lg:px-28 w-full"
+      className="px-9 lg:px-28 w-full"
       style={{
         maxWidth: "100%",
         width: "100%",

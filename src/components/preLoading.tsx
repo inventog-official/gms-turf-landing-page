@@ -51,7 +51,6 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
   return (
     <div
       className={`top-0 left-0 w-full h-full z-[99999999] bg-primary duration-500 ease-out ${
-        // className={`top-0 left-0 w-full h-full z-[99999999] bg-gradient-to-b from-primary to-primary/90 duration-500 ease-out ${
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -59,7 +58,6 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
         {/* First section: each word appears with blur effect */}
         {!firstSectionComplete && (
           <div className="absolute flex flex-col items-center justify-center h-full w-full pb-8 md:pb-16 z-10">
-            {/* {["South", "India's", "No.1"].map((word, index) => ( */}
             <p
               className={`text-[2rem] md:text-[2.5rem] leading-none text-white uppercase font-primary mr-4 transition-all duration-700 ${
                 currentWord >= 1
@@ -68,75 +66,32 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
               }`}
             >
               {"South India's No.1"}
-              {/* <span className="text-yellow-500">No.1</span> */}
             </p>
-
-            {/* {["South India's No.1"].map((word, index) => (
-              <p
-                key={index}
-                className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 ${
-                // className={`text-2xl md:text-4xl uppercase font-primary mr-4 transition-all duration-700 ${
-                  currentWord >= index + 1
-                    ? "opacity-100 blur-none translate-y-0"
-                    : "opacity-0 blur-[10px] translate-y-10"
-                }`}
-              >
-                {word}
-              </p>
-            ))} */}
             <div className="flex flex-col text-center leading-none">
-              {["Sports", "Infrastructure" ,"developer"].map((word, index) => (
+              {["Sports", "Infrastructure", "developer"].map((word, index) => (
                 <p
                   key={index}
                   className={`${
                     word === "Sports"
                       ? "text-[5.1rem] md:text-[6.5rem] text-secondary"
                       : "text-[2.25rem] md:text-[2.8rem] t"
-                  } ${word === "developer"?"text-[3.5rem] md:text-[4.3rem] text-[#febc12]":""
+                  } ${
+                    word === "developer"
+                      ? "text-[3.5rem] md:text-[4.3rem] text-[#febc12]"
+                      : ""
                   }
                   uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
                     currentWord >= index + 1
                       ? "opacity-100 blur-none translate-y-0"
                       : "opacity-0 blur-[10px] translate-y-10"
                   }
-                   ${word==="developer"?"text-[#febc12]":""}
-                  ${word==="Infrastructure"?"text-white":""}`}
+                   ${word === "developer" ? "text-[#febc12]" : ""}
+                  ${word === "Infrastructure" ? "text-white" : ""}`}
                 >
                   {word}
                 </p>
               ))}
             </div>
-
-            {/* <div className="flex flex-col text-center gap-3">
-              {["Sports", "Infrastructure"].map((word, index) => (
-                <p
-                  key={index}
-                  className={`text-4xl md:text-6xl text-white uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
-                    currentWord >= index + 1
-                      ? "opacity-100 blur-none translate-y-0"
-                      : "opacity-0 blur-[10px] translate-y-10"
-                  }`}
-                >
-                  {word}
-                </p>
-              ))}
-            </div> */}
-            {/* <div className="flex flex-col text-center gap-3">
-              {["Sports", "Infrastructure"].map((word, index) => (
-                <p
-                  key={index}
-                  className={`text-4xl md:text-6xl uppercase font-primary mr-4 transition-all duration-700 delay-500 ${
-                    currentWord >= index + 1
-                      ? "opacity-100 blur-none translate-y-0"
-                      : "opacity-0 blur-[10px] translate-y-10"
-                  } ${
-                    index === 1 ? "text-secondary" : "text-white" // Apply a different color for the first word
-                  }`}
-                >
-                  {word}
-                </p>
-              ))}
-            </div> */}
           </div>
         )}
 
@@ -146,7 +101,6 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
             <div className="relative px-8 md:px-[30px] overflow-hidden">
               {/* Sliding box that reveals the text */}
               <div className="absolute h-full w-full bg-secondary z-10 p-5 animate-slideReveal"></div>
-              {/* <div className="absolute h-full w-full bg-[#CD512F] z-10 p-5 animate-slideReveal"></div> */}
 
               {/* Text with reveal effect */}
               <p className="text-white text-4xl md:text-6xl uppercase font-primary animate-revealText">
