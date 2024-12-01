@@ -1,5 +1,5 @@
 import React from "react";
-import AnimatedCard from "./animateCard/main";
+import AnimatedCard from "./animateCard";
 import TextHoverAnimation from "./textHoverAnimation";
 
 const AboutUs: React.FC = () => {

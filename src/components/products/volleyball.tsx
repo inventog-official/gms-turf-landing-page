@@ -4,7 +4,7 @@ import { Container } from "./pageAnimation/container";
 import { FadeIn } from "./pageAnimation/fade-in";
 import { Hero } from "./pageAnimation/hero";
 import { VideoCarousel } from "./pageAnimation/video-carousel";
-import AnimateCard from "../animateCard/main";
+import AnimateCard from "../animateCard";
 import { useEffect } from "react";
 
 const VolleyballTurf = () => {
