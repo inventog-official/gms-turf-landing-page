@@ -31,7 +31,7 @@ const CircleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               Welcome to the Circle Mini Cricket Stadium , where passion for
               Cricket meets high-quality, exclusive playing surfaces. Designed
               With the perfect blend of aesthetics and functionality, our turf
@@ -48,7 +48,7 @@ const CircleTurf = () => {
               Circle Mini Stadium, every aspect has been designed to create an
               environment that brings out the best in every cricketer, from
               beginners to seasoned professionals.  
-            </p>
+            </span>
           </FadeIn>
           <FadeIn>
             <p className="uppercase text-secondary">
@@ -56,19 +56,19 @@ const CircleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               Professional-grade artificial turf for realistic ball behavior and
               play Durable, weather-resistant surface ideal for all seasons
               Shock-absorbing layers for player safety and comfort Compact
               design perfect for mini-cricket formats and casual games Low
               maintenance requirements, allowing more time for play
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>
       <VideoCarousel
         title="Circle Mini Cricket Turf"
-        carouselImages={cricketItems}
+        carouselImages={CircleMiniCricketItems}
       />
       <AnimateCard>
         <Certificates />
@@ -79,7 +79,7 @@ const CircleTurf = () => {
 };
 export default CircleTurf;
 
-const cricketItems = [
+const CircleMiniCricketItems = [
   {
     poster: "/CircleMiniCricketStadiumTurff/PLT_00002.jpg",
     name: "Airplane",

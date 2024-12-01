@@ -29,7 +29,7 @@ const MultiSportsTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               A multi-sport turf's construction must take into account elements
               that guarantee player safety, longevity, and adaptability to
               different sports. High-grade synthetic materials are used to
@@ -37,7 +37,7 @@ const MultiSportsTurf = () => {
               grip for a variety of sports, including basketball, tennis, and
               soccer. For a variety of uses, our multi-sport turf may offer a
               dependable, entertaining, and safe playing surface.
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>

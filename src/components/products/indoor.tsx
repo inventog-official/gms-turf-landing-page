@@ -31,7 +31,7 @@ const IndoorTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               When constructing an indoor turf, key considerations must be
               Addressed to ensure functionality, durability, and player safety.
               Organizations like FIFA, FIBA, FIH provide recommended dimensions
@@ -40,11 +40,11 @@ const IndoorTurf = () => {
               multi-purpose or recreational indoor turfs, the dimensions are
               often customized based on the intended use, available space, and
               client requirements.
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>
-      <VideoCarousel title="Indoor Turf" carouselImages={cricketItems} />
+      <VideoCarousel title="Indoor Turf" carouselImages={indoorTurfItems} />
       <AnimateCard>
         <Certificates />
       </AnimateCard>
@@ -109,7 +109,7 @@ const IndoorTurf = () => {
 };
 export default IndoorTurf;
 
-const cricketItems = [
+const indoorTurfItems = [
   {
     poster:
       "https://static.wixstatic.com/media/4c43d3_8ab1c9e8f0124f4fb1c6ceba1e12190e~mv2.png/v1/fill/w_488,h_326,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Indoor-02.png",

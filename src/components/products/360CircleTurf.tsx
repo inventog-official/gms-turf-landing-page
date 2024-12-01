@@ -31,7 +31,7 @@ const CircleTurf360 = () => {
             </span>
           </FadeIn>
           <FadeIn>
-            <span>
+            <span className="md:text-2xl text-lg">
               Establishing modern basketball courts in urban and suburban areas
               is a significant opportunity as interest in basketball continues
               to grow. With a rise in community sports initiatives, schools, and

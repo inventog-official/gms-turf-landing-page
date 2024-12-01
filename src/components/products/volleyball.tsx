@@ -31,20 +31,20 @@ const VolleyballTurf = () => {
             </span>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               To guarantee maximum playability and durability, a number of
               important factors must be taken into account while constructing a
               volleyball court.
-            </p>
+            </span>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               The Federation Internationale de Volleyball (FIVB), which is the
               worldwide governing organization of volleyball, establishes the
               size of a volleyball court. The FIVB sets the official volleyball
               rules and regulations, including the court's exact measurements,
               the height of the net, and other important details.
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>

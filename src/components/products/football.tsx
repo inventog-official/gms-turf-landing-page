@@ -19,7 +19,7 @@ const FootballTurf = () => {
           subtitle={"FOOTBALL TURF REDEFINED"}
           bgImgUrl={"/Football/Football-07.webp"}
         />
-        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px]   py-36 text-3xl font-bold text-white md:text-4xl ">
+        <Container className="relative z-10 space-y-10  md:max-w-[1000px] max-w-[692px] py-36 text-3xl font-bold text-white md:text-4xl ">
           <FadeIn>
             <p className="text-secondary font-primary">FOOTBALL TURF</p>
           </FadeIn>
@@ -29,7 +29,7 @@ const FootballTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               Ensuring compliance with FIFA (Federation Internationale de
               Football Association) and UEFA (Union of European Football
               Associations) standards is essential for artificial turf used in
@@ -47,14 +47,14 @@ const FootballTurf = () => {
               Regular maintenance and re-certification ensure the field’s
               longevity and reliability, making it a sustainable choice for all
               levels of football.
-            </p>
+            </span>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               These bodies establish regulations concerning the quality and
               Performance of artificial football surfaces, including
               Certifications such as FIFA Quality Pro.
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>

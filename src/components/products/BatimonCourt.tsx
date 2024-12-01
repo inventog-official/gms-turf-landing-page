@@ -29,7 +29,7 @@ const BadmintonCourt = () => {
             </span>
           </FadeIn>
           <FadeIn>
-            <span>
+            <span className="md:text-2xl text-lg">
               Creating a safe and professional environment for badminton players
               offers a remarkable business opportunity. With communities
               focusing on sports and fitness, the demand for high-quality
@@ -43,7 +43,7 @@ const BadmintonCourt = () => {
           </FadeIn>
         </Container>
       </div>
-      <VideoCarousel title="Badminton Court" carouselImages={BatmitonItems} />
+      <VideoCarousel title="Badminton Court" carouselImages={BadmintonItems} />
       <AnimateCard>
         <Certificates />
       </AnimateCard>
@@ -103,7 +103,7 @@ const BadmintonCourt = () => {
   );
 };
 export default BadmintonCourt;
-const BatmitonItems = [
+const BadmintonItems = [
   {
     poster: "/badminton/1.gif",
     name: "Airplane",

@@ -31,7 +31,7 @@ const CricketTurf = () => {
             </span>
           </FadeIn>
           <FadeIn>
-            <span>
+            <span className="md:text-2xl text-lg">
               Reviving box cricket in a safer environment presents a remarkable
               Business opportunity, especially as communities increasingly
               Prioritize sports and recreational activities in secure settings.

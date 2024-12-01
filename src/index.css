@@ -42,7 +42,7 @@
 }
 
 .canvas-container {
-  pointer-events: auto !important; /* Ensure pointer events are enabled */
+  pointer-events: auto !important;  /* Ensure pointer events are enabled */
 }
 
 canvas {
@@ -54,6 +54,7 @@ canvas {
   height: 100%; /* Ensure full height */
   display: block !important; /* Optional, to prevent inline block spacing */
 }
+
 
 /* Hide scrollbar for Firefox */
 * {
@@ -137,15 +138,11 @@ body {
 }
 
 @layer base {
-  /* * {
-    @apply border-border;
-  } */
   body {
     @apply bg-background;
   }
 }
 
-/* index.css */
 @keyframes slide-in-left {
   0% {
     transform: translateX(-100%);
@@ -181,57 +178,64 @@ body {
 }
 
 .wrapp {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 }
 
+
+
 .title {
-  position: relative;
-  margin: 0;
-  font-size: var(--fz-big);
-  line-height: 1;
-  color: var(--pr-color);
-  text-transform: uppercase;
-  mix-blend-mode: difference;
-  z-index: 2;
+	position: relative;
+	margin: 0;
+	font-size: var(--fz-big);
+	line-height: 1;
+	color: var(--pr-color);
+	text-transform: uppercase;
+	mix-blend-mode: difference;
+	z-index: 2;
 }
 
 .title .stroke {
-  display: block;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--color-n3);
+	display: block;
+	color: transparent;
+	-webkit-text-stroke: 1px var(--color-n3);
 }
 
 .main {
-  padding-bottom: var(--indent2);
+	padding-bottom: var(--indent2);
 }
 
 .content {
-  width: 100%;
-  height: auto;
-  padding: 0 var(--indent);
+	width: 100%;
+	height: auto;
+	padding: 0 var(--indent);
 }
+
+
+
+
+
 
 /* scroll trigger *************************/
 /*****************************************/
 .section-slider {
-  height: 80vh;
-  padding: 30px 0;
+	height: 80vh;
+	padding: 30px 0;
 }
 
 .gsap__slider {
-  height: 80vh;
+	height: 80vh;
 }
 
 .gsap__bl {
-  width: 100%;
+	width: 100%;
 }
 
 .gsap__inner,
 .gsap__track {
-  display: flex;
+	display: flex;
 }
 
 .video-card {
@@ -268,7 +272,7 @@ body {
   width: 60px; /* Button size */
   height: 60px; /* Button size */
   font-size: 24px; /* Play icon size */
-  color: #febc12; /* Play icon color */
+  color: #febc12;; /* Play icon color */
   cursor: pointer; /* Pointer on hover */
   z-index: 2; /* Ensure button is above the video */
   outline: none; /* Remove outline */
@@ -284,7 +288,7 @@ body {
   width: 60px; /* Button size */
   height: 60px; /* Button size */
   font-size: 24px; /* Play icon size */
-  color: #febc12; /* Play icon color */
+  color: #febc12;; /* Play icon color */
   cursor: pointer; /* Pointer on hover */
   z-index: 2; /* Ensure button is above the video */
   outline: none; /* Remove outline */
@@ -293,7 +297,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9); /* Change background on hover */
 }
 .mute-button:hover {
-  color: rgba(240, 232, 232, 0.9); /* Change background on hover */
+   color: rgba(240, 232, 232, 0.9); /* Change background on hover */
 }
 .gsap__item {
   position: relative;
@@ -446,15 +450,32 @@ body.dark .range-slider::-ms-thumb {
   /* Existing styles */
   animation: float 10s ease-in-out infinite;
 }
-
-@keyframes fadeInUp {
+@keyframes marquee {
   0% {
-    opacity: 0;
-    transform: translateY(20px);
+    transform: translateX(100%);
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-100%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee__group {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
   }
 }
 

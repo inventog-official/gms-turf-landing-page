@@ -26,7 +26,7 @@ const PickleTurf = () => {
             </p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg">
               Introducing Pickle Turf, an exclusive, top-quality surface
               designed specifically for pickle ball enthusiasts looking for a
               superior playing experience. With precise attention to texture,
@@ -45,23 +45,23 @@ const PickleTurf = () => {
               and skill levels. With our exclusive turf, you get a premier
               playing environment that fosters enjoyment, safety, and
               performance.
-            </p>
+            </span>
           </FadeIn>
           <FadeIn>
             <p className="uppercase text-secondary">Features of Pickle</p>
           </FadeIn>
           <FadeIn>
-            <p>
+            <span className="md:text-2xl text-lg leading-10">
               Professional-grade artificial turf tailored for pickle ball game
               play Optimized surface for consistent ball bounce and precise
               movement Weather-resistant materials, suitable for outdoor and
               indoor play Shock-absorbing layer for reduced impact on players'
               joints Low-maintenance design for hassle-free play
-            </p>
+            </span>
           </FadeIn>
         </Container>
       </div>
-      <VideoCarousel title="Cricket Turf" carouselImages={cricketItems} />
+      <VideoCarousel title="Pickle Turf" carouselImages={PickleTurfItems} />
       <AnimateCard>
         <Certificates />
       </AnimateCard>
@@ -71,7 +71,7 @@ const PickleTurf = () => {
 };
 export default PickleTurf;
 
-const cricketItems = [
+const PickleTurfItems = [
   {
     poster: "/pickleTurf/pickle-turf-001.jpg",
     name: "Airplane",
