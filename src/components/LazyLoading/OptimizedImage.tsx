@@ -7,7 +7,7 @@ import {
 import styled from "styled-components";
 
 
-const StyledBlurhash = styled(Blurhash)<{ isVisible?: boolean }>`
+const StyledBlurhash = styled(Blurhash)<{ isVisible: boolean }>`
   z-index: 20;
   position: absolute !important;
   top: 0;

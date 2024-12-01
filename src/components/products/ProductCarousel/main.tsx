@@ -5,7 +5,7 @@ import "./style.css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { OptimizedImage } from "@/components/lazyLoading/OptimizedImage.tsx";
+import { OptimizedImage } from "../../lazyLoading/OptimizedImage.tsx";
 interface Props {
   images: {
     poster: string;
