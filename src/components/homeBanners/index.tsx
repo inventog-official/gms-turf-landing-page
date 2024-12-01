@@ -6,7 +6,7 @@ import ContactForm from "../popup/contactsPopup";
 import { useCarousel } from "@/hook/useCarousel";
 import { SlBadge } from "react-icons/sl";
 import TextHoverAnimation from "../textHoverAnimation";
-import FootballAnimation from "../footballAnimation";
+import FootballAnimation from "../football3dAnimation";
 import { iconsWithImagesObj } from "@/common/iconsWithImagesObj";
 import Section from "./section";
 const HomeBanners: React.FC = () => {

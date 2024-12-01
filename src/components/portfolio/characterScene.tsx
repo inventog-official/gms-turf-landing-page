@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { gsap } from "gsap";
-import Character from "./character";
+import Character from "./character3d";
 import MediaPlane from "./mediaPlane";
 
 const mediaPaths: string[] = [
