@@ -32,7 +32,7 @@ const MenuDrawer: React.FC<drawerProps> = ({ isCloseMenu }) => {
       isCloseMenu();
     } else {
       // External route navigation
-      navigate(path, { replace: true });
+      navigate(path);
       setActiveTab(path);
       isCloseMenu();
     }
