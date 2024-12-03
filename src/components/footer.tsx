@@ -121,7 +121,7 @@ export const Footer = () => {
                 </p>
                 <p className="font-secondary tracking-[1.5px] uppercase text-center text-xs font-medium text-white">
                   Seethammal Colony 2nd Cross St, Lubdhi Colony, Alwarpet,
-                  Chennai, Tamil Nadu 600018
+                  Chennai, Tamilnadu-600018.
                 </p>
               </div>
             </div>
