@@ -82,6 +82,7 @@ const Portfolio: React.FC = () => {
     <>
       <div className="w-screen h-screen overflow-y-scroll bg-primary">
         <Canvas
+        onContextMenu={(e) => e.stopPropagation()} // Allow default right-click
           camera={{
             position: isMobile ? [0, 2, 4] : isTablet ? [0, 2.5, 5] : [0, 3, 6],
             fov: isMobile ? 60 : isTablet ? 55 : 50,
