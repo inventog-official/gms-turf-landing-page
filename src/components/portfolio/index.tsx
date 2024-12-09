@@ -4,6 +4,8 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import CharacterScene from "./characterScene";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
+import TabSEO from "../seoOptimize";
+import { seoData } from "@/common/seoTitleDescription";
 
 const Portfolio: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
@@ -74,15 +76,24 @@ const Portfolio: React.FC = () => {
 
     return (
       <div className="flex justify-center items-center h-screen w-full bg-primary text-white">
-        <motion.p className="text-xl md:text-2xl lg:text-4xl tracking-widest uppercase font-primary font-semibold">{splitText}</motion.p>
+        <motion.p className="text-xl md:text-2xl lg:text-4xl tracking-widest uppercase font-primary font-semibold">
+          {splitText}
+        </motion.p>
       </div>
     );
   }
   return (
     <>
+      <TabSEO
+        title={seoData.portfolio.title}
+        description={seoData.portfolio.description}
+        keywords={seoData.portfolio.keywords}
+        image={seoData.portfolio.image}
+        url={seoData.portfolio.url}
+      />
       <div className="w-screen h-screen overflow-y-scroll bg-primary">
         <Canvas
-        onContextMenu={(e) => e.stopPropagation()} // Allow default right-click
+          onContextMenu={(e) => e.stopPropagation()} // Allow default right-click
           camera={{
             position: isMobile ? [0, 2, 4] : isTablet ? [0, 2.5, 5] : [0, 3, 6],
             fov: isMobile ? 60 : isTablet ? 55 : 50,
