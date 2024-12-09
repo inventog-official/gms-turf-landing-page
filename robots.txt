@@ -1,0 +1,14 @@
+# Global rules for all crawlers
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /old-url/
+
+
+# Allow all crawlers to access public resources
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://gameonsolution.in/sitemap.xml
