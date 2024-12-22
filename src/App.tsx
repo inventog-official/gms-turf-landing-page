@@ -65,7 +65,7 @@ const App: React.FC = () => {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/get-in-touch" element={<ContactsPage />} />
 
-            
+            {/* products pages */}
             <Route path="/360-circle-turf" element={<CircleTurf360 />} />
             <Route path="/basket-ball" element={<BasketBallCourt />} />
             <Route path="/badminton-court" element={<BadmintonCourt />} />
