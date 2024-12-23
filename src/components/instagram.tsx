@@ -20,7 +20,8 @@ const InstagramEmbed = () => {
     >
       <blockquote
         className="instagram-media"
-        data-instgrm-permalink="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        data-instgrm-permalink="https://www.instagram.com/gameonsolution_southindia?igsh=MW4wcG5rZndiMG5zNQ=="
+        // data-instgrm-permalink="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
         data-instgrm-version="12"
         style={{
           background: "#FFF",
@@ -35,7 +36,8 @@ const InstagramEmbed = () => {
       >
         <div style={{ padding: "16px", width: "100%" }}>
           <a
-            href="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/gameonsolution_southindia?igsh=MW4wcG5rZndiMG5zNQ=="
+            // href="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             style={{
               background: "#FFFFFF",
               lineHeight: 0,
@@ -223,7 +225,8 @@ const InstagramEmbed = () => {
             }}
           >
             <a
-              href="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              href="https://www.instagram.com/gameonsolution_southindia?igsh=MW4wcG5rZndiMG5zNQ=="
+              // href="https://www.instagram.com/gameon_solution?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               style={{
                 color: "#c9c8cd",
                 fontFamily: "Arial,sans-serif",
