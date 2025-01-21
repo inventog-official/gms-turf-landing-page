@@ -14,6 +14,7 @@ const MediaPlane: React.FC<MediaPlaneProps> = ({
   onClick,
 }) => {
   const ref = useRef<THREE.Mesh>(null);
+  console.log({imagePath})
   const overlayRef = useRef<THREE.Mesh>(null);
   const initialRotation = useRef(new THREE.Euler(0, 0, 0));
   const [texture, setTexture] = useState<THREE.Texture | null>(null);

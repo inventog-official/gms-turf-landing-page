@@ -28,6 +28,11 @@ export function useTestimonials() {
         throw error;
       }
     },
+    enabled: !!(queryClient.getQueryData(["carousels"]) as {
+      id: number;
+      url: string;
+      phoneUrl: string;
+    }[]),
     staleTime: 600000,
     refetchInterval: 600000,
   });

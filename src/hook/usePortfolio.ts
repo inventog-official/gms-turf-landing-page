@@ -1,26 +1,26 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-export type NewsFeed = {
+type Portfolio = {
   id: number;
   date: string;
-  fileType: "image" | "video" | "youtube" | "instagram";
   details: string;
+  fileType: "image" | "video" | "youtube";
   mediaUrl: string;
 };
-// const API_URL = "https://api-gms.vercel.app/api/v1/newsfeed";
-const API_URL = "https://api-gms-theta.vercel.app/api/v1/newsFeed";
-export function useNewsFeed() {
+const API_URL = "https://api-gms-theta.vercel.app/api/v1/portfolio";
+
+export function usePortfolio() {
   const queryClient = useQueryClient();
 
-  // Fetch all news feeds (READ)
-  const getNewsFeeds = useQuery({
-    queryKey: ["newsfeeds"],
+  // Fetch all portfolio items (READ)
+  const getPortfolio = useQuery({
+    queryKey: ["portfolio"],
     queryFn: async () => {
       try {
         const response = await axios.get(`${API_URL}`);
-        return response.data as NewsFeed[];
+        return response.data as Portfolio[];
       } catch (error) {
-        console.error("Error fetching news feeds:", error);
+        console.error("Error fetching portfolio:", error);
         throw error;
       }
     },
@@ -34,7 +34,7 @@ export function useNewsFeed() {
   });
 
   return {
-    getNewsFeeds,
+    getPortfolio,
     queryClient,
   };
 }

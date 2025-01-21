@@ -16,14 +16,14 @@ const Navbar: React.FC = () => {
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  const { queryClient } = useCarousel();
+  const { queryClient, getCarousels } = useCarousel();
   const data = queryClient.getQueryData(["carousels"]) as {
     id: number;
     url: string;
     phoneUrl: string;
   }[];
 
-  if (!data || !data?.length) return;
+  if (!data || !data?.length) getCarousels?.refetch();
 
   // Set initial active tab based on location hash or pathname
   useEffect(() => {

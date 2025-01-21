@@ -1,5 +1,6 @@
 import { useCarousel } from "@/hook/useCarousel";
 import { useNewsFeed } from "@/hook/useNewsFeed";
+import { usePortfolio } from "@/hook/usePortfolio";
 import { useTestimonials } from "@/hook/useTestimonials";
 import React, { useState, useEffect } from "react";
 
@@ -11,6 +12,7 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
   const { getAllTestimonials } = useTestimonials();
   const { getCarousels } = useCarousel();
   const { getNewsFeeds } = useNewsFeed();
+  const { getPortfolio } = usePortfolio();
   const [firstSectionComplete, setFirstSectionComplete] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
@@ -20,7 +22,8 @@ const Preloader: React.FC<PreloaderProps> = ({ isLoading, onComplete }) => {
       isLoading ||
       getAllTestimonials.isLoading ||
       getCarousels.isLoading ||
-      getNewsFeeds.isLoading
+      getNewsFeeds.isLoading ||
+      getPortfolio.isLoading
     ) {
       // Animate each word
       let wordTimeouts: NodeJS.Timeout[] = [];

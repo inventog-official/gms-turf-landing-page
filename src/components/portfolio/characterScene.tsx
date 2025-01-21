@@ -4,19 +4,28 @@ import * as THREE from "three";
 import { gsap } from "gsap";
 import Character from "./character3d";
 import MediaPlane from "./mediaPlane";
+import { usePortfolio } from "@/hook/usePortfolio";
 
-const mediaPaths: string[] = [
-  "/Football/1.webp",
-  "/Football/2.webp",
-  "/videos/football-1.mp4",
-  "/videos/football-2.mp4",
-  "/videos/football-3.mp4",
-  "/Football/Football-06.webp",
-  "/Football/Football-02.webp",
-  "/Football/Football-03.webp",
-  "/Football/Football-04.webp",
-  "/Football/Football-05.webp",
-];
+type Portfolio = {
+  id: number;
+  date: string;
+  details: string;
+  fileType: "image" | "video" | "youtube";
+  mediaUrl: string;
+};
+
+// const mediaPaths: string[] = [
+//   "/Football/1.webp",
+//   "/Football/2.webp",
+//   "/videos/football-1.mp4",
+//   "/videos/football-2.mp4",
+//   "/videos/football-3.mp4",
+//   "/Football/Football-06.webp",
+//   "/Football/Football-02.webp",
+//   "/Football/Football-03.webp",
+//   "/Football/Football-04.webp",
+//   "/Football/Football-05.webp",
+// ];
 
 interface CharacterSceneProps {
   onVideoSelect: (url: string) => void;
@@ -26,16 +35,21 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
   const { camera } = useThree();
   const characterRef = useRef<THREE.Group>(null);
   const groupRef = useRef<THREE.Group>(null);
+  const { queryClient, getPortfolio } = usePortfolio();
   const scrollY = useRef(0);
   const targetScrollY = useRef(0);
   const [showMediaPlanes, setShowMediaPlanes] = useState(false);
   const dragStartX = useRef(0);
   const isDragging = useRef(false);
 
+  const mediaPaths = queryClient.getQueryData(["portfolio"]) as Portfolio[];
+
+  if (!mediaPaths || !mediaPaths?.length) getPortfolio?.refetch();
+
   const baseScrollSpeed = 0.001;
   const dragScrollMultiplier = 0.005; // Adjusted for smoother drag speed
   const rotationSpeed = 0.025; // Character rotation speed
-  const maxScrollY = mediaPaths.length * 1.75; // Max scroll distance
+  const maxScrollY = mediaPaths?.length * 1.75; // Max scroll distance
   const dampingFactor = 0.1; // Smoothing factor for scroll interpolation
 
   // Smoothly update positions of media planes and character rotation
@@ -43,7 +57,8 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
     if (!groupRef.current) return;
 
     // Interpolate scrollY toward targetScrollY
-    scrollY.current += (targetScrollY.current - scrollY.current) * dampingFactor;
+    scrollY.current +=
+      (targetScrollY.current - scrollY.current) * dampingFactor;
 
     groupRef.current.children.forEach((child, idx) => {
       const positionY = scrollY.current - 1.35 + idx * 1.75;
@@ -93,7 +108,10 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
 
     const handleScroll = (delta: number) => {
       targetScrollY.current += delta * baseScrollSpeed;
-      targetScrollY.current = Math.max(-maxScrollY, Math.min(0, targetScrollY.current));
+      targetScrollY.current = Math.max(
+        -maxScrollY,
+        Math.min(0, targetScrollY.current)
+      );
     };
 
     const handleDragStart = (event: MouseEvent | TouchEvent) => {
@@ -112,7 +130,10 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
       dragStartX.current = currentX;
 
       targetScrollY.current += deltaX * dragScrollMultiplier;
-      targetScrollY.current = Math.max(-maxScrollY, Math.min(0, targetScrollY.current));
+      targetScrollY.current = Math.max(
+        -maxScrollY,
+        Math.min(0, targetScrollY.current)
+      );
     };
 
     const handleDragEnd = () => {
@@ -130,7 +151,9 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
     window.addEventListener("touchend", handleDragEnd);
 
     return () => {
-      window.removeEventListener("wheel", (event) => handleScroll(-event.deltaY));
+      window.removeEventListener("wheel", (event) =>
+        handleScroll(-event.deltaY)
+      );
       window.removeEventListener("mousedown", handleDragStart);
       window.removeEventListener("mousemove", handleDragMove);
       window.removeEventListener("mouseup", handleDragEnd);
@@ -165,16 +188,16 @@ const CharacterScene: React.FC<CharacterSceneProps> = ({ onVideoSelect }) => {
 
       {showMediaPlanes && (
         <group ref={groupRef}>
-          {mediaPaths.map((imagePath, index) => (
+          {mediaPaths?.map((imagePath, index) => (
             <MediaPlane
-              key={imagePath}
-              imagePath={imagePath}
+              key={imagePath.id}
+              imagePath={imagePath.mediaUrl}
               position={[
                 Math.cos(index * (Math.PI / 3.5)) * 2,
                 index * 2.5 - 3,
                 Math.sin(index * (Math.PI / 3.5)) * 2,
               ]}
-              onClick={() => handleMediaPlaneClick(imagePath)}
+              onClick={() => handleMediaPlaneClick(imagePath.mediaUrl)}
             />
           ))}
         </group>
