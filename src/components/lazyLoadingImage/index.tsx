@@ -7,16 +7,25 @@ import {
 import styled from "styled-components";
 
 
-const StyledBlurhash = styled(Blurhash)<{ isVisible: boolean }>`
+const StyledBlurhash = styled(Blurhash)`
   z-index: 20;
   position: absolute !important;
   top: 0;
   left: 0;
   height:100vh
   width:100vw
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 1s ease-in-out;
 `;
+// const StyledBlurhash = styled(Blurhash)<{ isVisible: boolean }>`
+//   z-index: 20;
+//   position: absolute !important;
+//   top: 0;
+//   left: 0;
+//   height:100vh
+//   width:100vw
+//   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+//   transition: opacity 1s ease-in-out;
+// `;
 
 interface IOptimizedImageProps {
  imageUrl: string; blurhash: string 
@@ -58,7 +67,7 @@ function OptimizedImage(props: IOptimizedImageProps) {
           resolutionX={32}
           resolutionY={32}
           punch={1}
-          isVisible={!isLoaded}
+          // isVisible={!isLoaded}
         />
       )}
     </div>
