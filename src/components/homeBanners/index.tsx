@@ -16,7 +16,7 @@ const HomeBanners: React.FC = () => {
   const [hideHeading, setHideHeading] = useState(false);
   const [visibleIconIndexes, setVisibleIconIndexes] = useState<number[]>([]);
 
-  const { queryClient } = useCarousel();
+  const { getCarousels } = useCarousel();
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const popupRef = useRef<HTMLDivElement>(null);
 
@@ -24,11 +24,16 @@ const HomeBanners: React.FC = () => {
     localStorage.getItem("contacts-gms") as any
   ) as { value: boolean };
 
-  const data = queryClient.getQueryData(["carousels"]) as {
+  const data = getCarousels?.data as {
     id: number;
     url: string;
     phoneUrl: string;
   }[];
+  // const data = queryClient.getQueryData(["carousels"]) as {
+  //   id: number;
+  //   url: string;
+  //   phoneUrl: string;
+  // }[];
   const handleClosePopup = () => {
     localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
     setIsPopupOpen(false);
@@ -115,7 +120,13 @@ const HomeBanners: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [data]);
 
-  if (!data || data.length === 0) {
+  if (
+    !data ||
+    data.length === 0 ||
+    !getCarousels.isSuccess ||
+    !getCarousels.isFetched ||
+    getCarousels.isError
+  ) {
     return (
       <main ref={container} className="relative h-[100vh]">
         <div className="flex items-center justify-center text-white text-2xl">
