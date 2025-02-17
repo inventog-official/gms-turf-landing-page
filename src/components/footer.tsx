@@ -109,7 +109,7 @@ export const Footer = () => {
                   Write
                 </p>
                 <p className="font-secondary uppercase text-xs font-medium text-white tracking-[1.5px]">
-                  gameon.solution.317@gmail.com
+                  sales@gameonsolution.in
                 </p>
               </div>
             </div>
@@ -120,8 +120,7 @@ export const Footer = () => {
                   Visit
                 </p>
                 <p className="font-secondary tracking-[1.5px] uppercase text-center text-xs font-medium text-white">
-                  Seethammal Colony 2nd Cross St, Lubdhi Colony, Alwarpet,
-                  Chennai, Tamilnadu-600018.
+                  Hanifa Nagar, NGO Colony, Dindigul, Tamil Nadu 624005
                 </p>
               </div>
             </div>

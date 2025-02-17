@@ -51,8 +51,8 @@ const AboutUs: React.FC = () => {
             </AnimatedCard>
             <AnimatedCard>
               <p className="md:text-2xl text-lg">
-                In just the last two years, Game On Solution’s founder, Ms.
-                Dhineshwaran, has set up over 115 sports turfs across South
+                In just the last two years, Game On Solution’s founder, Mr.
+                Dhineshwaran, has many sports turfs across South
                 India, transforming local communities and inspiring young
                 athletes. This expansion has provided countless opportunities
                 for young people to pursue careers in sports, turning their

@@ -78,9 +78,9 @@ export const ContactsPage = () => {
                 <p className="font-primary uppercase text-xl md:text-2xl text-white">
                   Call
                 </p>
-                <p className="flex tracking-[1.5px] justify-center items-center gap-1 font-secondary uppercase text-xs font-medium text-white">
+                <p className="flex flex-col xl:flex-row tracking-[1.5px] justify-center items-center gap-1 font-secondary uppercase text-xs font-medium text-white">
                   Office :{" "}
-                  <span className="flex justify-center items-center gap-1.5">
+                  <span className="flex flex-col xl:flex-row justify-center items-center gap-1.5">
                     <span className="tracking-[1.5px]">+91 9615737373</span>
                     <span>(or)</span>
                     <span className="tracking-[1.5px]">+91 9715131313</span>
@@ -95,7 +95,7 @@ export const ContactsPage = () => {
                   Write
                 </p>
                 <p className="font-secondary uppercase text-xs font-medium text-white tracking-[1.5px]">
-                  gameon.solution.317@gmail.com
+                  sales@gameonsolution.in
                 </p>
               </div>
             </div>
@@ -106,8 +106,7 @@ export const ContactsPage = () => {
                   Visit
                 </p>
                 <p className="font-secondary tracking-[1.5px] uppercase text-center text-xs font-medium text-white">
-                  Seethammal Colony 2nd Cross St, Lubdhi Colony, Alwarpet,
-                  Chennai, Tamil Nadu 600018
+                  Hanifa Nagar, NGO Colony, Dindigul, Tamil Nadu 624005
                 </p>
               </div>
             </div>
