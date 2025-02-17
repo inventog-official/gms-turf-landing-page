@@ -66,10 +66,10 @@ const Testimonials = () => {
                 <div key={i} className="flex flex-col gap-2">
                   <HorizontalCard key={i} videoSrc={test.mediaUrl} />
 
-                  <p className="text-3xl  font-primary text-white  uppercase leading-tight">
+                  {/* <p className="text-3xl  font-primary text-white  uppercase leading-tight">
                     Author <span className="text-secondary">name</span>
                   </p>
-                  <div>content</div>
+                  <div>content</div> */}
                 </div>
               ))}
             </motion.div>
