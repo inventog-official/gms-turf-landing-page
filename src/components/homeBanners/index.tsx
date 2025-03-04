@@ -20,9 +20,10 @@ const HomeBanners: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  const PopupState = JSON.parse(
-    localStorage.getItem("contacts-gms") as any
-  ) as { value: boolean };
+  // const PopupState = JSON
+  //   .parse
+  //   localStorage.getItem("contacts-gms") as any
+  //   () as { value: boolean };
 
   const data = getCarousels?.data as {
     id: number;
@@ -35,13 +36,13 @@ const HomeBanners: React.FC = () => {
   //   phoneUrl: string;
   // }[];
   const handleClosePopup = () => {
-    localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
+    // localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
     setIsPopupOpen(false);
-    localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
+    // localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
   };
 
   useEffect(() => {
-    if (isPopupOpen && !PopupState) {
+    if (isPopupOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto"; // or 'scroll' depending on your needs
@@ -248,7 +249,7 @@ const HomeBanners: React.FC = () => {
           ))}
         </div>
       </div>
-      {PopupState == undefined && isPopupOpen ? (
+      {isPopupOpen ? (
         <Popup
           className="w-full md:w-96"
           ref={popupRef}

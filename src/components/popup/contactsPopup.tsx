@@ -6,33 +6,54 @@ interface FormData {
   name: string;
   email: string;
   message: string;
+  phone: string;
 }
 
-interface props{
-    setIsPopupOpen:(value:boolean) => void
+interface props {
+  setIsPopupOpen: (value: boolean) => void;
 }
+
 interface Errors {
   name?: string;
   email?: string;
   message?: string;
+  phone?: string;
 }
-const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
+
+const ContactForm: React.FC<props> = ({ setIsPopupOpen }) => {
   const { createContact } = useCantacts();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
+    phone: "",
   });
   const [errors, setErrors] = useState<Errors>({});
 
   const validate = (): boolean => {
     const newErrors: Errors = {};
+
+    // Validate name
     if (!formData.name.trim()) newErrors.name = "Name is required";
+
+    // Validate email
     if (!formData.email.trim()) newErrors.email = "Email is required";
     else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
       newErrors.email = "Invalid email address";
     }
+
+    // Validate message
     if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    // Validate phone number (10 digits, optional dashes/spaces)
+    const phoneRegex = /^(\+?\d{1,2})?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Invalid phone number";
+    }
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -42,11 +63,11 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
 
     if (validate()) {
       await createContact
-        .mutateAsync({ phone: "1234567890", ...formData })
+        .mutateAsync({ ...formData }) // Pass the form data including phone
         .then(() => {
-            localStorage.setItem("contacts-gms",JSON.stringify({value:true}))
-            setIsPopupOpen(false)
-            setFormData({ name: "", email: "", message: "" });
+          // localStorage.setItem("contacts-gms", JSON.stringify({ value: true }));
+          setIsPopupOpen(false);
+          setFormData({ name: "", email: "", message: "", phone: "" }); // Reset form
           setErrors({});
         });
       console.log("Form submitted successfully", formData);
@@ -70,7 +91,6 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
       </h1>
       <div className="flex flex-col">
         <label className="block text-sm uppercase font-medium text-white mb-1">
-          {" "}
           Your Name
         </label>
         <input
@@ -81,13 +101,12 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
           required
           className="block w-full text-secondary bg-transparent border-b border-gray-300 focus:border-secondary focus:outline-none pb-1"
         />
-        {errors.email && !formData.name && (
+        {errors.name && !formData.name && (
           <p className="text-red-500 text-xs mt-1">{errors.name}</p>
         )}
       </div>
       <div className="flex flex-col">
         <label className="block text-sm uppercase font-medium text-white mb-1">
-          {" "}
           Your Email
         </label>
         <input
@@ -114,8 +133,27 @@ const ContactForm:React.FC<props> = ({setIsPopupOpen}) => {
           className="block text-secondary bg-transparent w-full border-b border-gray-300 focus:border-secondary focus:outline-none pb-1"
           rows={4}
         />
-        {errors.email && !formData.message && (
+        {errors.message && !formData.message && (
           <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+        )}
+      </div>
+      <div className="flex flex-col">
+        <label className="block text-sm uppercase font-medium text-white mb-1">
+          Your Phone
+        </label>
+        <input
+          type="text"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+          className="block w-full text-secondary bg-transparent border-b border-gray-300 focus:border-secondary focus:outline-none pb-1"
+        />
+        {errors.phone && !formData.phone && (
+          <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+        )}
+        {errors.phone && formData.phone && (
+          <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
         )}
       </div>
       <div className="w-full flex justify-end items-end text-md">
