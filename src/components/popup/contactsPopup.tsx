@@ -121,22 +121,7 @@ const ContactForm: React.FC<props> = ({ setIsPopupOpen }) => {
           <p className="text-red-500 text-xs mt-1">{errors.email}</p>
         )}
       </div>
-      <div className="flex flex-col">
-        <label className="block text-sm font-medium uppercase text-white mb-1">
-          Your Message
-        </label>
-        <textarea
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="block text-secondary bg-transparent w-full border-b border-gray-300 focus:border-secondary focus:outline-none pb-1"
-          rows={4}
-        />
-        {errors.message && !formData.message && (
-          <p className="text-red-500 text-xs mt-1">{errors.message}</p>
-        )}
-      </div>
+
       <div className="flex flex-col">
         <label className="block text-sm uppercase font-medium text-white mb-1">
           Your Phone
@@ -156,6 +141,24 @@ const ContactForm: React.FC<props> = ({ setIsPopupOpen }) => {
           <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
         )}
       </div>
+
+      <div className="flex flex-col">
+        <label className="block text-sm font-medium uppercase text-white mb-1">
+          Your Message
+        </label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          className="block text-secondary bg-transparent w-full border-b border-gray-300 focus:border-secondary focus:outline-none pb-1"
+          rows={4}
+        />
+        {errors.message && !formData.message && (
+          <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+        )}
+      </div>
+
       <div className="w-full flex justify-end items-end text-md">
         <button
           type="submit"
