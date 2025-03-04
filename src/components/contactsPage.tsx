@@ -7,12 +7,14 @@ interface FormData {
   name: string;
   email: string;
   message: string;
+  phone: string;
 }
 
 interface Errors {
   name?: string;
   email?: string;
   message?: string;
+  phone?: string;
 }
 export const ContactsPage = () => {
   const { createContact } = useCantacts();
@@ -20,6 +22,7 @@ export const ContactsPage = () => {
     name: "",
     email: "",
     message: "",
+    phone: "",
   });
   const [errors, setErrors] = useState<Errors>({});
 
@@ -31,6 +34,12 @@ export const ContactsPage = () => {
       newErrors.email = "Invalid email address";
     }
     if (!formData.message.trim()) newErrors.message = "Message is required";
+    const phoneRegex = /^(\+?\d{1,2})?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{4}$/;
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!phoneRegex.test(formData.phone)) {
+      newErrors.phone = "Invalid phone number";
+    }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -39,12 +48,10 @@ export const ContactsPage = () => {
     e.preventDefault();
 
     if (validate()) {
-      await createContact
-        .mutateAsync({ phone: "1234567890", ...formData })
-        .then(() => {
-          setFormData({ name: "", email: "", message: "" });
-          setErrors({});
-        });
+      await createContact.mutateAsync({ ...formData }).then(() => {
+        setFormData({ name: "", email: "", message: "", phone: "" });
+        setErrors({});
+      });
     }
   };
 
@@ -146,6 +153,21 @@ export const ContactsPage = () => {
                     {errors.email && !formData.email && (
                       <p className="text-red-500 text-xs mt-1">
                         {errors.email}
+                      </p>
+                    )}
+                  </div>
+                  <div className="w-full md:w-1/2">
+                    <input
+                      type="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-transparent border-b-2 text-xs border-gray-300/60 w-full p-5 text-white uppercase font-secondary font-medium placeholder:opacity-65 focus:border-yellow-600"
+                      placeholder="Your Phone"
+                    />
+                    {errors.phone && !formData.phone && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.phone}
                       </p>
                     )}
                   </div>
